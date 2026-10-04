@@ -10,7 +10,7 @@ Community directory of Claude extensions (mods, plugins, skills, subagents, slas
 
 - `data/mods.json` holds one entry per line. It is the ONLY hand-edited data file.
 - `data/resolved.json` is written by `scripts/sync.mjs`. It holds the upstream plugins for each `bundle: true` entry, pinned to a commit sha.
-- `scripts/build.mjs` generates `README.md`, `.claude-plugin/marketplace.json` and `site/data.json`. Never edit these three by hand.
+- `scripts/build.mjs` generates `README.md`, `.claude-plugin/marketplace.json` and the site: `site/index.html` (from `scripts/index.template.html`, with every entry rendered into the HTML for search engines), `site/data.json`, `site/robots.txt` and `site/sitemap.xml`. Never edit these by hand; change the template or `build.mjs`.
 - `scripts/sync.mjs [ids…]` fetches each upstream `.claude-plugin/marketplace.json` (or `plugin.json`) and pins it with `git ls-remote`. It needs network access.
 - `scripts/issue-to-entry.mjs` turns a submission issue (`.github/ISSUE_TEMPLATE/submit.yml`) into an entry. `--dry-run` only validates.
 - `scripts/verify-installs.sh` installs every marketplace plugin into a throwaway `CLAUDE_CONFIG_DIR`. The last run passed 67/67.
@@ -66,5 +66,5 @@ Setup leftovers: a broken `.git/` folder (delete it) and `_github/` (rename to `
 - A per-mod "reach" badge: scan the source for the `$` calls and hooked events, like karanb192/awesome-claude-code-mods. That list is our closest competitor.
 - A weekly star-count refresh with `GITHUB_TOKEN`, written to `data/stats.json`, so the site can sort by popularity.
 - Add mods that were verified but cut: wandercom/kindex, kbrdn1/claude-crosstalk (installed with make).
-- An OG image for link previews, and a short demo GIF in the README.
+- A short demo GIF in the README. (The OG image, `site/og.png`, is a static file rendered once from HTML with headless Chrome.)
 - A launch post (LinkedIn, X, r/ClaudeAI, Hacker News "Show HN").

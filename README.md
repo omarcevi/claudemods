@@ -213,7 +213,7 @@ Other curated lists worth following.
 
 - `data/mods.json` is the only file people edit. One entry per mod, plugin, skill or link.
 - `scripts/sync.mjs` reads each `bundle: true` entry's upstream `.claude-plugin/marketplace.json` (or `plugin.json`), pins it to the current commit and saves the result in `data/resolved.json`.
-- `scripts/build.mjs` generates this README, `.claude-plugin/marketplace.json` and the site data.
+- `scripts/build.mjs` generates this README, `.claude-plugin/marketplace.json` and the site.
 - A weekly GitHub Action re-syncs and opens a pull request with any new commits, so every upstream change gets a human look before it reaches you.
 
 ## Contributing

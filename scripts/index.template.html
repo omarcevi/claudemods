@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{head}}
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23c4623f'/><path d='M9 21l5-10 3 6 2-3 4 7' stroke='white' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #faf8f5; --surface: #ffffff; --surface-2: #f3efe9; --text: #1f1d1a; --muted: #6b655d;
+  --border: #e6e0d7; --accent: #c4623f; --accent-ink: #ffffff; --accent-soft: #f6e4dc;
+  --good: #2f6f4f; --good-soft: #e2f0e7; --code-bg: #f3efe9; --shadow: 0 1px 2px rgba(31,29,26,.06), 0 4px 16px rgba(31,29,26,.04);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #161513; --surface: #1f1d1b; --surface-2: #2a2724; --text: #f1ede7; --muted: #a39b90;
+    --border: #35312c; --accent: #e07a55; --accent-ink: #1a1310; --accent-soft: #3a2a22;
+    --good: #7cc79c; --good-soft: #1f3328; --code-bg: #2a2724; --shadow: none;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #161513; --surface: #1f1d1b; --surface-2: #2a2724; --text: #f1ede7; --muted: #a39b90;
+  --border: #35312c; --accent: #e07a55; --accent-ink: #1a1310; --accent-soft: #3a2a22;
+  --good: #7cc79c; --good-soft: #1f3328; --code-bg: #2a2724; --shadow: none;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.55 Inter, system-ui, -apple-system, Segoe UI, sans-serif; }
+a { color: inherit; }
+code, .mono { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; }
+.wrap { max-width: 1160px; margin: 0 auto; padding: 0 16px; }
+
+header.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 0; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 17px; text-decoration: none; }
+.brand-mark { width: 28px; height: 28px; border-radius: 8px; background: var(--accent); display: grid; place-items: center; }
+.top-links { display: flex; gap: 6px; align-items: center; }
+.btn { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--border); background: var(--surface); color: var(--text);
+  padding: 7px 12px; border-radius: 8px; font: inherit; font-size: 14px; font-weight: 500; cursor: pointer; text-decoration: none; }
+.btn:hover { border-color: var(--muted); }
+.btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.btn.icon { padding: 7px 9px; }
+
+.hero { padding: 36px 0 28px; text-align: center; }
+.hero h1 { font-size: clamp(30px, 5vw, 46px); line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 12px; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero p { color: var(--muted); font-size: 17px; max-width: 640px; margin: 0 auto 22px; }
+.cmd { display: inline-flex; align-items: center; gap: 10px; max-width: 100%; background: var(--surface); border: 1px solid var(--border);
+  border-radius: 10px; padding: 8px 8px 8px 14px; box-shadow: var(--shadow); }
+.cmd code { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 14px; }
+.cmd .prompt { color: var(--accent); }
+.stats { display: flex; gap: 22px; justify-content: center; flex-wrap: wrap; margin-top: 18px; color: var(--muted); font-size: 14px; }
+.stats b { color: var(--text); }
+
+.controls { position: sticky; top: 0; z-index: 5; background: var(--bg); padding: 12px 0 10px; border-bottom: 1px solid var(--border); }
+.search { position: relative; }
+.search input { width: 100%; padding: 12px 14px 12px 40px; border-radius: 10px; border: 1px solid var(--border); background: var(--surface);
+  color: var(--text); font: inherit; font-size: 15px; }
+.search input:focus { outline: 2px solid var(--accent); outline-offset: -1px; border-color: transparent; }
+.search svg { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); color: var(--muted); }
+.chips { display: flex; gap: 6px; overflow-x: auto; padding: 10px 0 2px; scrollbar-width: none; }
+.chips::-webkit-scrollbar { display: none; }
+.chip { flex: none; border: 1px solid var(--border); background: var(--surface); color: var(--text); border-radius: 999px; padding: 5px 12px;
+  font: inherit; font-size: 13px; cursor: pointer; white-space: nowrap; }
+.chip span { color: var(--muted); margin-left: 4px; }
+.chip[aria-pressed="true"] { background: var(--text); color: var(--bg); border-color: var(--text); }
+.chip[aria-pressed="true"] span { color: inherit; opacity: .7; }
+.toggle { display: inline-flex; gap: 6px; align-items: center; font-size: 13px; color: var(--muted); margin-left: auto; cursor: pointer; white-space: nowrap; }
+
+.section-blurb { color: var(--muted); margin: 18px 0 4px; font-size: 14px; min-height: 1em; }
+.group { scroll-margin-top: 130px; }
+.group h2 { font-size: 20px; letter-spacing: -0.01em; margin: 22px 0 2px; }
+.group > p { color: var(--muted); font-size: 14px; margin: 0; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px; padding: 12px 0 18px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 10px;
+  box-shadow: var(--shadow); min-width: 0; scroll-margin-top: 140px; }
+.card:target { outline: 2px solid var(--accent); }
+.card-head { display: flex; justify-content: space-between; gap: 10px; align-items: flex-start; }
+.card h3 { margin: 0; font-size: 16px; line-height: 1.3; }
+.card h3 a { text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.by { color: var(--muted); font-size: 13px; }
+.badge { flex: none; font-size: 11px; font-weight: 600; letter-spacing: .02em; text-transform: uppercase; padding: 3px 7px; border-radius: 6px;
+  background: var(--surface-2); color: var(--muted); }
+.badge.mod { background: var(--accent-soft); color: var(--accent); }
+.desc { margin: 0; font-size: 14px; }
+.tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.tag { font-size: 12px; color: var(--muted); }
+.tag::before { content: "#"; opacity: .6; }
+.install { margin-top: auto; display: flex; flex-direction: column; gap: 6px; }
+.install-row { display: flex; align-items: center; gap: 6px; background: var(--code-bg); border-radius: 8px; padding: 4px 4px 4px 10px; min-width: 0; }
+.install-row code { flex: 1; overflow-x: auto; white-space: nowrap; scrollbar-width: thin; padding: 4px 0; }
+.copy { flex: none; border: 0; background: transparent; color: var(--muted); cursor: pointer; padding: 6px; border-radius: 6px; display: grid; place-items: center; }
+.copy:hover { background: var(--surface); color: var(--text); }
+.copy.done { color: var(--good); }
+.mk { font-size: 12px; color: var(--good); background: var(--good-soft); padding: 2px 7px; border-radius: 6px; align-self: flex-start; font-weight: 500; }
+.none { text-align: center; color: var(--muted); padding: 60px 0; }
+
+.about { margin: 22px 0 34px; }
+.about h2 { font-size: 20px; letter-spacing: -0.01em; margin: 0 0 12px; }
+.faq { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+.faq h3 { font-size: 15px; margin: 0 0 4px; }
+.faq p { margin: 0; color: var(--muted); font-size: 14px; }
+.callout { display: grid; grid-template-columns: 1fr auto; gap: 18px; align-items: center; background: var(--surface); border: 1px solid var(--border);
+  border-radius: 14px; padding: 22px; margin: 10px 0 40px; }
+.callout h2 { margin: 0 0 4px; font-size: 20px; }
+.callout p { margin: 0; color: var(--muted); }
+.warn { font-size: 13px; color: var(--muted); border-left: 3px solid var(--accent); padding: 4px 0 4px 12px; margin: 12px 0 30px; }
+footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; padding: 22px 0 40px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr; }
+  .callout { grid-template-columns: 1fr; }
+  .hide-sm { display: none; }
+  .cmd code { font-size: 12px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="./"><span class="brand-mark"><svg width="16" height="16" viewBox="0 0 32 32"><path d="M5 23l7-14 4 8 3-4 6 10" stroke="white" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>claudemods.chat</a>
+    <nav class="top-links">
+      <a class="btn hide-sm" href="{{submitUrl}}">Submit a mod</a>
+      <a class="btn icon" href="{{repoUrl}}" aria-label="GitHub repository"><svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+      <button class="btn icon" id="theme" aria-label="Toggle dark mode"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg></button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Claude mods, plugins &amp; skills.<br><em>Find what others built.</em></h1>
+    <p>A community directory of Claude Code mods, plugins, skills, subagents, hooks, status lines, MCP servers and prompts. Install the mods straight from one marketplace.</p>
+    <div class="cmd"><code><span class="prompt">&gt;</span> <span id="mk-cmd">/plugin marketplace add {{repo}}</span></code>
+      <button class="copy" data-copy-from="mk-cmd" aria-label="Copy command"></button></div>
+    <div class="stats">{{stats}}</div>
+  </section>
+</div>
+
+<div class="controls">
+  <div class="wrap">
+    <label class="search">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Search mods, skills, MCP servers…  (press / to focus)" autocomplete="off" aria-label="Search">
+    </label>
+    <div class="chips" id="chips" role="toolbar" aria-label="Filter by type">{{chips}}</div>
+  </div>
+</div>
+
+<main class="wrap">
+  <p class="section-blurb" id="blurb">{{count}} entries</p>
+  <div id="dir" aria-live="polite">
+{{directory}}
+  </div>
+  <p class="none" id="none" hidden>Nothing matches. <a href="{{submitUrl}}">Submit it?</a></p>
+
+  <p class="warn">Mods and plugins run with your permissions — they can read files, run commands and reach the network. Every plugin in the claudemods marketplace is pinned to the upstream commit we reviewed, but read the source before you install.</p>
+
+  <section class="about">
+    <h2>About Claude mods</h2>
+    <div class="faq">
+      <div><h3>What is a Claude mod?</h3><p>A Claude mod is a Claude Code plugin built from function hooks. It can draw a live pane, band, status line or toast inside Claude Code, or guard what Claude does. This directory also lists the wider ecosystem: plugins, skills, subagents, slash commands, hooks and MCP servers.</p></div>
+      <div><h3>How do I install one?</h3><p>Add the marketplace once with <code>/plugin marketplace add {{repo}}</code>, then install any mod by name, like <code>/plugin install cc-arcade@{{marketplace}}</code>. Entries outside the marketplace link to their own setup steps.</p></div>
+      <div><h3>Is claudemods official?</h3><p>No. It's a community project, not affiliated with or endorsed by Anthropic. The list is CC0, each linked project keeps its own license, and anyone can submit an entry.</p></div>
+    </div>
+  </section>
+
+  <section class="callout">
+    <div><h2>Built a mod? Add it.</h2><p>Fill in a short form. A maintainer reviews it and a bot opens the pull request for you.</p></div>
+    <a class="btn primary" href="{{submitUrl}}">Submit to claudemods</a>
+  </section>
+
+  <footer>
+    <span>A community project. Not affiliated with or endorsed by Anthropic.</span>
+    <span>List is CC0 · <a href="{{repoUrl}}">Source on GitHub</a></span>
+  </footer>
+</main>
+
+<script>
+(() => {
+  const COPY_ICON = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>';
+  const DONE_ICON = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5 9-10"/></svg>';
+  const $ = (s) => document.querySelector(s);
+
+  // Theme: remembered per viewer, wrapped because storage can be unavailable.
+  const store = { get(k) { try { return localStorage.getItem(k); } catch { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch {} } };
+  const saved = store.get("theme"); if (saved) document.documentElement.dataset.theme = saved;
+  $("#theme").onclick = () => {
+    const dark = document.documentElement.dataset.theme ? document.documentElement.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    const next = dark ? "light" : "dark"; document.documentElement.dataset.theme = next; store.set("theme", next);
+  };
+
+  async function copy(text, btn) {
+    try { await navigator.clipboard.writeText(text); }
+    catch { const t = document.createElement("textarea"); t.value = text; document.body.append(t); t.select(); document.execCommand("copy"); t.remove(); }
+    btn.innerHTML = DONE_ICON; btn.classList.add("done");
+    setTimeout(() => { btn.innerHTML = COPY_ICON; btn.classList.remove("done"); }, 1400);
+  }
+  document.addEventListener("click", (ev) => {
+    const b = ev.target.closest(".copy"); if (!b) return;
+    const text = b.dataset.copy ?? document.getElementById(b.dataset.copyFrom)?.textContent ?? "";
+    copy(text, b);
+  });
+  document.querySelectorAll(".copy").forEach((b) => (b.innerHTML = COPY_ICON));
+  document.addEventListener("keydown", (e) => { if (e.key === "/" && document.activeElement !== $("#q")) { e.preventDefault(); $("#q").focus(); } });
+
+  // The directory is rendered into the page at build time (scripts/build.mjs);
+  // search and the type chips only show, hide and reorder those cards.
+  const groups = [...document.querySelectorAll(".group")];
+  const cards = [...document.querySelectorAll(".card")];
+  const text = (el, s) => (el.querySelector(s)?.textContent || "").toLowerCase();
+  cards.forEach((c, i) => {
+    c._i = i;
+    c._hay = { name: text(c, "h3"), author: text(c, ".by"), desc: text(c, ".desc"),
+      tags: [...c.querySelectorAll(".tag")].map((t) => t.textContent).join(" ").toLowerCase(), type: c.dataset.type };
+  });
+  let state = { type: "all", q: "" };
+
+  function readHash() {
+    const h = new URLSearchParams(location.hash.slice(1));
+    if (h.has("type") || h.has("q")) { state.type = h.get("type") || "all"; state.q = h.get("q") || ""; }
+  }
+  function writeHash() {
+    const h = new URLSearchParams();
+    if (state.type !== "all") h.set("type", state.type);
+    if (state.q) h.set("q", state.q);
+    const s = h.toString(); history.replaceState(null, "", s ? "#" + s : location.pathname);
+  }
+
+  function score(hay, terms) {
+    if (!terms.length) return 1;
+    let s = 0;
+    for (const t of terms) {
+      const hit = (hay.name.includes(t) ? 5 : 0) + (hay.tags.includes(t) ? 3 : 0) + (hay.author.includes(t) ? 2 : 0) + (hay.desc.includes(t) ? 1 : 0) + (hay.type.includes(t) ? 1 : 0);
+      if (!hit) return 0; s += hit;
+    }
+    return s;
+  }
+
+  function render() {
+    const terms = state.q.toLowerCase().split(/\s+/).filter(Boolean);
+    let shown = 0;
+    for (const g of groups) {
+      const grid = g.querySelector(".grid");
+      const list = [...grid.children].map((c) => ({ c, s: state.type === "all" || c.dataset.type === state.type ? score(c._hay, terms) : 0 }));
+      list.sort((a, b) => (terms.length ? b.s - a.s : 0) || a.c._i - b.c._i).forEach(({ c, s }) => { c.hidden = !s; grid.append(c); });
+      const n = list.filter((x) => x.s).length;
+      g.hidden = !n; shown += n;
+    }
+    $("#none").hidden = shown > 0;
+    $("#blurb").textContent = shown === cards.length ? `${cards.length} entries` : `${shown} of ${cards.length} entries`;
+    document.querySelectorAll(".chip").forEach((c) => c.setAttribute("aria-pressed", String(c.dataset.type === state.type)));
+  }
+
+  $("#chips").onclick = (ev) => { const c = ev.target.closest(".chip"); if (!c) return; state.type = c.dataset.type; writeHash(); render(); };
+  readHash(); $("#q").value = state.q;
+  let t; $("#q").oninput = (ev) => { clearTimeout(t); t = setTimeout(() => { state.q = ev.target.value.trim(); writeHash(); render(); }, 80); };
+  if (state.type !== "all" || state.q) render();
+})();
+</script>
+</body>
+</html>

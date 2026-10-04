@@ -16,7 +16,7 @@ Open the [submission form](../../issues/new?template=submit.yml). A bot checks i
 
 2. If you set `"bundle": true`, pin it: `node scripts/sync.mjs my-mod`
 3. Regenerate: `node scripts/build.mjs`
-4. Open a pull request. Don't edit `README.md`, `.claude-plugin/marketplace.json` or `site/data.json` by hand; they're generated.
+4. Open a pull request. Don't edit `README.md`, `.claude-plugin/marketplace.json` or the files in `site/` (except `og.png` and `CNAME`) by hand; they're generated. The page layout lives in `scripts/index.template.html`.
 
 ### Fields
 
