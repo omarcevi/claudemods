@@ -19,7 +19,7 @@
       "label": "Skills",
       "heading": "Claude skills",
       "blurb": "SKILL.md folders that teach Claude a task or workflow.",
-      "count": 11
+      "count": 20
     },
     "subagent": {
       "label": "Subagents",
@@ -909,6 +909,167 @@
         "/plugin install taste-skill@claudemods"
       ],
       "inMarketplace": true
+    },
+    {
+      "id": "ponytail",
+      "name": "Ponytail",
+      "type": "skill",
+      "url": "https://github.com/DietrichGebert/ponytail",
+      "author": "DietrichGebert",
+      "description": "Makes Claude code like the laziest senior dev in the room: the best code is the code you never wrote.",
+      "tags": [
+        "minimalism",
+        "workflow",
+        "code-quality"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install ponytail@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "mattpocock-skills",
+      "name": "Matt Pocock Skills",
+      "type": "skill",
+      "url": "https://github.com/mattpocock/skills",
+      "author": "mattpocock",
+      "description": "Matt Pocock's skills for real engineers, straight from his .agents directory: debugging, triage, architecture and more.",
+      "tags": [
+        "engineering",
+        "debugging",
+        "architecture"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install mattpocock-skills@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "i-have-adhd",
+      "name": "I Have ADHD",
+      "type": "skill",
+      "url": "https://github.com/ayghri/i-have-adhd",
+      "author": "ayghri",
+      "description": "Stops your coding agent from burying the answer: ADHD-friendly output with the point first, plus an opt-in always-on mode.",
+      "tags": [
+        "output",
+        "writing",
+        "accessibility"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install i-have-adhd@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "cloudflare-security-audit",
+      "name": "Security Audit Skill (Cloudflare)",
+      "type": "skill",
+      "url": "https://github.com/cloudflare/security-audit-skill",
+      "author": "cloudflare",
+      "description": "Cloudflare's skill for multi-phase security audits with independently verified, machine-readable findings.",
+      "tags": [
+        "security",
+        "auditing",
+        "cloudflare"
+      ],
+      "featured": false,
+      "install": [
+        "npx skills add https://github.com/cloudflare/security-audit-skill --skill security-audit"
+      ],
+      "inMarketplace": false
+    },
+    {
+      "id": "diagram-design",
+      "name": "Diagram Design",
+      "type": "skill",
+      "url": "https://github.com/cathrynlavery/diagram-design",
+      "author": "cathrynlavery",
+      "description": "Editorial diagram design: 42 diagram types as self-contained HTML and SVG, with Mermaid, draw.io and Excalidraw import.",
+      "tags": [
+        "diagrams",
+        "design",
+        "svg"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install diagram-design@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "humanizer",
+      "name": "Humanizer",
+      "type": "skill",
+      "url": "https://github.com/blader/humanizer",
+      "author": "blader",
+      "description": "Removes the signs of AI-generated writing from text.",
+      "tags": [
+        "writing",
+        "editing"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install humanizer@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "graphify",
+      "name": "Graphify",
+      "type": "skill",
+      "url": "https://github.com/Graphify-Labs/graphify",
+      "author": "Graphify-Labs",
+      "description": "Turns a codebase, with its docs, SQL schemas, configs and PDFs, into a queryable knowledge graph you use through a /graphify skill.",
+      "tags": [
+        "knowledge-graph",
+        "codebase",
+        "docs"
+      ],
+      "featured": false,
+      "install": [
+        "uv tool install graphifyy && graphify install"
+      ],
+      "inMarketplace": false
+    },
+    {
+      "id": "addyosmani-agent-skills",
+      "name": "Addy Osmani Agent Skills",
+      "type": "skill",
+      "url": "https://github.com/addyosmani/agent-skills",
+      "author": "addyosmani",
+      "description": "Production-grade engineering skills, plus code review, security and web performance subagents and slash commands.",
+      "tags": [
+        "engineering",
+        "code-review",
+        "performance"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install agent-skills@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "impeccable",
+      "name": "Impeccable",
+      "type": "skill",
+      "url": "https://github.com/pbakaus/impeccable",
+      "author": "pbakaus",
+      "description": "A design language for AI harnesses: one skill with 24 commands like polish, audit and critique, plus anti-pattern detection.",
+      "tags": [
+        "design",
+        "frontend",
+        "ui"
+      ],
+      "featured": false,
+      "install": [
+        "npx impeccable install"
+      ],
+      "inMarketplace": false
     },
     {
       "id": "wshobson-agents",

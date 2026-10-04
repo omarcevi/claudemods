@@ -854,6 +854,102 @@
       }
     ]
   },
+  "ponytail": {
+    "repo": "DietrichGebert/ponytail",
+    "sha": "c982cd411abb53323c4baa1baa3c2f020b8d0b08",
+    "upstreamMarketplace": "ponytail",
+    "plugins": [
+      {
+        "name": "ponytail",
+        "description": "Forces the laziest solution that works. YAGNI, stdlib first, one line over fifty.",
+        "source": {
+          "source": "github",
+          "repo": "DietrichGebert/ponytail",
+          "sha": "c982cd411abb53323c4baa1baa3c2f020b8d0b08"
+        }
+      }
+    ]
+  },
+  "mattpocock-skills": {
+    "repo": "mattpocock/skills",
+    "sha": "24fe0ef7737efae15c87225755e9f6f5965e4888",
+    "upstreamMarketplace": "mattpocock",
+    "plugins": [
+      {
+        "name": "mattpocock-skills",
+        "description": "Matt Pocock's agent skills for real engineering (grilling, spec/ticket flows, TDD, code review, domain modelling and more).",
+        "source": {
+          "source": "github",
+          "repo": "mattpocock/skills",
+          "sha": "24fe0ef7737efae15c87225755e9f6f5965e4888"
+        }
+      }
+    ]
+  },
+  "i-have-adhd": {
+    "repo": "ayghri/i-have-adhd",
+    "sha": "839872f9d1cd634fed642b4589ce7226199cc15f",
+    "upstreamMarketplace": "i-have-adhd",
+    "plugins": [
+      {
+        "name": "i-have-adhd",
+        "description": "Action-first, ADHD-friendly output shaping for Claude Code.",
+        "source": {
+          "source": "github",
+          "repo": "ayghri/i-have-adhd",
+          "sha": "839872f9d1cd634fed642b4589ce7226199cc15f"
+        }
+      }
+    ]
+  },
+  "diagram-design": {
+    "repo": "cathrynlavery/diagram-design",
+    "sha": "f903933a534ba92cde1c85a28186267b3a317bb2",
+    "upstreamMarketplace": "diagram-design",
+    "plugins": [
+      {
+        "name": "diagram-design",
+        "description": "Editorial diagram design: 42 diagram types as self-contained HTML and SVG, with Mermaid, draw.io and Excalidraw import.",
+        "source": {
+          "source": "github",
+          "repo": "cathrynlavery/diagram-design",
+          "sha": "f903933a534ba92cde1c85a28186267b3a317bb2"
+        }
+      }
+    ]
+  },
+  "humanizer": {
+    "repo": "blader/humanizer",
+    "sha": "225a6f39ac85f76ee48dbad772ea4abe4ed6c9d8",
+    "upstreamMarketplace": "humanizer",
+    "plugins": [
+      {
+        "name": "humanizer",
+        "description": "Rewrite AI-sounding text so it reads like the writer without changing what it says.",
+        "source": {
+          "source": "github",
+          "repo": "blader/humanizer",
+          "sha": "225a6f39ac85f76ee48dbad772ea4abe4ed6c9d8"
+        }
+      }
+    ]
+  },
+  "addyosmani-agent-skills": {
+    "repo": "addyosmani/agent-skills",
+    "sha": "1401c8b8030e023baeebb31781a6653fe8e93026",
+    "upstreamMarketplace": "addy-agent-skills",
+    "plugins": [
+      {
+        "name": "agent-skills",
+        "description": "Production-grade engineering skills covering every phase of software development: spec, plan, build, verify, review, and ship.",
+        "source": {
+          "source": "github",
+          "repo": "addyosmani/agent-skills",
+          "sha": "1401c8b8030e023baeebb31781a6653fe8e93026"
+        }
+      }
+    ]
+  },
   "tdd-guard": {
     "repo": "nizos/tdd-guard",
     "sha": "2579ec1823fac5f4afb73be678d9c500b19885ac",

@@ -137,6 +137,31 @@
       }
     },
     {
+      "name": "agent-skills",
+      "source": {
+        "source": "github",
+        "repo": "addyosmani/agent-skills",
+        "sha": "1401c8b8030e023baeebb31781a6653fe8e93026"
+      },
+      "description": "Production-grade engineering skills covering every phase of software development: spec, plan, build, verify, review, and ship.",
+      "author": {
+        "name": "addyosmani",
+        "url": "https://github.com/addyosmani"
+      },
+      "homepage": "https://github.com/addyosmani/agent-skills",
+      "category": "skill",
+      "tags": [
+        "engineering",
+        "code-review",
+        "performance"
+      ],
+      "metadata": {
+        "entry": "addyosmani-agent-skills",
+        "upstreamName": "agent-skills",
+        "upstreamMarketplace": "addy-agent-skills"
+      }
+    },
+    {
       "name": "aside",
       "source": {
         "source": "github",
@@ -575,6 +600,31 @@
       }
     },
     {
+      "name": "diagram-design",
+      "source": {
+        "source": "github",
+        "repo": "cathrynlavery/diagram-design",
+        "sha": "f903933a534ba92cde1c85a28186267b3a317bb2"
+      },
+      "description": "Editorial diagram design: 42 diagram types as self-contained HTML and SVG, with Mermaid, draw.io and Excalidraw import.",
+      "author": {
+        "name": "cathrynlavery",
+        "url": "https://github.com/cathrynlavery"
+      },
+      "homepage": "https://github.com/cathrynlavery/diagram-design",
+      "category": "skill",
+      "tags": [
+        "diagrams",
+        "design",
+        "svg"
+      ],
+      "metadata": {
+        "entry": "diagram-design",
+        "upstreamName": "diagram-design",
+        "upstreamMarketplace": "diagram-design"
+      }
+    },
+    {
       "name": "diff-review",
       "source": {
         "source": "git-subdir",
@@ -675,6 +725,55 @@
         "entry": "claude-familiar",
         "upstreamName": "familiar",
         "upstreamMarketplace": "claude-familiar"
+      }
+    },
+    {
+      "name": "humanizer",
+      "source": {
+        "source": "github",
+        "repo": "blader/humanizer",
+        "sha": "225a6f39ac85f76ee48dbad772ea4abe4ed6c9d8"
+      },
+      "description": "Rewrite AI-sounding text so it reads like the writer without changing what it says.",
+      "author": {
+        "name": "blader",
+        "url": "https://github.com/blader"
+      },
+      "homepage": "https://github.com/blader/humanizer",
+      "category": "skill",
+      "tags": [
+        "writing",
+        "editing"
+      ],
+      "metadata": {
+        "entry": "humanizer",
+        "upstreamName": "humanizer",
+        "upstreamMarketplace": "humanizer"
+      }
+    },
+    {
+      "name": "i-have-adhd",
+      "source": {
+        "source": "github",
+        "repo": "ayghri/i-have-adhd",
+        "sha": "839872f9d1cd634fed642b4589ce7226199cc15f"
+      },
+      "description": "Action-first, ADHD-friendly output shaping for Claude Code.",
+      "author": {
+        "name": "ayghri",
+        "url": "https://github.com/ayghri"
+      },
+      "homepage": "https://github.com/ayghri/i-have-adhd",
+      "category": "skill",
+      "tags": [
+        "output",
+        "writing",
+        "accessibility"
+      ],
+      "metadata": {
+        "entry": "i-have-adhd",
+        "upstreamName": "i-have-adhd",
+        "upstreamMarketplace": "i-have-adhd"
       }
     },
     {
@@ -831,6 +930,31 @@
         "entry": "lcm",
         "upstreamName": "lcm",
         "upstreamMarketplace": "lossless-claude"
+      }
+    },
+    {
+      "name": "mattpocock-skills",
+      "source": {
+        "source": "github",
+        "repo": "mattpocock/skills",
+        "sha": "24fe0ef7737efae15c87225755e9f6f5965e4888"
+      },
+      "description": "Matt Pocock's agent skills for real engineering (grilling, spec/ticket flows, TDD, code review, domain modelling and more).",
+      "author": {
+        "name": "mattpocock",
+        "url": "https://github.com/mattpocock"
+      },
+      "homepage": "https://github.com/mattpocock/skills",
+      "category": "skill",
+      "tags": [
+        "engineering",
+        "debugging",
+        "architecture"
+      ],
+      "metadata": {
+        "entry": "mattpocock-skills",
+        "upstreamName": "mattpocock-skills",
+        "upstreamMarketplace": "mattpocock"
       }
     },
     {
@@ -1062,6 +1186,31 @@
         "entry": "playwright-skill",
         "upstreamName": "playwright-skill",
         "upstreamMarketplace": "playwright-skill"
+      }
+    },
+    {
+      "name": "ponytail",
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail",
+        "sha": "c982cd411abb53323c4baa1baa3c2f020b8d0b08"
+      },
+      "description": "Forces the laziest solution that works. YAGNI, stdlib first, one line over fifty.",
+      "author": {
+        "name": "DietrichGebert",
+        "url": "https://github.com/DietrichGebert"
+      },
+      "homepage": "https://github.com/DietrichGebert/ponytail",
+      "category": "skill",
+      "tags": [
+        "minimalism",
+        "workflow",
+        "code-quality"
+      ],
+      "metadata": {
+        "entry": "ponytail",
+        "upstreamName": "ponytail",
+        "upstreamMarketplace": "ponytail"
       }
     },
     {

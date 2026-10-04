@@ -7,7 +7,7 @@
 
 [Browse the site](https://claudemods.chat) · [Submit something](https://github.com/omarcevi/claudemods/issues/new?template=submit.yml) · [How it works](#how-it-works)
 
-![entries](https://img.shields.io/badge/entries-93-d97757) ![installable](https://img.shields.io/badge/installable_plugins-69-2f6f4f) ![license](https://img.shields.io/badge/list-CC0-lightgrey)
+![entries](https://img.shields.io/badge/entries-102-d97757) ![installable](https://img.shields.io/badge/installable_plugins-75-2f6f4f) ![license](https://img.shields.io/badge/list-CC0-lightgrey)
 
 </div>
 
@@ -29,7 +29,7 @@ Every plugin in the marketplace points at the exact upstream commit we looked at
 
 - [Mods](#mods) (27)
 - [Plugins & marketplaces](#plugins-marketplaces) (7)
-- [Skills](#skills) (11)
+- [Skills](#skills) (20)
 - [Subagents](#subagents) (6)
 - [Slash commands](#slash-commands) (5)
 - [Hooks](#hooks) (6)
@@ -95,12 +95,21 @@ SKILL.md folders that teach Claude a task or workflow.
 | --- | --- | --- |
 | [Anthropic Agent Skills](https://github.com/anthropics/skills) ⭐<br><sub>by anthropics</sub> | Anthropic's official skills repo: docx, pdf, pptx, xlsx, examples, the spec and a template. | `/plugin marketplace add anthropics/skills` |
 | [Superpowers](https://github.com/obra/superpowers) ⭐<br><sub>by obra</sub> | Skills library and dev methodology for TDD, debugging, planning and collaboration. | `/plugin install superpowers@claudemods` |
+| [Addy Osmani Agent Skills](https://github.com/addyosmani/agent-skills)<br><sub>by addyosmani</sub> | Production-grade engineering skills, plus code review, security and web performance subagents and slash commands. | `/plugin install agent-skills@claudemods` |
 | [Awesome Claude Skills (Composio)](https://github.com/ComposioHQ/awesome-claude-skills)<br><sub>by ComposioHQ</sub> | Large collection of ready-made skills for dev, business and productivity, plus SaaS automation. | see repo |
 | [Claude Skills (alirezarezvani)](https://github.com/alirezarezvani/claude-skills)<br><sub>by alirezarezvani</sub> | 380+ skills, agents and commands across engineering, product, marketing and compliance. | `/plugin marketplace add alirezarezvani/claude-skills` |
+| [Diagram Design](https://github.com/cathrynlavery/diagram-design)<br><sub>by cathrynlavery</sub> | Editorial diagram design: 42 diagram types as self-contained HTML and SVG, with Mermaid, draw.io and Excalidraw import. | `/plugin install diagram-design@claudemods` |
 | [Expo Skills](https://github.com/expo/skills)<br><sub>by expo</sub> | The Expo team's skills for building Expo apps and using Expo Application Services. | `/plugin install expo@claude-plugins-official` |
+| [Graphify](https://github.com/Graphify-Labs/graphify)<br><sub>by Graphify-Labs</sub> | Turns a codebase, with its docs, SQL schemas, configs and PDFs, into a queryable knowledge graph you use through a /graphify skill. | `uv tool install graphifyy && graphify install` |
+| [Humanizer](https://github.com/blader/humanizer)<br><sub>by blader</sub> | Removes the signs of AI-generated writing from text. | `/plugin install humanizer@claudemods` |
+| [I Have ADHD](https://github.com/ayghri/i-have-adhd)<br><sub>by ayghri</sub> | Stops your coding agent from burying the answer: ADHD-friendly output with the point first, plus an opt-in always-on mode. | `/plugin install i-have-adhd@claudemods` |
+| [Impeccable](https://github.com/pbakaus/impeccable)<br><sub>by pbakaus</sub> | A design language for AI harnesses: one skill with 24 commands like polish, audit and critique, plus anti-pattern detection. | `npx impeccable install` |
 | [iOS Simulator Skill](https://github.com/conorluddy/ios-simulator-skill)<br><sub>by conorluddy</sub> | Scripts for building, testing and driving iOS apps with xcodebuild, simctl and idb. | `/plugin install ios-simulator-skill@claudemods` |
+| [Matt Pocock Skills](https://github.com/mattpocock/skills)<br><sub>by mattpocock</sub> | Matt Pocock's skills for real engineers, straight from his .agents directory: debugging, triage, architecture and more. | `/plugin install mattpocock-skills@claudemods` |
 | [Playwright Skill](https://github.com/lackeyjb/playwright-skill)<br><sub>by lackeyjb</sub> | Lets Claude write and run custom Playwright scripts for browser automation and testing. | `/plugin install playwright-skill@claudemods` |
+| [Ponytail](https://github.com/DietrichGebert/ponytail)<br><sub>by DietrichGebert</sub> | Makes Claude code like the laziest senior dev in the room: the best code is the code you never wrote. | `/plugin install ponytail@claudemods` |
 | [Scientific Agent Skills](https://github.com/K-Dense-AI/scientific-agent-skills)<br><sub>by K-Dense-AI</sub> | 177 research skills for biology, chemistry, medicine and data analysis. | `npx skills add K-Dense-AI/scientific-agent-skills` |
+| [Security Audit Skill (Cloudflare)](https://github.com/cloudflare/security-audit-skill)<br><sub>by cloudflare</sub> | Cloudflare's skill for multi-phase security audits with independently verified, machine-readable findings. | `npx skills add https://github.com/cloudflare/security-audit-skill --skill security-audit` |
 | [Taste Skill](https://github.com/Leonxlnx/taste-skill)<br><sub>by Leonxlnx</sub> | 13 design skills that stop AI agents shipping generic, template-looking UIs: minimalist, brutalist, redesign, image-to-code and more. | `/plugin install taste-skill@claudemods` |
 | [Trail of Bits Skills](https://github.com/trailofbits/skills)<br><sub>by trailofbits</sub> | Security research, vulnerability detection and audit workflows from Trail of Bits. | `/plugin marketplace add trailofbits/skills` |
 | [Vercel Agent Skills](https://github.com/vercel-labs/agent-skills)<br><sub>by vercel-labs</sub> | Vercel's skills for React best practices, web design guidelines, composition patterns and deploys. | `npx skills add vercel-labs/agent-skills` |
