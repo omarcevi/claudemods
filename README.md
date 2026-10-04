@@ -7,7 +7,7 @@
 
 [Browse the site](https://claudemods.chat) · [Submit something](https://github.com/omarcevi/claudemods/issues/new?template=submit.yml) · [How it works](#how-it-works)
 
-![entries](https://img.shields.io/badge/entries-91-d97757) ![installable](https://img.shields.io/badge/installable_plugins-67-2f6f4f) ![license](https://img.shields.io/badge/list-CC0-lightgrey)
+![entries](https://img.shields.io/badge/entries-92-d97757) ![installable](https://img.shields.io/badge/installable_plugins-68-2f6f4f) ![license](https://img.shields.io/badge/list-CC0-lightgrey)
 
 </div>
 
@@ -29,7 +29,7 @@ Every plugin in the marketplace points at the exact upstream commit we looked at
 
 - [Mods](#mods) (26)
 - [Plugins & marketplaces](#plugins-marketplaces) (7)
-- [Skills](#skills) (10)
+- [Skills](#skills) (11)
 - [Subagents](#subagents) (6)
 - [Slash commands](#slash-commands) (5)
 - [Hooks](#hooks) (6)
@@ -100,6 +100,7 @@ SKILL.md folders that teach Claude a task or workflow.
 | [iOS Simulator Skill](https://github.com/conorluddy/ios-simulator-skill)<br><sub>by conorluddy</sub> | Scripts for building, testing and driving iOS apps with xcodebuild, simctl and idb. | `/plugin install ios-simulator-skill@claudemods` |
 | [Playwright Skill](https://github.com/lackeyjb/playwright-skill)<br><sub>by lackeyjb</sub> | Lets Claude write and run custom Playwright scripts for browser automation and testing. | `/plugin install playwright-skill@claudemods` |
 | [Scientific Agent Skills](https://github.com/K-Dense-AI/scientific-agent-skills)<br><sub>by K-Dense-AI</sub> | 177 research skills for biology, chemistry, medicine and data analysis. | `npx skills add K-Dense-AI/scientific-agent-skills` |
+| [Taste Skill](https://github.com/Leonxlnx/taste-skill)<br><sub>by Leonxlnx</sub> | 13 design skills that stop AI agents shipping generic, template-looking UIs: minimalist, brutalist, redesign, image-to-code and more. | `/plugin install taste-skill@claudemods` |
 | [Trail of Bits Skills](https://github.com/trailofbits/skills)<br><sub>by trailofbits</sub> | Security research, vulnerability detection and audit workflows from Trail of Bits. | `/plugin marketplace add trailofbits/skills` |
 | [Vercel Agent Skills](https://github.com/vercel-labs/agent-skills)<br><sub>by vercel-labs</sub> | Vercel's skills for React best practices, web design guidelines, composition patterns and deploys. | `npx skills add vercel-labs/agent-skills` |
 

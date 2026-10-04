@@ -822,6 +822,22 @@
       }
     ]
   },
+  "taste-skill": {
+    "repo": "Leonxlnx/taste-skill",
+    "sha": "ce26fc25c0e5e8cab638f883de62d9a86ee5e45b",
+    "upstreamMarketplace": "taste-skill",
+    "plugins": [
+      {
+        "name": "taste-skill",
+        "description": "Frontend design taste skills including brutalist, minimalist, soft, redesign, stitch, and more",
+        "source": {
+          "source": "github",
+          "repo": "Leonxlnx/taste-skill",
+          "sha": "ce26fc25c0e5e8cab638f883de62d9a86ee5e45b"
+        }
+      }
+    ]
+  },
   "tdd-guard": {
     "repo": "nizos/tdd-guard",
     "sha": "2579ec1823fac5f4afb73be678d9c500b19885ac",
