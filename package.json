@@ -1,0 +1,12 @@
+{
+  "name": "claudemods",
+  "private": true,
+  "description": "Community directory and marketplace of Claude mods, plugins, skills and more.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/build.mjs --check",
+    "sync": "node scripts/sync.mjs",
+    "verify": "./scripts/verify-installs.sh"
+  },
+  "engines": { "node": ">=20" }
+}

@@ -1,0 +1,79 @@
+name: Submit a mod, plugin, skill or link
+description: Add something to claudemods.chat. A maintainer reviews it and a bot opens the pull request.
+title: "[Submit] "
+labels: ["submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for adding to the list! Keep it short and plain. Your own projects are welcome.
+        If it's a Claude Code plugin or mod with a `.claude-plugin/` folder at the repo root, we can also add it to the one-command marketplace.
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      placeholder: cc-arcade
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      description: GitHub repo or docs page (https://…)
+      placeholder: https://github.com/owner/repo
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type
+      options:
+        - mod — panes, bands, status lines, toasts, guards
+        - plugin — plugin or plugin marketplace
+        - skill — SKILL.md skills
+        - subagent — Claude Code subagents
+        - command — slash commands
+        - hook — shell hooks / hook SDKs
+        - statusline — status line tools
+        - mcp — MCP servers
+        - claude-md — CLAUDE.md templates & config
+        - prompt — prompts & guides
+        - list — another curated list
+    validations:
+      required: true
+  - type: input
+    id: author
+    attributes:
+      label: Author
+      description: GitHub handle or org of whoever made it
+      placeholder: sezaakgun
+    validations:
+      required: true
+  - type: input
+    id: description
+    attributes:
+      label: What does it do?
+      description: One plain sentence, 140 characters max.
+      placeholder: Snake, Tetris and 2048, playable above the prompt while Claude works.
+    validations:
+      required: true
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Up to 5, comma separated.
+      placeholder: games, fun, band
+  - type: input
+    id: install
+    attributes:
+      label: Install command (optional)
+      description: Leave empty if it's going into the claudemods marketplace.
+      placeholder: npx some-tool@latest install
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: Add it to the claudemods marketplace (repo has `.claude-plugin/marketplace.json` or `plugin.json` at its root)
+        - label: It's public and open source, and I'm not aware of anything malicious in it
+          required: true

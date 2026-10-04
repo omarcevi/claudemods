@@ -1,0 +1,57 @@
+name: Submission
+on:
+  issues:
+    types: [opened, edited, labeled]
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+concurrency:
+  group: submission-${{ github.event.issue.number }}
+jobs:
+  check:
+    # Validate every new or edited submission and reply on the issue.
+    if: github.event.action != 'labeled' && contains(github.event.issue.labels.*.name, 'submission')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - id: check
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: node scripts/issue-to-entry.mjs --dry-run > comment.md || true
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue comment ${{ github.event.issue.number }} --body-file comment.md
+
+  add:
+    # A maintainer adds the `approved` label -> bot opens a pull request.
+    if: github.event.action == 'labeled' && github.event.label.name == 'approved'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - id: entry
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: node scripts/issue-to-entry.mjs > comment.md
+      - name: Pin the plugin(s) for the marketplace
+        if: steps.entry.outputs.bundle == 'true'
+        run: node scripts/sync.mjs "${{ steps.entry.outputs.id }}"
+      - run: node scripts/build.mjs
+      - uses: peter-evans/create-pull-request@v7
+        with:
+          branch: submission/${{ github.event.issue.number }}
+          commit-message: "Add ${{ steps.entry.outputs.id }} (#${{ github.event.issue.number }})"
+          title: "Add ${{ steps.entry.outputs.id }}"
+          body: |
+            Adds the submission from #${{ github.event.issue.number }}.
+
+            Closes #${{ github.event.issue.number }}
+          labels: submission
+      - if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue comment ${{ github.event.issue.number }} --body "Couldn't add this automatically. A maintainer will take a look." 

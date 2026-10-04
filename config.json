@@ -1,0 +1,9 @@
+{
+  "siteName": "claudemods.chat",
+  "siteUrl": "https://claudemods.chat",
+  "repo": "omarcevi/claudemods",
+  "marketplaceName": "claudemods",
+  "owner": { "name": "Omar Elcircevi", "url": "https://claudemods.chat" },
+  "tagline": "The community directory of Claude mods, plugins, skills, subagents, hooks, status lines, MCP servers and prompts.",
+  "maxPluginsPerSource": 15
+}

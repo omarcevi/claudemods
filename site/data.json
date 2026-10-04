@@ -1,0 +1,1670 @@
+{
+  "siteName": "claudemods.chat",
+  "repo": "omarcevi/claudemods",
+  "marketplace": "claudemods",
+  "types": {
+    "mod": {
+      "label": "Mods",
+      "blurb": "Function-hook plugins that draw panes, bands, status lines and toasts, or guard what Claude does.",
+      "count": 26
+    },
+    "plugin": {
+      "label": "Plugins & marketplaces",
+      "blurb": "Bundles of commands, agents, skills and hooks you install with /plugin.",
+      "count": 7
+    },
+    "skill": {
+      "label": "Skills",
+      "blurb": "SKILL.md folders that teach Claude a task or workflow.",
+      "count": 10
+    },
+    "subagent": {
+      "label": "Subagents",
+      "blurb": "Specialist agents Claude can hand work to.",
+      "count": 6
+    },
+    "command": {
+      "label": "Slash commands",
+      "blurb": "Reusable /commands and command frameworks.",
+      "count": 5
+    },
+    "hook": {
+      "label": "Hooks",
+      "blurb": "Shell hooks and hook SDKs that run on Claude Code lifecycle events.",
+      "count": 6
+    },
+    "statusline": {
+      "label": "Status lines",
+      "blurb": "What sits under your prompt: cost, context, git and more.",
+      "count": 5
+    },
+    "mcp": {
+      "label": "MCP servers",
+      "blurb": "Connect Claude to tools, data and services.",
+      "count": 10
+    },
+    "claude-md": {
+      "label": "CLAUDE.md & config",
+      "blurb": "Templates and guides for project memory and setup.",
+      "count": 5
+    },
+    "prompt": {
+      "label": "Prompts & guides",
+      "blurb": "Prompt libraries, system prompts and prompting courses.",
+      "count": 6
+    },
+    "list": {
+      "label": "More lists",
+      "blurb": "Other curated lists worth following.",
+      "count": 5
+    }
+  },
+  "entries": [
+    {
+      "id": "mindful-claude",
+      "name": "Mindful Claude",
+      "type": "mod",
+      "url": "https://github.com/halluton/Mindful-Claude",
+      "author": "halluton",
+      "description": "Guided breathing exercises drawn above the prompt while Claude works, with several techniques via /breathe.",
+      "tags": [
+        "wellness",
+        "band",
+        "animation"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install mindful-breathing@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "karanb192-claude-code-mods",
+      "name": "claude-code-mods (karanb192)",
+      "type": "mod",
+      "url": "https://github.com/karanb192/claude-code-mods",
+      "author": "karanb192",
+      "description": "A mod-builder skill plus mods for pinning subagent models, keeping the prompt cache warm and peeking at images.",
+      "tags": [
+        "mod-builder",
+        "cache",
+        "cost"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install image-peek@claudemods",
+        "/plugin install mod-builder@claudemods",
+        "/plugin install fable-pin@claudemods",
+        "/plugin install cache-tax@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "lcm",
+      "name": "lcm — Lossless Context Management",
+      "type": "mod",
+      "url": "https://github.com/lossless-claude/lcm",
+      "author": "lossless-claude",
+      "description": "DAG-based summarization and SQLite persistence so no message is lost when context is compacted.",
+      "tags": [
+        "context",
+        "memory",
+        "compaction"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install lcm@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "cc-arcade",
+      "name": "cc-arcade",
+      "type": "mod",
+      "url": "https://github.com/sezaakgun/cc-arcade",
+      "author": "sezaakgun",
+      "description": "Snake, Tetris, 2048 and more, playable above the prompt while Claude works, plus a virtual pet.",
+      "tags": [
+        "games",
+        "fun",
+        "band"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install cc-arcade@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "prompt-rail",
+      "name": "prompt-rail",
+      "type": "mod",
+      "url": "https://github.com/oikon48/prompt-rail",
+      "author": "oikon48",
+      "description": "A rail of your session's prompts: hover to read one, click to jump to it in the transcript.",
+      "tags": [
+        "navigation",
+        "pane",
+        "transcript"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install prompt-rail@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "agent-flow",
+      "name": "agent-flow",
+      "type": "mod",
+      "url": "https://github.com/Charlie0113-T/claude-agent-flow",
+      "author": "Charlie0113-T",
+      "description": "Live tree of the session's subagents with status, tool calls, timing and token use in a side pane.",
+      "tags": [
+        "subagents",
+        "pane",
+        "observability"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install agent-flow@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "pixelband",
+      "name": "pixelband",
+      "type": "mod",
+      "url": "https://github.com/furqan-khan07/pixelband",
+      "author": "furqan-khan07",
+      "description": "Animated pixel art above the prompt that reacts while Claude works; seven scenes or your own image or GIF.",
+      "tags": [
+        "pixel-art",
+        "band",
+        "fun"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install pixelband@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "arunjay-claude-mods",
+      "name": "claude-mods (Arunjay4213)",
+      "type": "mod",
+      "url": "https://github.com/Arunjay4213/claude-mods",
+      "author": "Arunjay4213",
+      "description": "Session trackers: context window fill, plan quota burn rate, per-turn cost and a budget guard.",
+      "tags": [
+        "context",
+        "quota",
+        "cost"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install context-lens@claudemods",
+        "/plugin install quota-meter@claudemods",
+        "/plugin install token-ledger@claudemods",
+        "/plugin install budget-guard@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "onewave-claude-code-mods",
+      "name": "claude-code-mods (OneWave AI)",
+      "type": "mod",
+      "url": "https://github.com/OneWave-AI/claude-code-mods",
+      "author": "OneWave-AI",
+      "description": "Eleven mods: burn meter, risky-command launch codes, session wrap-up card, boss fights, a code pet and more.",
+      "tags": [
+        "collection",
+        "cost",
+        "fun"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install agent-narrator@claudemods",
+        "/plugin install agent-race@claudemods",
+        "/plugin install boss-fight@claudemods",
+        "/plugin install burn-meter@claudemods",
+        "/plugin install code-pet@claudemods",
+        "/plugin install inbox-alerts@claudemods",
+        "/plugin install inner-monologue@claudemods",
+        "/plugin install launch-codes@claudemods",
+        "/plugin install session-wrapped@claudemods",
+        "/plugin install sportscaster@claudemods",
+        "/plugin install swarm@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "claude-review",
+      "name": "claude-review",
+      "type": "mod",
+      "url": "https://github.com/r3al1tym/claude-review",
+      "author": "r3al1tym",
+      "description": "Shows Claude's latest reply in a calm reading pane docked beside the conversation.",
+      "tags": [
+        "reading",
+        "pane",
+        "markdown"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install review-pane@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "rudrasecure-review-pane",
+      "name": "review-pane (Rudra Secure)",
+      "type": "mod",
+      "url": "https://github.com/rudrasecure/claude-mods",
+      "author": "rudrasecure",
+      "description": "Side pane with every file Claude changed as a diff; mark lines, comment, and send comments back to Claude.",
+      "tags": [
+        "diff",
+        "code-review",
+        "pane"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install review-pane-rudrasecure@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "buffer-pane",
+      "name": "buffer-pane",
+      "type": "mod",
+      "url": "https://github.com/meganemura/buffer-pane",
+      "author": "meganemura",
+      "description": "A scratch pane beside the transcript to draft your next prompts while the agent is still working.",
+      "tags": [
+        "drafts",
+        "pane",
+        "productivity"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install buffer-pane@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "pull-request-pane",
+      "name": "pull-request-pane",
+      "type": "mod",
+      "url": "https://github.com/meganemura/pull-request-pane",
+      "author": "meganemura",
+      "description": "Shows the GitHub PRs and issues related to the session in a pane, with checks and review status.",
+      "tags": [
+        "github",
+        "pane",
+        "ci"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install pull-request-pane@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "md-prompt",
+      "name": "md-prompt",
+      "type": "mod",
+      "url": "https://github.com/nogu66/md-prompt",
+      "author": "nogu66",
+      "description": "Renders Markdown in the prompt box as you type, with syntax-highlighted code cards.",
+      "tags": [
+        "markdown",
+        "prompt",
+        "editor"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install md-prompt@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "aside",
+      "name": "aside",
+      "type": "mod",
+      "url": "https://github.com/JayDoubleu/aside",
+      "author": "JayDoubleu",
+      "description": "Read-only side chat pane to ask about the session so far without touching the main thread.",
+      "tags": [
+        "side-chat",
+        "pane",
+        "context"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install aside@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "prismantis",
+      "name": "prismantis",
+      "type": "mod",
+      "url": "https://github.com/NahumLitvin/prismantis",
+      "author": "NahumLitvin",
+      "description": "Restyles Claude's replies with tables, diagrams, charts and copy buttons in 15 themes.",
+      "tags": [
+        "themes",
+        "rendering",
+        "appearance"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install prismantis@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "cctop",
+      "name": "cctop",
+      "type": "mod",
+      "url": "https://github.com/tomstagl/cctop",
+      "author": "tomstagl",
+      "description": "btop-style live dashboard of context, tokens, cost, limits, tools and agents in a pane beside your session.",
+      "tags": [
+        "dashboard",
+        "tokens",
+        "pane"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install cctop@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "function-hooks-redactor",
+      "name": "secret-redactor + vercel-deploy-status",
+      "type": "mod",
+      "url": "https://github.com/ray-amjad/awesome-claude-code-function-hooks",
+      "author": "ray-amjad",
+      "description": "Keeps keys, emails and IPs out of the transcript, plus a Vercel deploy-status band.",
+      "tags": [
+        "security",
+        "redaction",
+        "vercel"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install secret-redactor@claudemods",
+        "/plugin install vercel-deploy-status@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "topic-filter",
+      "name": "topic-filter",
+      "type": "mod",
+      "url": "https://github.com/lperezmo/topic-filter-mod",
+      "author": "lperezmo",
+      "description": "Swaps chosen topics, repos and names for neutral placeholders before Claude reads them.",
+      "tags": [
+        "privacy",
+        "filter",
+        "guard"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install topic-filter@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "roll-credits",
+      "name": "roll-credits",
+      "type": "mod",
+      "url": "https://github.com/smukh/roll-credits",
+      "author": "smukh",
+      "description": "Movie-style end credits for your coding session, with no model calls or telemetry.",
+      "tags": [
+        "fun",
+        "session-summary",
+        "animation"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install roll-credits@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "claude-mermaid",
+      "name": "claude-mermaid + claude-queue",
+      "type": "mod",
+      "url": "https://github.com/galElmalah/claude-mods",
+      "author": "galElmalah",
+      "description": "Draws mermaid diagrams inline in the transcript as colored box art, plus a prompt queue mod.",
+      "tags": [
+        "mermaid",
+        "diagrams",
+        "queue"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install mermaid-art@claudemods",
+        "/plugin install prompt-queue@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "yash-claude-mods",
+      "name": "claude-mods (yash-gadodia)",
+      "type": "mod",
+      "url": "https://github.com/yash-gadodia/claude-mods",
+      "author": "yash-gadodia",
+      "description": "Thirteen mods that guard scope, verify deploys, gate merges and draw usage and cost bands.",
+      "tags": [
+        "guard",
+        "usage",
+        "collection"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install deploy-verify@claudemods",
+        "/plugin install mini-offload@claudemods",
+        "/plugin install scope-guard@claudemods",
+        "/plugin install merge-gate@claudemods",
+        "/plugin install receipt@claudemods",
+        "/plugin install diff-review@claudemods",
+        "/plugin install money-band@claudemods",
+        "/plugin install usage-band@claudemods",
+        "/plugin install copy-band@claudemods",
+        "/plugin install chrome-switch@claudemods",
+        "/plugin install wod-band@claudemods",
+        "/plugin install wod-timer@claudemods",
+        "/plugin install done-blink@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "clawdhouse",
+      "name": "clawdhouse",
+      "type": "mod",
+      "url": "https://github.com/ishuagrawal/clawdhouse",
+      "author": "ishuagrawal",
+      "description": "A pixel Clawd character above the prompt or in a side pane that reacts to what Claude is doing.",
+      "tags": [
+        "pixel-art",
+        "companion",
+        "fun"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install clawdhouse@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "cost-git",
+      "name": "cost-git",
+      "type": "mod",
+      "url": "https://github.com/juulsverne/claude-code-mods",
+      "author": "juulsverne",
+      "description": "Band above the prompt with session cost plus git branch, status, CI, pull and push.",
+      "tags": [
+        "cost",
+        "git",
+        "band"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install cost-git@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "session-monitor",
+      "name": "claude-code-session-monitor",
+      "type": "mod",
+      "url": "https://github.com/udaaff/claude-code-session-monitor",
+      "author": "udaaff",
+      "description": "A side panel with live cards for every open Claude Code session.",
+      "tags": [
+        "sessions",
+        "pane",
+        "dashboard"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install session-monitor@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "claude-usage-meter",
+      "name": "claude-usage-meter",
+      "type": "mod",
+      "url": "https://github.com/aycandv/claude-usage-meter",
+      "author": "aycandv",
+      "description": "A usage board: a weekly pace gauge and an LED crawl of today's spend per model.",
+      "tags": [
+        "usage",
+        "cost",
+        "band"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install usage-ticker@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "claude-plugins-official",
+      "name": "Claude Plugins Official",
+      "type": "plugin",
+      "url": "https://github.com/anthropics/claude-plugins-official",
+      "author": "anthropics",
+      "description": "Anthropic-managed directory of curated Claude Code plugins from Anthropic and partners.",
+      "tags": [
+        "official",
+        "marketplace",
+        "directory"
+      ],
+      "featured": true,
+      "install": [
+        "/plugin install <plugin>@claude-plugins-official"
+      ],
+      "inMarketplace": false
+    },
+    {
+      "id": "claude-code-bundled",
+      "name": "Claude Code bundled plugins",
+      "type": "plugin",
+      "url": "https://github.com/anthropics/claude-code",
+      "author": "anthropics",
+      "description": "Anthropic's own plugins: code review, commit commands, feature dev, hookify, plugin-dev and more.",
+      "tags": [
+        "official",
+        "code-review",
+        "git"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin marketplace add anthropics/claude-code"
+      ],
+      "inMarketplace": false
+    },
+    {
+      "id": "knowledge-work-plugins",
+      "name": "Knowledge Work Plugins",
+      "type": "plugin",
+      "url": "https://github.com/anthropics/knowledge-work-plugins",
+      "author": "anthropics",
+      "description": "Role plugins for sales, finance, legal, marketing, data and more, plus partner integrations.",
+      "tags": [
+        "official",
+        "roles",
+        "business"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin marketplace add anthropics/knowledge-work-plugins"
+      ],
+      "inMarketplace": false
+    },
+    {
+      "id": "compound-engineering",
+      "name": "Compound Engineering",
+      "type": "plugin",
+      "url": "https://github.com/EveryInc/compound-engineering-plugin",
+      "author": "EveryInc",
+      "description": "Skills for a brainstorm, plan, build, review and capture-learnings development loop.",
+      "tags": [
+        "workflow",
+        "planning",
+        "code-review"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install compound-engineering@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "claude-mem",
+      "name": "claude-mem",
+      "type": "plugin",
+      "url": "https://github.com/thedotmack/claude-mem",
+      "author": "thedotmack",
+      "description": "Records what your agent does, compresses it, and feeds relevant context back into future sessions.",
+      "tags": [
+        "memory",
+        "context",
+        "persistence"
+      ],
+      "featured": true,
+      "install": [
+        "/plugin install agent-mem@claudemods",
+        "/plugin install agent-mem-cowork@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "plugins-plus-skills",
+      "name": "Claude Code Plugins Plus Skills",
+      "type": "plugin",
+      "url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills",
+      "author": "jeremylongshore",
+      "description": "Huge community marketplace with hundreds of plugins and skills across DevOps, data, security and more.",
+      "tags": [
+        "marketplace",
+        "community",
+        "devops"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin marketplace add jeremylongshore/claude-code-plugins-plus-skills"
+      ],
+      "inMarketplace": false
+    },
+    {
+      "id": "ccplugins",
+      "name": "Awesome Claude Code Plugins",
+      "type": "plugin",
+      "url": "https://github.com/ccplugins/awesome-claude-code-plugins",
+      "author": "ccplugins",
+      "description": "Curated, installable marketplace of slash commands, subagents and hooks.",
+      "tags": [
+        "curated",
+        "commands",
+        "marketplace"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin marketplace add ccplugins/awesome-claude-code-plugins"
+      ],
+      "inMarketplace": false
+    },
+    {
+      "id": "anthropic-skills",
+      "name": "Anthropic Agent Skills",
+      "type": "skill",
+      "url": "https://github.com/anthropics/skills",
+      "author": "anthropics",
+      "description": "Anthropic's official skills repo: docx, pdf, pptx, xlsx, examples, the spec and a template.",
+      "tags": [
+        "official",
+        "documents",
+        "template"
+      ],
+      "featured": true,
+      "install": [
+        "/plugin marketplace add anthropics/skills"
+      ],
+      "inMarketplace": false
+    },
+    {
+      "id": "superpowers",
+      "name": "Superpowers",
+      "type": "skill",
+      "url": "https://github.com/obra/superpowers",
+      "author": "obra",
+      "description": "Skills library and dev methodology for TDD, debugging, planning and collaboration.",
+      "tags": [
+        "methodology",
+        "tdd",
+        "debugging"
+      ],
+      "featured": true,
+      "install": [
+        "/plugin install superpowers@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "composio-skills",
+      "name": "Awesome Claude Skills (Composio)",
+      "type": "skill",
+      "url": "https://github.com/ComposioHQ/awesome-claude-skills",
+      "author": "ComposioHQ",
+      "description": "Large collection of ready-made skills for dev, business and productivity, plus SaaS automation.",
+      "tags": [
+        "collection",
+        "automation",
+        "integrations"
+      ],
+      "featured": false,
+      "install": [],
+      "inMarketplace": false
+    },
+    {
+      "id": "scientific-skills",
+      "name": "Scientific Agent Skills",
+      "type": "skill",
+      "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "author": "K-Dense-AI",
+      "description": "177 research skills for biology, chemistry, medicine and data analysis.",
+      "tags": [
+        "science",
+        "research",
+        "bioinformatics"
+      ],
+      "featured": false,
+      "install": [
+        "npx skills add K-Dense-AI/scientific-agent-skills"
+      ],
+      "inMarketplace": false
+    },
+    {
+      "id": "vercel-skills",
+      "name": "Vercel Agent Skills",
+      "type": "skill",
+      "url": "https://github.com/vercel-labs/agent-skills",
+      "author": "vercel-labs",
+      "description": "Vercel's skills for React best practices, web design guidelines, composition patterns and deploys.",
+      "tags": [
+        "react",
+        "frontend",
+        "vercel"
+      ],
+      "featured": false,
+      "install": [
+        "npx skills add vercel-labs/agent-skills"
+      ],
+      "inMarketplace": false
+    },
+    {
+      "id": "alirezarezvani-skills",
+      "name": "Claude Skills (alirezarezvani)",
+      "type": "skill",
+      "url": "https://github.com/alirezarezvani/claude-skills",
+      "author": "alirezarezvani",
+      "description": "380+ skills, agents and commands across engineering, product, marketing and compliance.",
+      "tags": [
+        "collection",
+        "engineering",
+        "product"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin marketplace add alirezarezvani/claude-skills"
+      ],
+      "inMarketplace": false
+    },
+    {
+      "id": "trailofbits-skills",
+      "name": "Trail of Bits Skills",
+      "type": "skill",
+      "url": "https://github.com/trailofbits/skills",
+      "author": "trailofbits",
+      "description": "Security research, vulnerability detection and audit workflows from Trail of Bits.",
+      "tags": [
+        "security",
+        "auditing",
+        "static-analysis"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin marketplace add trailofbits/skills"
+      ],
+      "inMarketplace": false
+    },
+    {
+      "id": "playwright-skill",
+      "name": "Playwright Skill",
+      "type": "skill",
+      "url": "https://github.com/lackeyjb/playwright-skill",
+      "author": "lackeyjb",
+      "description": "Lets Claude write and run custom Playwright scripts for browser automation and testing.",
+      "tags": [
+        "playwright",
+        "browser",
+        "testing"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install playwright-skill@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "expo-skills",
+      "name": "Expo Skills",
+      "type": "skill",
+      "url": "https://github.com/expo/skills",
+      "author": "expo",
+      "description": "The Expo team's skills for building Expo apps and using Expo Application Services.",
+      "tags": [
+        "expo",
+        "react-native",
+        "mobile"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install expo@claude-plugins-official"
+      ],
+      "inMarketplace": false
+    },
+    {
+      "id": "ios-simulator-skill",
+      "name": "iOS Simulator Skill",
+      "type": "skill",
+      "url": "https://github.com/conorluddy/ios-simulator-skill",
+      "author": "conorluddy",
+      "description": "Scripts for building, testing and driving iOS apps with xcodebuild, simctl and idb.",
+      "tags": [
+        "ios",
+        "xcode",
+        "mobile"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install ios-simulator-skill@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "wshobson-agents",
+      "name": "wshobson/agents",
+      "type": "subagent",
+      "url": "https://github.com/wshobson/agents",
+      "author": "wshobson",
+      "description": "Marketplace of ~200 subagents and 180+ skills grouped into 90+ focused plugins.",
+      "tags": [
+        "subagents",
+        "orchestration",
+        "collection"
+      ],
+      "featured": true,
+      "install": [
+        "/plugin marketplace add wshobson/agents"
+      ],
+      "inMarketplace": false
+    },
+    {
+      "id": "voltagent-subagents",
+      "name": "Awesome Claude Code Subagents",
+      "type": "subagent",
+      "url": "https://github.com/VoltAgent/awesome-claude-code-subagents",
+      "author": "VoltAgent",
+      "description": "160+ specialized subagents in 10 categories, installable as plugins.",
+      "tags": [
+        "subagents",
+        "collection",
+        "development"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin marketplace add VoltAgent/awesome-claude-code-subagents"
+      ],
+      "inMarketplace": false
+    },
+    {
+      "id": "contains-studio-agents",
+      "name": "Contains Studio Agents",
+      "type": "subagent",
+      "url": "https://github.com/contains-studio/agents",
+      "author": "contains-studio",
+      "description": "Department-style subagents for engineering, design, marketing, product, testing and ops.",
+      "tags": [
+        "subagents",
+        "product",
+        "design"
+      ],
+      "featured": false,
+      "install": [
+        "cp -r agents/* ~/.claude/agents/"
+      ],
+      "inMarketplace": false
+    },
+    {
+      "id": "awesome-claude-agents",
+      "name": "Awesome Claude Agents",
+      "type": "subagent",
+      "url": "https://github.com/vijaythecoder/awesome-claude-agents",
+      "author": "vijaythecoder",
+      "description": "An orchestrated dev team of 24 subagents: orchestrators, framework specialists and core experts.",
+      "tags": [
+        "subagents",
+        "orchestration",
+        "frameworks"
+      ],
+      "featured": false,
+      "install": [],
+      "inMarketplace": false
+    },
+    {
+      "id": "lst97-subagents",
+      "name": "Claude Code Sub-Agents (lst97)",
+      "type": "subagent",
+      "url": "https://github.com/lst97/claude-code-sub-agents",
+      "author": "lst97",
+      "description": "33 full-stack subagents for dev, infra, QA, data, security and business, plus an organizer.",
+      "tags": [
+        "subagents",
+        "full-stack",
+        "qa"
+      ],
+      "featured": false,
+      "install": [],
+      "inMarketplace": false
+    },
+    {
+      "id": "0xfurai-subagents",
+      "name": "Claude Code Subagents (0xfurai)",
+      "type": "subagent",
+      "url": "https://github.com/0xfurai/claude-code-subagents",
+      "author": "0xfurai",
+      "description": "100+ language and framework expert subagents.",
+      "tags": [
+        "subagents",
+        "languages",
+        "frameworks"
+      ],
+      "featured": false,
+      "install": [],
+      "inMarketplace": false
+    },
+    {
+      "id": "claude-code-templates",
+      "name": "Claude Code Templates",
+      "type": "command",
+      "url": "https://github.com/davila7/claude-code-templates",
+      "author": "davila7",
+      "description": "CLI and web catalog for installing agents, commands, hooks, settings and MCPs.",
+      "tags": [
+        "cli",
+        "templates",
+        "catalog"
+      ],
+      "featured": false,
+      "install": [
+        "npx claude-code-templates@latest"
+      ],
+      "inMarketplace": false
+    },
+    {
+      "id": "superclaude",
+      "name": "SuperClaude Framework",
+      "type": "command",
+      "url": "https://github.com/SuperClaude-Org/SuperClaude_Framework",
+      "author": "SuperClaude-Org",
+      "description": "Adds specialized slash commands, personas and dev methodologies to Claude Code.",
+      "tags": [
+        "commands",
+        "framework",
+        "personas"
+      ],
+      "featured": false,
+      "install": [
+        "pipx install superclaude && superclaude install"
+      ],
+      "inMarketplace": false
+    },
+    {
+      "id": "buildwithclaude",
+      "name": "Build with Claude",
+      "type": "command",
+      "url": "https://github.com/davepoon/buildwithclaude",
+      "author": "davepoon",
+      "description": "Marketplace with 175 slash commands plus agents, hooks, skills and plugins.",
+      "tags": [
+        "commands",
+        "marketplace",
+        "hooks"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin marketplace add davepoon/buildwithclaude"
+      ],
+      "inMarketplace": false
+    },
+    {
+      "id": "wshobson-commands",
+      "name": "wshobson/commands",
+      "type": "command",
+      "url": "https://github.com/wshobson/commands",
+      "author": "wshobson",
+      "description": "57 production-ready slash commands: 42 tools and 15 multi-agent workflows.",
+      "tags": [
+        "commands",
+        "workflows",
+        "devops"
+      ],
+      "featured": false,
+      "install": [],
+      "inMarketplace": false
+    },
+    {
+      "id": "claude-command-suite",
+      "name": "Claude Command Suite",
+      "type": "command",
+      "url": "https://github.com/qdhenry/Claude-Command-Suite",
+      "author": "qdhenry",
+      "description": "200+ slash commands plus skills and agents for review, testing, deployment and architecture.",
+      "tags": [
+        "commands",
+        "code-review",
+        "architecture"
+      ],
+      "featured": false,
+      "install": [],
+      "inMarketplace": false
+    },
+    {
+      "id": "hooks-mastery",
+      "name": "Claude Code Hooks Mastery",
+      "type": "hook",
+      "url": "https://github.com/disler/claude-code-hooks-mastery",
+      "author": "disler",
+      "description": "Reference implementations of every hook lifecycle event, written as UV Python scripts.",
+      "tags": [
+        "hooks",
+        "python",
+        "reference"
+      ],
+      "featured": false,
+      "install": [],
+      "inMarketplace": false
+    },
+    {
+      "id": "tdd-guard",
+      "name": "TDD Guard",
+      "type": "hook",
+      "url": "https://github.com/nizos/tdd-guard",
+      "author": "nizos",
+      "description": "Blocks implementation without failing tests or beyond what the tests require.",
+      "tags": [
+        "hooks",
+        "tdd",
+        "guardrails"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install tdd-guard@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "cc-safety-net",
+      "name": "CC Safety Net",
+      "type": "hook",
+      "url": "https://github.com/kenryu42/claude-code-safety-net",
+      "author": "kenryu42",
+      "description": "Blocks destructive git and filesystem commands and access to sensitive files before they run.",
+      "tags": [
+        "hooks",
+        "safety",
+        "security"
+      ],
+      "featured": false,
+      "install": [
+        "npx -y cc-safety-net@latest install"
+      ],
+      "inMarketplace": false
+    },
+    {
+      "id": "hooks-observability",
+      "name": "Multi-Agent Observability",
+      "type": "hook",
+      "url": "https://github.com/disler/claude-code-hooks-multi-agent-observability",
+      "author": "disler",
+      "description": "Real-time monitoring dashboard for Claude Code agents, fed by hook events.",
+      "tags": [
+        "hooks",
+        "observability",
+        "dashboard"
+      ],
+      "featured": false,
+      "install": [],
+      "inMarketplace": false
+    },
+    {
+      "id": "claude-hooks-ts",
+      "name": "claude-hooks",
+      "type": "hook",
+      "url": "https://github.com/johnlindquist/claude-hooks",
+      "author": "johnlindquist",
+      "description": "TypeScript hook system with strongly typed, auto-completing handlers.",
+      "tags": [
+        "hooks",
+        "typescript",
+        "sdk"
+      ],
+      "featured": false,
+      "install": [
+        "npx claude-hooks"
+      ],
+      "inMarketplace": false
+    },
+    {
+      "id": "cchooks",
+      "name": "cchooks",
+      "type": "hook",
+      "url": "https://github.com/GowayLee/cchooks",
+      "author": "GowayLee",
+      "description": "Lightweight Python SDK for writing Claude Code hooks with little boilerplate.",
+      "tags": [
+        "hooks",
+        "python",
+        "sdk"
+      ],
+      "featured": false,
+      "install": [
+        "pip install cchooks"
+      ],
+      "inMarketplace": false
+    },
+    {
+      "id": "ccusage",
+      "name": "ccusage",
+      "type": "statusline",
+      "url": "https://github.com/ryoppippi/ccusage",
+      "author": "ryoppippi",
+      "description": "Token usage and cost analyzer with a compact statusline mode for Claude Code.",
+      "tags": [
+        "usage",
+        "cost",
+        "tokens"
+      ],
+      "featured": true,
+      "install": [
+        "bunx ccusage statusline"
+      ],
+      "inMarketplace": false
+    },
+    {
+      "id": "ccstatusline",
+      "name": "ccstatusline",
+      "type": "statusline",
+      "url": "https://github.com/sirmalloc/ccstatusline",
+      "author": "sirmalloc",
+      "description": "Highly customizable statusline with powerline support and themes.",
+      "tags": [
+        "powerline",
+        "themes",
+        "customizable"
+      ],
+      "featured": false,
+      "install": [
+        "npx -y ccstatusline@latest"
+      ],
+      "inMarketplace": false
+    },
+    {
+      "id": "claude-powerline",
+      "name": "Claude Powerline",
+      "type": "statusline",
+      "url": "https://github.com/Owloops/claude-powerline",
+      "author": "Owloops",
+      "description": "Vim-style powerline statusline with real-time usage, git info and custom themes.",
+      "tags": [
+        "powerline",
+        "git",
+        "usage"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install powerline@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "cc-statusline",
+      "name": "cc-statusline",
+      "type": "statusline",
+      "url": "https://github.com/chongdashu/cc-statusline",
+      "author": "chongdashu",
+      "description": "Interactive generator that sets up an informative statusline script.",
+      "tags": [
+        "generator",
+        "cli",
+        "setup"
+      ],
+      "featured": false,
+      "install": [
+        "npx @chongdashu/cc-statusline@latest init"
+      ],
+      "inMarketplace": false
+    },
+    {
+      "id": "rz1989s-statusline",
+      "name": "claude-code-statusline (rz1989s)",
+      "type": "statusline",
+      "url": "https://github.com/rz1989s/claude-code-statusline",
+      "author": "rz1989s",
+      "description": "Modular Bash statusline with flexible layouts, cost tracking, MCP monitoring and themes.",
+      "tags": [
+        "bash",
+        "cost",
+        "themes"
+      ],
+      "featured": false,
+      "install": [],
+      "inMarketplace": false
+    },
+    {
+      "id": "mcp-reference-servers",
+      "name": "MCP Reference Servers",
+      "type": "mcp",
+      "url": "https://github.com/modelcontextprotocol/servers",
+      "author": "modelcontextprotocol",
+      "description": "Official reference servers: Filesystem, Fetch, Git, Memory, Sequential Thinking, Time and more.",
+      "tags": [
+        "official",
+        "reference",
+        "filesystem"
+      ],
+      "featured": false,
+      "install": [],
+      "inMarketplace": false
+    },
+    {
+      "id": "context7",
+      "name": "Context7",
+      "type": "mcp",
+      "url": "https://github.com/upstash/context7",
+      "author": "upstash",
+      "description": "Feeds up-to-date, version-specific library docs and code examples into Claude's context.",
+      "tags": [
+        "documentation",
+        "libraries",
+        "context"
+      ],
+      "featured": true,
+      "install": [
+        "/plugin install context7@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "chrome-devtools-mcp",
+      "name": "Chrome DevTools MCP",
+      "type": "mcp",
+      "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "author": "ChromeDevTools",
+      "description": "Lets Claude control and inspect a live Chrome browser for debugging and performance work.",
+      "tags": [
+        "browser",
+        "chrome",
+        "debugging"
+      ],
+      "featured": false,
+      "install": [
+        "claude mcp add chrome-devtools --scope user npx chrome-devtools-mcp@latest"
+      ],
+      "inMarketplace": false
+    },
+    {
+      "id": "playwright-mcp",
+      "name": "Playwright MCP",
+      "type": "mcp",
+      "url": "https://github.com/microsoft/playwright-mcp",
+      "author": "microsoft",
+      "description": "Browser automation via accessibility snapshots instead of screenshots.",
+      "tags": [
+        "browser",
+        "playwright",
+        "automation"
+      ],
+      "featured": false,
+      "install": [
+        "claude mcp add playwright npx @playwright/mcp@latest"
+      ],
+      "inMarketplace": false
+    },
+    {
+      "id": "github-mcp",
+      "name": "GitHub MCP Server",
+      "type": "mcp",
+      "url": "https://github.com/github/github-mcp-server",
+      "author": "github",
+      "description": "GitHub's official MCP server for repos, issues, pull requests and Actions.",
+      "tags": [
+        "github",
+        "official",
+        "git"
+      ],
+      "featured": false,
+      "install": [],
+      "inMarketplace": false
+    },
+    {
+      "id": "serena",
+      "name": "Serena",
+      "type": "mcp",
+      "url": "https://github.com/oraios/serena",
+      "author": "oraios",
+      "description": "Semantic, IDE-like code retrieval and editing tools for coding agents.",
+      "tags": [
+        "coding",
+        "semantic",
+        "lsp"
+      ],
+      "featured": false,
+      "install": [],
+      "inMarketplace": false
+    },
+    {
+      "id": "aws-mcp",
+      "name": "AWS MCP Servers",
+      "type": "mcp",
+      "url": "https://github.com/awslabs/mcp",
+      "author": "awslabs",
+      "description": "MCP servers for AWS: docs, CDK, CloudFormation, Lambda, EKS, Bedrock and more.",
+      "tags": [
+        "aws",
+        "cloud",
+        "infrastructure"
+      ],
+      "featured": false,
+      "install": [],
+      "inMarketplace": false
+    },
+    {
+      "id": "notion-mcp",
+      "name": "Notion MCP Server",
+      "type": "mcp",
+      "url": "https://github.com/makenotion/notion-mcp-server",
+      "author": "makenotion",
+      "description": "Notion's official MCP server; Notion recommends its hosted remote server.",
+      "tags": [
+        "notion",
+        "docs",
+        "official"
+      ],
+      "featured": false,
+      "install": [
+        "claude mcp add --transport http notion https://mcp.notion.com/mcp"
+      ],
+      "inMarketplace": false
+    },
+    {
+      "id": "supabase-mcp",
+      "name": "Supabase MCP",
+      "type": "mcp",
+      "url": "https://github.com/supabase-community/supabase-mcp",
+      "author": "supabase-community",
+      "description": "Connects Claude to Supabase projects for database management, config and queries.",
+      "tags": [
+        "supabase",
+        "database",
+        "postgres"
+      ],
+      "featured": false,
+      "install": [],
+      "inMarketplace": false
+    },
+    {
+      "id": "sentry-mcp",
+      "name": "Sentry MCP",
+      "type": "mcp",
+      "url": "https://github.com/getsentry/sentry-mcp",
+      "author": "getsentry",
+      "description": "Sentry's MCP server for working with issues and errors from your coding assistant.",
+      "tags": [
+        "sentry",
+        "errors",
+        "monitoring"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install sentry-mcp@claudemods",
+        "/plugin install sentry-mcp-experimental@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "cc-best-practices",
+      "name": "Claude Code Best Practices",
+      "type": "claude-md",
+      "url": "https://code.claude.com/docs/en/best-practices",
+      "author": "anthropics",
+      "description": "Anthropic's guide to writing an effective CLAUDE.md and what to leave out.",
+      "tags": [
+        "official",
+        "guide",
+        "best-practices"
+      ],
+      "featured": false,
+      "install": [],
+      "inMarketplace": false
+    },
+    {
+      "id": "cc-memory-docs",
+      "name": "Claude Code Memory Docs",
+      "type": "claude-md",
+      "url": "https://code.claude.com/docs/en/memory",
+      "author": "anthropics",
+      "description": "Official docs on CLAUDE.md files, imports, .claude/rules and auto memory.",
+      "tags": [
+        "official",
+        "memory",
+        "docs"
+      ],
+      "featured": false,
+      "install": [],
+      "inMarketplace": false
+    },
+    {
+      "id": "my-claude-code-setup",
+      "name": "My Claude Code Setup",
+      "type": "claude-md",
+      "url": "https://github.com/centminmod/my-claude-code-setup",
+      "author": "centminmod",
+      "description": "Starter config with CLAUDE.md memory-bank templates, commands and subagents.",
+      "tags": [
+        "templates",
+        "memory-bank",
+        "setup"
+      ],
+      "featured": false,
+      "install": [],
+      "inMarketplace": false
+    },
+    {
+      "id": "awesome-claude-md",
+      "name": "Awesome CLAUDE.md",
+      "type": "claude-md",
+      "url": "https://github.com/josix/awesome-claude-md",
+      "author": "josix",
+      "description": "Curated, analyzed examples of great CLAUDE.md files from public projects.",
+      "tags": [
+        "examples",
+        "curated",
+        "onboarding"
+      ],
+      "featured": false,
+      "install": [],
+      "inMarketplace": false
+    },
+    {
+      "id": "claude-md-examples",
+      "name": "CLAUDE.md Examples",
+      "type": "claude-md",
+      "url": "https://github.com/ArthurClune/claude-md-examples",
+      "author": "ArthurClune",
+      "description": "Sample CLAUDE.md files for Python, Hugo, Terraform and other stacks.",
+      "tags": [
+        "examples",
+        "templates",
+        "python"
+      ],
+      "featured": false,
+      "install": [],
+      "inMarketplace": false
+    },
+    {
+      "id": "prompting-best-practices",
+      "name": "Claude Prompting Best Practices",
+      "type": "prompt",
+      "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+      "author": "anthropics",
+      "description": "Anthropic's prompt engineering guide for current Claude models, including agentic use.",
+      "tags": [
+        "official",
+        "prompt-engineering",
+        "guide"
+      ],
+      "featured": true,
+      "install": [],
+      "inMarketplace": false
+    },
+    {
+      "id": "claude-system-prompts",
+      "name": "Claude System Prompts (official)",
+      "type": "prompt",
+      "url": "https://platform.claude.com/docs/en/release-notes/system-prompts/overview",
+      "author": "anthropics",
+      "description": "Anthropic's published system prompts for claude.ai and the apps, with version history.",
+      "tags": [
+        "official",
+        "system-prompts"
+      ],
+      "featured": false,
+      "install": [],
+      "inMarketplace": false
+    },
+    {
+      "id": "prompt-eng-tutorial",
+      "name": "Prompt Engineering Interactive Tutorial",
+      "type": "prompt",
+      "url": "https://github.com/anthropics/prompt-eng-interactive-tutorial",
+      "author": "anthropics",
+      "description": "Anthropic's 9-chapter hands-on prompt engineering course for Claude.",
+      "tags": [
+        "official",
+        "tutorial",
+        "course"
+      ],
+      "featured": false,
+      "install": [],
+      "inMarketplace": false
+    },
+    {
+      "id": "claude-cookbooks",
+      "name": "Claude Cookbooks",
+      "type": "prompt",
+      "url": "https://github.com/anthropics/claude-cookbooks",
+      "author": "anthropics",
+      "description": "Notebooks and recipes for RAG, tool use, sub-agents, caching and evals with Claude.",
+      "tags": [
+        "official",
+        "cookbook",
+        "api"
+      ],
+      "featured": false,
+      "install": [],
+      "inMarketplace": false
+    },
+    {
+      "id": "anthropic-courses",
+      "name": "Anthropic Courses",
+      "type": "prompt",
+      "url": "https://github.com/anthropics/courses",
+      "author": "anthropics",
+      "description": "Courses on API basics, prompting, real-world prompts, evals and tool use.",
+      "tags": [
+        "official",
+        "courses",
+        "evals"
+      ],
+      "featured": false,
+      "install": [],
+      "inMarketplace": false
+    },
+    {
+      "id": "system-prompts-ai-tools",
+      "name": "System Prompts and Models of AI Tools",
+      "type": "prompt",
+      "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
+      "author": "x1xhlol",
+      "description": "Collection of system prompts and tool definitions from Claude, Cursor and other AI tools.",
+      "tags": [
+        "system-prompts",
+        "collection",
+        "reference"
+      ],
+      "featured": false,
+      "install": [],
+      "inMarketplace": false
+    },
+    {
+      "id": "awesome-claude-code",
+      "name": "Awesome Claude Code",
+      "type": "list",
+      "url": "https://github.com/hesreallyhim/awesome-claude-code",
+      "author": "hesreallyhim",
+      "description": "Hand-picked list of skills, hooks, commands, tooling and plugins for Claude Code.",
+      "tags": [
+        "awesome-list",
+        "claude-code"
+      ],
+      "featured": false,
+      "install": [],
+      "inMarketplace": false
+    },
+    {
+      "id": "awesome-claude-code-mods",
+      "name": "Awesome Claude Code Mods",
+      "type": "list",
+      "url": "https://github.com/karanb192/awesome-claude-code-mods",
+      "author": "karanb192",
+      "description": "Mods index with a nightly footprint scanner showing what each mod can reach.",
+      "tags": [
+        "awesome-list",
+        "mods",
+        "security"
+      ],
+      "featured": false,
+      "install": [],
+      "inMarketplace": false
+    },
+    {
+      "id": "awesome-mcp-servers",
+      "name": "Awesome MCP Servers",
+      "type": "list",
+      "url": "https://github.com/punkpeye/awesome-mcp-servers",
+      "author": "punkpeye",
+      "description": "The largest curated list of MCP servers, grouped by category.",
+      "tags": [
+        "awesome-list",
+        "mcp"
+      ],
+      "featured": false,
+      "install": [],
+      "inMarketplace": false
+    },
+    {
+      "id": "awesome-claude-skills-travisvn",
+      "name": "Awesome Claude Skills",
+      "type": "list",
+      "url": "https://github.com/travisvn/awesome-claude-skills",
+      "author": "travisvn",
+      "description": "Curated list of Claude Skills, resources and tools.",
+      "tags": [
+        "awesome-list",
+        "skills"
+      ],
+      "featured": false,
+      "install": [],
+      "inMarketplace": false
+    },
+    {
+      "id": "awesome-claude-code-toolkit",
+      "name": "Awesome Claude Code Toolkit",
+      "type": "list",
+      "url": "https://github.com/rohitg00/awesome-claude-code-toolkit",
+      "author": "rohitg00",
+      "description": "Index of agents, skills, commands, hooks, rules, templates and 170+ plugins.",
+      "tags": [
+        "awesome-list",
+        "toolkit",
+        "plugins"
+      ],
+      "featured": false,
+      "install": [],
+      "inMarketplace": false
+    }
+  ]
+}

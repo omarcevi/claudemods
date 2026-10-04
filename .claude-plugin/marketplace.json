@@ -1,0 +1,1739 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "claudemods",
+  "description": "claudemods.chat: community Claude Code mods and plugins, each pinned to a reviewed commit.",
+  "owner": {
+    "name": "Omar Elcircevi",
+    "url": "https://claudemods.chat"
+  },
+  "plugins": [
+    {
+      "name": "agent-flow",
+      "source": {
+        "source": "github",
+        "repo": "Charlie0113-T/claude-agent-flow",
+        "sha": "72f1287c84b312ef106a6a91c9520afa4d67244c"
+      },
+      "description": "/flow opens a live, read-only tree of the session's subagents and teammates beside the transcript: status, current tool call, waits for approval, elapsed time, tokens; prints the same tree as text where no pane can be drawn",
+      "author": {
+        "name": "Charlie0113-T",
+        "url": "https://github.com/Charlie0113-T"
+      },
+      "homepage": "https://github.com/Charlie0113-T/claude-agent-flow",
+      "category": "mod",
+      "tags": [
+        "subagents",
+        "pane",
+        "observability"
+      ],
+      "metadata": {
+        "entry": "agent-flow",
+        "upstreamName": "agent-flow",
+        "upstreamMarketplace": "claude-agent-flow"
+      }
+    },
+    {
+      "name": "agent-mem",
+      "source": {
+        "source": "git-subdir",
+        "url": "thedotmack/claude-mem",
+        "path": "plugin",
+        "sha": "bfc50259f64a4e0c9e81df849095683608e87ac8"
+      },
+      "description": "Persistent memory system for Claude Code - context compression across sessions",
+      "author": {
+        "name": "thedotmack",
+        "url": "https://github.com/thedotmack"
+      },
+      "homepage": "https://github.com/thedotmack/claude-mem",
+      "category": "plugin",
+      "tags": [
+        "memory",
+        "context",
+        "persistence"
+      ],
+      "metadata": {
+        "entry": "claude-mem",
+        "upstreamName": "claude-mem",
+        "upstreamMarketplace": "thedotmack"
+      }
+    },
+    {
+      "name": "agent-mem-cowork",
+      "source": {
+        "source": "git-subdir",
+        "url": "thedotmack/claude-mem",
+        "path": "cowork",
+        "sha": "bfc50259f64a4e0c9e81df849095683608e87ac8"
+      },
+      "description": "Claude-Mem for Cowork (Claude app cloud sessions) - hooks stream tool use to cmem.ai and inject observations into new sessions and agents",
+      "author": {
+        "name": "thedotmack",
+        "url": "https://github.com/thedotmack"
+      },
+      "homepage": "https://github.com/thedotmack/claude-mem",
+      "category": "plugin",
+      "tags": [
+        "memory",
+        "context",
+        "persistence"
+      ],
+      "metadata": {
+        "entry": "claude-mem",
+        "upstreamName": "claude-mem-cowork",
+        "upstreamMarketplace": "thedotmack"
+      }
+    },
+    {
+      "name": "agent-narrator",
+      "source": {
+        "source": "git-subdir",
+        "url": "OneWave-AI/claude-code-mods",
+        "path": "agent-narrator",
+        "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
+      },
+      "description": "Watch the agent work: every step in plain English, with a live time-saved counter",
+      "author": {
+        "name": "OneWave-AI",
+        "url": "https://github.com/OneWave-AI"
+      },
+      "homepage": "https://github.com/OneWave-AI/claude-code-mods",
+      "category": "mod",
+      "tags": [
+        "collection",
+        "cost",
+        "fun"
+      ],
+      "metadata": {
+        "entry": "onewave-claude-code-mods",
+        "upstreamName": "agent-narrator",
+        "upstreamMarketplace": "claude-code-mods"
+      }
+    },
+    {
+      "name": "agent-race",
+      "source": {
+        "source": "git-subdir",
+        "url": "OneWave-AI/claude-code-mods",
+        "path": "agent-race",
+        "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
+      },
+      "description": "Race Claude Code sessions on a task: live split-screen race track scoreboard",
+      "author": {
+        "name": "OneWave-AI",
+        "url": "https://github.com/OneWave-AI"
+      },
+      "homepage": "https://github.com/OneWave-AI/claude-code-mods",
+      "category": "mod",
+      "tags": [
+        "collection",
+        "cost",
+        "fun"
+      ],
+      "metadata": {
+        "entry": "onewave-claude-code-mods",
+        "upstreamName": "agent-race",
+        "upstreamMarketplace": "claude-code-mods"
+      }
+    },
+    {
+      "name": "aside",
+      "source": {
+        "source": "github",
+        "repo": "JayDoubleu/aside",
+        "sha": "cf2b7562ae7b376cdcf9e2436a926aba77dc759f"
+      },
+      "description": "Read-only side chat: /aside opens a pane where you ask about the session so far, answered by a tool-less fork of the transcript; nothing is written back into the main thread.",
+      "author": {
+        "name": "JayDoubleu",
+        "url": "https://github.com/JayDoubleu"
+      },
+      "homepage": "https://github.com/JayDoubleu/aside",
+      "category": "mod",
+      "tags": [
+        "side-chat",
+        "pane",
+        "context"
+      ],
+      "metadata": {
+        "entry": "aside",
+        "upstreamName": "aside",
+        "upstreamMarketplace": "aside"
+      }
+    },
+    {
+      "name": "boss-fight",
+      "source": {
+        "source": "git-subdir",
+        "url": "OneWave-AI/claude-code-mods",
+        "path": "boss-fight",
+        "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
+      },
+      "description": "Failing tests spawn a pixel boss; every run that fixes tests lands a hit, zero failures is a KO with loot",
+      "author": {
+        "name": "OneWave-AI",
+        "url": "https://github.com/OneWave-AI"
+      },
+      "homepage": "https://github.com/OneWave-AI/claude-code-mods",
+      "category": "mod",
+      "tags": [
+        "collection",
+        "cost",
+        "fun"
+      ],
+      "metadata": {
+        "entry": "onewave-claude-code-mods",
+        "upstreamName": "boss-fight",
+        "upstreamMarketplace": "claude-code-mods"
+      }
+    },
+    {
+      "name": "budget-guard",
+      "source": {
+        "source": "git-subdir",
+        "url": "Arunjay4213/claude-mods",
+        "path": "plugins/budget-guard",
+        "sha": "d4fffd7de9204a62b10e7b3604fc893158fa25fd"
+      },
+      "description": "Stops a session before it runs past a budget: warns near a cost or plan-window limit, then refuses tool calls and asks before the next prompt.",
+      "author": {
+        "name": "Arunjay4213",
+        "url": "https://github.com/Arunjay4213"
+      },
+      "homepage": "https://github.com/Arunjay4213/claude-mods",
+      "category": "mod",
+      "tags": [
+        "context",
+        "quota",
+        "cost"
+      ],
+      "metadata": {
+        "entry": "arunjay-claude-mods",
+        "upstreamName": "budget-guard",
+        "upstreamMarketplace": "claude-mods"
+      }
+    },
+    {
+      "name": "buffer-pane",
+      "source": {
+        "source": "git-subdir",
+        "url": "meganemura/buffer-pane",
+        "path": "plugin",
+        "sha": "214211adfade734463bd045b7a1129a6792f7c28"
+      },
+      "description": "A pane beside the transcript that holds the next things to tell the agent: write blocks of text while a turn runs, then press [+] to put one block into the prompt box.",
+      "author": {
+        "name": "meganemura",
+        "url": "https://github.com/meganemura"
+      },
+      "homepage": "https://github.com/meganemura/buffer-pane",
+      "category": "mod",
+      "tags": [
+        "drafts",
+        "pane",
+        "productivity"
+      ],
+      "metadata": {
+        "entry": "buffer-pane",
+        "upstreamName": "buffer-pane",
+        "upstreamMarketplace": "buffer-pane"
+      }
+    },
+    {
+      "name": "burn-meter",
+      "source": {
+        "source": "git-subdir",
+        "url": "OneWave-AI/claude-code-mods",
+        "path": "burn-meter",
+        "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
+      },
+      "description": "Live session cost odometer above the prompt: a burning fuse, real-world comparisons, threshold alerts",
+      "author": {
+        "name": "OneWave-AI",
+        "url": "https://github.com/OneWave-AI"
+      },
+      "homepage": "https://github.com/OneWave-AI/claude-code-mods",
+      "category": "mod",
+      "tags": [
+        "collection",
+        "cost",
+        "fun"
+      ],
+      "metadata": {
+        "entry": "onewave-claude-code-mods",
+        "upstreamName": "burn-meter",
+        "upstreamMarketplace": "claude-code-mods"
+      }
+    },
+    {
+      "name": "cache-tax",
+      "source": {
+        "source": "github",
+        "repo": "karanb192/cache-tax",
+        "sha": "06cac47ec125a41a4aeeb78a6b006bec8cc6d6ed"
+      },
+      "description": "cache-tax, the Mod. Stops a cold send once with its price, keeps the 1-hour prompt cache warm for a window you set (/keepwarm 6h), arms that for you after a paid cold write, and keeps score. Reach L2, one $.model.fork per idle stretch, its own store, a status slot; sees prompt length only.",
+      "author": {
+        "name": "karanb192",
+        "url": "https://github.com/karanb192"
+      },
+      "homepage": "https://github.com/karanb192/claude-code-mods",
+      "category": "mod",
+      "tags": [
+        "mod-builder",
+        "cache",
+        "cost"
+      ],
+      "metadata": {
+        "entry": "karanb192-claude-code-mods",
+        "upstreamName": "cache-tax",
+        "upstreamMarketplace": "claude-code-mods"
+      }
+    },
+    {
+      "name": "cc-arcade",
+      "source": {
+        "source": "github",
+        "repo": "sezaakgun/cc-arcade",
+        "sha": "0baff06d31295850283c2eebe052f39bbc35473f"
+      },
+      "description": "Games above the Claude Code prompt (snake, Tetris, Doom, 2048, Minesweeper, Flappy, Pong, typing test, Space Invaders) that pause when Claude finishes a turn, and a pet that grows as Claude tests, commits and edits. Clones of the genre, not affiliated with or endorsed by Tetris Holding, Taito, Atari or id Software",
+      "author": {
+        "name": "sezaakgun",
+        "url": "https://github.com/sezaakgun"
+      },
+      "homepage": "https://github.com/sezaakgun/cc-arcade",
+      "category": "mod",
+      "tags": [
+        "games",
+        "fun",
+        "band"
+      ],
+      "metadata": {
+        "entry": "cc-arcade",
+        "upstreamName": "cc-arcade",
+        "upstreamMarketplace": "cc-arcade"
+      }
+    },
+    {
+      "name": "cctop",
+      "source": {
+        "source": "git-subdir",
+        "url": "tomstagl/cctop",
+        "path": "plugin",
+        "sha": "6ceafc34a972f4e58d5e53b1c69f80e2a9759d41"
+      },
+      "description": "btop-style live dashboard for Claude Code internals: /cctop opens it in a side pane, cctop-insights lets the session answer questions from its numbers",
+      "author": {
+        "name": "tomstagl",
+        "url": "https://github.com/tomstagl"
+      },
+      "homepage": "https://github.com/tomstagl/cctop",
+      "category": "mod",
+      "tags": [
+        "dashboard",
+        "tokens",
+        "pane"
+      ],
+      "metadata": {
+        "entry": "cctop",
+        "upstreamName": "cctop",
+        "upstreamMarketplace": "cctop"
+      }
+    },
+    {
+      "name": "chrome-switch",
+      "source": {
+        "source": "git-subdir",
+        "url": "yash-gadodia/claude-mods",
+        "path": "chrome-switch",
+        "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
+      },
+      "description": "Switches the Chrome profile Claude drives with no approval click.",
+      "author": {
+        "name": "yash-gadodia",
+        "url": "https://github.com/yash-gadodia"
+      },
+      "homepage": "https://github.com/yash-gadodia/claude-mods",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "usage",
+        "collection"
+      ],
+      "metadata": {
+        "entry": "yash-claude-mods",
+        "upstreamName": "chrome-switch",
+        "upstreamMarketplace": "claude-mods"
+      }
+    },
+    {
+      "name": "clawdhouse",
+      "source": {
+        "source": "git-subdir",
+        "url": "ishuagrawal/clawdhouse",
+        "path": "plugin",
+        "sha": "e17d76bdb76ba74832f1ce302309c390cb8c1b4e"
+      },
+      "description": "A pixel Clawd in a side pane that reacts to what Claude is doing",
+      "author": {
+        "name": "ishuagrawal",
+        "url": "https://github.com/ishuagrawal"
+      },
+      "homepage": "https://github.com/ishuagrawal/clawdhouse",
+      "category": "mod",
+      "tags": [
+        "pixel-art",
+        "companion",
+        "fun"
+      ],
+      "metadata": {
+        "entry": "clawdhouse",
+        "upstreamName": "clawdhouse",
+        "upstreamMarketplace": "clawdhouse"
+      }
+    },
+    {
+      "name": "code-pet",
+      "source": {
+        "source": "git-subdir",
+        "url": "OneWave-AI/claude-code-mods",
+        "path": "code-pet",
+        "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
+      },
+      "description": "A pixel pet that lives in a pane and reacts to what Claude does: eats on tool calls, gets sick on failures, panics on rm -rf, sleeps when idle, evolves as you ship",
+      "author": {
+        "name": "OneWave-AI",
+        "url": "https://github.com/OneWave-AI"
+      },
+      "homepage": "https://github.com/OneWave-AI/claude-code-mods",
+      "category": "mod",
+      "tags": [
+        "collection",
+        "cost",
+        "fun"
+      ],
+      "metadata": {
+        "entry": "onewave-claude-code-mods",
+        "upstreamName": "code-pet",
+        "upstreamMarketplace": "claude-code-mods"
+      }
+    },
+    {
+      "name": "compound-engineering",
+      "source": {
+        "source": "github",
+        "repo": "EveryInc/compound-engineering-plugin",
+        "sha": "9af474a70e7f2a844338519ad9e92aafbd92d4fb"
+      },
+      "description": "Brainstorm, plan, debug, review, and compound learnings with AI agents",
+      "author": {
+        "name": "EveryInc",
+        "url": "https://github.com/EveryInc"
+      },
+      "homepage": "https://github.com/EveryInc/compound-engineering-plugin",
+      "category": "plugin",
+      "tags": [
+        "workflow",
+        "planning",
+        "code-review"
+      ],
+      "metadata": {
+        "entry": "compound-engineering",
+        "upstreamName": "compound-engineering",
+        "upstreamMarketplace": "compound-engineering-plugin"
+      }
+    },
+    {
+      "name": "context-lens",
+      "source": {
+        "source": "git-subdir",
+        "url": "Arunjay4213/claude-mods",
+        "path": "plugins/context-lens",
+        "sha": "d4fffd7de9204a62b10e7b3604fc893158fa25fd"
+      },
+      "description": "Live /context: what fills the window, per-turn growth, and distance to auto-compaction.",
+      "author": {
+        "name": "Arunjay4213",
+        "url": "https://github.com/Arunjay4213"
+      },
+      "homepage": "https://github.com/Arunjay4213/claude-mods",
+      "category": "mod",
+      "tags": [
+        "context",
+        "quota",
+        "cost"
+      ],
+      "metadata": {
+        "entry": "arunjay-claude-mods",
+        "upstreamName": "context-lens",
+        "upstreamMarketplace": "claude-mods"
+      }
+    },
+    {
+      "name": "context7",
+      "source": {
+        "source": "git-subdir",
+        "url": "upstash/context7",
+        "path": "plugins/claude/context7",
+        "sha": "bfa02ea67b5707fe0e0a673faa49d0f50b28c80b"
+      },
+      "description": "Up-to-date documentation lookup. Pull version-specific documentation and code examples directly from source repositories into your LLM context.",
+      "author": {
+        "name": "upstash",
+        "url": "https://github.com/upstash"
+      },
+      "homepage": "https://github.com/upstash/context7",
+      "category": "mcp",
+      "tags": [
+        "documentation",
+        "libraries",
+        "context"
+      ],
+      "metadata": {
+        "entry": "context7",
+        "upstreamName": "context7",
+        "upstreamMarketplace": "context7-marketplace"
+      }
+    },
+    {
+      "name": "copy-band",
+      "source": {
+        "source": "git-subdir",
+        "url": "yash-gadodia/claude-mods",
+        "path": "copy-band",
+        "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
+      },
+      "description": "Click-to-copy buttons above the prompt for the last answer's blocks, plus a durable stash.",
+      "author": {
+        "name": "yash-gadodia",
+        "url": "https://github.com/yash-gadodia"
+      },
+      "homepage": "https://github.com/yash-gadodia/claude-mods",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "usage",
+        "collection"
+      ],
+      "metadata": {
+        "entry": "yash-claude-mods",
+        "upstreamName": "copy-band",
+        "upstreamMarketplace": "claude-mods"
+      }
+    },
+    {
+      "name": "cost-git",
+      "source": {
+        "source": "git-subdir",
+        "url": "juulsverne/claude-code-mods",
+        "path": "cost-git",
+        "sha": "a9242ffcda08ac488fff4cad8b0aed5dc54d7f7f"
+      },
+      "description": "A band above the prompt: session and last-message cost, plus git branch, status, CI, pull and push",
+      "author": {
+        "name": "juulsverne",
+        "url": "https://github.com/juulsverne"
+      },
+      "homepage": "https://github.com/juulsverne/claude-code-mods",
+      "category": "mod",
+      "tags": [
+        "cost",
+        "git",
+        "band"
+      ],
+      "metadata": {
+        "entry": "cost-git",
+        "upstreamName": "cost-git",
+        "upstreamMarketplace": "playground-mods"
+      }
+    },
+    {
+      "name": "deploy-verify",
+      "source": {
+        "source": "git-subdir",
+        "url": "yash-gadodia/claude-mods",
+        "path": "deploy-verify",
+        "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
+      },
+      "description": "Verifies the live URL after a deploy command succeeds.",
+      "author": {
+        "name": "yash-gadodia",
+        "url": "https://github.com/yash-gadodia"
+      },
+      "homepage": "https://github.com/yash-gadodia/claude-mods",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "usage",
+        "collection"
+      ],
+      "metadata": {
+        "entry": "yash-claude-mods",
+        "upstreamName": "deploy-verify",
+        "upstreamMarketplace": "claude-mods"
+      }
+    },
+    {
+      "name": "diff-review",
+      "source": {
+        "source": "git-subdir",
+        "url": "yash-gadodia/claude-mods",
+        "path": "diff-review",
+        "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
+      },
+      "description": "A docked pane with each edited file's hunk and keep or revert buttons that act without a model turn.",
+      "author": {
+        "name": "yash-gadodia",
+        "url": "https://github.com/yash-gadodia"
+      },
+      "homepage": "https://github.com/yash-gadodia/claude-mods",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "usage",
+        "collection"
+      ],
+      "metadata": {
+        "entry": "yash-claude-mods",
+        "upstreamName": "diff-review",
+        "upstreamMarketplace": "claude-mods"
+      }
+    },
+    {
+      "name": "done-blink",
+      "source": {
+        "source": "git-subdir",
+        "url": "yash-gadodia/claude-mods",
+        "path": "done-blink",
+        "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
+      },
+      "description": "Blinks the iTerm2 tab orange when a turn lands, until you type again or three minutes pass.",
+      "author": {
+        "name": "yash-gadodia",
+        "url": "https://github.com/yash-gadodia"
+      },
+      "homepage": "https://github.com/yash-gadodia/claude-mods",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "usage",
+        "collection"
+      ],
+      "metadata": {
+        "entry": "yash-claude-mods",
+        "upstreamName": "done-blink",
+        "upstreamMarketplace": "claude-mods"
+      }
+    },
+    {
+      "name": "fable-pin",
+      "source": {
+        "source": "git-subdir",
+        "url": "karanb192/claude-code-mods",
+        "path": "plugins/fable-pin",
+        "sha": "10617a90106144d3cb131bd599e677d9c38bfd35"
+      },
+      "description": "Pins every subagent to the fable model by rewriting agent.spawn, with /fable-pin on, off and status. Reach L0: its own store and one command, nothing else.",
+      "author": {
+        "name": "karanb192",
+        "url": "https://github.com/karanb192"
+      },
+      "homepage": "https://github.com/karanb192/claude-code-mods",
+      "category": "mod",
+      "tags": [
+        "mod-builder",
+        "cache",
+        "cost"
+      ],
+      "metadata": {
+        "entry": "karanb192-claude-code-mods",
+        "upstreamName": "fable-pin",
+        "upstreamMarketplace": "claude-code-mods"
+      }
+    },
+    {
+      "name": "image-peek",
+      "source": {
+        "source": "git-subdir",
+        "url": "karanb192/claude-code-mods",
+        "path": "plugins/image-peek",
+        "sha": "10617a90106144d3cb131bd599e677d9c38bfd35"
+      },
+      "description": "Preview pasted images at their prompt markers on macOS. Ghostty, plus experimental iTerm2 and Herdr support with a startup override. Reach L2: local clipboard capture and temporary files, no model or network calls.",
+      "author": {
+        "name": "karanb192",
+        "url": "https://github.com/karanb192"
+      },
+      "homepage": "https://github.com/karanb192/claude-code-mods",
+      "category": "mod",
+      "tags": [
+        "mod-builder",
+        "cache",
+        "cost"
+      ],
+      "metadata": {
+        "entry": "karanb192-claude-code-mods",
+        "upstreamName": "image-peek",
+        "upstreamMarketplace": "claude-code-mods"
+      }
+    },
+    {
+      "name": "inbox-alerts",
+      "source": {
+        "source": "git-subdir",
+        "url": "OneWave-AI/claude-code-mods",
+        "path": "inbox-alerts",
+        "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
+      },
+      "description": "Gmail + Slack alerts inside Claude Code: toasts, status count, and an Alerts pane",
+      "author": {
+        "name": "OneWave-AI",
+        "url": "https://github.com/OneWave-AI"
+      },
+      "homepage": "https://github.com/OneWave-AI/claude-code-mods",
+      "category": "mod",
+      "tags": [
+        "collection",
+        "cost",
+        "fun"
+      ],
+      "metadata": {
+        "entry": "onewave-claude-code-mods",
+        "upstreamName": "inbox-alerts",
+        "upstreamMarketplace": "claude-code-mods"
+      }
+    },
+    {
+      "name": "inner-monologue",
+      "source": {
+        "source": "git-subdir",
+        "url": "OneWave-AI/claude-code-mods",
+        "path": "inner-monologue",
+        "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
+      },
+      "description": "A pane of Claude's dry inner thoughts about your session, typed out live",
+      "author": {
+        "name": "OneWave-AI",
+        "url": "https://github.com/OneWave-AI"
+      },
+      "homepage": "https://github.com/OneWave-AI/claude-code-mods",
+      "category": "mod",
+      "tags": [
+        "collection",
+        "cost",
+        "fun"
+      ],
+      "metadata": {
+        "entry": "onewave-claude-code-mods",
+        "upstreamName": "inner-monologue",
+        "upstreamMarketplace": "claude-code-mods"
+      }
+    },
+    {
+      "name": "ios-simulator-skill",
+      "source": {
+        "source": "git-subdir",
+        "url": "conorluddy/ios-simulator-skill",
+        "path": "ios-simulator-skill",
+        "sha": "037a37f135100c76157b4c915a5b55bd272b5e32"
+      },
+      "description": "29 production-ready scripts for iOS app testing, building, and automation",
+      "author": {
+        "name": "conorluddy",
+        "url": "https://github.com/conorluddy"
+      },
+      "homepage": "https://github.com/conorluddy/ios-simulator-skill",
+      "category": "skill",
+      "tags": [
+        "ios",
+        "xcode",
+        "mobile"
+      ],
+      "metadata": {
+        "entry": "ios-simulator-skill",
+        "upstreamName": "ios-simulator-skill",
+        "upstreamMarketplace": "conorluddy"
+      }
+    },
+    {
+      "name": "launch-codes",
+      "source": {
+        "source": "git-subdir",
+        "url": "OneWave-AI/claude-code-mods",
+        "path": "launch-codes",
+        "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
+      },
+      "description": "Dangerous Bash commands need launch codes: red alert pane, siren, a code to arm and a LAUNCH to fire",
+      "author": {
+        "name": "OneWave-AI",
+        "url": "https://github.com/OneWave-AI"
+      },
+      "homepage": "https://github.com/OneWave-AI/claude-code-mods",
+      "category": "mod",
+      "tags": [
+        "collection",
+        "cost",
+        "fun"
+      ],
+      "metadata": {
+        "entry": "onewave-claude-code-mods",
+        "upstreamName": "launch-codes",
+        "upstreamMarketplace": "claude-code-mods"
+      }
+    },
+    {
+      "name": "lcm",
+      "source": {
+        "source": "github",
+        "repo": "lossless-claude/lcm",
+        "ref": "v0.16.0",
+        "sha": "0c17dbffda452cf7fae46929af427dff355aeaa3"
+      },
+      "description": "Lossless context management — DAG-based summarization that preserves every message",
+      "author": {
+        "name": "lossless-claude",
+        "url": "https://github.com/lossless-claude"
+      },
+      "homepage": "https://github.com/lossless-claude/lcm",
+      "category": "mod",
+      "tags": [
+        "context",
+        "memory",
+        "compaction"
+      ],
+      "metadata": {
+        "entry": "lcm",
+        "upstreamName": "lcm",
+        "upstreamMarketplace": "lossless-claude"
+      }
+    },
+    {
+      "name": "md-prompt",
+      "source": {
+        "source": "git-subdir",
+        "url": "nogu66/md-prompt",
+        "path": "plugins/md-prompt",
+        "sha": "424b2e8fb8693f7d5432e678120567bf334f942a"
+      },
+      "description": "Paints Markdown onto the prompt box as you type: syntax-highlighted code blocks, inline code, bold, italic, lists, tables, quotes, links and headings. Paint only, your text is never changed.",
+      "author": {
+        "name": "nogu66",
+        "url": "https://github.com/nogu66"
+      },
+      "homepage": "https://github.com/nogu66/md-prompt",
+      "category": "mod",
+      "tags": [
+        "markdown",
+        "prompt",
+        "editor"
+      ],
+      "metadata": {
+        "entry": "md-prompt",
+        "upstreamName": "md-prompt",
+        "upstreamMarketplace": "nogu66"
+      }
+    },
+    {
+      "name": "merge-gate",
+      "source": {
+        "source": "git-subdir",
+        "url": "yash-gadodia/claude-mods",
+        "path": "merge-gate",
+        "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
+      },
+      "description": "Denies a merge unless the latest human message says merge; ship, push and deploy do not count.",
+      "author": {
+        "name": "yash-gadodia",
+        "url": "https://github.com/yash-gadodia"
+      },
+      "homepage": "https://github.com/yash-gadodia/claude-mods",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "usage",
+        "collection"
+      ],
+      "metadata": {
+        "entry": "yash-claude-mods",
+        "upstreamName": "merge-gate",
+        "upstreamMarketplace": "claude-mods"
+      }
+    },
+    {
+      "name": "mermaid-art",
+      "source": {
+        "source": "git-subdir",
+        "url": "galElmalah/claude-mods",
+        "path": "claude-mermaid",
+        "sha": "b19a0f0d09bf214c010b15cc2849c0c1a11d7b0d"
+      },
+      "description": "Mermaid diagrams drawn as box art inline in the transcript.",
+      "author": {
+        "name": "galElmalah",
+        "url": "https://github.com/galElmalah"
+      },
+      "homepage": "https://github.com/galElmalah/claude-mods",
+      "category": "mod",
+      "tags": [
+        "mermaid",
+        "diagrams",
+        "queue"
+      ],
+      "metadata": {
+        "entry": "claude-mermaid",
+        "upstreamName": "claude-mermaid",
+        "upstreamMarketplace": "claude-mods"
+      }
+    },
+    {
+      "name": "mindful-breathing",
+      "source": {
+        "source": "github",
+        "repo": "halluton/Mindful-Claude",
+        "sha": "411c9c4f4f1c3d128159be7315823341ae7d9e2d"
+      },
+      "description": "Guided breathing exercises above the Claude Code prompt while Claude works; the spinner reads the breath",
+      "author": {
+        "name": "halluton",
+        "url": "https://github.com/halluton"
+      },
+      "homepage": "https://github.com/halluton/Mindful-Claude",
+      "category": "mod",
+      "tags": [
+        "wellness",
+        "band",
+        "animation"
+      ],
+      "metadata": {
+        "entry": "mindful-claude",
+        "upstreamName": "mindful-claude",
+        "upstreamMarketplace": "mindful-claude"
+      }
+    },
+    {
+      "name": "mini-offload",
+      "source": {
+        "source": "git-subdir",
+        "url": "yash-gadodia/claude-mods",
+        "path": "mini-offload",
+        "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
+      },
+      "description": "Routes heavy Bash commands to a second machine over ssh, syncing the commit first.",
+      "author": {
+        "name": "yash-gadodia",
+        "url": "https://github.com/yash-gadodia"
+      },
+      "homepage": "https://github.com/yash-gadodia/claude-mods",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "usage",
+        "collection"
+      ],
+      "metadata": {
+        "entry": "yash-claude-mods",
+        "upstreamName": "mini-offload",
+        "upstreamMarketplace": "claude-mods"
+      }
+    },
+    {
+      "name": "mod-builder",
+      "source": {
+        "source": "git-subdir",
+        "url": "karanb192/claude-code-mods",
+        "path": "plugins/mod-builder",
+        "sha": "10617a90106144d3cb131bd599e677d9c38bfd35"
+      },
+      "description": "A skill that plans, writes, validates, proves, reviews, migrates and publishes Claude Code mods. Plan first with the smallest $ surface, a footprint diffed against the plan, a test seen failing, an isolated load that leaves evidence files, a five-line threat model, and a handoff that names what was and was not proven. Brainstorm mode checks ideas against every mod already on GitHub.",
+      "author": {
+        "name": "karanb192",
+        "url": "https://github.com/karanb192"
+      },
+      "homepage": "https://github.com/karanb192/claude-code-mods",
+      "category": "mod",
+      "tags": [
+        "mod-builder",
+        "cache",
+        "cost"
+      ],
+      "metadata": {
+        "entry": "karanb192-claude-code-mods",
+        "upstreamName": "mod-builder",
+        "upstreamMarketplace": "claude-code-mods"
+      }
+    },
+    {
+      "name": "money-band",
+      "source": {
+        "source": "git-subdir",
+        "url": "yash-gadodia/claude-mods",
+        "path": "money-band",
+        "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
+      },
+      "description": "A money line above the prompt, read from SQLite databases over ssh.",
+      "author": {
+        "name": "yash-gadodia",
+        "url": "https://github.com/yash-gadodia"
+      },
+      "homepage": "https://github.com/yash-gadodia/claude-mods",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "usage",
+        "collection"
+      ],
+      "metadata": {
+        "entry": "yash-claude-mods",
+        "upstreamName": "money-band",
+        "upstreamMarketplace": "claude-mods"
+      }
+    },
+    {
+      "name": "pixelband",
+      "source": {
+        "source": "github",
+        "repo": "furqan-khan07/pixelband",
+        "sha": "20e27f99b023e62c8aa91dace07654442a715c24"
+      },
+      "description": "Animated pixel-art scenes or your own image above the prompt, reacting to Claude. Zero tokens.",
+      "author": {
+        "name": "furqan-khan07",
+        "url": "https://github.com/furqan-khan07"
+      },
+      "homepage": "https://github.com/furqan-khan07/pixelband",
+      "category": "mod",
+      "tags": [
+        "pixel-art",
+        "band",
+        "fun"
+      ],
+      "metadata": {
+        "entry": "pixelband",
+        "upstreamName": "pixelband",
+        "upstreamMarketplace": "pixelband"
+      }
+    },
+    {
+      "name": "playwright-skill",
+      "source": {
+        "source": "github",
+        "repo": "lackeyjb/playwright-skill",
+        "sha": "dd47a6a023e249eb1b36e9e943eab89d0900865d"
+      },
+      "description": "Agent Skill for general-purpose browser automation with Playwright. The agent writes and executes custom scripts for testing pages, validating UX, and automating browser tasks.",
+      "author": {
+        "name": "lackeyjb",
+        "url": "https://github.com/lackeyjb"
+      },
+      "homepage": "https://github.com/lackeyjb/playwright-skill",
+      "category": "skill",
+      "tags": [
+        "playwright",
+        "browser",
+        "testing"
+      ],
+      "metadata": {
+        "entry": "playwright-skill",
+        "upstreamName": "playwright-skill",
+        "upstreamMarketplace": "playwright-skill"
+      }
+    },
+    {
+      "name": "powerline",
+      "source": {
+        "source": "git-subdir",
+        "url": "Owloops/claude-powerline",
+        "path": "plugin",
+        "sha": "3e763e558bca908475cf34adb55dfc59e4b39aa2"
+      },
+      "description": "Interactive setup wizard for theme, style, segment, and budget configuration",
+      "author": {
+        "name": "Owloops",
+        "url": "https://github.com/Owloops"
+      },
+      "homepage": "https://github.com/Owloops/claude-powerline",
+      "category": "statusline",
+      "tags": [
+        "powerline",
+        "git",
+        "usage"
+      ],
+      "metadata": {
+        "entry": "claude-powerline",
+        "upstreamName": "claude-powerline",
+        "upstreamMarketplace": "claude-powerline"
+      }
+    },
+    {
+      "name": "prismantis",
+      "source": {
+        "source": "github",
+        "repo": "NahumLitvin/prismantis",
+        "sha": "b13de6c9ec39e01946943f67b07e5fae4aefd939"
+      },
+      "description": "Colorful, themeable rendering for Claude Code replies: tables, headings, code, numbers, paths and links.",
+      "author": {
+        "name": "NahumLitvin",
+        "url": "https://github.com/NahumLitvin"
+      },
+      "homepage": "https://github.com/NahumLitvin/prismantis",
+      "category": "mod",
+      "tags": [
+        "themes",
+        "rendering",
+        "appearance"
+      ],
+      "metadata": {
+        "entry": "prismantis",
+        "upstreamName": "prismantis",
+        "upstreamMarketplace": "prismantis"
+      }
+    },
+    {
+      "name": "prompt-queue",
+      "source": {
+        "source": "git-subdir",
+        "url": "galElmalah/claude-mods",
+        "path": "claude-queue",
+        "sha": "b19a0f0d09bf214c010b15cc2849c0c1a11d7b0d"
+      },
+      "description": "/q <text> while Claude is working waits in a stack above the prompt and goes out when the turn ends.",
+      "author": {
+        "name": "galElmalah",
+        "url": "https://github.com/galElmalah"
+      },
+      "homepage": "https://github.com/galElmalah/claude-mods",
+      "category": "mod",
+      "tags": [
+        "mermaid",
+        "diagrams",
+        "queue"
+      ],
+      "metadata": {
+        "entry": "claude-mermaid",
+        "upstreamName": "claude-queue",
+        "upstreamMarketplace": "claude-mods"
+      }
+    },
+    {
+      "name": "prompt-rail",
+      "source": {
+        "source": "git-subdir",
+        "url": "oikon48/prompt-rail",
+        "path": "plugins/prompt-rail",
+        "sha": "2ac50fb87fc426fed89ba0f09f1784ef6f289ae8"
+      },
+      "description": "A rail of your session's prompts beside the transcript or above the prompt; hover to read one, click to jump to it.",
+      "author": {
+        "name": "oikon48",
+        "url": "https://github.com/oikon48"
+      },
+      "homepage": "https://github.com/oikon48/prompt-rail",
+      "category": "mod",
+      "tags": [
+        "navigation",
+        "pane",
+        "transcript"
+      ],
+      "metadata": {
+        "entry": "prompt-rail",
+        "upstreamName": "prompt-rail",
+        "upstreamMarketplace": "oikon48"
+      }
+    },
+    {
+      "name": "pull-request-pane",
+      "source": {
+        "source": "git-subdir",
+        "url": "meganemura/pull-request-pane",
+        "path": "plugin",
+        "sha": "2b072514053814083609a3e6b45ca4d602448f9f"
+      },
+      "description": "A pane beside the transcript with the GitHub pull requests and issues related to the current session: drag a title or description to leave a comment on it, add as many as you like, then Submit sends them all as one prompt. Watch each pull request's checks, review decision and mergeability update on a timer.",
+      "author": {
+        "name": "meganemura",
+        "url": "https://github.com/meganemura"
+      },
+      "homepage": "https://github.com/meganemura/pull-request-pane",
+      "category": "mod",
+      "tags": [
+        "github",
+        "pane",
+        "ci"
+      ],
+      "metadata": {
+        "entry": "pull-request-pane",
+        "upstreamName": "pull-request-pane",
+        "upstreamMarketplace": "pull-request-pane"
+      }
+    },
+    {
+      "name": "quota-meter",
+      "source": {
+        "source": "git-subdir",
+        "url": "Arunjay4213/claude-mods",
+        "path": "plugins/quota-meter",
+        "sha": "d4fffd7de9204a62b10e7b3604fc893158fa25fd"
+      },
+      "description": "5-hour and weekly plan limits with reset countdown and projected time until you hit them.",
+      "author": {
+        "name": "Arunjay4213",
+        "url": "https://github.com/Arunjay4213"
+      },
+      "homepage": "https://github.com/Arunjay4213/claude-mods",
+      "category": "mod",
+      "tags": [
+        "context",
+        "quota",
+        "cost"
+      ],
+      "metadata": {
+        "entry": "arunjay-claude-mods",
+        "upstreamName": "quota-meter",
+        "upstreamMarketplace": "claude-mods"
+      }
+    },
+    {
+      "name": "receipt",
+      "source": {
+        "source": "git-subdir",
+        "url": "yash-gadodia/claude-mods",
+        "path": "receipt",
+        "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
+      },
+      "description": "A receipt in the turn footer: edits, runs and curls, a warning when edits ran nothing, unfolded destructive commands, and a spinner that names an unverified claim.",
+      "author": {
+        "name": "yash-gadodia",
+        "url": "https://github.com/yash-gadodia"
+      },
+      "homepage": "https://github.com/yash-gadodia/claude-mods",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "usage",
+        "collection"
+      ],
+      "metadata": {
+        "entry": "yash-claude-mods",
+        "upstreamName": "receipt",
+        "upstreamMarketplace": "claude-mods"
+      }
+    },
+    {
+      "name": "review-pane",
+      "source": {
+        "source": "github",
+        "repo": "r3al1tym/claude-review",
+        "sha": "ae7a92cdf9d4dd0018d1b1edc43456b9fc306fad"
+      },
+      "description": "claude review: the session's latest reply in a calm reading pane docked beside the conversation",
+      "author": {
+        "name": "r3al1tym",
+        "url": "https://github.com/r3al1tym"
+      },
+      "homepage": "https://github.com/r3al1tym/claude-review",
+      "category": "mod",
+      "tags": [
+        "reading",
+        "pane",
+        "markdown"
+      ],
+      "metadata": {
+        "entry": "claude-review",
+        "upstreamName": "review-pane",
+        "upstreamMarketplace": "claude-review"
+      }
+    },
+    {
+      "name": "review-pane-rudrasecure",
+      "source": {
+        "source": "git-subdir",
+        "url": "rudrasecure/claude-mods",
+        "path": "review-pane",
+        "sha": "d408a11fd553fb9266e5fefcd948f4fc4d7708aa"
+      },
+      "description": "Side pane showing the files changed in this conversation as diffs; mark lines, comment, and send the comments back to Claude",
+      "author": {
+        "name": "rudrasecure",
+        "url": "https://github.com/rudrasecure"
+      },
+      "homepage": "https://github.com/rudrasecure/claude-mods",
+      "category": "mod",
+      "tags": [
+        "diff",
+        "code-review",
+        "pane"
+      ],
+      "metadata": {
+        "entry": "rudrasecure-review-pane",
+        "upstreamName": "review-pane",
+        "upstreamMarketplace": "claude-mods"
+      }
+    },
+    {
+      "name": "roll-credits",
+      "source": {
+        "source": "github",
+        "repo": "smukh/roll-credits",
+        "sha": "5b627e351fb745db6dc12f5bfe8656aaa385424e"
+      },
+      "description": "Movie-style credits for your Claude Code session",
+      "author": {
+        "name": "smukh",
+        "url": "https://github.com/smukh"
+      },
+      "homepage": "https://github.com/smukh/roll-credits",
+      "category": "mod",
+      "tags": [
+        "fun",
+        "session-summary",
+        "animation"
+      ],
+      "metadata": {
+        "entry": "roll-credits",
+        "upstreamName": "roll-credits",
+        "upstreamMarketplace": "roll-credits-marketplace"
+      }
+    },
+    {
+      "name": "scope-guard",
+      "source": {
+        "source": "git-subdir",
+        "url": "yash-gadodia/claude-mods",
+        "path": "scope-guard",
+        "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
+      },
+      "description": "Stops a turn that has edited too many files until the goal is restated.",
+      "author": {
+        "name": "yash-gadodia",
+        "url": "https://github.com/yash-gadodia"
+      },
+      "homepage": "https://github.com/yash-gadodia/claude-mods",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "usage",
+        "collection"
+      ],
+      "metadata": {
+        "entry": "yash-claude-mods",
+        "upstreamName": "scope-guard",
+        "upstreamMarketplace": "claude-mods"
+      }
+    },
+    {
+      "name": "secret-redactor",
+      "source": {
+        "source": "git-subdir",
+        "url": "ray-amjad/awesome-claude-code-function-hooks",
+        "path": "plugins/secret-redactor",
+        "sha": "12b5fea27a4bd1b88cd9c9b6abc1efc0756c6625"
+      },
+      "description": "Keeps secrets, email addresses and IP addresses out of the session transcript, and puts the real value back on the way into a tool call",
+      "author": {
+        "name": "ray-amjad",
+        "url": "https://github.com/ray-amjad"
+      },
+      "homepage": "https://github.com/ray-amjad/awesome-claude-code-function-hooks",
+      "category": "mod",
+      "tags": [
+        "security",
+        "redaction",
+        "vercel"
+      ],
+      "metadata": {
+        "entry": "function-hooks-redactor",
+        "upstreamName": "secret-redactor",
+        "upstreamMarketplace": "awesome-claude-code-function-hooks"
+      }
+    },
+    {
+      "name": "sentry-mcp",
+      "source": {
+        "source": "git-subdir",
+        "url": "getsentry/sentry-mcp",
+        "path": "plugins/sentry-mcp",
+        "sha": "9f1a7b2147d96246859f42d6f2cbf02ee3985c01"
+      },
+      "description": "Sentry error tracking and performance monitoring - search issues, analyze errors, explore traces, and get AI-powered root cause analysis",
+      "author": {
+        "name": "getsentry",
+        "url": "https://github.com/getsentry"
+      },
+      "homepage": "https://github.com/getsentry/sentry-mcp",
+      "category": "mcp",
+      "tags": [
+        "sentry",
+        "errors",
+        "monitoring"
+      ],
+      "metadata": {
+        "entry": "sentry-mcp",
+        "upstreamName": "sentry-mcp",
+        "upstreamMarketplace": "sentry-mcp"
+      }
+    },
+    {
+      "name": "sentry-mcp-experimental",
+      "source": {
+        "source": "git-subdir",
+        "url": "getsentry/sentry-mcp",
+        "path": "plugins/sentry-mcp-experimental",
+        "sha": "9f1a7b2147d96246859f42d6f2cbf02ee3985c01"
+      },
+      "description": "Sentry MCP with experimental features enabled - includes all stable tools plus bleeding-edge capabilities",
+      "author": {
+        "name": "getsentry",
+        "url": "https://github.com/getsentry"
+      },
+      "homepage": "https://github.com/getsentry/sentry-mcp",
+      "category": "mcp",
+      "tags": [
+        "sentry",
+        "errors",
+        "monitoring"
+      ],
+      "metadata": {
+        "entry": "sentry-mcp",
+        "upstreamName": "sentry-mcp-experimental",
+        "upstreamMarketplace": "sentry-mcp"
+      }
+    },
+    {
+      "name": "session-monitor",
+      "source": {
+        "source": "github",
+        "repo": "udaaff/claude-code-session-monitor",
+        "sha": "aa6b3ecc82540d36d8646ee423d4fa27fd524d70"
+      },
+      "description": "A side panel with live cards for every open Claude Code session. Requires CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1.",
+      "author": {
+        "name": "udaaff",
+        "url": "https://github.com/udaaff"
+      },
+      "homepage": "https://github.com/udaaff/claude-code-session-monitor",
+      "category": "mod",
+      "tags": [
+        "sessions",
+        "pane",
+        "dashboard"
+      ],
+      "metadata": {
+        "entry": "session-monitor",
+        "upstreamName": "session-monitor",
+        "upstreamMarketplace": "session-monitor"
+      }
+    },
+    {
+      "name": "session-wrapped",
+      "source": {
+        "source": "git-subdir",
+        "url": "OneWave-AI/claude-code-mods",
+        "path": "session-wrapped",
+        "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
+      },
+      "description": "Spotify Wrapped for a Claude Code session: an animated stat reveal and a shareable PNG card",
+      "author": {
+        "name": "OneWave-AI",
+        "url": "https://github.com/OneWave-AI"
+      },
+      "homepage": "https://github.com/OneWave-AI/claude-code-mods",
+      "category": "mod",
+      "tags": [
+        "collection",
+        "cost",
+        "fun"
+      ],
+      "metadata": {
+        "entry": "onewave-claude-code-mods",
+        "upstreamName": "session-wrapped",
+        "upstreamMarketplace": "claude-code-mods"
+      }
+    },
+    {
+      "name": "sportscaster",
+      "source": {
+        "source": "git-subdir",
+        "url": "OneWave-AI/claude-code-mods",
+        "path": "sportscaster",
+        "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
+      },
+      "description": "Live TV play-by-play of your Claude Code session, spoken aloud with crowd effects",
+      "author": {
+        "name": "OneWave-AI",
+        "url": "https://github.com/OneWave-AI"
+      },
+      "homepage": "https://github.com/OneWave-AI/claude-code-mods",
+      "category": "mod",
+      "tags": [
+        "collection",
+        "cost",
+        "fun"
+      ],
+      "metadata": {
+        "entry": "onewave-claude-code-mods",
+        "upstreamName": "sportscaster",
+        "upstreamMarketplace": "claude-code-mods"
+      }
+    },
+    {
+      "name": "superpowers",
+      "source": {
+        "source": "github",
+        "repo": "obra/superpowers",
+        "sha": "8ca22dba9a94f28898bbce59f2537ff4d87c747d"
+      },
+      "description": "Core skills library for Claude Code: TDD, debugging, collaboration patterns, and proven techniques",
+      "author": {
+        "name": "obra",
+        "url": "https://github.com/obra"
+      },
+      "homepage": "https://github.com/obra/superpowers",
+      "category": "skill",
+      "tags": [
+        "methodology",
+        "tdd",
+        "debugging"
+      ],
+      "metadata": {
+        "entry": "superpowers",
+        "upstreamName": "superpowers",
+        "upstreamMarketplace": "superpowers-dev"
+      }
+    },
+    {
+      "name": "swarm",
+      "source": {
+        "source": "git-subdir",
+        "url": "OneWave-AI/claude-code-mods",
+        "path": "swarm",
+        "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
+      },
+      "description": "Mission control for subagents and agent teams: who is running, what each is doing, who spawned whom, who is talking to whom",
+      "author": {
+        "name": "OneWave-AI",
+        "url": "https://github.com/OneWave-AI"
+      },
+      "homepage": "https://github.com/OneWave-AI/claude-code-mods",
+      "category": "mod",
+      "tags": [
+        "collection",
+        "cost",
+        "fun"
+      ],
+      "metadata": {
+        "entry": "onewave-claude-code-mods",
+        "upstreamName": "swarm",
+        "upstreamMarketplace": "claude-code-mods"
+      }
+    },
+    {
+      "name": "tdd-guard",
+      "source": {
+        "source": "git-subdir",
+        "url": "nizos/tdd-guard",
+        "path": "plugin",
+        "sha": "2579ec1823fac5f4afb73be678d9c500b19885ac"
+      },
+      "description": "Automated Test-Driven Development enforcement",
+      "author": {
+        "name": "nizos",
+        "url": "https://github.com/nizos"
+      },
+      "homepage": "https://github.com/nizos/tdd-guard",
+      "category": "hook",
+      "tags": [
+        "hooks",
+        "tdd",
+        "guardrails"
+      ],
+      "metadata": {
+        "entry": "tdd-guard",
+        "upstreamName": "tdd-guard",
+        "upstreamMarketplace": "tdd-guard"
+      }
+    },
+    {
+      "name": "token-ledger",
+      "source": {
+        "source": "git-subdir",
+        "url": "Arunjay4213/claude-mods",
+        "path": "plugins/token-ledger",
+        "sha": "d4fffd7de9204a62b10e7b3604fc893158fa25fd"
+      },
+      "description": "Per-turn cost, tokens and cache hit ratio, with the session total.",
+      "author": {
+        "name": "Arunjay4213",
+        "url": "https://github.com/Arunjay4213"
+      },
+      "homepage": "https://github.com/Arunjay4213/claude-mods",
+      "category": "mod",
+      "tags": [
+        "context",
+        "quota",
+        "cost"
+      ],
+      "metadata": {
+        "entry": "arunjay-claude-mods",
+        "upstreamName": "token-ledger",
+        "upstreamMarketplace": "claude-mods"
+      }
+    },
+    {
+      "name": "topic-filter",
+      "source": {
+        "source": "github",
+        "repo": "lperezmo/topic-filter-mod",
+        "sha": "678a5554e7fb35b4c93ef3095dbee3d5f54fdd01"
+      },
+      "description": "Keep unrelated topics from pulling Claude off your code: listed terms become stable placeholder names (or their lines are dropped) before the model reads them.",
+      "author": {
+        "name": "lperezmo",
+        "url": "https://github.com/lperezmo"
+      },
+      "homepage": "https://github.com/lperezmo/topic-filter-mod",
+      "category": "mod",
+      "tags": [
+        "privacy",
+        "filter",
+        "guard"
+      ],
+      "metadata": {
+        "entry": "topic-filter",
+        "upstreamName": "topic-filter",
+        "upstreamMarketplace": "topic-filter-mod"
+      }
+    },
+    {
+      "name": "usage-band",
+      "source": {
+        "source": "git-subdir",
+        "url": "yash-gadodia/claude-mods",
+        "path": "usage-band",
+        "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
+      },
+      "description": "Limit windows, context fill and cost above the prompt, with a nudge to clear.",
+      "author": {
+        "name": "yash-gadodia",
+        "url": "https://github.com/yash-gadodia"
+      },
+      "homepage": "https://github.com/yash-gadodia/claude-mods",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "usage",
+        "collection"
+      ],
+      "metadata": {
+        "entry": "yash-claude-mods",
+        "upstreamName": "usage-band",
+        "upstreamMarketplace": "claude-mods"
+      }
+    },
+    {
+      "name": "usage-ticker",
+      "source": {
+        "source": "git-subdir",
+        "url": "aycandv/claude-usage-meter",
+        "path": "plugins/usage-ticker",
+        "sha": "52b1130bddedc9cc9127e370a2f970429254647e"
+      },
+      "description": "A usage board for Claude Code: a weekly pace gauge and a sliding ticker of your spend per model, in the terminal and on the desktop.",
+      "author": {
+        "name": "aycandv",
+        "url": "https://github.com/aycandv"
+      },
+      "homepage": "https://github.com/aycandv/claude-usage-meter",
+      "category": "mod",
+      "tags": [
+        "usage",
+        "cost",
+        "band"
+      ],
+      "metadata": {
+        "entry": "claude-usage-meter",
+        "upstreamName": "usage-ticker",
+        "upstreamMarketplace": "claude-usage-meter"
+      }
+    },
+    {
+      "name": "vercel-deploy-status",
+      "source": {
+        "source": "git-subdir",
+        "url": "ray-amjad/awesome-claude-code-function-hooks",
+        "path": "plugins/vercel-deploy-status",
+        "sha": "12b5fea27a4bd1b88cd9c9b6abc1efc0756c6625"
+      },
+      "description": "Pins the Vercel deploy queue of the linked project under the prompt: every deploy queued, building or just finished, with its phase and elapsed time",
+      "author": {
+        "name": "ray-amjad",
+        "url": "https://github.com/ray-amjad"
+      },
+      "homepage": "https://github.com/ray-amjad/awesome-claude-code-function-hooks",
+      "category": "mod",
+      "tags": [
+        "security",
+        "redaction",
+        "vercel"
+      ],
+      "metadata": {
+        "entry": "function-hooks-redactor",
+        "upstreamName": "vercel-deploy-status",
+        "upstreamMarketplace": "awesome-claude-code-function-hooks"
+      }
+    },
+    {
+      "name": "wod-band",
+      "source": {
+        "source": "git-subdir",
+        "url": "yash-gadodia/claude-mods",
+        "path": "wod-band",
+        "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
+      },
+      "description": "A pixel Ragtag athlete above the prompt: every turn is a rep, the session is an AMRAP.",
+      "author": {
+        "name": "yash-gadodia",
+        "url": "https://github.com/yash-gadodia"
+      },
+      "homepage": "https://github.com/yash-gadodia/claude-mods",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "usage",
+        "collection"
+      ],
+      "metadata": {
+        "entry": "yash-claude-mods",
+        "upstreamName": "wod-band",
+        "upstreamMarketplace": "claude-mods"
+      }
+    },
+    {
+      "name": "wod-timer",
+      "source": {
+        "source": "git-subdir",
+        "url": "yash-gadodia/claude-mods",
+        "path": "wod-timer",
+        "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
+      },
+      "description": "3, 2, 1, GO on submit, a running clock per turn, and the split when it lands.",
+      "author": {
+        "name": "yash-gadodia",
+        "url": "https://github.com/yash-gadodia"
+      },
+      "homepage": "https://github.com/yash-gadodia/claude-mods",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "usage",
+        "collection"
+      ],
+      "metadata": {
+        "entry": "yash-claude-mods",
+        "upstreamName": "wod-timer",
+        "upstreamMarketplace": "claude-mods"
+      }
+    }
+  ]
+}
