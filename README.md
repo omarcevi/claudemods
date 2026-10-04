@@ -7,7 +7,7 @@
 
 [Browse the site](https://claudemods.chat) · [Submit something](https://github.com/omarcevi/claudemods/issues/new?template=submit.yml) · [How it works](#how-it-works)
 
-![entries](https://img.shields.io/badge/entries-91-d97757) ![installable](https://img.shields.io/badge/installable_plugins-67-2f6f4f) ![license](https://img.shields.io/badge/list-CC0-lightgrey)
+![entries](https://img.shields.io/badge/entries-92-d97757) ![installable](https://img.shields.io/badge/installable_plugins-67-2f6f4f) ![license](https://img.shields.io/badge/list-CC0-lightgrey)
 
 </div>
 
@@ -34,7 +34,7 @@ Every plugin in the marketplace points at the exact upstream commit we looked at
 - [Slash commands](#slash-commands) (5)
 - [Hooks](#hooks) (6)
 - [Status lines](#status-lines) (5)
-- [MCP servers](#mcp-servers) (10)
+- [MCP servers](#mcp-servers) (11)
 - [CLAUDE.md & config](#claudemd-config) (5)
 - [Prompts & guides](#prompts-guides) (6)
 - [More lists](#more-lists) (5)
@@ -163,6 +163,7 @@ Connect Claude to tools, data and services.
 | [AWS MCP Servers](https://github.com/awslabs/mcp)<br><sub>by awslabs</sub> | MCP servers for AWS: docs, CDK, CloudFormation, Lambda, EKS, Bedrock and more. | see repo |
 | [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp)<br><sub>by ChromeDevTools</sub> | Lets Claude control and inspect a live Chrome browser for debugging and performance work. | `claude mcp add chrome-devtools --scope user npx chrome-devtools-mcp@latest` |
 | [GitHub MCP Server](https://github.com/github/github-mcp-server)<br><sub>by github</sub> | GitHub's official MCP server for repos, issues, pull requests and Actions. | see repo |
+| [kindex](https://github.com/wandercom/kindex)<br><sub>by wandercom</sub> | TEST SUBMISSION (launch smoke test, will be closed without merging). | see repo |
 | [MCP Reference Servers](https://github.com/modelcontextprotocol/servers)<br><sub>by modelcontextprotocol</sub> | Official reference servers: Filesystem, Fetch, Git, Memory, Sequential Thinking, Time and more. | see repo |
 | [Notion MCP Server](https://github.com/makenotion/notion-mcp-server)<br><sub>by makenotion</sub> | Notion's official MCP server; Notion recommends its hosted remote server. | `claude mcp add --transport http notion https://mcp.notion.com/mcp` |
 | [Playwright MCP](https://github.com/microsoft/playwright-mcp)<br><sub>by microsoft</sub> | Browser automation via accessibility snapshots instead of screenshots. | `claude mcp add playwright npx @playwright/mcp@latest` |

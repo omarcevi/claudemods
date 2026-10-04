@@ -41,7 +41,7 @@
     "mcp": {
       "label": "MCP servers",
       "blurb": "Connect Claude to tools, data and services.",
-      "count": 10
+      "count": 11
     },
     "claude-md": {
       "label": "CLAUDE.md & config",
@@ -1661,6 +1661,20 @@
         "awesome-list",
         "toolkit",
         "plugins"
+      ],
+      "featured": false,
+      "install": [],
+      "inMarketplace": false
+    },
+    {
+      "id": "kindex",
+      "name": "kindex",
+      "type": "mcp",
+      "url": "https://github.com/wandercom/kindex",
+      "author": "wandercom",
+      "description": "TEST SUBMISSION (launch smoke test, will be closed without merging).",
+      "tags": [
+        "test"
       ],
       "featured": false,
       "install": [],
