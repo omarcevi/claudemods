@@ -17,19 +17,20 @@ export const writeEntries = (entries) =>
 
 export const config = readJSON("config.json");
 
-// Display order + labels for every entry type.
+// Display order + labels for every entry type. `heading` is the site's section
+// heading, worded the way people search for it.
 export const TYPES = {
-  mod:          { label: "Mods",                 blurb: "Function-hook plugins that draw panes, bands, status lines and toasts, or guard what Claude does." },
-  plugin:       { label: "Plugins & marketplaces", blurb: "Bundles of commands, agents, skills and hooks you install with /plugin." },
-  skill:        { label: "Skills",               blurb: "SKILL.md folders that teach Claude a task or workflow." },
-  subagent:     { label: "Subagents",            blurb: "Specialist agents Claude can hand work to." },
-  command:      { label: "Slash commands",       blurb: "Reusable /commands and command frameworks." },
-  hook:         { label: "Hooks",                blurb: "Shell hooks and hook SDKs that run on Claude Code lifecycle events." },
-  statusline:   { label: "Status lines",         blurb: "What sits under your prompt: cost, context, git and more." },
-  mcp:          { label: "MCP servers",          blurb: "Connect Claude to tools, data and services." },
-  "claude-md":  { label: "CLAUDE.md & config",   blurb: "Templates and guides for project memory and setup." },
-  prompt:       { label: "Prompts & guides",     blurb: "Prompt libraries, system prompts and prompting courses." },
-  list:         { label: "More lists",           blurb: "Other curated lists worth following." },
+  mod:          { label: "Mods",                 heading: "Claude Code mods",                   blurb: "Function-hook plugins that draw panes, bands, status lines and toasts, or guard what Claude does." },
+  plugin:       { label: "Plugins & marketplaces", heading: "Claude Code plugins & marketplaces", blurb: "Bundles of commands, agents, skills and hooks you install with /plugin." },
+  skill:        { label: "Skills",               heading: "Claude skills",                      blurb: "SKILL.md folders that teach Claude a task or workflow." },
+  subagent:     { label: "Subagents",            heading: "Claude Code subagents",              blurb: "Specialist agents Claude can hand work to." },
+  command:      { label: "Slash commands",       heading: "Claude Code slash commands",         blurb: "Reusable /commands and command frameworks." },
+  hook:         { label: "Hooks",                heading: "Claude Code hooks",                  blurb: "Shell hooks and hook SDKs that run on Claude Code lifecycle events." },
+  statusline:   { label: "Status lines",         heading: "Claude Code status lines",           blurb: "What sits under your prompt: cost, context, git and more." },
+  mcp:          { label: "MCP servers",          heading: "MCP servers for Claude",             blurb: "Connect Claude to tools, data and services." },
+  "claude-md":  { label: "CLAUDE.md & config",   heading: "CLAUDE.md templates & config",       blurb: "Templates and guides for project memory and setup." },
+  prompt:       { label: "Prompts & guides",     heading: "Claude prompts & guides",            blurb: "Prompt libraries, system prompts and prompting courses." },
+  list:         { label: "More lists",           heading: "More Claude lists",                  blurb: "Other curated lists worth following." },
 };
 
 const ID_RE = /^[a-z0-9][a-z0-9._-]*$/;

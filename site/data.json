@@ -5,56 +5,67 @@
   "types": {
     "mod": {
       "label": "Mods",
+      "heading": "Claude Code mods",
       "blurb": "Function-hook plugins that draw panes, bands, status lines and toasts, or guard what Claude does.",
       "count": 26
     },
     "plugin": {
       "label": "Plugins & marketplaces",
+      "heading": "Claude Code plugins & marketplaces",
       "blurb": "Bundles of commands, agents, skills and hooks you install with /plugin.",
       "count": 7
     },
     "skill": {
       "label": "Skills",
+      "heading": "Claude skills",
       "blurb": "SKILL.md folders that teach Claude a task or workflow.",
       "count": 11
     },
     "subagent": {
       "label": "Subagents",
+      "heading": "Claude Code subagents",
       "blurb": "Specialist agents Claude can hand work to.",
       "count": 6
     },
     "command": {
       "label": "Slash commands",
+      "heading": "Claude Code slash commands",
       "blurb": "Reusable /commands and command frameworks.",
       "count": 5
     },
     "hook": {
       "label": "Hooks",
+      "heading": "Claude Code hooks",
       "blurb": "Shell hooks and hook SDKs that run on Claude Code lifecycle events.",
       "count": 6
     },
     "statusline": {
       "label": "Status lines",
+      "heading": "Claude Code status lines",
       "blurb": "What sits under your prompt: cost, context, git and more.",
       "count": 5
     },
     "mcp": {
       "label": "MCP servers",
+      "heading": "MCP servers for Claude",
       "blurb": "Connect Claude to tools, data and services.",
       "count": 10
     },
     "claude-md": {
       "label": "CLAUDE.md & config",
+      "heading": "CLAUDE.md templates & config",
       "blurb": "Templates and guides for project memory and setup.",
       "count": 5
     },
     "prompt": {
       "label": "Prompts & guides",
+      "heading": "Claude prompts & guides",
       "blurb": "Prompt libraries, system prompts and prompting courses.",
       "count": 6
     },
     "list": {
       "label": "More lists",
+      "heading": "More Claude lists",
       "blurb": "Other curated lists worth following.",
       "count": 5
     }
