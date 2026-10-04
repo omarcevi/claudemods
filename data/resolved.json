@@ -730,6 +730,22 @@
       }
     ]
   },
+  "claude-familiar": {
+    "repo": "lucenity0/claude-familiar",
+    "sha": "77930064d5624d7c1a20ed974e80af48f3e1eb43",
+    "upstreamMarketplace": "claude-familiar",
+    "plugins": [
+      {
+        "name": "familiar",
+        "description": "A pixel-art companion above the prompt that reacts to your session, levels up, and can be redrawn by hand",
+        "source": {
+          "source": "github",
+          "repo": "lucenity0/claude-familiar",
+          "sha": "77930064d5624d7c1a20ed974e80af48f3e1eb43"
+        }
+      }
+    ]
+  },
   "compound-engineering": {
     "repo": "EveryInc/compound-engineering-plugin",
     "sha": "9af474a70e7f2a844338519ad9e92aafbd92d4fb",
