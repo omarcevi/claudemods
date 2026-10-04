@@ -218,7 +218,7 @@ const head = [
 
 const pageVars = {
   head, directory, chips,
-  stats: `<span><b>${entries.length}</b> entries</span><span><b>${byType.mod.length}</b> mods</span><span><b>${bundledCount}</b> one-command installs</span>`,
+  stats: `<span><b>${byType.mod.length}</b> mods</span><span><b>${bundledCount}</b> one-command installs</span><span><b>${entries.length}</b> entries</span>`,
   count: entries.length, repo: html(config.repo), marketplace: html(mk), repoUrl: html(repoUrl), submitUrl: html(submitUrl),
 };
 const page = readFileSync(p("scripts/index.template.html"), "utf8").replace(/\{\{(\w+)\}\}/g, (m, k) => {

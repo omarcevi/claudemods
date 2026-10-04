@@ -1,0 +1,28 @@
+name: Find new mods
+on:
+  schedule:
+    - cron: "41 7 * * 1" # Mondays 07:41 UTC, after the plugin sync
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  find:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - id: find
+        env:
+          # Code search may refuse the default token; set MODS_SEARCH_TOKEN (a fine-grained
+          # token with public read access) if the issue says code search was skipped.
+          GH_TOKEN: ${{ secrets.MODS_SEARCH_TOKEN || github.token }}
+        run: node scripts/find-mods.mjs > "$RUNNER_TEMP/candidates.md"
+      - name: Open the candidates issue
+        if: steps.find.outputs.count != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create mod-candidates --color 5319e7 --description "Weekly list of possible new mods" 2>/dev/null || true
+          gh issue create --label mod-candidates --title "New mod candidates ($(date -u +%F))" --body-file "$RUNNER_TEMP/candidates.md"

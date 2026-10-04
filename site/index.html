@@ -111,6 +111,7 @@ header.top { display: flex; align-items: center; justify-content: space-between;
 .copy.done { color: var(--good); }
 .mk { font-size: 12px; color: var(--good); background: var(--good-soft); padding: 2px 7px; border-radius: 6px; align-self: flex-start; font-weight: 500; }
 .none { text-align: center; color: var(--muted); padding: 60px 0; }
+.linkish { border: 0; background: none; padding: 0; font: inherit; color: var(--accent); text-decoration: underline; cursor: pointer; }
 
 .about { margin: 22px 0 34px; }
 .about h2 { font-size: 20px; letter-spacing: -0.01em; margin: 0 0 12px; }
@@ -144,11 +145,11 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
   </header>
 
   <section class="hero">
-    <h1>Claude mods, plugins &amp; skills.<br><em>Find what others built.</em></h1>
-    <p>A community directory of Claude Code mods, plugins, skills, subagents, hooks, status lines, MCP servers and prompts. Install the mods straight from one marketplace.</p>
+    <h1>The home of Claude Code mods.<br><em>Panes, bands, status lines, guards.</em></h1>
+    <p>Mods change how Claude Code looks and behaves. Install any of them with one command, each pinned to a commit we reviewed. Plugins, skills, subagents, hooks, MCP servers and prompts are here too.</p>
     <div class="cmd"><code><span class="prompt">&gt;</span> <span id="mk-cmd">/plugin marketplace add omarcevi/claudemods</span></code>
       <button class="copy" data-copy-from="mk-cmd" aria-label="Copy command"></button></div>
-    <div class="stats"><span><b>93</b> entries</span><span><b>27</b> mods</span><span><b>69</b> one-command installs</span></div>
+    <div class="stats"><span><b>27</b> mods</span><span><b>69</b> one-command installs</span><span><b>93</b> entries</span></div>
   </section>
 </div>
 
@@ -976,7 +977,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
       </div>
     </section>
   </div>
-  <p class="none" id="none" hidden>Nothing matches. <a href="https://github.com/omarcevi/claudemods/issues/new?template=submit.yml">Submit it?</a></p>
+  <p class="none" id="none" hidden><span id="none-msg">Nothing matches.</span> <button class="linkish" id="see-all" hidden></button> <a href="https://github.com/omarcevi/claudemods/issues/new?template=submit.yml">Submit it?</a></p>
 
   <p class="warn">Mods and plugins run with your permissions — they can read files, run commands and reach the network. Every plugin in the claudemods marketplace is pinned to the upstream commit we reviewed, but read the source before you install.</p>
 
@@ -1038,15 +1039,17 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
     c._hay = { name: text(c, "h3"), author: text(c, ".by"), desc: text(c, ".desc"),
       tags: [...c.querySelectorAll(".tag")].map((t) => t.textContent).join(" ").toLowerCase(), type: c.dataset.type };
   });
-  let state = { type: "all", q: "" };
+  // The site opens on mods; the "All" chip (or #type=all) shows everything.
+  const DEFAULT_TYPE = "mod";
+  let state = { type: DEFAULT_TYPE, q: "" };
 
   function readHash() {
     const h = new URLSearchParams(location.hash.slice(1));
-    if (h.has("type") || h.has("q")) { state.type = h.get("type") || "all"; state.q = h.get("q") || ""; }
+    if (h.has("type") || h.has("q")) { state.type = h.get("type") || DEFAULT_TYPE; state.q = h.get("q") || ""; }
   }
   function writeHash() {
     const h = new URLSearchParams();
-    if (state.type !== "all") h.set("type", state.type);
+    if (state.type !== DEFAULT_TYPE) h.set("type", state.type);
     if (state.q) h.set("q", state.q);
     const s = h.toString(); history.replaceState(null, "", s ? "#" + s : location.pathname);
   }
@@ -1072,14 +1075,25 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
       g.hidden = !n; shown += n;
     }
     $("#none").hidden = shown > 0;
+    // Searching inside one type can come up empty while other types match: offer those.
+    const elsewhere = !shown && state.type !== "all" ? cards.filter((c) => score(c._hay, terms)).length : 0;
+    $("#none-msg").textContent = elsewhere ? `No ${$(`.chip[data-type="${state.type}"]`)?.firstChild.textContent.toLowerCase() || "entries"} match.` : "Nothing matches.";
+    $("#see-all").hidden = !elsewhere;
+    $("#see-all").textContent = `See ${elsewhere} in all entries`;
     $("#blurb").textContent = shown === cards.length ? `${cards.length} entries` : `${shown} of ${cards.length} entries`;
     document.querySelectorAll(".chip").forEach((c) => c.setAttribute("aria-pressed", String(c.dataset.type === state.type)));
   }
 
-  $("#chips").onclick = (ev) => { const c = ev.target.closest(".chip"); if (!c) return; state.type = c.dataset.type; writeHash(); render(); };
+  const setType = (type) => { state.type = type; writeHash(); render(); };
+  $("#chips").onclick = (ev) => { const c = ev.target.closest(".chip"); if (c) setType(c.dataset.type); };
+  $("#see-all").onclick = () => setType("all");
   readHash(); $("#q").value = state.q;
   let t; $("#q").oninput = (ev) => { clearTimeout(t); t = setTimeout(() => { state.q = ev.target.value.trim(); writeHash(); render(); }, 80); };
-  if (state.type !== "all" || state.q) render();
+  // A link to one card (#taste-skill) must still land on it, whatever its type.
+  const target = location.hash.length > 1 && !location.hash.includes("=") ? document.getElementById(decodeURIComponent(location.hash.slice(1))) : null;
+  if (target?.classList.contains("card") && target.dataset.type !== state.type) state.type = "all";
+  render();
+  target?.scrollIntoView();
 })();
 </script>
 </body>

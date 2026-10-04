@@ -12,6 +12,7 @@ Community directory of Claude extensions (mods, plugins, skills, subagents, slas
 - `data/resolved.json` is written by `scripts/sync.mjs`. It holds the upstream plugins for each `bundle: true` entry, pinned to a commit sha.
 - `scripts/build.mjs` generates `README.md`, `.claude-plugin/marketplace.json` and the site: `site/index.html` (from `scripts/index.template.html`, with every entry rendered into the HTML for search engines), `site/data.json`, `site/robots.txt` and `site/sitemap.xml`. Never edit these by hand; change the template or `build.mjs`.
 - `scripts/sync.mjs [ids…]` fetches each upstream `.claude-plugin/marketplace.json` (or `plugin.json`) and pins it with `git ls-remote`. It needs network access.
+- `scripts/find-mods.mjs` searches GitHub for mods we don't list (topics `claude-code-mods`/`claude-mods`, and `hooks/hooks.json` files with a `modules` list, i.e. function hooks) and prints a candidates issue. It skips listed repos and any repo named in an earlier `mod-candidates` issue.
 - `scripts/issue-to-entry.mjs` turns a submission issue (`.github/ISSUE_TEMPLATE/submit.yml`) into an entry. `--dry-run` only validates.
 - `scripts/verify-installs.sh` installs every marketplace plugin into a throwaway `CLAUDE_CONFIG_DIR`. The last run passed 67/67.
 - `config.json` holds the repo slug, site URL and marketplace name.
@@ -19,6 +20,7 @@ Community directory of Claude extensions (mods, plugins, skills, subagents, slas
   - `ci.yml` runs `build --check` and `claude plugin validate`.
   - `submission.yml` checks submission issues; the `approved` label makes it open a PR.
   - `sync.yml` runs weekly and opens a PR that bumps pinned commits.
+  - `find-mods.yml` runs weekly and opens one `mod-candidates` issue with new mods to review. Code search may need a `MODS_SEARCH_TOKEN` secret; the issue says so if it was skipped.
   - `pages.yml` deploys `site/`.
 
 ## Commands
