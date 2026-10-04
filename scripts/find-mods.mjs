@@ -50,7 +50,7 @@ async function pool(items, size, fn) {
   return out;
 }
 // Repo descriptions are written by strangers: one line, no markup, no @-mentions.
-const clean = (s) => String(s || "").replace(/\s+/g, " ").replace(/[<>[\]()!`|*_#~\\]/g, "").replace(/@/g, "@​").trim().slice(0, 160);
+const clean = (s) => String(s || "").replace(/\s+/g, " ").replace(/[<>[\]()!`|*_#~\\]/g, "").replace(/@/g, "@\u200b").trim().slice(0, 160);
 
 // ---- what we already have -------------------------------------------------------
 const key = (r) => r.toLowerCase();
