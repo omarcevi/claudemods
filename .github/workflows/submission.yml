@@ -20,10 +20,10 @@ jobs:
       - id: check
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
-        run: node scripts/issue-to-entry.mjs --dry-run > comment.md || true
+        run: node scripts/issue-to-entry.mjs --dry-run > "$RUNNER_TEMP/comment.md" || true
       - env:
           GH_TOKEN: ${{ github.token }}
-        run: gh issue comment ${{ github.event.issue.number }} --body-file comment.md
+        run: gh issue comment ${{ github.event.issue.number }} --body-file "$RUNNER_TEMP/comment.md"
 
   add:
     # A maintainer adds the `approved` label -> bot opens a pull request.
@@ -36,7 +36,7 @@ jobs:
       - id: entry
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
-        run: node scripts/issue-to-entry.mjs > comment.md
+        run: node scripts/issue-to-entry.mjs > "$RUNNER_TEMP/comment.md"
       - name: Pin the plugin(s) for the marketplace
         if: steps.entry.outputs.bundle == 'true'
         run: node scripts/sync.mjs "${{ steps.entry.outputs.id }}"
