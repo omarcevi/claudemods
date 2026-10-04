@@ -16,7 +16,7 @@
     "skill": {
       "label": "Skills",
       "blurb": "SKILL.md folders that teach Claude a task or workflow.",
-      "count": 10
+      "count": 11
     },
     "subagent": {
       "label": "Subagents",
@@ -860,6 +860,24 @@
       "featured": false,
       "install": [
         "/plugin install ios-simulator-skill@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "taste-skill",
+      "name": "Taste Skill",
+      "type": "skill",
+      "url": "https://github.com/Leonxlnx/taste-skill",
+      "author": "Leonxlnx",
+      "description": "13 design skills that stop AI agents shipping generic, template-looking UIs: minimalist, brutalist, redesign, image-to-code and more.",
+      "tags": [
+        "design",
+        "frontend",
+        "ui"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install taste-skill@claudemods"
       ],
       "inMarketplace": true
     },

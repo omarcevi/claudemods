@@ -1529,6 +1529,31 @@
       }
     },
     {
+      "name": "taste-skill",
+      "source": {
+        "source": "github",
+        "repo": "Leonxlnx/taste-skill",
+        "sha": "ce26fc25c0e5e8cab638f883de62d9a86ee5e45b"
+      },
+      "description": "Frontend design taste skills including brutalist, minimalist, soft, redesign, stitch, and more",
+      "author": {
+        "name": "Leonxlnx",
+        "url": "https://github.com/Leonxlnx"
+      },
+      "homepage": "https://github.com/Leonxlnx/taste-skill",
+      "category": "skill",
+      "tags": [
+        "design",
+        "frontend",
+        "ui"
+      ],
+      "metadata": {
+        "entry": "taste-skill",
+        "upstreamName": "taste-skill",
+        "upstreamMarketplace": "taste-skill"
+      }
+    },
+    {
       "name": "tdd-guard",
       "source": {
         "source": "git-subdir",
