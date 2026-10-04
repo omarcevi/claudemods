@@ -29,9 +29,14 @@ async function getText(url) {
 }
 
 // Commit sha for a ref (default HEAD). Peels annotated tags.
+// URLs and refs can come from an upstream marketplace.json, so they are untrusted:
+// only https URLs and plain ref names reach git, and `--` stops either one being
+// parsed as an option (e.g. `--upload-pack=<cmd>` would run a command).
 function lsRemote(gitUrl, ref = "HEAD") {
+  if (!/^https:\/\/[\w.-]+\//.test(gitUrl || "")) throw new Error(`refusing git url ${gitUrl}`);
+  if (!/^\w[\w./-]*$/.test(ref || "")) throw new Error(`refusing ref ${ref}`);
   const args = ref === "HEAD" ? [ref] : [ref, `${ref}^{}`];
-  const out = execFileSync("git", ["ls-remote", gitUrl, ...args], {
+  const out = execFileSync("git", ["ls-remote", "--", gitUrl, ...args], {
     encoding: "utf8", timeout: 30_000, stdio: ["ignore", "pipe", "pipe"],
   });
   const lines = out.trim().split("\n").filter(Boolean).map((l) => l.split(/\s+/));
