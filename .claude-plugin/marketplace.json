@@ -653,6 +653,31 @@
       }
     },
     {
+      "name": "familiar",
+      "source": {
+        "source": "github",
+        "repo": "lucenity0/claude-familiar",
+        "sha": "77930064d5624d7c1a20ed974e80af48f3e1eb43"
+      },
+      "description": "A pixel-art companion above the prompt that reacts to your session, levels up, and can be redrawn by hand",
+      "author": {
+        "name": "lucenity0",
+        "url": "https://github.com/lucenity0"
+      },
+      "homepage": "https://github.com/lucenity0/claude-familiar",
+      "category": "mod",
+      "tags": [
+        "pixel-art",
+        "band",
+        "pet"
+      ],
+      "metadata": {
+        "entry": "claude-familiar",
+        "upstreamName": "familiar",
+        "upstreamMarketplace": "claude-familiar"
+      }
+    },
+    {
       "name": "image-peek",
       "source": {
         "source": "git-subdir",
