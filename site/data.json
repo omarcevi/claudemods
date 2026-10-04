@@ -6,7 +6,7 @@
     "mod": {
       "label": "Mods",
       "blurb": "Function-hook plugins that draw panes, bands, status lines and toasts, or guard what Claude does.",
-      "count": 26
+      "count": 27
     },
     "plugin": {
       "label": "Plugins & marketplaces",
@@ -555,6 +555,24 @@
       "featured": false,
       "install": [
         "/plugin install usage-ticker@claudemods"
+      ],
+      "inMarketplace": true
+    },
+    {
+      "id": "claude-familiar",
+      "name": "claude-familiar",
+      "type": "mod",
+      "url": "https://github.com/lucenity0/claude-familiar",
+      "author": "lucenity0",
+      "description": "A pixel companion above the prompt that reacts to your session, levels up, and can be redrawn in a built-in editor.",
+      "tags": [
+        "pixel-art",
+        "band",
+        "pet"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install familiar@claudemods"
       ],
       "inMarketplace": true
     },

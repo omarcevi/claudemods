@@ -7,7 +7,7 @@
 
 [Browse the site](https://claudemods.chat) · [Submit something](https://github.com/omarcevi/claudemods/issues/new?template=submit.yml) · [How it works](#how-it-works)
 
-![entries](https://img.shields.io/badge/entries-92-d97757) ![installable](https://img.shields.io/badge/installable_plugins-68-2f6f4f) ![license](https://img.shields.io/badge/list-CC0-lightgrey)
+![entries](https://img.shields.io/badge/entries-93-d97757) ![installable](https://img.shields.io/badge/installable_plugins-69-2f6f4f) ![license](https://img.shields.io/badge/list-CC0-lightgrey)
 
 </div>
 
@@ -27,7 +27,7 @@ Every plugin in the marketplace points at the exact upstream commit we looked at
 
 ## Contents
 
-- [Mods](#mods) (26)
+- [Mods](#mods) (27)
 - [Plugins & marketplaces](#plugins-marketplaces) (7)
 - [Skills](#skills) (11)
 - [Subagents](#subagents) (6)
@@ -53,6 +53,7 @@ Function-hook plugins that draw panes, bands, status lines and toasts, or guard 
 | [claude-code-mods (karanb192)](https://github.com/karanb192/claude-code-mods)<br><sub>by karanb192</sub> | A mod-builder skill plus mods for pinning subagent models, keeping the prompt cache warm and peeking at images. | `/plugin install image-peek@claudemods`<br>`/plugin install mod-builder@claudemods`<br>`/plugin install fable-pin@claudemods`<br>`/plugin install cache-tax@claudemods` |
 | [claude-code-mods (OneWave AI)](https://github.com/OneWave-AI/claude-code-mods)<br><sub>by OneWave-AI</sub> | Eleven mods: burn meter, risky-command launch codes, session wrap-up card, boss fights, a code pet and more. | `/plugin install agent-narrator@claudemods`<br>`/plugin install agent-race@claudemods`<br>`/plugin install boss-fight@claudemods`<br>`/plugin install burn-meter@claudemods`<br>`/plugin install code-pet@claudemods`<br>`/plugin install inbox-alerts@claudemods`<br>`/plugin install inner-monologue@claudemods`<br>`/plugin install launch-codes@claudemods`<br>`/plugin install session-wrapped@claudemods`<br>`/plugin install sportscaster@claudemods`<br>`/plugin install swarm@claudemods` |
 | [claude-code-session-monitor](https://github.com/udaaff/claude-code-session-monitor)<br><sub>by udaaff</sub> | A side panel with live cards for every open Claude Code session. | `/plugin install session-monitor@claudemods` |
+| [claude-familiar](https://github.com/lucenity0/claude-familiar)<br><sub>by lucenity0</sub> | A pixel companion above the prompt that reacts to your session, levels up, and can be redrawn in a built-in editor. | `/plugin install familiar@claudemods` |
 | [claude-mermaid + claude-queue](https://github.com/galElmalah/claude-mods)<br><sub>by galElmalah</sub> | Draws mermaid diagrams inline in the transcript as colored box art, plus a prompt queue mod. | `/plugin install mermaid-art@claudemods`<br>`/plugin install prompt-queue@claudemods` |
 | [claude-mods (Arunjay4213)](https://github.com/Arunjay4213/claude-mods)<br><sub>by Arunjay4213</sub> | Session trackers: context window fill, plan quota burn rate, per-turn cost and a budget guard. | `/plugin install context-lens@claudemods`<br>`/plugin install quota-meter@claudemods`<br>`/plugin install token-ledger@claudemods`<br>`/plugin install budget-guard@claudemods` |
 | [claude-mods (yash-gadodia)](https://github.com/yash-gadodia/claude-mods)<br><sub>by yash-gadodia</sub> | Thirteen mods that guard scope, verify deploys, gate merges and draw usage and cost bands. | `/plugin install deploy-verify@claudemods`<br>`/plugin install mini-offload@claudemods`<br>`/plugin install scope-guard@claudemods`<br>`/plugin install merge-gate@claudemods`<br>`/plugin install receipt@claudemods`<br>`/plugin install diff-review@claudemods`<br>`/plugin install money-band@claudemods`<br>`/plugin install usage-band@claudemods`<br>`/plugin install copy-band@claudemods`<br>`/plugin install chrome-switch@claudemods`<br>`/plugin install wod-band@claudemods`<br>`/plugin install wod-timer@claudemods`<br>`/plugin install done-blink@claudemods` |
