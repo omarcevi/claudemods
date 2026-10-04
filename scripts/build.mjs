@@ -157,9 +157,12 @@ const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g
 
 function card(e) {
   const inst = installLine(e);
-  const rows = inst.slice(0, 4).map((i) =>
-    `<div class="install-row"><code>${html(i)}</code><button class="copy" data-copy="${html(i)}" aria-label="Copy install command"></button></div>`).join("")
-    + (inst.length > 4 ? `<a class="by" href="${html(e.url)}" target="_blank" rel="noopener">+${inst.length - 4} more plugins in this repo</a>` : "");
+  const row = (i) =>
+    `<div class="install-row"><code title="${html(i)}">${html(i)}</code><button class="copy" data-copy="${html(i)}" aria-label="Copy install command"></button></div>`;
+  // One command on the card; the rest fold away so a big bundle doesn't stretch its whole grid row.
+  const [first, ...rest] = inst;
+  const rows = (first ? row(first) : "")
+    + (rest.length ? `<details class="more"><summary>+${rest.length} more plugin${rest.length > 1 ? "s" : ""}</summary>${rest.map(row).join("")}</details>` : "");
   const badge = TYPES[e.type].label.replace(/s$/, "").replace(/ & .*/, "");
   return `<article class="card" id="${html(e.id)}" data-type="${e.type}">
         <div class="card-head"><div><h3><a href="${html(e.url)}" target="_blank" rel="noopener">${html(e.name)}</a>${e.featured ? " ⭐" : ""}</h3>
