@@ -105,12 +105,21 @@ header.top { display: flex; align-items: center; justify-content: space-between;
 .tag::before { content: "#"; opacity: .6; }
 .install { margin-top: auto; display: flex; flex-direction: column; gap: 6px; }
 .install-row { display: flex; align-items: center; gap: 6px; background: var(--code-bg); border-radius: 8px; padding: 4px 4px 4px 10px; min-width: 0; }
-.install-row code { flex: 1; overflow-x: auto; white-space: nowrap; scrollbar-width: thin; padding: 4px 0; }
+.install-row code { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: 4px 0; font-size: 12px; }
+.more summary { cursor: pointer; font-size: 13px; color: var(--muted); list-style: none; width: fit-content; }
+.more summary::-webkit-details-marker { display: none; }
+.more summary::before { content: "▸ "; }
+.more[open] summary::before { content: "▾ "; }
+.more summary:hover { color: var(--text); }
+.more .install-row { margin-top: 6px; }
+/* While one card shows its extra commands, the others in that grid keep their own height. */
+.grid:has(.more[open]) .card:not(:has(.more[open])) { align-self: start; }
 .copy { flex: none; border: 0; background: transparent; color: var(--muted); cursor: pointer; padding: 6px; border-radius: 6px; display: grid; place-items: center; }
 .copy:hover { background: var(--surface); color: var(--text); }
 .copy.done { color: var(--good); }
 .mk { font-size: 12px; color: var(--good); background: var(--good-soft); padding: 2px 7px; border-radius: 6px; align-self: flex-start; font-weight: 500; }
 .none { text-align: center; color: var(--muted); padding: 60px 0; }
+.linkish { border: 0; background: none; padding: 0; font: inherit; color: var(--accent); text-decoration: underline; cursor: pointer; }
 
 .about { margin: 22px 0 34px; }
 .about h2 { font-size: 20px; letter-spacing: -0.01em; margin: 0 0 12px; }
@@ -144,11 +153,11 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
   </header>
 
   <section class="hero">
-    <h1>Claude mods, plugins &amp; skills.<br><em>Find what others built.</em></h1>
-    <p>A community directory of Claude Code mods, plugins, skills, subagents, hooks, status lines, MCP servers and prompts. Install the mods straight from one marketplace.</p>
+    <h1>The home of Claude Code mods.<br><em>Panes, bands, status lines, guards.</em></h1>
+    <p>Mods change how Claude Code looks and behaves. Install any of them with one command, each pinned to a commit we reviewed. Plugins, skills, subagents, hooks, MCP servers and prompts are here too.</p>
     <div class="cmd"><code><span class="prompt">&gt;</span> <span id="mk-cmd">/plugin marketplace add omarcevi/claudemods</span></code>
       <button class="copy" data-copy-from="mk-cmd" aria-label="Copy command"></button></div>
-    <div class="stats"><span><b>93</b> entries</span><span><b>27</b> mods</span><span><b>69</b> one-command installs</span></div>
+    <div class="stats"><span><b>27</b> mods</span><span><b>69</b> one-command installs</span><span><b>93</b> entries</span></div>
   </section>
 </div>
 
@@ -175,7 +184,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge mod">Mod</span></div>
         <p class="desc">Live tree of the session&#39;s subagents with status, tool calls, timing and token use in a side pane.</p>
         <div class="tags"><span class="tag">subagents</span><span class="tag">pane</span><span class="tag">observability</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install agent-flow@claudemods</code><button class="copy" data-copy="/plugin install agent-flow@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install agent-flow@claudemods">/plugin install agent-flow@claudemods</code><button class="copy" data-copy="/plugin install agent-flow@claudemods" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="aside" data-type="mod">
         <div class="card-head"><div><h3><a href="https://github.com/JayDoubleu/aside" target="_blank" rel="noopener">aside</a></h3>
@@ -183,7 +192,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge mod">Mod</span></div>
         <p class="desc">Read-only side chat pane to ask about the session so far without touching the main thread.</p>
         <div class="tags"><span class="tag">side-chat</span><span class="tag">pane</span><span class="tag">context</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install aside@claudemods</code><button class="copy" data-copy="/plugin install aside@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install aside@claudemods">/plugin install aside@claudemods</code><button class="copy" data-copy="/plugin install aside@claudemods" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="buffer-pane" data-type="mod">
         <div class="card-head"><div><h3><a href="https://github.com/meganemura/buffer-pane" target="_blank" rel="noopener">buffer-pane</a></h3>
@@ -191,7 +200,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge mod">Mod</span></div>
         <p class="desc">A scratch pane beside the transcript to draft your next prompts while the agent is still working.</p>
         <div class="tags"><span class="tag">drafts</span><span class="tag">pane</span><span class="tag">productivity</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install buffer-pane@claudemods</code><button class="copy" data-copy="/plugin install buffer-pane@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install buffer-pane@claudemods">/plugin install buffer-pane@claudemods</code><button class="copy" data-copy="/plugin install buffer-pane@claudemods" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="cc-arcade" data-type="mod">
         <div class="card-head"><div><h3><a href="https://github.com/sezaakgun/cc-arcade" target="_blank" rel="noopener">cc-arcade</a></h3>
@@ -199,7 +208,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge mod">Mod</span></div>
         <p class="desc">Snake, Tetris, 2048 and more, playable above the prompt while Claude works, plus a virtual pet.</p>
         <div class="tags"><span class="tag">games</span><span class="tag">fun</span><span class="tag">band</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install cc-arcade@claudemods</code><button class="copy" data-copy="/plugin install cc-arcade@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install cc-arcade@claudemods">/plugin install cc-arcade@claudemods</code><button class="copy" data-copy="/plugin install cc-arcade@claudemods" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="cctop" data-type="mod">
         <div class="card-head"><div><h3><a href="https://github.com/tomstagl/cctop" target="_blank" rel="noopener">cctop</a></h3>
@@ -207,7 +216,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge mod">Mod</span></div>
         <p class="desc">btop-style live dashboard of context, tokens, cost, limits, tools and agents in a pane beside your session.</p>
         <div class="tags"><span class="tag">dashboard</span><span class="tag">tokens</span><span class="tag">pane</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install cctop@claudemods</code><button class="copy" data-copy="/plugin install cctop@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install cctop@claudemods">/plugin install cctop@claudemods</code><button class="copy" data-copy="/plugin install cctop@claudemods" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="karanb192-claude-code-mods" data-type="mod">
         <div class="card-head"><div><h3><a href="https://github.com/karanb192/claude-code-mods" target="_blank" rel="noopener">claude-code-mods (karanb192)</a></h3>
@@ -215,7 +224,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge mod">Mod</span></div>
         <p class="desc">A mod-builder skill plus mods for pinning subagent models, keeping the prompt cache warm and peeking at images.</p>
         <div class="tags"><span class="tag">mod-builder</span><span class="tag">cache</span><span class="tag">cost</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install image-peek@claudemods</code><button class="copy" data-copy="/plugin install image-peek@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code>/plugin install mod-builder@claudemods</code><button class="copy" data-copy="/plugin install mod-builder@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code>/plugin install fable-pin@claudemods</code><button class="copy" data-copy="/plugin install fable-pin@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code>/plugin install cache-tax@claudemods</code><button class="copy" data-copy="/plugin install cache-tax@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install image-peek@claudemods">/plugin install image-peek@claudemods</code><button class="copy" data-copy="/plugin install image-peek@claudemods" aria-label="Copy install command"></button></div><details class="more"><summary>+3 more plugins</summary><div class="install-row"><code title="/plugin install mod-builder@claudemods">/plugin install mod-builder@claudemods</code><button class="copy" data-copy="/plugin install mod-builder@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code title="/plugin install fable-pin@claudemods">/plugin install fable-pin@claudemods</code><button class="copy" data-copy="/plugin install fable-pin@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code title="/plugin install cache-tax@claudemods">/plugin install cache-tax@claudemods</code><button class="copy" data-copy="/plugin install cache-tax@claudemods" aria-label="Copy install command"></button></div></details></div>
       </article>
       <article class="card" id="onewave-claude-code-mods" data-type="mod">
         <div class="card-head"><div><h3><a href="https://github.com/OneWave-AI/claude-code-mods" target="_blank" rel="noopener">claude-code-mods (OneWave AI)</a></h3>
@@ -223,7 +232,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge mod">Mod</span></div>
         <p class="desc">Eleven mods: burn meter, risky-command launch codes, session wrap-up card, boss fights, a code pet and more.</p>
         <div class="tags"><span class="tag">collection</span><span class="tag">cost</span><span class="tag">fun</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install agent-narrator@claudemods</code><button class="copy" data-copy="/plugin install agent-narrator@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code>/plugin install agent-race@claudemods</code><button class="copy" data-copy="/plugin install agent-race@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code>/plugin install boss-fight@claudemods</code><button class="copy" data-copy="/plugin install boss-fight@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code>/plugin install burn-meter@claudemods</code><button class="copy" data-copy="/plugin install burn-meter@claudemods" aria-label="Copy install command"></button></div><a class="by" href="https://github.com/OneWave-AI/claude-code-mods" target="_blank" rel="noopener">+7 more plugins in this repo</a></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install agent-narrator@claudemods">/plugin install agent-narrator@claudemods</code><button class="copy" data-copy="/plugin install agent-narrator@claudemods" aria-label="Copy install command"></button></div><details class="more"><summary>+10 more plugins</summary><div class="install-row"><code title="/plugin install agent-race@claudemods">/plugin install agent-race@claudemods</code><button class="copy" data-copy="/plugin install agent-race@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code title="/plugin install boss-fight@claudemods">/plugin install boss-fight@claudemods</code><button class="copy" data-copy="/plugin install boss-fight@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code title="/plugin install burn-meter@claudemods">/plugin install burn-meter@claudemods</code><button class="copy" data-copy="/plugin install burn-meter@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code title="/plugin install code-pet@claudemods">/plugin install code-pet@claudemods</code><button class="copy" data-copy="/plugin install code-pet@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code title="/plugin install inbox-alerts@claudemods">/plugin install inbox-alerts@claudemods</code><button class="copy" data-copy="/plugin install inbox-alerts@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code title="/plugin install inner-monologue@claudemods">/plugin install inner-monologue@claudemods</code><button class="copy" data-copy="/plugin install inner-monologue@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code title="/plugin install launch-codes@claudemods">/plugin install launch-codes@claudemods</code><button class="copy" data-copy="/plugin install launch-codes@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code title="/plugin install session-wrapped@claudemods">/plugin install session-wrapped@claudemods</code><button class="copy" data-copy="/plugin install session-wrapped@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code title="/plugin install sportscaster@claudemods">/plugin install sportscaster@claudemods</code><button class="copy" data-copy="/plugin install sportscaster@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code title="/plugin install swarm@claudemods">/plugin install swarm@claudemods</code><button class="copy" data-copy="/plugin install swarm@claudemods" aria-label="Copy install command"></button></div></details></div>
       </article>
       <article class="card" id="session-monitor" data-type="mod">
         <div class="card-head"><div><h3><a href="https://github.com/udaaff/claude-code-session-monitor" target="_blank" rel="noopener">claude-code-session-monitor</a></h3>
@@ -231,7 +240,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge mod">Mod</span></div>
         <p class="desc">A side panel with live cards for every open Claude Code session.</p>
         <div class="tags"><span class="tag">sessions</span><span class="tag">pane</span><span class="tag">dashboard</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install session-monitor@claudemods</code><button class="copy" data-copy="/plugin install session-monitor@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install session-monitor@claudemods">/plugin install session-monitor@claudemods</code><button class="copy" data-copy="/plugin install session-monitor@claudemods" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="claude-familiar" data-type="mod">
         <div class="card-head"><div><h3><a href="https://github.com/lucenity0/claude-familiar" target="_blank" rel="noopener">claude-familiar</a></h3>
@@ -239,7 +248,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge mod">Mod</span></div>
         <p class="desc">A pixel companion above the prompt that reacts to your session, levels up, and can be redrawn in a built-in editor.</p>
         <div class="tags"><span class="tag">pixel-art</span><span class="tag">band</span><span class="tag">pet</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install familiar@claudemods</code><button class="copy" data-copy="/plugin install familiar@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install familiar@claudemods">/plugin install familiar@claudemods</code><button class="copy" data-copy="/plugin install familiar@claudemods" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="claude-mermaid" data-type="mod">
         <div class="card-head"><div><h3><a href="https://github.com/galElmalah/claude-mods" target="_blank" rel="noopener">claude-mermaid + claude-queue</a></h3>
@@ -247,7 +256,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge mod">Mod</span></div>
         <p class="desc">Draws mermaid diagrams inline in the transcript as colored box art, plus a prompt queue mod.</p>
         <div class="tags"><span class="tag">mermaid</span><span class="tag">diagrams</span><span class="tag">queue</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install mermaid-art@claudemods</code><button class="copy" data-copy="/plugin install mermaid-art@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code>/plugin install prompt-queue@claudemods</code><button class="copy" data-copy="/plugin install prompt-queue@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install mermaid-art@claudemods">/plugin install mermaid-art@claudemods</code><button class="copy" data-copy="/plugin install mermaid-art@claudemods" aria-label="Copy install command"></button></div><details class="more"><summary>+1 more plugin</summary><div class="install-row"><code title="/plugin install prompt-queue@claudemods">/plugin install prompt-queue@claudemods</code><button class="copy" data-copy="/plugin install prompt-queue@claudemods" aria-label="Copy install command"></button></div></details></div>
       </article>
       <article class="card" id="arunjay-claude-mods" data-type="mod">
         <div class="card-head"><div><h3><a href="https://github.com/Arunjay4213/claude-mods" target="_blank" rel="noopener">claude-mods (Arunjay4213)</a></h3>
@@ -255,7 +264,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge mod">Mod</span></div>
         <p class="desc">Session trackers: context window fill, plan quota burn rate, per-turn cost and a budget guard.</p>
         <div class="tags"><span class="tag">context</span><span class="tag">quota</span><span class="tag">cost</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install context-lens@claudemods</code><button class="copy" data-copy="/plugin install context-lens@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code>/plugin install quota-meter@claudemods</code><button class="copy" data-copy="/plugin install quota-meter@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code>/plugin install token-ledger@claudemods</code><button class="copy" data-copy="/plugin install token-ledger@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code>/plugin install budget-guard@claudemods</code><button class="copy" data-copy="/plugin install budget-guard@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install context-lens@claudemods">/plugin install context-lens@claudemods</code><button class="copy" data-copy="/plugin install context-lens@claudemods" aria-label="Copy install command"></button></div><details class="more"><summary>+3 more plugins</summary><div class="install-row"><code title="/plugin install quota-meter@claudemods">/plugin install quota-meter@claudemods</code><button class="copy" data-copy="/plugin install quota-meter@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code title="/plugin install token-ledger@claudemods">/plugin install token-ledger@claudemods</code><button class="copy" data-copy="/plugin install token-ledger@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code title="/plugin install budget-guard@claudemods">/plugin install budget-guard@claudemods</code><button class="copy" data-copy="/plugin install budget-guard@claudemods" aria-label="Copy install command"></button></div></details></div>
       </article>
       <article class="card" id="yash-claude-mods" data-type="mod">
         <div class="card-head"><div><h3><a href="https://github.com/yash-gadodia/claude-mods" target="_blank" rel="noopener">claude-mods (yash-gadodia)</a></h3>
@@ -263,7 +272,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge mod">Mod</span></div>
         <p class="desc">Thirteen mods that guard scope, verify deploys, gate merges and draw usage and cost bands.</p>
         <div class="tags"><span class="tag">guard</span><span class="tag">usage</span><span class="tag">collection</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install deploy-verify@claudemods</code><button class="copy" data-copy="/plugin install deploy-verify@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code>/plugin install mini-offload@claudemods</code><button class="copy" data-copy="/plugin install mini-offload@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code>/plugin install scope-guard@claudemods</code><button class="copy" data-copy="/plugin install scope-guard@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code>/plugin install merge-gate@claudemods</code><button class="copy" data-copy="/plugin install merge-gate@claudemods" aria-label="Copy install command"></button></div><a class="by" href="https://github.com/yash-gadodia/claude-mods" target="_blank" rel="noopener">+9 more plugins in this repo</a></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install deploy-verify@claudemods">/plugin install deploy-verify@claudemods</code><button class="copy" data-copy="/plugin install deploy-verify@claudemods" aria-label="Copy install command"></button></div><details class="more"><summary>+12 more plugins</summary><div class="install-row"><code title="/plugin install mini-offload@claudemods">/plugin install mini-offload@claudemods</code><button class="copy" data-copy="/plugin install mini-offload@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code title="/plugin install scope-guard@claudemods">/plugin install scope-guard@claudemods</code><button class="copy" data-copy="/plugin install scope-guard@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code title="/plugin install merge-gate@claudemods">/plugin install merge-gate@claudemods</code><button class="copy" data-copy="/plugin install merge-gate@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code title="/plugin install receipt@claudemods">/plugin install receipt@claudemods</code><button class="copy" data-copy="/plugin install receipt@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code title="/plugin install diff-review@claudemods">/plugin install diff-review@claudemods</code><button class="copy" data-copy="/plugin install diff-review@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code title="/plugin install money-band@claudemods">/plugin install money-band@claudemods</code><button class="copy" data-copy="/plugin install money-band@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code title="/plugin install usage-band@claudemods">/plugin install usage-band@claudemods</code><button class="copy" data-copy="/plugin install usage-band@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code title="/plugin install copy-band@claudemods">/plugin install copy-band@claudemods</code><button class="copy" data-copy="/plugin install copy-band@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code title="/plugin install chrome-switch@claudemods">/plugin install chrome-switch@claudemods</code><button class="copy" data-copy="/plugin install chrome-switch@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code title="/plugin install wod-band@claudemods">/plugin install wod-band@claudemods</code><button class="copy" data-copy="/plugin install wod-band@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code title="/plugin install wod-timer@claudemods">/plugin install wod-timer@claudemods</code><button class="copy" data-copy="/plugin install wod-timer@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code title="/plugin install done-blink@claudemods">/plugin install done-blink@claudemods</code><button class="copy" data-copy="/plugin install done-blink@claudemods" aria-label="Copy install command"></button></div></details></div>
       </article>
       <article class="card" id="claude-review" data-type="mod">
         <div class="card-head"><div><h3><a href="https://github.com/r3al1tym/claude-review" target="_blank" rel="noopener">claude-review</a></h3>
@@ -271,7 +280,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge mod">Mod</span></div>
         <p class="desc">Shows Claude&#39;s latest reply in a calm reading pane docked beside the conversation.</p>
         <div class="tags"><span class="tag">reading</span><span class="tag">pane</span><span class="tag">markdown</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install review-pane@claudemods</code><button class="copy" data-copy="/plugin install review-pane@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install review-pane@claudemods">/plugin install review-pane@claudemods</code><button class="copy" data-copy="/plugin install review-pane@claudemods" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="claude-usage-meter" data-type="mod">
         <div class="card-head"><div><h3><a href="https://github.com/aycandv/claude-usage-meter" target="_blank" rel="noopener">claude-usage-meter</a></h3>
@@ -279,7 +288,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge mod">Mod</span></div>
         <p class="desc">A usage board: a weekly pace gauge and an LED crawl of today&#39;s spend per model.</p>
         <div class="tags"><span class="tag">usage</span><span class="tag">cost</span><span class="tag">band</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install usage-ticker@claudemods</code><button class="copy" data-copy="/plugin install usage-ticker@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install usage-ticker@claudemods">/plugin install usage-ticker@claudemods</code><button class="copy" data-copy="/plugin install usage-ticker@claudemods" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="clawdhouse" data-type="mod">
         <div class="card-head"><div><h3><a href="https://github.com/ishuagrawal/clawdhouse" target="_blank" rel="noopener">clawdhouse</a></h3>
@@ -287,7 +296,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge mod">Mod</span></div>
         <p class="desc">A pixel Clawd character above the prompt or in a side pane that reacts to what Claude is doing.</p>
         <div class="tags"><span class="tag">pixel-art</span><span class="tag">companion</span><span class="tag">fun</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install clawdhouse@claudemods</code><button class="copy" data-copy="/plugin install clawdhouse@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install clawdhouse@claudemods">/plugin install clawdhouse@claudemods</code><button class="copy" data-copy="/plugin install clawdhouse@claudemods" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="cost-git" data-type="mod">
         <div class="card-head"><div><h3><a href="https://github.com/juulsverne/claude-code-mods" target="_blank" rel="noopener">cost-git</a></h3>
@@ -295,7 +304,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge mod">Mod</span></div>
         <p class="desc">Band above the prompt with session cost plus git branch, status, CI, pull and push.</p>
         <div class="tags"><span class="tag">cost</span><span class="tag">git</span><span class="tag">band</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install cost-git@claudemods</code><button class="copy" data-copy="/plugin install cost-git@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install cost-git@claudemods">/plugin install cost-git@claudemods</code><button class="copy" data-copy="/plugin install cost-git@claudemods" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="lcm" data-type="mod">
         <div class="card-head"><div><h3><a href="https://github.com/lossless-claude/lcm" target="_blank" rel="noopener">lcm — Lossless Context Management</a></h3>
@@ -303,7 +312,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge mod">Mod</span></div>
         <p class="desc">DAG-based summarization and SQLite persistence so no message is lost when context is compacted.</p>
         <div class="tags"><span class="tag">context</span><span class="tag">memory</span><span class="tag">compaction</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install lcm@claudemods</code><button class="copy" data-copy="/plugin install lcm@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install lcm@claudemods">/plugin install lcm@claudemods</code><button class="copy" data-copy="/plugin install lcm@claudemods" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="md-prompt" data-type="mod">
         <div class="card-head"><div><h3><a href="https://github.com/nogu66/md-prompt" target="_blank" rel="noopener">md-prompt</a></h3>
@@ -311,7 +320,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge mod">Mod</span></div>
         <p class="desc">Renders Markdown in the prompt box as you type, with syntax-highlighted code cards.</p>
         <div class="tags"><span class="tag">markdown</span><span class="tag">prompt</span><span class="tag">editor</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install md-prompt@claudemods</code><button class="copy" data-copy="/plugin install md-prompt@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install md-prompt@claudemods">/plugin install md-prompt@claudemods</code><button class="copy" data-copy="/plugin install md-prompt@claudemods" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="mindful-claude" data-type="mod">
         <div class="card-head"><div><h3><a href="https://github.com/halluton/Mindful-Claude" target="_blank" rel="noopener">Mindful Claude</a></h3>
@@ -319,7 +328,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge mod">Mod</span></div>
         <p class="desc">Guided breathing exercises drawn above the prompt while Claude works, with several techniques via /breathe.</p>
         <div class="tags"><span class="tag">wellness</span><span class="tag">band</span><span class="tag">animation</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install mindful-breathing@claudemods</code><button class="copy" data-copy="/plugin install mindful-breathing@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install mindful-breathing@claudemods">/plugin install mindful-breathing@claudemods</code><button class="copy" data-copy="/plugin install mindful-breathing@claudemods" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="pixelband" data-type="mod">
         <div class="card-head"><div><h3><a href="https://github.com/furqan-khan07/pixelband" target="_blank" rel="noopener">pixelband</a></h3>
@@ -327,7 +336,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge mod">Mod</span></div>
         <p class="desc">Animated pixel art above the prompt that reacts while Claude works; seven scenes or your own image or GIF.</p>
         <div class="tags"><span class="tag">pixel-art</span><span class="tag">band</span><span class="tag">fun</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install pixelband@claudemods</code><button class="copy" data-copy="/plugin install pixelband@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install pixelband@claudemods">/plugin install pixelband@claudemods</code><button class="copy" data-copy="/plugin install pixelband@claudemods" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="prismantis" data-type="mod">
         <div class="card-head"><div><h3><a href="https://github.com/NahumLitvin/prismantis" target="_blank" rel="noopener">prismantis</a></h3>
@@ -335,7 +344,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge mod">Mod</span></div>
         <p class="desc">Restyles Claude&#39;s replies with tables, diagrams, charts and copy buttons in 15 themes.</p>
         <div class="tags"><span class="tag">themes</span><span class="tag">rendering</span><span class="tag">appearance</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install prismantis@claudemods</code><button class="copy" data-copy="/plugin install prismantis@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install prismantis@claudemods">/plugin install prismantis@claudemods</code><button class="copy" data-copy="/plugin install prismantis@claudemods" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="prompt-rail" data-type="mod">
         <div class="card-head"><div><h3><a href="https://github.com/oikon48/prompt-rail" target="_blank" rel="noopener">prompt-rail</a></h3>
@@ -343,7 +352,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge mod">Mod</span></div>
         <p class="desc">A rail of your session&#39;s prompts: hover to read one, click to jump to it in the transcript.</p>
         <div class="tags"><span class="tag">navigation</span><span class="tag">pane</span><span class="tag">transcript</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install prompt-rail@claudemods</code><button class="copy" data-copy="/plugin install prompt-rail@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install prompt-rail@claudemods">/plugin install prompt-rail@claudemods</code><button class="copy" data-copy="/plugin install prompt-rail@claudemods" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="pull-request-pane" data-type="mod">
         <div class="card-head"><div><h3><a href="https://github.com/meganemura/pull-request-pane" target="_blank" rel="noopener">pull-request-pane</a></h3>
@@ -351,7 +360,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge mod">Mod</span></div>
         <p class="desc">Shows the GitHub PRs and issues related to the session in a pane, with checks and review status.</p>
         <div class="tags"><span class="tag">github</span><span class="tag">pane</span><span class="tag">ci</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install pull-request-pane@claudemods</code><button class="copy" data-copy="/plugin install pull-request-pane@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install pull-request-pane@claudemods">/plugin install pull-request-pane@claudemods</code><button class="copy" data-copy="/plugin install pull-request-pane@claudemods" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="rudrasecure-review-pane" data-type="mod">
         <div class="card-head"><div><h3><a href="https://github.com/rudrasecure/claude-mods" target="_blank" rel="noopener">review-pane (Rudra Secure)</a></h3>
@@ -359,7 +368,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge mod">Mod</span></div>
         <p class="desc">Side pane with every file Claude changed as a diff; mark lines, comment, and send comments back to Claude.</p>
         <div class="tags"><span class="tag">diff</span><span class="tag">code-review</span><span class="tag">pane</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install review-pane-rudrasecure@claudemods</code><button class="copy" data-copy="/plugin install review-pane-rudrasecure@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install review-pane-rudrasecure@claudemods">/plugin install review-pane-rudrasecure@claudemods</code><button class="copy" data-copy="/plugin install review-pane-rudrasecure@claudemods" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="roll-credits" data-type="mod">
         <div class="card-head"><div><h3><a href="https://github.com/smukh/roll-credits" target="_blank" rel="noopener">roll-credits</a></h3>
@@ -367,7 +376,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge mod">Mod</span></div>
         <p class="desc">Movie-style end credits for your coding session, with no model calls or telemetry.</p>
         <div class="tags"><span class="tag">fun</span><span class="tag">session-summary</span><span class="tag">animation</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install roll-credits@claudemods</code><button class="copy" data-copy="/plugin install roll-credits@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install roll-credits@claudemods">/plugin install roll-credits@claudemods</code><button class="copy" data-copy="/plugin install roll-credits@claudemods" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="function-hooks-redactor" data-type="mod">
         <div class="card-head"><div><h3><a href="https://github.com/ray-amjad/awesome-claude-code-function-hooks" target="_blank" rel="noopener">secret-redactor + vercel-deploy-status</a></h3>
@@ -375,7 +384,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge mod">Mod</span></div>
         <p class="desc">Keeps keys, emails and IPs out of the transcript, plus a Vercel deploy-status band.</p>
         <div class="tags"><span class="tag">security</span><span class="tag">redaction</span><span class="tag">vercel</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install secret-redactor@claudemods</code><button class="copy" data-copy="/plugin install secret-redactor@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code>/plugin install vercel-deploy-status@claudemods</code><button class="copy" data-copy="/plugin install vercel-deploy-status@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install secret-redactor@claudemods">/plugin install secret-redactor@claudemods</code><button class="copy" data-copy="/plugin install secret-redactor@claudemods" aria-label="Copy install command"></button></div><details class="more"><summary>+1 more plugin</summary><div class="install-row"><code title="/plugin install vercel-deploy-status@claudemods">/plugin install vercel-deploy-status@claudemods</code><button class="copy" data-copy="/plugin install vercel-deploy-status@claudemods" aria-label="Copy install command"></button></div></details></div>
       </article>
       <article class="card" id="topic-filter" data-type="mod">
         <div class="card-head"><div><h3><a href="https://github.com/lperezmo/topic-filter-mod" target="_blank" rel="noopener">topic-filter</a></h3>
@@ -383,7 +392,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge mod">Mod</span></div>
         <p class="desc">Swaps chosen topics, repos and names for neutral placeholders before Claude reads them.</p>
         <div class="tags"><span class="tag">privacy</span><span class="tag">filter</span><span class="tag">guard</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install topic-filter@claudemods</code><button class="copy" data-copy="/plugin install topic-filter@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install topic-filter@claudemods">/plugin install topic-filter@claudemods</code><button class="copy" data-copy="/plugin install topic-filter@claudemods" aria-label="Copy install command"></button></div></div>
       </article>
       </div>
     </section>
@@ -397,7 +406,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">Plugins</span></div>
         <p class="desc">Anthropic-managed directory of curated Claude Code plugins from Anthropic and partners.</p>
         <div class="tags"><span class="tag">official</span><span class="tag">marketplace</span><span class="tag">directory</span></div>
-        <div class="install"><div class="install-row"><code>/plugin install &lt;plugin&gt;@claude-plugins-official</code><button class="copy" data-copy="/plugin install &lt;plugin&gt;@claude-plugins-official" aria-label="Copy install command"></button></div></div>
+        <div class="install"><div class="install-row"><code title="/plugin install &lt;plugin&gt;@claude-plugins-official">/plugin install &lt;plugin&gt;@claude-plugins-official</code><button class="copy" data-copy="/plugin install &lt;plugin&gt;@claude-plugins-official" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="claude-mem" data-type="plugin">
         <div class="card-head"><div><h3><a href="https://github.com/thedotmack/claude-mem" target="_blank" rel="noopener">claude-mem</a> ⭐</h3>
@@ -405,7 +414,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">Plugins</span></div>
         <p class="desc">Records what your agent does, compresses it, and feeds relevant context back into future sessions.</p>
         <div class="tags"><span class="tag">memory</span><span class="tag">context</span><span class="tag">persistence</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install agent-mem@claudemods</code><button class="copy" data-copy="/plugin install agent-mem@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code>/plugin install agent-mem-cowork@claudemods</code><button class="copy" data-copy="/plugin install agent-mem-cowork@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install agent-mem@claudemods">/plugin install agent-mem@claudemods</code><button class="copy" data-copy="/plugin install agent-mem@claudemods" aria-label="Copy install command"></button></div><details class="more"><summary>+1 more plugin</summary><div class="install-row"><code title="/plugin install agent-mem-cowork@claudemods">/plugin install agent-mem-cowork@claudemods</code><button class="copy" data-copy="/plugin install agent-mem-cowork@claudemods" aria-label="Copy install command"></button></div></details></div>
       </article>
       <article class="card" id="ccplugins" data-type="plugin">
         <div class="card-head"><div><h3><a href="https://github.com/ccplugins/awesome-claude-code-plugins" target="_blank" rel="noopener">Awesome Claude Code Plugins</a></h3>
@@ -413,7 +422,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">Plugins</span></div>
         <p class="desc">Curated, installable marketplace of slash commands, subagents and hooks.</p>
         <div class="tags"><span class="tag">curated</span><span class="tag">commands</span><span class="tag">marketplace</span></div>
-        <div class="install"><div class="install-row"><code>/plugin marketplace add ccplugins/awesome-claude-code-plugins</code><button class="copy" data-copy="/plugin marketplace add ccplugins/awesome-claude-code-plugins" aria-label="Copy install command"></button></div></div>
+        <div class="install"><div class="install-row"><code title="/plugin marketplace add ccplugins/awesome-claude-code-plugins">/plugin marketplace add ccplugins/awesome-claude-code-plugins</code><button class="copy" data-copy="/plugin marketplace add ccplugins/awesome-claude-code-plugins" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="claude-code-bundled" data-type="plugin">
         <div class="card-head"><div><h3><a href="https://github.com/anthropics/claude-code" target="_blank" rel="noopener">Claude Code bundled plugins</a></h3>
@@ -421,7 +430,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">Plugins</span></div>
         <p class="desc">Anthropic&#39;s own plugins: code review, commit commands, feature dev, hookify, plugin-dev and more.</p>
         <div class="tags"><span class="tag">official</span><span class="tag">code-review</span><span class="tag">git</span></div>
-        <div class="install"><div class="install-row"><code>/plugin marketplace add anthropics/claude-code</code><button class="copy" data-copy="/plugin marketplace add anthropics/claude-code" aria-label="Copy install command"></button></div></div>
+        <div class="install"><div class="install-row"><code title="/plugin marketplace add anthropics/claude-code">/plugin marketplace add anthropics/claude-code</code><button class="copy" data-copy="/plugin marketplace add anthropics/claude-code" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="plugins-plus-skills" data-type="plugin">
         <div class="card-head"><div><h3><a href="https://github.com/jeremylongshore/claude-code-plugins-plus-skills" target="_blank" rel="noopener">Claude Code Plugins Plus Skills</a></h3>
@@ -429,7 +438,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">Plugins</span></div>
         <p class="desc">Huge community marketplace with hundreds of plugins and skills across DevOps, data, security and more.</p>
         <div class="tags"><span class="tag">marketplace</span><span class="tag">community</span><span class="tag">devops</span></div>
-        <div class="install"><div class="install-row"><code>/plugin marketplace add jeremylongshore/claude-code-plugins-plus-skills</code><button class="copy" data-copy="/plugin marketplace add jeremylongshore/claude-code-plugins-plus-skills" aria-label="Copy install command"></button></div></div>
+        <div class="install"><div class="install-row"><code title="/plugin marketplace add jeremylongshore/claude-code-plugins-plus-skills">/plugin marketplace add jeremylongshore/claude-code-plugins-plus-skills</code><button class="copy" data-copy="/plugin marketplace add jeremylongshore/claude-code-plugins-plus-skills" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="compound-engineering" data-type="plugin">
         <div class="card-head"><div><h3><a href="https://github.com/EveryInc/compound-engineering-plugin" target="_blank" rel="noopener">Compound Engineering</a></h3>
@@ -437,7 +446,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">Plugins</span></div>
         <p class="desc">Skills for a brainstorm, plan, build, review and capture-learnings development loop.</p>
         <div class="tags"><span class="tag">workflow</span><span class="tag">planning</span><span class="tag">code-review</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install compound-engineering@claudemods</code><button class="copy" data-copy="/plugin install compound-engineering@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install compound-engineering@claudemods">/plugin install compound-engineering@claudemods</code><button class="copy" data-copy="/plugin install compound-engineering@claudemods" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="knowledge-work-plugins" data-type="plugin">
         <div class="card-head"><div><h3><a href="https://github.com/anthropics/knowledge-work-plugins" target="_blank" rel="noopener">Knowledge Work Plugins</a></h3>
@@ -445,7 +454,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">Plugins</span></div>
         <p class="desc">Role plugins for sales, finance, legal, marketing, data and more, plus partner integrations.</p>
         <div class="tags"><span class="tag">official</span><span class="tag">roles</span><span class="tag">business</span></div>
-        <div class="install"><div class="install-row"><code>/plugin marketplace add anthropics/knowledge-work-plugins</code><button class="copy" data-copy="/plugin marketplace add anthropics/knowledge-work-plugins" aria-label="Copy install command"></button></div></div>
+        <div class="install"><div class="install-row"><code title="/plugin marketplace add anthropics/knowledge-work-plugins">/plugin marketplace add anthropics/knowledge-work-plugins</code><button class="copy" data-copy="/plugin marketplace add anthropics/knowledge-work-plugins" aria-label="Copy install command"></button></div></div>
       </article>
       </div>
     </section>
@@ -459,7 +468,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">Skill</span></div>
         <p class="desc">Anthropic&#39;s official skills repo: docx, pdf, pptx, xlsx, examples, the spec and a template.</p>
         <div class="tags"><span class="tag">official</span><span class="tag">documents</span><span class="tag">template</span></div>
-        <div class="install"><div class="install-row"><code>/plugin marketplace add anthropics/skills</code><button class="copy" data-copy="/plugin marketplace add anthropics/skills" aria-label="Copy install command"></button></div></div>
+        <div class="install"><div class="install-row"><code title="/plugin marketplace add anthropics/skills">/plugin marketplace add anthropics/skills</code><button class="copy" data-copy="/plugin marketplace add anthropics/skills" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="superpowers" data-type="skill">
         <div class="card-head"><div><h3><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">Superpowers</a> ⭐</h3>
@@ -467,7 +476,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">Skill</span></div>
         <p class="desc">Skills library and dev methodology for TDD, debugging, planning and collaboration.</p>
         <div class="tags"><span class="tag">methodology</span><span class="tag">tdd</span><span class="tag">debugging</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install superpowers@claudemods</code><button class="copy" data-copy="/plugin install superpowers@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install superpowers@claudemods">/plugin install superpowers@claudemods</code><button class="copy" data-copy="/plugin install superpowers@claudemods" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="composio-skills" data-type="skill">
         <div class="card-head"><div><h3><a href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank" rel="noopener">Awesome Claude Skills (Composio)</a></h3>
@@ -483,7 +492,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">Skill</span></div>
         <p class="desc">380+ skills, agents and commands across engineering, product, marketing and compliance.</p>
         <div class="tags"><span class="tag">collection</span><span class="tag">engineering</span><span class="tag">product</span></div>
-        <div class="install"><div class="install-row"><code>/plugin marketplace add alirezarezvani/claude-skills</code><button class="copy" data-copy="/plugin marketplace add alirezarezvani/claude-skills" aria-label="Copy install command"></button></div></div>
+        <div class="install"><div class="install-row"><code title="/plugin marketplace add alirezarezvani/claude-skills">/plugin marketplace add alirezarezvani/claude-skills</code><button class="copy" data-copy="/plugin marketplace add alirezarezvani/claude-skills" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="expo-skills" data-type="skill">
         <div class="card-head"><div><h3><a href="https://github.com/expo/skills" target="_blank" rel="noopener">Expo Skills</a></h3>
@@ -491,7 +500,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">Skill</span></div>
         <p class="desc">The Expo team&#39;s skills for building Expo apps and using Expo Application Services.</p>
         <div class="tags"><span class="tag">expo</span><span class="tag">react-native</span><span class="tag">mobile</span></div>
-        <div class="install"><div class="install-row"><code>/plugin install expo@claude-plugins-official</code><button class="copy" data-copy="/plugin install expo@claude-plugins-official" aria-label="Copy install command"></button></div></div>
+        <div class="install"><div class="install-row"><code title="/plugin install expo@claude-plugins-official">/plugin install expo@claude-plugins-official</code><button class="copy" data-copy="/plugin install expo@claude-plugins-official" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="ios-simulator-skill" data-type="skill">
         <div class="card-head"><div><h3><a href="https://github.com/conorluddy/ios-simulator-skill" target="_blank" rel="noopener">iOS Simulator Skill</a></h3>
@@ -499,7 +508,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">Skill</span></div>
         <p class="desc">Scripts for building, testing and driving iOS apps with xcodebuild, simctl and idb.</p>
         <div class="tags"><span class="tag">ios</span><span class="tag">xcode</span><span class="tag">mobile</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install ios-simulator-skill@claudemods</code><button class="copy" data-copy="/plugin install ios-simulator-skill@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install ios-simulator-skill@claudemods">/plugin install ios-simulator-skill@claudemods</code><button class="copy" data-copy="/plugin install ios-simulator-skill@claudemods" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="playwright-skill" data-type="skill">
         <div class="card-head"><div><h3><a href="https://github.com/lackeyjb/playwright-skill" target="_blank" rel="noopener">Playwright Skill</a></h3>
@@ -507,7 +516,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">Skill</span></div>
         <p class="desc">Lets Claude write and run custom Playwright scripts for browser automation and testing.</p>
         <div class="tags"><span class="tag">playwright</span><span class="tag">browser</span><span class="tag">testing</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install playwright-skill@claudemods</code><button class="copy" data-copy="/plugin install playwright-skill@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install playwright-skill@claudemods">/plugin install playwright-skill@claudemods</code><button class="copy" data-copy="/plugin install playwright-skill@claudemods" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="scientific-skills" data-type="skill">
         <div class="card-head"><div><h3><a href="https://github.com/K-Dense-AI/scientific-agent-skills" target="_blank" rel="noopener">Scientific Agent Skills</a></h3>
@@ -515,7 +524,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">Skill</span></div>
         <p class="desc">177 research skills for biology, chemistry, medicine and data analysis.</p>
         <div class="tags"><span class="tag">science</span><span class="tag">research</span><span class="tag">bioinformatics</span></div>
-        <div class="install"><div class="install-row"><code>npx skills add K-Dense-AI/scientific-agent-skills</code><button class="copy" data-copy="npx skills add K-Dense-AI/scientific-agent-skills" aria-label="Copy install command"></button></div></div>
+        <div class="install"><div class="install-row"><code title="npx skills add K-Dense-AI/scientific-agent-skills">npx skills add K-Dense-AI/scientific-agent-skills</code><button class="copy" data-copy="npx skills add K-Dense-AI/scientific-agent-skills" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="taste-skill" data-type="skill">
         <div class="card-head"><div><h3><a href="https://github.com/Leonxlnx/taste-skill" target="_blank" rel="noopener">Taste Skill</a></h3>
@@ -523,7 +532,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">Skill</span></div>
         <p class="desc">13 design skills that stop AI agents shipping generic, template-looking UIs: minimalist, brutalist, redesign, image-to-code and more.</p>
         <div class="tags"><span class="tag">design</span><span class="tag">frontend</span><span class="tag">ui</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install taste-skill@claudemods</code><button class="copy" data-copy="/plugin install taste-skill@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install taste-skill@claudemods">/plugin install taste-skill@claudemods</code><button class="copy" data-copy="/plugin install taste-skill@claudemods" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="trailofbits-skills" data-type="skill">
         <div class="card-head"><div><h3><a href="https://github.com/trailofbits/skills" target="_blank" rel="noopener">Trail of Bits Skills</a></h3>
@@ -531,7 +540,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">Skill</span></div>
         <p class="desc">Security research, vulnerability detection and audit workflows from Trail of Bits.</p>
         <div class="tags"><span class="tag">security</span><span class="tag">auditing</span><span class="tag">static-analysis</span></div>
-        <div class="install"><div class="install-row"><code>/plugin marketplace add trailofbits/skills</code><button class="copy" data-copy="/plugin marketplace add trailofbits/skills" aria-label="Copy install command"></button></div></div>
+        <div class="install"><div class="install-row"><code title="/plugin marketplace add trailofbits/skills">/plugin marketplace add trailofbits/skills</code><button class="copy" data-copy="/plugin marketplace add trailofbits/skills" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="vercel-skills" data-type="skill">
         <div class="card-head"><div><h3><a href="https://github.com/vercel-labs/agent-skills" target="_blank" rel="noopener">Vercel Agent Skills</a></h3>
@@ -539,7 +548,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">Skill</span></div>
         <p class="desc">Vercel&#39;s skills for React best practices, web design guidelines, composition patterns and deploys.</p>
         <div class="tags"><span class="tag">react</span><span class="tag">frontend</span><span class="tag">vercel</span></div>
-        <div class="install"><div class="install-row"><code>npx skills add vercel-labs/agent-skills</code><button class="copy" data-copy="npx skills add vercel-labs/agent-skills" aria-label="Copy install command"></button></div></div>
+        <div class="install"><div class="install-row"><code title="npx skills add vercel-labs/agent-skills">npx skills add vercel-labs/agent-skills</code><button class="copy" data-copy="npx skills add vercel-labs/agent-skills" aria-label="Copy install command"></button></div></div>
       </article>
       </div>
     </section>
@@ -553,7 +562,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">Subagent</span></div>
         <p class="desc">Marketplace of ~200 subagents and 180+ skills grouped into 90+ focused plugins.</p>
         <div class="tags"><span class="tag">subagents</span><span class="tag">orchestration</span><span class="tag">collection</span></div>
-        <div class="install"><div class="install-row"><code>/plugin marketplace add wshobson/agents</code><button class="copy" data-copy="/plugin marketplace add wshobson/agents" aria-label="Copy install command"></button></div></div>
+        <div class="install"><div class="install-row"><code title="/plugin marketplace add wshobson/agents">/plugin marketplace add wshobson/agents</code><button class="copy" data-copy="/plugin marketplace add wshobson/agents" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="awesome-claude-agents" data-type="subagent">
         <div class="card-head"><div><h3><a href="https://github.com/vijaythecoder/awesome-claude-agents" target="_blank" rel="noopener">Awesome Claude Agents</a></h3>
@@ -569,7 +578,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">Subagent</span></div>
         <p class="desc">160+ specialized subagents in 10 categories, installable as plugins.</p>
         <div class="tags"><span class="tag">subagents</span><span class="tag">collection</span><span class="tag">development</span></div>
-        <div class="install"><div class="install-row"><code>/plugin marketplace add VoltAgent/awesome-claude-code-subagents</code><button class="copy" data-copy="/plugin marketplace add VoltAgent/awesome-claude-code-subagents" aria-label="Copy install command"></button></div></div>
+        <div class="install"><div class="install-row"><code title="/plugin marketplace add VoltAgent/awesome-claude-code-subagents">/plugin marketplace add VoltAgent/awesome-claude-code-subagents</code><button class="copy" data-copy="/plugin marketplace add VoltAgent/awesome-claude-code-subagents" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="lst97-subagents" data-type="subagent">
         <div class="card-head"><div><h3><a href="https://github.com/lst97/claude-code-sub-agents" target="_blank" rel="noopener">Claude Code Sub-Agents (lst97)</a></h3>
@@ -593,7 +602,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">Subagent</span></div>
         <p class="desc">Department-style subagents for engineering, design, marketing, product, testing and ops.</p>
         <div class="tags"><span class="tag">subagents</span><span class="tag">product</span><span class="tag">design</span></div>
-        <div class="install"><div class="install-row"><code>cp -r agents/* ~/.claude/agents/</code><button class="copy" data-copy="cp -r agents/* ~/.claude/agents/" aria-label="Copy install command"></button></div></div>
+        <div class="install"><div class="install-row"><code title="cp -r agents/* ~/.claude/agents/">cp -r agents/* ~/.claude/agents/</code><button class="copy" data-copy="cp -r agents/* ~/.claude/agents/" aria-label="Copy install command"></button></div></div>
       </article>
       </div>
     </section>
@@ -607,7 +616,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">Slash command</span></div>
         <p class="desc">Marketplace with 175 slash commands plus agents, hooks, skills and plugins.</p>
         <div class="tags"><span class="tag">commands</span><span class="tag">marketplace</span><span class="tag">hooks</span></div>
-        <div class="install"><div class="install-row"><code>/plugin marketplace add davepoon/buildwithclaude</code><button class="copy" data-copy="/plugin marketplace add davepoon/buildwithclaude" aria-label="Copy install command"></button></div></div>
+        <div class="install"><div class="install-row"><code title="/plugin marketplace add davepoon/buildwithclaude">/plugin marketplace add davepoon/buildwithclaude</code><button class="copy" data-copy="/plugin marketplace add davepoon/buildwithclaude" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="claude-code-templates" data-type="command">
         <div class="card-head"><div><h3><a href="https://github.com/davila7/claude-code-templates" target="_blank" rel="noopener">Claude Code Templates</a></h3>
@@ -615,7 +624,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">Slash command</span></div>
         <p class="desc">CLI and web catalog for installing agents, commands, hooks, settings and MCPs.</p>
         <div class="tags"><span class="tag">cli</span><span class="tag">templates</span><span class="tag">catalog</span></div>
-        <div class="install"><div class="install-row"><code>npx claude-code-templates@latest</code><button class="copy" data-copy="npx claude-code-templates@latest" aria-label="Copy install command"></button></div></div>
+        <div class="install"><div class="install-row"><code title="npx claude-code-templates@latest">npx claude-code-templates@latest</code><button class="copy" data-copy="npx claude-code-templates@latest" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="claude-command-suite" data-type="command">
         <div class="card-head"><div><h3><a href="https://github.com/qdhenry/Claude-Command-Suite" target="_blank" rel="noopener">Claude Command Suite</a></h3>
@@ -631,7 +640,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">Slash command</span></div>
         <p class="desc">Adds specialized slash commands, personas and dev methodologies to Claude Code.</p>
         <div class="tags"><span class="tag">commands</span><span class="tag">framework</span><span class="tag">personas</span></div>
-        <div class="install"><div class="install-row"><code>pipx install superclaude &amp;&amp; superclaude install</code><button class="copy" data-copy="pipx install superclaude &amp;&amp; superclaude install" aria-label="Copy install command"></button></div></div>
+        <div class="install"><div class="install-row"><code title="pipx install superclaude &amp;&amp; superclaude install">pipx install superclaude &amp;&amp; superclaude install</code><button class="copy" data-copy="pipx install superclaude &amp;&amp; superclaude install" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="wshobson-commands" data-type="command">
         <div class="card-head"><div><h3><a href="https://github.com/wshobson/commands" target="_blank" rel="noopener">wshobson/commands</a></h3>
@@ -653,7 +662,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">Hook</span></div>
         <p class="desc">Blocks destructive git and filesystem commands and access to sensitive files before they run.</p>
         <div class="tags"><span class="tag">hooks</span><span class="tag">safety</span><span class="tag">security</span></div>
-        <div class="install"><div class="install-row"><code>npx -y cc-safety-net@latest install</code><button class="copy" data-copy="npx -y cc-safety-net@latest install" aria-label="Copy install command"></button></div></div>
+        <div class="install"><div class="install-row"><code title="npx -y cc-safety-net@latest install">npx -y cc-safety-net@latest install</code><button class="copy" data-copy="npx -y cc-safety-net@latest install" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="cchooks" data-type="hook">
         <div class="card-head"><div><h3><a href="https://github.com/GowayLee/cchooks" target="_blank" rel="noopener">cchooks</a></h3>
@@ -661,7 +670,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">Hook</span></div>
         <p class="desc">Lightweight Python SDK for writing Claude Code hooks with little boilerplate.</p>
         <div class="tags"><span class="tag">hooks</span><span class="tag">python</span><span class="tag">sdk</span></div>
-        <div class="install"><div class="install-row"><code>pip install cchooks</code><button class="copy" data-copy="pip install cchooks" aria-label="Copy install command"></button></div></div>
+        <div class="install"><div class="install-row"><code title="pip install cchooks">pip install cchooks</code><button class="copy" data-copy="pip install cchooks" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="hooks-mastery" data-type="hook">
         <div class="card-head"><div><h3><a href="https://github.com/disler/claude-code-hooks-mastery" target="_blank" rel="noopener">Claude Code Hooks Mastery</a></h3>
@@ -677,7 +686,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">Hook</span></div>
         <p class="desc">TypeScript hook system with strongly typed, auto-completing handlers.</p>
         <div class="tags"><span class="tag">hooks</span><span class="tag">typescript</span><span class="tag">sdk</span></div>
-        <div class="install"><div class="install-row"><code>npx claude-hooks</code><button class="copy" data-copy="npx claude-hooks" aria-label="Copy install command"></button></div></div>
+        <div class="install"><div class="install-row"><code title="npx claude-hooks">npx claude-hooks</code><button class="copy" data-copy="npx claude-hooks" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="hooks-observability" data-type="hook">
         <div class="card-head"><div><h3><a href="https://github.com/disler/claude-code-hooks-multi-agent-observability" target="_blank" rel="noopener">Multi-Agent Observability</a></h3>
@@ -693,7 +702,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">Hook</span></div>
         <p class="desc">Blocks implementation without failing tests or beyond what the tests require.</p>
         <div class="tags"><span class="tag">hooks</span><span class="tag">tdd</span><span class="tag">guardrails</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install tdd-guard@claudemods</code><button class="copy" data-copy="/plugin install tdd-guard@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install tdd-guard@claudemods">/plugin install tdd-guard@claudemods</code><button class="copy" data-copy="/plugin install tdd-guard@claudemods" aria-label="Copy install command"></button></div></div>
       </article>
       </div>
     </section>
@@ -707,7 +716,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">Status line</span></div>
         <p class="desc">Token usage and cost analyzer with a compact statusline mode for Claude Code.</p>
         <div class="tags"><span class="tag">usage</span><span class="tag">cost</span><span class="tag">tokens</span></div>
-        <div class="install"><div class="install-row"><code>bunx ccusage statusline</code><button class="copy" data-copy="bunx ccusage statusline" aria-label="Copy install command"></button></div></div>
+        <div class="install"><div class="install-row"><code title="bunx ccusage statusline">bunx ccusage statusline</code><button class="copy" data-copy="bunx ccusage statusline" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="cc-statusline" data-type="statusline">
         <div class="card-head"><div><h3><a href="https://github.com/chongdashu/cc-statusline" target="_blank" rel="noopener">cc-statusline</a></h3>
@@ -715,7 +724,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">Status line</span></div>
         <p class="desc">Interactive generator that sets up an informative statusline script.</p>
         <div class="tags"><span class="tag">generator</span><span class="tag">cli</span><span class="tag">setup</span></div>
-        <div class="install"><div class="install-row"><code>npx @chongdashu/cc-statusline@latest init</code><button class="copy" data-copy="npx @chongdashu/cc-statusline@latest init" aria-label="Copy install command"></button></div></div>
+        <div class="install"><div class="install-row"><code title="npx @chongdashu/cc-statusline@latest init">npx @chongdashu/cc-statusline@latest init</code><button class="copy" data-copy="npx @chongdashu/cc-statusline@latest init" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="ccstatusline" data-type="statusline">
         <div class="card-head"><div><h3><a href="https://github.com/sirmalloc/ccstatusline" target="_blank" rel="noopener">ccstatusline</a></h3>
@@ -723,7 +732,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">Status line</span></div>
         <p class="desc">Highly customizable statusline with powerline support and themes.</p>
         <div class="tags"><span class="tag">powerline</span><span class="tag">themes</span><span class="tag">customizable</span></div>
-        <div class="install"><div class="install-row"><code>npx -y ccstatusline@latest</code><button class="copy" data-copy="npx -y ccstatusline@latest" aria-label="Copy install command"></button></div></div>
+        <div class="install"><div class="install-row"><code title="npx -y ccstatusline@latest">npx -y ccstatusline@latest</code><button class="copy" data-copy="npx -y ccstatusline@latest" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="claude-powerline" data-type="statusline">
         <div class="card-head"><div><h3><a href="https://github.com/Owloops/claude-powerline" target="_blank" rel="noopener">Claude Powerline</a></h3>
@@ -731,7 +740,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">Status line</span></div>
         <p class="desc">Vim-style powerline statusline with real-time usage, git info and custom themes.</p>
         <div class="tags"><span class="tag">powerline</span><span class="tag">git</span><span class="tag">usage</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install powerline@claudemods</code><button class="copy" data-copy="/plugin install powerline@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install powerline@claudemods">/plugin install powerline@claudemods</code><button class="copy" data-copy="/plugin install powerline@claudemods" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="rz1989s-statusline" data-type="statusline">
         <div class="card-head"><div><h3><a href="https://github.com/rz1989s/claude-code-statusline" target="_blank" rel="noopener">claude-code-statusline (rz1989s)</a></h3>
@@ -753,7 +762,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">MCP server</span></div>
         <p class="desc">Feeds up-to-date, version-specific library docs and code examples into Claude&#39;s context.</p>
         <div class="tags"><span class="tag">documentation</span><span class="tag">libraries</span><span class="tag">context</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install context7@claudemods</code><button class="copy" data-copy="/plugin install context7@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install context7@claudemods">/plugin install context7@claudemods</code><button class="copy" data-copy="/plugin install context7@claudemods" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="aws-mcp" data-type="mcp">
         <div class="card-head"><div><h3><a href="https://github.com/awslabs/mcp" target="_blank" rel="noopener">AWS MCP Servers</a></h3>
@@ -769,7 +778,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">MCP server</span></div>
         <p class="desc">Lets Claude control and inspect a live Chrome browser for debugging and performance work.</p>
         <div class="tags"><span class="tag">browser</span><span class="tag">chrome</span><span class="tag">debugging</span></div>
-        <div class="install"><div class="install-row"><code>claude mcp add chrome-devtools --scope user npx chrome-devtools-mcp@latest</code><button class="copy" data-copy="claude mcp add chrome-devtools --scope user npx chrome-devtools-mcp@latest" aria-label="Copy install command"></button></div></div>
+        <div class="install"><div class="install-row"><code title="claude mcp add chrome-devtools --scope user npx chrome-devtools-mcp@latest">claude mcp add chrome-devtools --scope user npx chrome-devtools-mcp@latest</code><button class="copy" data-copy="claude mcp add chrome-devtools --scope user npx chrome-devtools-mcp@latest" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="github-mcp" data-type="mcp">
         <div class="card-head"><div><h3><a href="https://github.com/github/github-mcp-server" target="_blank" rel="noopener">GitHub MCP Server</a></h3>
@@ -793,7 +802,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">MCP server</span></div>
         <p class="desc">Notion&#39;s official MCP server; Notion recommends its hosted remote server.</p>
         <div class="tags"><span class="tag">notion</span><span class="tag">docs</span><span class="tag">official</span></div>
-        <div class="install"><div class="install-row"><code>claude mcp add --transport http notion https://mcp.notion.com/mcp</code><button class="copy" data-copy="claude mcp add --transport http notion https://mcp.notion.com/mcp" aria-label="Copy install command"></button></div></div>
+        <div class="install"><div class="install-row"><code title="claude mcp add --transport http notion https://mcp.notion.com/mcp">claude mcp add --transport http notion https://mcp.notion.com/mcp</code><button class="copy" data-copy="claude mcp add --transport http notion https://mcp.notion.com/mcp" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="playwright-mcp" data-type="mcp">
         <div class="card-head"><div><h3><a href="https://github.com/microsoft/playwright-mcp" target="_blank" rel="noopener">Playwright MCP</a></h3>
@@ -801,7 +810,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">MCP server</span></div>
         <p class="desc">Browser automation via accessibility snapshots instead of screenshots.</p>
         <div class="tags"><span class="tag">browser</span><span class="tag">playwright</span><span class="tag">automation</span></div>
-        <div class="install"><div class="install-row"><code>claude mcp add playwright npx @playwright/mcp@latest</code><button class="copy" data-copy="claude mcp add playwright npx @playwright/mcp@latest" aria-label="Copy install command"></button></div></div>
+        <div class="install"><div class="install-row"><code title="claude mcp add playwright npx @playwright/mcp@latest">claude mcp add playwright npx @playwright/mcp@latest</code><button class="copy" data-copy="claude mcp add playwright npx @playwright/mcp@latest" aria-label="Copy install command"></button></div></div>
       </article>
       <article class="card" id="sentry-mcp" data-type="mcp">
         <div class="card-head"><div><h3><a href="https://github.com/getsentry/sentry-mcp" target="_blank" rel="noopener">Sentry MCP</a></h3>
@@ -809,7 +818,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
           <span class="badge">MCP server</span></div>
         <p class="desc">Sentry&#39;s MCP server for working with issues and errors from your coding assistant.</p>
         <div class="tags"><span class="tag">sentry</span><span class="tag">errors</span><span class="tag">monitoring</span></div>
-        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code>/plugin install sentry-mcp@claudemods</code><button class="copy" data-copy="/plugin install sentry-mcp@claudemods" aria-label="Copy install command"></button></div><div class="install-row"><code>/plugin install sentry-mcp-experimental@claudemods</code><button class="copy" data-copy="/plugin install sentry-mcp-experimental@claudemods" aria-label="Copy install command"></button></div></div>
+        <div class="install"><span class="mk">In the claudemods marketplace</span><div class="install-row"><code title="/plugin install sentry-mcp@claudemods">/plugin install sentry-mcp@claudemods</code><button class="copy" data-copy="/plugin install sentry-mcp@claudemods" aria-label="Copy install command"></button></div><details class="more"><summary>+1 more plugin</summary><div class="install-row"><code title="/plugin install sentry-mcp-experimental@claudemods">/plugin install sentry-mcp-experimental@claudemods</code><button class="copy" data-copy="/plugin install sentry-mcp-experimental@claudemods" aria-label="Copy install command"></button></div></details></div>
       </article>
       <article class="card" id="serena" data-type="mcp">
         <div class="card-head"><div><h3><a href="https://github.com/oraios/serena" target="_blank" rel="noopener">Serena</a></h3>
@@ -976,7 +985,7 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
       </div>
     </section>
   </div>
-  <p class="none" id="none" hidden>Nothing matches. <a href="https://github.com/omarcevi/claudemods/issues/new?template=submit.yml">Submit it?</a></p>
+  <p class="none" id="none" hidden><span id="none-msg">Nothing matches.</span> <button class="linkish" id="see-all" hidden></button> <a href="https://github.com/omarcevi/claudemods/issues/new?template=submit.yml">Submit it?</a></p>
 
   <p class="warn">Mods and plugins run with your permissions — they can read files, run commands and reach the network. Every plugin in the claudemods marketplace is pinned to the upstream commit we reviewed, but read the source before you install.</p>
 
@@ -1038,15 +1047,17 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
     c._hay = { name: text(c, "h3"), author: text(c, ".by"), desc: text(c, ".desc"),
       tags: [...c.querySelectorAll(".tag")].map((t) => t.textContent).join(" ").toLowerCase(), type: c.dataset.type };
   });
-  let state = { type: "all", q: "" };
+  // The site opens on mods; the "All" chip (or #type=all) shows everything.
+  const DEFAULT_TYPE = "mod";
+  let state = { type: DEFAULT_TYPE, q: "" };
 
   function readHash() {
     const h = new URLSearchParams(location.hash.slice(1));
-    if (h.has("type") || h.has("q")) { state.type = h.get("type") || "all"; state.q = h.get("q") || ""; }
+    if (h.has("type") || h.has("q")) { state.type = h.get("type") || DEFAULT_TYPE; state.q = h.get("q") || ""; }
   }
   function writeHash() {
     const h = new URLSearchParams();
-    if (state.type !== "all") h.set("type", state.type);
+    if (state.type !== DEFAULT_TYPE) h.set("type", state.type);
     if (state.q) h.set("q", state.q);
     const s = h.toString(); history.replaceState(null, "", s ? "#" + s : location.pathname);
   }
@@ -1072,14 +1083,25 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
       g.hidden = !n; shown += n;
     }
     $("#none").hidden = shown > 0;
+    // Searching inside one type can come up empty while other types match: offer those.
+    const elsewhere = !shown && state.type !== "all" ? cards.filter((c) => score(c._hay, terms)).length : 0;
+    $("#none-msg").textContent = elsewhere ? `No ${$(`.chip[data-type="${state.type}"]`)?.firstChild.textContent.toLowerCase() || "entries"} match.` : "Nothing matches.";
+    $("#see-all").hidden = !elsewhere;
+    $("#see-all").textContent = `See ${elsewhere} in all entries`;
     $("#blurb").textContent = shown === cards.length ? `${cards.length} entries` : `${shown} of ${cards.length} entries`;
     document.querySelectorAll(".chip").forEach((c) => c.setAttribute("aria-pressed", String(c.dataset.type === state.type)));
   }
 
-  $("#chips").onclick = (ev) => { const c = ev.target.closest(".chip"); if (!c) return; state.type = c.dataset.type; writeHash(); render(); };
+  const setType = (type) => { state.type = type; writeHash(); render(); };
+  $("#chips").onclick = (ev) => { const c = ev.target.closest(".chip"); if (c) setType(c.dataset.type); };
+  $("#see-all").onclick = () => setType("all");
   readHash(); $("#q").value = state.q;
   let t; $("#q").oninput = (ev) => { clearTimeout(t); t = setTimeout(() => { state.q = ev.target.value.trim(); writeHash(); render(); }, 80); };
-  if (state.type !== "all" || state.q) render();
+  // A link to one card (#taste-skill) must still land on it, whatever its type.
+  const target = location.hash.length > 1 && !location.hash.includes("=") ? document.getElementById(decodeURIComponent(location.hash.slice(1))) : null;
+  if (target?.classList.contains("card") && target.dataset.type !== state.type) state.type = "all";
+  render();
+  target?.scrollIntoView();
 })();
 </script>
 </body>
