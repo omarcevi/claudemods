@@ -624,7 +624,7 @@
   },
   "agent-flow": {
     "repo": "Charlie0113-T/claude-agent-flow",
-    "sha": "72f1287c84b312ef106a6a91c9520afa4d67244c",
+    "sha": "d87b2559dec03979e088026e8f48aee5f9d2cab5",
     "upstreamMarketplace": "claude-agent-flow",
     "plugins": [
       {
@@ -633,7 +633,7 @@
         "source": {
           "source": "github",
           "repo": "Charlie0113-T/claude-agent-flow",
-          "sha": "72f1287c84b312ef106a6a91c9520afa4d67244c"
+          "sha": "d87b2559dec03979e088026e8f48aee5f9d2cab5"
         },
         "footprint": {
           "v": 2,
@@ -1861,7 +1861,7 @@
   },
   "prismantis": {
     "repo": "NahumLitvin/prismantis",
-    "sha": "b13de6c9ec39e01946943f67b07e5fae4aefd939",
+    "sha": "41bfa17526e3e137566fa850648b506989943d3d",
     "upstreamMarketplace": "prismantis",
     "plugins": [
       {
@@ -1870,7 +1870,7 @@
         "source": {
           "source": "github",
           "repo": "NahumLitvin/prismantis",
-          "sha": "b13de6c9ec39e01946943f67b07e5fae4aefd939"
+          "sha": "41bfa17526e3e137566fa850648b506989943d3d"
         },
         "footprint": {
           "v": 2,
@@ -3377,7 +3377,7 @@
   },
   "compound-engineering": {
     "repo": "EveryInc/compound-engineering-plugin",
-    "sha": "9af474a70e7f2a844338519ad9e92aafbd92d4fb",
+    "sha": "030188b4ba27f2dc33fbc4d5a112d3c8cc893e8c",
     "upstreamMarketplace": "compound-engineering-plugin",
     "plugins": [
       {
@@ -3386,7 +3386,7 @@
         "source": {
           "source": "github",
           "repo": "EveryInc/compound-engineering-plugin",
-          "sha": "9af474a70e7f2a844338519ad9e92aafbd92d4fb"
+          "sha": "030188b4ba27f2dc33fbc4d5a112d3c8cc893e8c"
         },
         "footprint": {
           "v": 2,
@@ -3458,7 +3458,7 @@
   },
   "claude-mem": {
     "repo": "thedotmack/claude-mem",
-    "sha": "bfc50259f64a4e0c9e81df849095683608e87ac8",
+    "sha": "1bb64393a6122c2cdf45cf219cd9b4d1cf78645b",
     "upstreamMarketplace": "thedotmack",
     "plugins": [
       {
@@ -3468,7 +3468,7 @@
           "source": "git-subdir",
           "url": "https://github.com/thedotmack/claude-mem.git",
           "path": "plugin",
-          "sha": "bfc50259f64a4e0c9e81df849095683608e87ac8"
+          "sha": "1bb64393a6122c2cdf45cf219cd9b4d1cf78645b"
         },
         "footprint": {
           "v": 2,
@@ -3485,7 +3485,7 @@
             },
             {
               "event": "SessionStart",
-              "matcher": "startup|resume|clear|compact",
+              "matcher": "startup|clear|compact",
               "command": "export PATH=\"$HOME/.nvm/versions/node/v$(ls \"$HOME/.nvm/versions/node\" 2>/dev/null | sed 's/^v//' | sort -t. -k1,1n -k2,2n -k3,3n | tail -1)/bin:$HOME/.local/bin:/usr/local/bin:/opt/homebrew/bin:$PATH\"; _C=\"${CLAUDE_CONFIG_DIR:-$HOME/.claude}\"; _E=\"${CLAUDE_PLUGIN_ROOT:-${PLUGIN_ROOT:-}}\"; _P=; if [ -n \"$_E\" ]; then _R=\"${_E%/}\"; [ -d \"$_R/plugin/scripts\" ] && _Q=\"$_R/plugin\" || _Q=\"$_R\"; [ -f \"$_Q/scripts/bun-runner.js\" ] && [ -f \"$_Q/scripts/worker-service.cjs\" ] && _P=\"$_Q\"; fi; if [ -z \"$_P\" ]; then _F=; _P=$({ for _V in \"$_C/plugins/cache/thedotmack/claude-mem\"/[0-9]*/; do [ -d \"$_V\" ] || continue; [ -e \"${_V}.orphaned_at\" ] && continue; _B=${_V%/}; _B=${_B##*/}; case \"$_B\" in (*-*) _G=0;; (*) _G=1;; esac; _N=${_B%%-*}; _M1=${_N%%.*}; case \"$_N\" in (*.*) _T=${_N#*.};; (*) _T=0;; esac; _M2=${_T%%.*}; case \"$_T\" in (*.*) _U=${_T#*.};; (*) _U=0;; esac; _M3=${_U%%.*}; _M1=${_M1%%[!0-9]*}; _M2=${_M2%%[!0-9]*}; _M3=${_M3%%[!0-9]*}; printf '%08d%08d%08d%d %s\\n' \"${_M1:-0}\" \"${_M2:-0}\" \"${_M3:-0}\" \"$_G\" \"$_V\"; done 2>/dev/null | sort -r | sed 's/^[^ ]* //'; printf '%s\\n' \"$_C/plugins/marketplaces/thedotmack/plugin\"; } | while IFS= read -r _R; do _R=\"${_R%/}\"; [ -d \"$_R/plugin/scripts\" ] && _Q=\"$_R/plugin\" || _Q=\"$_R\"; [ -f \"$_Q/scripts/bun-runner.js\" ] && [ -f \"$_Q/scripts/worker-service.cjs\" ] && [ -z \"$_F\" ] && { _F=1; printf '%s\\n' \"$_Q\"; }; done); fi; [ -n \"$_P\" ] || { echo \"claude-mem: plugin scripts not found\" >&2; exit 0; }; command -v cygpath >/dev/null 2>&1 && { _W=$(cygpath -w \"$_P\" 2>/dev/null); [ -n \"$_W\" ] && _P=\"$_W\"; }; { node \"$_P/scripts/bun-runner.js\" \"$_P/scripts/worker-service.cjs\" hook claude-code context; } || { _S=$?; echo \"claude-mem: hook command failed (exit $_S)\" >&2; exit 0; }"
             },
             {
@@ -3568,6 +3568,7 @@
               "more": 1,
               "via": [
                 "child_process",
+                "subprocess.Popen",
                 "subprocess.run"
               ]
             },
@@ -3601,6 +3602,7 @@
             {
               "id": "bundled",
               "where": [
+                "scripts/context-generator.cjs",
                 "scripts/mcp-server.cjs",
                 "scripts/transcript-watcher.cjs",
                 "sqlite/SessionStore.js",
@@ -3622,7 +3624,7 @@
           "source": "git-subdir",
           "url": "https://github.com/thedotmack/claude-mem.git",
           "path": "cowork",
-          "sha": "bfc50259f64a4e0c9e81df849095683608e87ac8"
+          "sha": "1bb64393a6122c2cdf45cf219cd9b4d1cf78645b"
         },
         "footprint": {
           "v": 2,
@@ -3691,6 +3693,7 @@
                 "skills/agent-cost-report/scripts/acr/wins.py"
               ],
               "via": [
+                "subprocess.Popen",
                 "subprocess.run"
               ]
             },
@@ -3906,7 +3909,7 @@
   },
   "ponytail": {
     "repo": "DietrichGebert/ponytail",
-    "sha": "c982cd411abb53323c4baa1baa3c2f020b8d0b08",
+    "sha": "944b5dcc253cb0561db525207db5b804072ab127",
     "upstreamMarketplace": "ponytail",
     "plugins": [
       {
@@ -3915,7 +3918,7 @@
         "source": {
           "source": "github",
           "repo": "DietrichGebert/ponytail",
-          "sha": "c982cd411abb53323c4baa1baa3c2f020b8d0b08"
+          "sha": "944b5dcc253cb0561db525207db5b804072ab127"
         },
         "footprint": {
           "v": 2,
@@ -3957,7 +3960,7 @@
   },
   "mattpocock-skills": {
     "repo": "mattpocock/skills",
-    "sha": "24fe0ef7737efae15c87225755e9f6f5965e4888",
+    "sha": "4588b32ecab9ecc9fc8cc6b6c5e7d675b6004b0d",
     "upstreamMarketplace": "mattpocock",
     "plugins": [
       {
@@ -3966,14 +3969,14 @@
         "source": {
           "source": "github",
           "repo": "mattpocock/skills",
-          "sha": "24fe0ef7737efae15c87225755e9f6f5965e4888"
+          "sha": "4588b32ecab9ecc9fc8cc6b6c5e7d675b6004b0d"
         },
         "footprint": {
           "v": 2,
           "hooks": [],
           "modules": [],
           "mcp": [],
-          "skills": 37,
+          "skills": 38,
           "commands": 0,
           "agents": 0,
           "flags": [],
@@ -4031,7 +4034,7 @@
   },
   "diagram-design": {
     "repo": "cathrynlavery/diagram-design",
-    "sha": "f903933a534ba92cde1c85a28186267b3a317bb2",
+    "sha": "cb80b0d299a5c0674e0d133d33f91f19af8cda0f",
     "upstreamMarketplace": "diagram-design",
     "plugins": [
       {
@@ -4040,7 +4043,7 @@
         "source": {
           "source": "github",
           "repo": "cathrynlavery/diagram-design",
-          "sha": "f903933a534ba92cde1c85a28186267b3a317bb2"
+          "sha": "cb80b0d299a5c0674e0d133d33f91f19af8cda0f"
         },
         "footprint": {
           "v": 2,
@@ -4090,7 +4093,7 @@
               ]
             }
           ],
-          "scanned": 42
+          "scanned": 47
         }
       }
     ]
@@ -4199,7 +4202,7 @@
   },
   "context7": {
     "repo": "upstash/context7",
-    "sha": "bfa02ea67b5707fe0e0a673faa49d0f50b28c80b",
+    "sha": "f2eef4f49da71a758c91cf6cb97640c8b262ef81",
     "upstreamMarketplace": "context7-marketplace",
     "plugins": [
       {
@@ -4209,7 +4212,7 @@
           "source": "git-subdir",
           "url": "https://github.com/upstash/context7.git",
           "path": "plugins/claude/context7",
-          "sha": "bfa02ea67b5707fe0e0a673faa49d0f50b28c80b"
+          "sha": "f2eef4f49da71a758c91cf6cb97640c8b262ef81"
         },
         "footprint": {
           "v": 2,
@@ -4245,7 +4248,7 @@
   },
   "sentry-mcp": {
     "repo": "getsentry/sentry-mcp",
-    "sha": "9f1a7b2147d96246859f42d6f2cbf02ee3985c01",
+    "sha": "dc98e07385d9f87e8549f22a4582a109219636a7",
     "upstreamMarketplace": "sentry-mcp",
     "plugins": [
       {
@@ -4255,7 +4258,7 @@
           "source": "git-subdir",
           "url": "https://github.com/getsentry/sentry-mcp.git",
           "path": "plugins/sentry-mcp",
-          "sha": "9f1a7b2147d96246859f42d6f2cbf02ee3985c01"
+          "sha": "dc98e07385d9f87e8549f22a4582a109219636a7"
         },
         "footprint": {
           "v": 2,
@@ -4294,7 +4297,7 @@
           "source": "git-subdir",
           "url": "https://github.com/getsentry/sentry-mcp.git",
           "path": "plugins/sentry-mcp-experimental",
-          "sha": "9f1a7b2147d96246859f42d6f2cbf02ee3985c01"
+          "sha": "dc98e07385d9f87e8549f22a4582a109219636a7"
         },
         "footprint": {
           "v": 2,
