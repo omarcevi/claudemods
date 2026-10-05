@@ -43,35 +43,81 @@ Every plugin in the marketplace points at the exact upstream commit we looked at
 
 Function-hook plugins that draw panes, bands, status lines and toasts, or guard what Claude does.
 
+### Guards
+
+Ask or block before risky commands, edits and pushes.
+
+| Name | What it does | Install |
+| --- | --- | --- |
+| [topic-filter](https://github.com/lperezmo/topic-filter-mod)<br><sub>by lperezmo</sub> | Swaps chosen topics, repos and names for neutral placeholders before Claude reads them. | `/plugin install topic-filter@claudemods` |
+
+### Bands & status
+
+Live info above the prompt or in the status line: cost, context, git, time.
+
+| Name | What it does | Install |
+| --- | --- | --- |
+| [claude-usage-meter](https://github.com/aycandv/claude-usage-meter)<br><sub>by aycandv</sub> | A usage board: a weekly pace gauge and an LED crawl of today's spend per model. | `/plugin install usage-ticker@claudemods` |
+| [cost-git](https://github.com/juulsverne/claude-code-mods)<br><sub>by juulsverne</sub> | Band above the prompt with session cost plus git branch, status, CI, pull and push. | `/plugin install cost-git@claudemods` |
+| [Mindful Claude](https://github.com/halluton/Mindful-Claude)<br><sub>by halluton</sub> | Guided breathing exercises drawn above the prompt while Claude works, with several techniques via /breathe. | `/plugin install mindful-breathing@claudemods` |
+
+### Panes & dashboards
+
+Side panes and dashboards that sit beside the conversation.
+
 | Name | What it does | Install |
 | --- | --- | --- |
 | [agent-flow](https://github.com/Charlie0113-T/claude-agent-flow)<br><sub>by Charlie0113-T</sub> | Live tree of the session's subagents with status, tool calls, timing and token use in a side pane. | `/plugin install agent-flow@claudemods` |
 | [aside](https://github.com/JayDoubleu/aside)<br><sub>by JayDoubleu</sub> | Read-only side chat pane to ask about the session so far without touching the main thread. | `/plugin install aside@claudemods` |
 | [buffer-pane](https://github.com/meganemura/buffer-pane)<br><sub>by meganemura</sub> | A scratch pane beside the transcript to draft your next prompts while the agent is still working. | `/plugin install buffer-pane@claudemods` |
-| [cc-arcade](https://github.com/sezaakgun/cc-arcade)<br><sub>by sezaakgun</sub> | Snake, Tetris, 2048 and more, playable above the prompt while Claude works, plus a virtual pet. | `/plugin install cc-arcade@claudemods` |
 | [cctop](https://github.com/tomstagl/cctop)<br><sub>by tomstagl</sub> | btop-style live dashboard of context, tokens, cost, limits, tools and agents in a pane beside your session. | `/plugin install cctop@claudemods` |
+| [claude-code-session-monitor](https://github.com/udaaff/claude-code-session-monitor)<br><sub>by udaaff</sub> | A side panel with live cards for every open Claude Code session. | `/plugin install session-monitor@claudemods` |
+| [claude-review](https://github.com/r3al1tym/claude-review)<br><sub>by r3al1tym</sub> | Shows Claude's latest reply in a calm reading pane docked beside the conversation. | `/plugin install review-pane@claudemods` |
+| [pull-request-pane](https://github.com/meganemura/pull-request-pane)<br><sub>by meganemura</sub> | Shows the GitHub PRs and issues related to the session in a pane, with checks and review status. | `/plugin install pull-request-pane@claudemods` |
+| [review-pane (Rudra Secure)](https://github.com/rudrasecure/claude-mods)<br><sub>by rudrasecure</sub> | Side pane with every file Claude changed as a diff; mark lines, comment, and send comments back to Claude. | `/plugin install review-pane-rudrasecure@claudemods` |
+
+### Display tweaks
+
+Change how the transcript, tool rows and replies look.
+
+| Name | What it does | Install |
+| --- | --- | --- |
+| [md-prompt](https://github.com/nogu66/md-prompt)<br><sub>by nogu66</sub> | Renders Markdown in the prompt box as you type, with syntax-highlighted code cards. | `/plugin install md-prompt@claudemods` |
+| [prismantis](https://github.com/NahumLitvin/prismantis)<br><sub>by NahumLitvin</sub> | Restyles Claude's replies with tables, diagrams, charts and copy buttons in 15 themes. | `/plugin install prismantis@claudemods` |
+| [prompt-rail](https://github.com/oikon48/prompt-rail)<br><sub>by oikon48</sub> | A rail of your session's prompts: hover to read one, click to jump to it in the transcript. | `/plugin install prompt-rail@claudemods` |
+
+### Tools & automation
+
+Slash commands and helpers that do work for you.
+
+| Name | What it does | Install |
+| --- | --- | --- |
+| [lcm — Lossless Context Management](https://github.com/lossless-claude/lcm)<br><sub>by lossless-claude</sub> | DAG-based summarization and SQLite persistence so no message is lost when context is compacted. | `/plugin install lcm@claudemods` |
+
+### Fun & games
+
+Games, pets, pixel art, streaks and achievements.
+
+| Name | What it does | Install |
+| --- | --- | --- |
+| [cc-arcade](https://github.com/sezaakgun/cc-arcade)<br><sub>by sezaakgun</sub> | Snake, Tetris, 2048 and more, playable above the prompt while Claude works, plus a virtual pet. | `/plugin install cc-arcade@claudemods` |
+| [claude-familiar](https://github.com/lucenity0/claude-familiar)<br><sub>by lucenity0</sub> | A pixel companion above the prompt that reacts to your session, levels up, and can be redrawn in a built-in editor. | `/plugin install familiar@claudemods` |
+| [clawdhouse](https://github.com/ishuagrawal/clawdhouse)<br><sub>by ishuagrawal</sub> | A pixel Clawd character above the prompt or in a side pane that reacts to what Claude is doing. | `/plugin install clawdhouse@claudemods` |
+| [pixelband](https://github.com/furqan-khan07/pixelband)<br><sub>by furqan-khan07</sub> | Animated pixel art above the prompt that reacts while Claude works; seven scenes or your own image or GIF. | `/plugin install pixelband@claudemods` |
+| [roll-credits](https://github.com/smukh/roll-credits)<br><sub>by smukh</sub> | Movie-style end credits for your coding session, with no model calls or telemetry. | `/plugin install roll-credits@claudemods` |
+
+### Packs
+
+Several mods in one install.
+
+| Name | What it does | Install |
+| --- | --- | --- |
 | [claude-code-mods (karanb192)](https://github.com/karanb192/claude-code-mods)<br><sub>by karanb192</sub> | A mod-builder skill plus mods for pinning subagent models, keeping the prompt cache warm and peeking at images. | `/plugin install image-peek@claudemods`<br>`/plugin install mod-builder@claudemods`<br>`/plugin install fable-pin@claudemods`<br>`/plugin install cache-tax@claudemods` |
 | [claude-code-mods (OneWave AI)](https://github.com/OneWave-AI/claude-code-mods)<br><sub>by OneWave-AI</sub> | Eleven mods: burn meter, risky-command launch codes, session wrap-up card, boss fights, a code pet and more. | `/plugin install agent-narrator@claudemods`<br>`/plugin install agent-race@claudemods`<br>`/plugin install boss-fight@claudemods`<br>`/plugin install burn-meter@claudemods`<br>`/plugin install code-pet@claudemods`<br>`/plugin install inbox-alerts@claudemods`<br>`/plugin install inner-monologue@claudemods`<br>`/plugin install launch-codes@claudemods`<br>`/plugin install session-wrapped@claudemods`<br>`/plugin install sportscaster@claudemods`<br>`/plugin install swarm@claudemods` |
-| [claude-code-session-monitor](https://github.com/udaaff/claude-code-session-monitor)<br><sub>by udaaff</sub> | A side panel with live cards for every open Claude Code session. | `/plugin install session-monitor@claudemods` |
-| [claude-familiar](https://github.com/lucenity0/claude-familiar)<br><sub>by lucenity0</sub> | A pixel companion above the prompt that reacts to your session, levels up, and can be redrawn in a built-in editor. | `/plugin install familiar@claudemods` |
 | [claude-mermaid + claude-queue](https://github.com/galElmalah/claude-mods)<br><sub>by galElmalah</sub> | Draws mermaid diagrams inline in the transcript as colored box art, plus a prompt queue mod. | `/plugin install mermaid-art@claudemods`<br>`/plugin install prompt-queue@claudemods` |
 | [claude-mods (Arunjay4213)](https://github.com/Arunjay4213/claude-mods)<br><sub>by Arunjay4213</sub> | Session trackers: context window fill, plan quota burn rate, per-turn cost and a budget guard. | `/plugin install context-lens@claudemods`<br>`/plugin install quota-meter@claudemods`<br>`/plugin install token-ledger@claudemods`<br>`/plugin install budget-guard@claudemods` |
 | [claude-mods (yash-gadodia)](https://github.com/yash-gadodia/claude-mods)<br><sub>by yash-gadodia</sub> | Thirteen mods that guard scope, verify deploys, gate merges and draw usage and cost bands. | `/plugin install deploy-verify@claudemods`<br>`/plugin install mini-offload@claudemods`<br>`/plugin install scope-guard@claudemods`<br>`/plugin install merge-gate@claudemods`<br>`/plugin install receipt@claudemods`<br>`/plugin install diff-review@claudemods`<br>`/plugin install money-band@claudemods`<br>`/plugin install usage-band@claudemods`<br>`/plugin install copy-band@claudemods`<br>`/plugin install chrome-switch@claudemods`<br>`/plugin install wod-band@claudemods`<br>`/plugin install wod-timer@claudemods`<br>`/plugin install done-blink@claudemods` |
-| [claude-review](https://github.com/r3al1tym/claude-review)<br><sub>by r3al1tym</sub> | Shows Claude's latest reply in a calm reading pane docked beside the conversation. | `/plugin install review-pane@claudemods` |
-| [claude-usage-meter](https://github.com/aycandv/claude-usage-meter)<br><sub>by aycandv</sub> | A usage board: a weekly pace gauge and an LED crawl of today's spend per model. | `/plugin install usage-ticker@claudemods` |
-| [clawdhouse](https://github.com/ishuagrawal/clawdhouse)<br><sub>by ishuagrawal</sub> | A pixel Clawd character above the prompt or in a side pane that reacts to what Claude is doing. | `/plugin install clawdhouse@claudemods` |
-| [cost-git](https://github.com/juulsverne/claude-code-mods)<br><sub>by juulsverne</sub> | Band above the prompt with session cost plus git branch, status, CI, pull and push. | `/plugin install cost-git@claudemods` |
-| [lcm — Lossless Context Management](https://github.com/lossless-claude/lcm)<br><sub>by lossless-claude</sub> | DAG-based summarization and SQLite persistence so no message is lost when context is compacted. | `/plugin install lcm@claudemods` |
-| [md-prompt](https://github.com/nogu66/md-prompt)<br><sub>by nogu66</sub> | Renders Markdown in the prompt box as you type, with syntax-highlighted code cards. | `/plugin install md-prompt@claudemods` |
-| [Mindful Claude](https://github.com/halluton/Mindful-Claude)<br><sub>by halluton</sub> | Guided breathing exercises drawn above the prompt while Claude works, with several techniques via /breathe. | `/plugin install mindful-breathing@claudemods` |
-| [pixelband](https://github.com/furqan-khan07/pixelband)<br><sub>by furqan-khan07</sub> | Animated pixel art above the prompt that reacts while Claude works; seven scenes or your own image or GIF. | `/plugin install pixelband@claudemods` |
-| [prismantis](https://github.com/NahumLitvin/prismantis)<br><sub>by NahumLitvin</sub> | Restyles Claude's replies with tables, diagrams, charts and copy buttons in 15 themes. | `/plugin install prismantis@claudemods` |
-| [prompt-rail](https://github.com/oikon48/prompt-rail)<br><sub>by oikon48</sub> | A rail of your session's prompts: hover to read one, click to jump to it in the transcript. | `/plugin install prompt-rail@claudemods` |
-| [pull-request-pane](https://github.com/meganemura/pull-request-pane)<br><sub>by meganemura</sub> | Shows the GitHub PRs and issues related to the session in a pane, with checks and review status. | `/plugin install pull-request-pane@claudemods` |
-| [review-pane (Rudra Secure)](https://github.com/rudrasecure/claude-mods)<br><sub>by rudrasecure</sub> | Side pane with every file Claude changed as a diff; mark lines, comment, and send comments back to Claude. | `/plugin install review-pane-rudrasecure@claudemods` |
-| [roll-credits](https://github.com/smukh/roll-credits)<br><sub>by smukh</sub> | Movie-style end credits for your coding session, with no model calls or telemetry. | `/plugin install roll-credits@claudemods` |
 | [secret-redactor + vercel-deploy-status](https://github.com/ray-amjad/awesome-claude-code-function-hooks)<br><sub>by ray-amjad</sub> | Keeps keys, emails and IPs out of the transcript, plus a Vercel deploy-status band. | `/plugin install secret-redactor@claudemods`<br>`/plugin install vercel-deploy-status@claudemods` |
-| [topic-filter](https://github.com/lperezmo/topic-filter-mod)<br><sub>by lperezmo</sub> | Swaps chosen topics, repos and names for neutral placeholders before Claude reads them. | `/plugin install topic-filter@claudemods` |
 
 ## Plugins & marketplaces
 

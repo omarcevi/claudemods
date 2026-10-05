@@ -16,7 +16,7 @@ import { pathToFileURL } from "node:url";
 import { readJSON, writeJSON, githubRepo, FLAGS } from "./lib.mjs";
 
 // Bump when the scan changes, so sync.mjs recomputes instead of reusing old results.
-export const FOOTPRINT_VERSION = 1;
+export const FOOTPRINT_VERSION = 2;
 
 const CODE_EXT = new Set([".js", ".mjs", ".cjs", ".jsx", ".ts", ".mts", ".cts", ".tsx", ".sh", ".bash", ".zsh", ".ps1", ".py", ".rb"]);
 const SHELL_EXT = new Set([".sh", ".bash", ".zsh", ".ps1"]);
@@ -40,7 +40,9 @@ const RULES = [
   { id: "auto-approve", re: /permissionDecision['"]?\s*[:=]\s*['"]allow['"]|\bbehavior['"]?\s*:\s*['"]allow['"]|\bdecision['"]?\s*[:=]\s*['"](?:approve|allow)['"]|\bautoApprove\b|--dangerously-skip-permissions/ },
   { id: "obfuscation", re: /\beval\s*\(|\bnew Function\s*\(|(?:\\x[0-9a-fA-F]{2}){24}/, shell: false },
   { id: "obfuscation", encoded: true }, // long base64 that decodes to text, i.e. hidden code (images and pixel data decode to binary)
-  { id: "credentials", re: /[~/]\.ssh\b|[~/]\.aws\b|\.gnupg\b|\bid_(?:rsa|ed25519)\b|\.netrc\b|find-generic-password|['"/]\.env(?:\.\w+)?['"]|process\.env\.(?:\w+_)?(?:TOKEN|SECRET|PASSWORD|API_KEY|ACCESS_KEY)(?:_\w+)?\b|os\.environ(?:\.get)?\s*[[(]\s*['"](?:\w+_)?(?:TOKEN|SECRET|PASSWORD|API_KEY|ACCESS_KEY)(?:_\w+)?['"]|ANTHROPIC_API_KEY|AWS_SECRET_ACCESS_KEY/ },
+  // Secret file paths only count when the file can read files: guards list them to block them.
+  { id: "credentials", re: /[~/]\.ssh\b|[~/]\.aws\b|\.gnupg\b|\bid_(?:rsa|ed25519)\b|\.netrc\b|find-generic-password|['"/]\.env(?!\.(?:example|sample|template|dist)\b)(?:\.\w+)?['"]/, needs: /\breadFileSync\b|\breadFile\s*\(|\bcreateReadStream\b|\$\.fs\.(?:read|readFile)\b|\bopen\s*\(|\bcat\s/ },
+  { id: "credentials", re: /process\.env\.(?:\w+_)?(?:TOKEN|SECRET|PASSWORD|API_KEY|ACCESS_KEY)(?:_\w+)?\b|os\.environ(?:\.get)?\s*[[(]\s*['"](?:\w+_)?(?:TOKEN|SECRET|PASSWORD|API_KEY|ACCESS_KEY)(?:_\w+)?['"]|ANTHROPIC_API_KEY|AWS_SECRET_ACCESS_KEY/ },
   { id: "processes", re: /\bchild_process\b|\bBun\.spawn\b|\bsubprocess\.(?:run|Popen|call|check_output)\b|\bos\.system\s*\(|\bDeno\.Command\b|\bexeca\b/, shell: false },
   { id: "network", re: /\bfetch\s*\(|\bhttps?\.(?:get|request)\s*\(|\bnew WebSocket\b|\bnet\.(?:connect|createConnection)\b|\bXMLHttpRequest\b|\baxios\b|\brequests\.(?:get|post|put|patch|delete|request)\s*\(|\burllib\.request\b|\bhttpx\.|\bhttp\.client\b|['"]ssh['"]/, shell: false },
   { id: "network", re: /\b(?:curl|wget|ssh|scp|rsync|nc)\s/, shell: true },
@@ -171,7 +173,7 @@ export async function footprintFor(pl) {
       if (r.shell === false && shell) continue;
       if (r.encoded) { if (encodedText(text)) flag(r.id, f.rel, { via: "base64 that decodes to text" }); continue; }
       const m = text.match(r.re);
-      if (m) flag(r.id, f.rel, { hosts: r.id === "network" ? hostsIn(text) : [], via: m[0] });
+      if (m && (!r.needs || r.needs.test(text))) flag(r.id, f.rel, { hosts: r.id === "network" ? hostsIn(text) : [], via: m[0] });
     }
     if (f.size > 100_000 && text.split("\n").some((l) => l.length > 10_000)) flag("bundled", f.rel);
     for (const m of text.matchAll(/\$\.([a-z]\w*)\.([a-zA-Z]\w*)\b/g)) {

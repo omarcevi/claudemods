@@ -9,12 +9,13 @@ Community directory of Claude extensions (mods, plugins, skills, subagents, slas
 ## Layout
 
 - `data/mods.json` holds one entry per line. It is the ONLY hand-edited data file.
+  - Mods (`type: "mod"`) can have a `category` from `MOD_CATEGORIES` in `lib.mjs` (guards, bands, panes, display, nudges, notify, styles, tools, fun, packs). The Mods tab filters by it; a mod without one shows under "More mods".
 - `data/resolved.json` is written by `scripts/sync.mjs`. It holds the upstream plugins for each `bundle: true` entry, pinned to a commit sha.
 - `scripts/build.mjs` generates `README.md`, `.claude-plugin/marketplace.json` and the site: `site/index.html` (from `scripts/index.template.html`, with every entry rendered into the HTML for search engines), `site/data.json`, `site/robots.txt` and `site/sitemap.xml`. Never edit these by hand; change the template or `build.mjs`.
 - `scripts/sync.mjs [ids…] [--summary file]` fetches each upstream `.claude-plugin/marketplace.json` (or `plugin.json`) and pins it with `git ls-remote`, then records each newly pinned plugin's footprint. `--summary` writes the sync PR body: compare links plus what changed in what each plugin runs. It needs network access.
 - `scripts/footprint.mjs [ids…]` recomputes footprints at the current pins without re-pinning: it downloads each repo tarball at the pinned sha and reads (never runs) the plugin. A footprint lists shell hooks, function-hook modules with their events, `$` calls and env reads, MCP servers, skill/command/agent counts, and flags (`FLAGS` in `lib.mjs`). Bump `FOOTPRINT_VERSION` when the scan changes, then run it.
 - `build.mjs` fails if a bundled plugin has no footprint, or is flagged `runtime-fetch` (it would run code we didn't pin) without an `acknowledge: {"runtime-fetch": "why"}` on its entry. That's why tdd-guard (`npx tdd-guard@latest` in its hooks) and impeccable (downloads an engine binary) are listed, not bundled.
-- `scripts/find-mods.mjs` searches GitHub for mods we don't list (topics `claude-code-mods`/`claude-mods`, and `hooks/hooks.json` files with a `modules` list, i.e. function hooks) and prints a candidates issue. It skips listed repos and any repo named in an earlier `mod-candidates` issue.
+- `scripts/find-mods.mjs` searches GitHub for mods we don't list: the `claude-code-mods`/`claude-mods` topics; name-independent code search (`hooks/hooks.json` with a `modules` list, `CLAUDE_CODE_ENABLE_FUNCTION_HOOKS`, `FOOTPRINT` files); and other catalogs in its `CATALOGS` list (karanb192's awesome list). It retries rate-limited searches, lists repos from the last 14 days in their own section (they have no stars yet), and skips listed repos and any repo named in an earlier `mod-candidates` issue.
 - `scripts/issue-to-entry.mjs` turns a submission issue (`.github/ISSUE_TEMPLATE/submit.yml`) into an entry. `--dry-run` only validates.
 - `scripts/verify-installs.sh` installs every marketplace plugin into a throwaway `CLAUDE_CONFIG_DIR` (uses `timeout`/`gtimeout` when present).
 - `config.json` holds the repo slug, site URL and marketplace name.
@@ -23,7 +24,7 @@ Community directory of Claude extensions (mods, plugins, skills, subagents, slas
   - `submission.yml` checks submission issues; the `approved` label makes it open a PR.
   - `sync.yml` runs weekly and opens a PR that bumps pinned commits; its body is the sync summary (⛔ marks rule breaks; bot PRs don't trigger CI).
   - `install-test.yml` runs `verify-installs.sh` weekly and on PRs that touch `data/`.
-  - `find-mods.yml` runs weekly and opens one `mod-candidates` issue with new mods to review. Code search may need a `MODS_SEARCH_TOKEN` secret; the issue says so if it was skipped.
+  - `find-mods.yml` runs weekly and opens one `mod-candidates` issue with new mods to review. GitHub rate-limits code search from Actions; a `MODS_SEARCH_TOKEN` secret (fine-grained, public read) makes it reliable, and the issue footer says if a search was skipped.
   - `pages.yml` deploys `site/`.
 
 ## Commands

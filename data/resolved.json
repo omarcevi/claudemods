@@ -13,7 +13,7 @@
           "sha": "411c9c4f4f1c3d128159be7315823341ae7d9e2d"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -61,7 +61,7 @@
           "sha": "10617a90106144d3cb131bd599e677d9c38bfd35"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.ts"
@@ -127,7 +127,7 @@
           "sha": "10617a90106144d3cb131bd599e677d9c38bfd35"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [],
           "mcp": [],
@@ -206,7 +206,7 @@
           "sha": "10617a90106144d3cb131bd599e677d9c38bfd35"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.ts"
@@ -238,7 +238,7 @@
           "sha": "06cac47ec125a41a4aeeb78a6b006bec8cc6d6ed"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.ts"
@@ -320,7 +320,7 @@
           "sha": "0c17dbffda452cf7fae46929af427dff355aeaa3"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [
             {
               "event": "PreCompact",
@@ -421,9 +421,7 @@
                 "src/daemon/proxy-manager.ts",
                 "src/doctor/doctor.ts"
               ],
-              "more": 1,
               "via": [
-                "\".env\"",
                 "ANTHROPIC_API_KEY",
                 "process.env.ANTHROPIC_API_KEY"
               ]
@@ -516,7 +514,7 @@
           "sha": "0baff06d31295850283c2eebe052f39bbc35473f"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -565,7 +563,7 @@
           "sha": "2ac50fb87fc426fed89ba0f09f1784ef6f289ae8"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./index.tsx"
@@ -638,7 +636,7 @@
           "sha": "72f1287c84b312ef106a6a91c9520afa4d67244c"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.ts"
@@ -695,7 +693,7 @@
           "sha": "20e27f99b023e62c8aa91dace07654442a715c24"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.ts"
@@ -776,7 +774,7 @@
           "sha": "d4fffd7de9204a62b10e7b3604fc893158fa25fd"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -817,7 +815,7 @@
           "sha": "d4fffd7de9204a62b10e7b3604fc893158fa25fd"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -860,7 +858,7 @@
           "sha": "d4fffd7de9204a62b10e7b3604fc893158fa25fd"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -903,7 +901,7 @@
           "sha": "d4fffd7de9204a62b10e7b3604fc893158fa25fd"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -954,7 +952,7 @@
           "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -985,15 +983,6 @@
           "agents": 0,
           "flags": [
             {
-              "id": "credentials",
-              "where": [
-                "hooks/narrate.ts"
-              ],
-              "via": [
-                "'.env'"
-              ]
-            },
-            {
               "id": "model-calls",
               "where": [
                 "hooks/register.tsx"
@@ -1016,7 +1005,7 @@
           "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -1076,7 +1065,7 @@
           "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -1119,7 +1108,7 @@
           "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -1163,7 +1152,7 @@
           "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -1206,7 +1195,7 @@
           "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -1266,7 +1255,7 @@
           "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -1317,7 +1306,7 @@
           "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -1359,7 +1348,7 @@
           "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -1427,7 +1416,7 @@
           "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -1481,7 +1470,7 @@
           "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -1530,7 +1519,7 @@
           "sha": "ae7a92cdf9d4dd0018d1b1edc43456b9fc306fad"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -1584,7 +1573,7 @@
           "sha": "d408a11fd553fb9266e5fefcd948f4fc4d7708aa"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -1651,7 +1640,7 @@
           "sha": "214211adfade734463bd045b7a1129a6792f7c28"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./mod.ts"
@@ -1711,7 +1700,7 @@
           "sha": "2b072514053814083609a3e6b45ca4d602448f9f"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./mod.ts"
@@ -1786,7 +1775,7 @@
           "sha": "424b2e8fb8693f7d5432e678120567bf334f942a"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -1825,7 +1814,7 @@
           "sha": "cf2b7562ae7b376cdcf9e2436a926aba77dc759f"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.ts"
@@ -1884,7 +1873,7 @@
           "sha": "b13de6c9ec39e01946943f67b07e5fae4aefd939"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -1953,7 +1942,7 @@
           "sha": "6ceafc34a972f4e58d5e53b1c69f80e2a9759d41"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./pane.tsx"
@@ -2038,7 +2027,7 @@
           "sha": "12b5fea27a4bd1b88cd9c9b6abc1efc0756c6625"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./redact.ts"
@@ -2070,7 +2059,7 @@
           "sha": "12b5fea27a4bd1b88cd9c9b6abc1efc0756c6625"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./deploy-status.tsx"
@@ -2127,7 +2116,7 @@
           "sha": "678a5554e7fb35b4c93ef3095dbee3d5f54fdd01"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.ts"
@@ -2211,7 +2200,7 @@
           "sha": "5b627e351fb745db6dc12f5bfe8656aaa385424e"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -2279,7 +2268,7 @@
           "sha": "b19a0f0d09bf214c010b15cc2849c0c1a11d7b0d"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.ts"
@@ -2313,7 +2302,7 @@
           "sha": "b19a0f0d09bf214c010b15cc2849c0c1a11d7b0d"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.ts"
@@ -2361,7 +2350,7 @@
           "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.ts"
@@ -2429,7 +2418,7 @@
           "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.ts"
@@ -2491,7 +2480,7 @@
           "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.ts"
@@ -2548,7 +2537,7 @@
           "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.ts"
@@ -2598,7 +2587,7 @@
           "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.ts"
@@ -2641,7 +2630,7 @@
           "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -2702,7 +2691,7 @@
           "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -2764,7 +2753,7 @@
           "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -2812,7 +2801,7 @@
           "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -2868,7 +2857,7 @@
           "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.ts"
@@ -2926,7 +2915,7 @@
           "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -2973,7 +2962,7 @@
           "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -3020,7 +3009,7 @@
           "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.ts"
@@ -3077,7 +3066,7 @@
           "sha": "e17d76bdb76ba74832f1ce302309c390cb8c1b4e"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -3129,7 +3118,7 @@
           "sha": "a9242ffcda08ac488fff4cad8b0aed5dc54d7f7f"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -3194,7 +3183,7 @@
           "sha": "aa6b3ecc82540d36d8646ee423d4fa27fd524d70"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.ts"
@@ -3278,7 +3267,7 @@
           "sha": "52b1130bddedc9cc9127e370a2f970429254647e"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -3337,7 +3326,7 @@
           "sha": "77930064d5624d7c1a20ed974e80af48f3e1eb43"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [
             "./register.tsx"
@@ -3400,7 +3389,7 @@
           "sha": "9af474a70e7f2a844338519ad9e92aafbd92d4fb"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [],
           "mcp": [],
@@ -3411,16 +3400,13 @@
             {
               "id": "credentials",
               "where": [
-                "skills/ce-optimize/scripts/experiment-worktree.sh",
                 "skills/ce-polish/scripts/live-endpoint.js",
-                "skills/ce-polish/scripts/resolve-port.sh",
                 "skills/ce-riffrec-feedback-analysis/scripts/analyze_riffrec_zip.py",
                 "skills/ce-sweep/scripts/analyze_riffrec_zip.py"
               ],
               "via": [
-                "\".env.example\"",
-                "/.env.local\"",
-                "os.environ.get(\"OPENAI_API_KEY\""
+                "os.environ.get(\"OPENAI_API_KEY\"",
+                "process.env.OPENAI_API_KEY"
               ]
             },
             {
@@ -3485,7 +3471,7 @@
           "sha": "bfc50259f64a4e0c9e81df849095683608e87ac8"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [
             {
               "event": "Setup",
@@ -3559,12 +3545,11 @@
                 "skills/agent-cost-report/scripts/acr/classify.py",
                 "skills/mode-creator/scripts/configure-telegram.mjs",
                 "sqlite/SessionStore.js",
-                "sqlite/observations/files.js",
-                "ui/viewer-bundle.js"
+                "sqlite/observations/files.js"
               ],
               "via": [
                 "\".env\"",
-                "/.env\"",
+                "AWS_SECRET_ACCESS_KEY",
                 "os.environ.get(\"OPENROUTER_API_KEY\""
               ]
             },
@@ -3640,7 +3625,7 @@
           "sha": "bfc50259f64a4e0c9e81df849095683608e87ac8"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [
             {
               "event": "SessionStart",
@@ -3746,7 +3731,7 @@
           "sha": "8ca22dba9a94f28898bbce59f2537ff4d87c747d"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [
             {
               "event": "SessionStart",
@@ -3813,7 +3798,7 @@
           "sha": "dd47a6a023e249eb1b36e9e943eab89d0900865d"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [],
           "mcp": [],
@@ -3860,7 +3845,7 @@
           "sha": "037a37f135100c76157b4c915a5b55bd272b5e32"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [],
           "mcp": [],
@@ -3906,7 +3891,7 @@
           "sha": "ce26fc25c0e5e8cab638f883de62d9a86ee5e45b"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [],
           "mcp": [],
@@ -3933,7 +3918,7 @@
           "sha": "c982cd411abb53323c4baa1baa3c2f020b8d0b08"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [
             {
               "event": "SessionStart",
@@ -3984,7 +3969,7 @@
           "sha": "24fe0ef7737efae15c87225755e9f6f5965e4888"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [],
           "mcp": [],
@@ -4011,7 +3996,7 @@
           "sha": "839872f9d1cd634fed642b4589ce7226199cc15f"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [
             {
               "event": "SessionStart",
@@ -4058,7 +4043,7 @@
           "sha": "f903933a534ba92cde1c85a28186267b3a317bb2"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [],
           "mcp": [],
@@ -4124,7 +4109,7 @@
           "sha": "225a6f39ac85f76ee48dbad772ea4abe4ed6c9d8"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [],
           "mcp": [],
@@ -4151,7 +4136,7 @@
           "sha": "1401c8b8030e023baeebb31781a6653fe8e93026"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [],
           "mcp": [],
@@ -4199,7 +4184,7 @@
           "sha": "3e763e558bca908475cf34adb55dfc59e4b39aa2"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [],
           "mcp": [],
@@ -4227,7 +4212,7 @@
           "sha": "bfa02ea67b5707fe0e0a673faa49d0f50b28c80b"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [],
           "mcp": [
@@ -4273,7 +4258,7 @@
           "sha": "9f1a7b2147d96246859f42d6f2cbf02ee3985c01"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [],
           "mcp": [
@@ -4312,7 +4297,7 @@
           "sha": "9f1a7b2147d96246859f42d6f2cbf02ee3985c01"
         },
         "footprint": {
-          "v": 1,
+          "v": 2,
           "hooks": [],
           "modules": [],
           "mcp": [

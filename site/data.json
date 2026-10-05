@@ -84,6 +84,7 @@
         "animation"
       ],
       "featured": false,
+      "category": "bands",
       "install": [
         "/plugin install mindful-breathing@claudemods"
       ],
@@ -99,7 +100,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -145,6 +146,7 @@
         "cost"
       ],
       "featured": false,
+      "category": "packs",
       "install": [
         "/plugin install image-peek@claudemods",
         "/plugin install mod-builder@claudemods",
@@ -163,7 +165,7 @@
             "path": "plugins/image-peek"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -229,7 +231,7 @@
             "path": "plugins/mod-builder"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [],
             "mcp": [],
@@ -308,7 +310,7 @@
             "path": "plugins/fable-pin"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -341,7 +343,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -424,6 +426,7 @@
         "compaction"
       ],
       "featured": false,
+      "category": "tools",
       "install": [
         "/plugin install lcm@claudemods"
       ],
@@ -439,7 +442,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [
               {
                 "event": "PreCompact",
@@ -540,9 +543,7 @@
                   "src/daemon/proxy-manager.ts",
                   "src/doctor/doctor.ts"
                 ],
-                "more": 1,
                 "via": [
-                  "\".env\"",
                   "ANTHROPIC_API_KEY",
                   "process.env.ANTHROPIC_API_KEY"
                 ]
@@ -634,6 +635,7 @@
         "band"
       ],
       "featured": false,
+      "category": "fun",
       "install": [
         "/plugin install cc-arcade@claudemods"
       ],
@@ -649,7 +651,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -696,6 +698,7 @@
         "transcript"
       ],
       "featured": false,
+      "category": "display",
       "install": [
         "/plugin install prompt-rail@claudemods"
       ],
@@ -711,7 +714,7 @@
             "path": "plugins/prompt-rail"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./index.tsx"
@@ -783,6 +786,7 @@
         "observability"
       ],
       "featured": false,
+      "category": "panes",
       "install": [
         "/plugin install agent-flow@claudemods"
       ],
@@ -798,7 +802,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -854,6 +858,7 @@
         "fun"
       ],
       "featured": false,
+      "category": "fun",
       "install": [
         "/plugin install pixelband@claudemods"
       ],
@@ -869,7 +874,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -948,6 +953,7 @@
         "cost"
       ],
       "featured": false,
+      "category": "packs",
       "install": [
         "/plugin install context-lens@claudemods",
         "/plugin install quota-meter@claudemods",
@@ -966,7 +972,7 @@
             "path": "plugins/context-lens"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1007,7 +1013,7 @@
             "path": "plugins/quota-meter"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1050,7 +1056,7 @@
             "path": "plugins/token-ledger"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1093,7 +1099,7 @@
             "path": "plugins/budget-guard"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1142,6 +1148,7 @@
         "fun"
       ],
       "featured": false,
+      "category": "packs",
       "install": [
         "/plugin install agent-narrator@claudemods",
         "/plugin install agent-race@claudemods",
@@ -1167,7 +1174,7 @@
             "path": "agent-narrator"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1198,15 +1205,6 @@
             "agents": 0,
             "flags": [
               {
-                "id": "credentials",
-                "where": [
-                  "hooks/narrate.ts"
-                ],
-                "via": [
-                  "'.env'"
-                ]
-              },
-              {
                 "id": "model-calls",
                 "where": [
                   "hooks/register.tsx"
@@ -1229,7 +1227,7 @@
             "path": "agent-race"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1289,7 +1287,7 @@
             "path": "boss-fight"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1332,7 +1330,7 @@
             "path": "burn-meter"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1376,7 +1374,7 @@
             "path": "code-pet"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1419,7 +1417,7 @@
             "path": "inbox-alerts"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1479,7 +1477,7 @@
             "path": "inner-monologue"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1530,7 +1528,7 @@
             "path": "launch-codes"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1572,7 +1570,7 @@
             "path": "session-wrapped"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1640,7 +1638,7 @@
             "path": "sportscaster"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1694,7 +1692,7 @@
             "path": "swarm"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1742,6 +1740,7 @@
         "markdown"
       ],
       "featured": false,
+      "category": "panes",
       "install": [
         "/plugin install review-pane@claudemods"
       ],
@@ -1757,7 +1756,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1809,6 +1808,7 @@
         "pane"
       ],
       "featured": false,
+      "category": "panes",
       "install": [
         "/plugin install review-pane-rudrasecure@claudemods"
       ],
@@ -1824,7 +1824,7 @@
             "path": "review-pane"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1889,6 +1889,7 @@
         "productivity"
       ],
       "featured": false,
+      "category": "panes",
       "install": [
         "/plugin install buffer-pane@claudemods"
       ],
@@ -1904,7 +1905,7 @@
             "path": "plugin"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./mod.ts"
@@ -1962,6 +1963,7 @@
         "ci"
       ],
       "featured": false,
+      "category": "panes",
       "install": [
         "/plugin install pull-request-pane@claudemods"
       ],
@@ -1977,7 +1979,7 @@
             "path": "plugin"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./mod.ts"
@@ -2050,6 +2052,7 @@
         "editor"
       ],
       "featured": false,
+      "category": "display",
       "install": [
         "/plugin install md-prompt@claudemods"
       ],
@@ -2065,7 +2068,7 @@
             "path": "plugins/md-prompt"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -2103,6 +2106,7 @@
         "context"
       ],
       "featured": false,
+      "category": "panes",
       "install": [
         "/plugin install aside@claudemods"
       ],
@@ -2118,7 +2122,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -2176,6 +2180,7 @@
         "appearance"
       ],
       "featured": false,
+      "category": "display",
       "install": [
         "/plugin install prismantis@claudemods"
       ],
@@ -2191,7 +2196,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -2258,6 +2263,7 @@
         "pane"
       ],
       "featured": false,
+      "category": "panes",
       "install": [
         "/plugin install cctop@claudemods"
       ],
@@ -2273,7 +2279,7 @@
             "path": "plugin"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./pane.tsx"
@@ -2356,6 +2362,7 @@
         "vercel"
       ],
       "featured": false,
+      "category": "packs",
       "install": [
         "/plugin install secret-redactor@claudemods",
         "/plugin install vercel-deploy-status@claudemods"
@@ -2372,7 +2379,7 @@
             "path": "plugins/secret-redactor"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./redact.ts"
@@ -2404,7 +2411,7 @@
             "path": "plugins/vercel-deploy-status"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./deploy-status.tsx"
@@ -2460,6 +2467,7 @@
         "guard"
       ],
       "featured": false,
+      "category": "guards",
       "install": [
         "/plugin install topic-filter@claudemods"
       ],
@@ -2475,7 +2483,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -2558,6 +2566,7 @@
         "animation"
       ],
       "featured": false,
+      "category": "fun",
       "install": [
         "/plugin install roll-credits@claudemods"
       ],
@@ -2573,7 +2582,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -2639,6 +2648,7 @@
         "queue"
       ],
       "featured": false,
+      "category": "packs",
       "install": [
         "/plugin install mermaid-art@claudemods",
         "/plugin install prompt-queue@claudemods"
@@ -2655,7 +2665,7 @@
             "path": "claude-mermaid"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -2689,7 +2699,7 @@
             "path": "claude-queue"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -2735,6 +2745,7 @@
         "collection"
       ],
       "featured": false,
+      "category": "packs",
       "install": [
         "/plugin install deploy-verify@claudemods",
         "/plugin install mini-offload@claudemods",
@@ -2762,7 +2773,7 @@
             "path": "deploy-verify"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -2830,7 +2841,7 @@
             "path": "mini-offload"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -2892,7 +2903,7 @@
             "path": "scope-guard"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -2949,7 +2960,7 @@
             "path": "merge-gate"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -2999,7 +3010,7 @@
             "path": "receipt"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -3042,7 +3053,7 @@
             "path": "diff-review"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -3103,7 +3114,7 @@
             "path": "money-band"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -3165,7 +3176,7 @@
             "path": "usage-band"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -3213,7 +3224,7 @@
             "path": "copy-band"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -3269,7 +3280,7 @@
             "path": "chrome-switch"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -3327,7 +3338,7 @@
             "path": "wod-band"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -3374,7 +3385,7 @@
             "path": "wod-timer"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -3421,7 +3432,7 @@
             "path": "done-blink"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -3476,6 +3487,7 @@
         "fun"
       ],
       "featured": false,
+      "category": "fun",
       "install": [
         "/plugin install clawdhouse@claudemods"
       ],
@@ -3491,7 +3503,7 @@
             "path": "plugin"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -3541,6 +3553,7 @@
         "band"
       ],
       "featured": false,
+      "category": "bands",
       "install": [
         "/plugin install cost-git@claudemods"
       ],
@@ -3556,7 +3569,7 @@
             "path": "cost-git"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -3620,6 +3633,7 @@
         "dashboard"
       ],
       "featured": false,
+      "category": "panes",
       "install": [
         "/plugin install session-monitor@claudemods"
       ],
@@ -3635,7 +3649,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -3717,6 +3731,7 @@
         "band"
       ],
       "featured": false,
+      "category": "bands",
       "install": [
         "/plugin install usage-ticker@claudemods"
       ],
@@ -3732,7 +3747,7 @@
             "path": "plugins/usage-ticker"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -3790,6 +3805,7 @@
         "pet"
       ],
       "featured": false,
+      "category": "fun",
       "install": [
         "/plugin install familiar@claudemods"
       ],
@@ -3805,7 +3821,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -3936,7 +3952,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [],
             "mcp": [],
@@ -3947,16 +3963,13 @@
               {
                 "id": "credentials",
                 "where": [
-                  "skills/ce-optimize/scripts/experiment-worktree.sh",
                   "skills/ce-polish/scripts/live-endpoint.js",
-                  "skills/ce-polish/scripts/resolve-port.sh",
                   "skills/ce-riffrec-feedback-analysis/scripts/analyze_riffrec_zip.py",
                   "skills/ce-sweep/scripts/analyze_riffrec_zip.py"
                 ],
                 "via": [
-                  "\".env.example\"",
-                  "/.env.local\"",
-                  "os.environ.get(\"OPENAI_API_KEY\""
+                  "os.environ.get(\"OPENAI_API_KEY\"",
+                  "process.env.OPENAI_API_KEY"
                 ]
               },
               {
@@ -4035,7 +4048,7 @@
             "path": "plugin"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [
               {
                 "event": "Setup",
@@ -4109,12 +4122,11 @@
                   "skills/agent-cost-report/scripts/acr/classify.py",
                   "skills/mode-creator/scripts/configure-telegram.mjs",
                   "sqlite/SessionStore.js",
-                  "sqlite/observations/files.js",
-                  "ui/viewer-bundle.js"
+                  "sqlite/observations/files.js"
                 ],
                 "via": [
                   "\".env\"",
-                  "/.env\"",
+                  "AWS_SECRET_ACCESS_KEY",
                   "os.environ.get(\"OPENROUTER_API_KEY\""
                 ]
               },
@@ -4190,7 +4202,7 @@
             "path": "cowork"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [
               {
                 "event": "SessionStart",
@@ -4364,7 +4376,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [
               {
                 "event": "SessionStart",
@@ -4533,7 +4545,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [],
             "mcp": [],
@@ -4611,7 +4623,7 @@
             "path": "ios-simulator-skill"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [],
             "mcp": [],
@@ -4671,7 +4683,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [],
             "mcp": [],
@@ -4712,7 +4724,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [
               {
                 "event": "SessionStart",
@@ -4777,7 +4789,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [],
             "mcp": [],
@@ -4818,7 +4830,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [
               {
                 "event": "SessionStart",
@@ -4897,7 +4909,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [],
             "mcp": [],
@@ -4976,7 +4988,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [],
             "mcp": [],
@@ -5035,7 +5047,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [],
             "mcp": [],
@@ -5442,7 +5454,7 @@
             "path": "plugin"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [],
             "mcp": [],
@@ -5533,7 +5545,7 @@
             "path": "plugins/claude/context7"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [],
             "mcp": [
@@ -5711,7 +5723,7 @@
             "path": "plugins/sentry-mcp"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [],
             "mcp": [
@@ -5750,7 +5762,7 @@
             "path": "plugins/sentry-mcp-experimental"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [],
             "mcp": [
