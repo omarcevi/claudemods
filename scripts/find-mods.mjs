@@ -2,9 +2,11 @@
 //
 //   GH_TOKEN=... node scripts/find-mods.mjs   # prints the issue body to stdout
 //
-// Candidates are repos tagged claude-code-mods or claude-mods, and repos whose
-// hooks/hooks.json has a `modules` list (function hooks). Repos already in
-// data/mods.json, or listed in an earlier `mod-candidates` issue, are skipped.
+// Candidates come from: repos tagged claude-code-mods or claude-mods; code search
+// that doesn't depend on names (hooks/hooks.json with a `modules` list, mentions of
+// CLAUDE_CODE_ENABLE_FUNCTION_HOOKS, FOOTPRINT files); and other catalogs we watch.
+// Repos already in data/mods.json, or listed in an earlier `mod-candidates` issue,
+// are skipped. New repos get their own section, since they have no stars yet.
 // Writes `count` to $GITHUB_OUTPUT so the workflow only opens an issue when there
 // is something new.
 import { appendFileSync } from "node:fs";
@@ -15,15 +17,39 @@ const REPO = process.env.GITHUB_REPOSITORY || config.repo;
 const LABEL = "mod-candidates";
 const TOPICS = ["claude-code-mods", "claude-mods"];
 const CODE_QUERY = "modules filename:hooks.json path:hooks";
-const MAX_LISTED = 60; // the rest stay unreported and show up next week
+const EXTRA_CODE_QUERIES = [
+  { q: "CLAUDE_CODE_ENABLE_FUNCTION_HOOKS", reason: "mentions function hooks" },
+  { q: "filename:FOOTPRINT calls", reason: "ships a FOOTPRINT file" },
+];
+// Other directories of mods: a marketplace.json to read, or a README to pull repo links from.
+const CATALOGS = [
+  { repo: "baselane-sh/mods-catalog", kind: "marketplace" },
+  { repo: "karanb192/awesome-claude-code-mods", kind: "readme" },
+];
+const MAX_LISTED = 60; // most-starred; the rest stay unreported and show up next week
+const NEW_DAYS = 14, MAX_NEW = 25;
 
-async function api(path) {
-  const res = await fetch(`https://api.github.com/${path}`, {
-    headers: { accept: "application/vnd.github+json", "user-agent": "claudemods-find-mods", ...(TOKEN ? { authorization: `Bearer ${TOKEN}` } : {}) },
-  });
-  if (res.status === 404) return null;
-  if (!res.ok) throw Object.assign(new Error(`GitHub API ${res.status} on ${path.split("?")[0]}`), { status: res.status });
-  return res.json();
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+let lastCodeSearch = 0;
+async function api(path, tries = 4) {
+  // Code search allows about 10 requests a minute, so space those out.
+  if (path.startsWith("search/code")) { await sleep(Math.max(0, lastCodeSearch + 6500 - Date.now())); lastCodeSearch = Date.now(); }
+  for (let i = 0; ; i++) {
+    const res = await fetch(`https://api.github.com/${path}`, {
+      headers: { accept: "application/vnd.github+json", "user-agent": "claudemods-find-mods", ...(TOKEN ? { authorization: `Bearer ${TOKEN}` } : {}) },
+    });
+    if (res.status === 404) return null;
+    // Rate limited (search is strict, especially from Actions): wait as long as GitHub asks, then retry.
+    const limited = res.status === 429 || (res.status === 403 && (res.headers.get("retry-after") || res.headers.get("x-ratelimit-remaining") === "0"));
+    if (limited && i < tries - 1) {
+      const reset = Number(res.headers.get("x-ratelimit-reset")) * 1000 - Date.now();
+      const wait = Number(res.headers.get("retry-after")) * 1000 || (reset > 0 ? reset : 20_000 * (i + 1));
+      await sleep(Math.min(wait + 1000, 90_000));
+      continue;
+    }
+    if (!res.ok) throw Object.assign(new Error(`GitHub API ${res.status} on ${path.split("?")[0]}`), { status: res.status });
+    return res.json();
+  }
 }
 async function rawText(url) {
   const res = await fetch(url, { headers: { "user-agent": "claudemods-find-mods" } });
@@ -102,6 +128,38 @@ try {
   notes.push(`code search skipped (${err.message}); add a \`MODS_SEARCH_TOKEN\` secret to enable it`);
 }
 
+for (const { q, reason } of EXTRA_CODE_QUERIES) {
+  try {
+    const { items, total } = await search("code", q, 2);
+    for (const it of items) add(it.repository.full_name, reason);
+    notes.push(`\`${q}\`: ${total} files`);
+  } catch (err) {
+    notes.push(`\`${q}\` skipped (${err.message})`);
+  }
+}
+
+// Other catalogs: whatever they list that we don't.
+for (const cat of CATALOGS) {
+  const before = new Set(found.keys());
+  if (cat.kind === "marketplace") {
+    const text = await rawText(`https://raw.githubusercontent.com/${cat.repo}/HEAD/.claude-plugin/marketplace.json`);
+    let mp = null; try { mp = JSON.parse(text); } catch {}
+    for (const pl of mp?.plugins || []) {
+      const s = pl.source || {};
+      const r = s.repo || githubRepo(s.url) || (/^[\w.-]+\/[\w.-]+$/.test(s.url || "") ? s.url : null);
+      if (r) add(r.replace(/\.git$/, ""), `listed in \`${cat.repo}\``);
+    }
+  } else {
+    const text = (await rawText(`https://raw.githubusercontent.com/${cat.repo}/HEAD/README.md`)) || "";
+    for (const m of text.matchAll(/github\.com\/([\w.-]+)\/([\w.-]+?)(?:\.git)?(?=[/)#?\s"'>\]]|$)/g)) {
+      if (["topics", "orgs", "sponsors", "features", "settings", "marketplace", "apps"].includes(m[1])) continue;
+      add(`${m[1]}/${m[2]}`, `listed in \`${cat.repo}\``);
+    }
+  }
+  const unlisted = [...found.keys()].filter((k) => !before.has(k) && !known.has(k)).length;
+  notes.push(`catalog \`${cat.repo}\`: ${unlisted} repos we don't list and the searches missed`);
+}
+
 // ---- filter and describe --------------------------------------------------------
 const fresh = [...found.entries()].filter(([k]) => !known.has(k) && !reported.has(k)).map(([, c]) => c);
 await pool(fresh, 8, async (c) => {
@@ -111,9 +169,15 @@ await pool(fresh, 8, async (c) => {
   const has = async (p) => (await rawText(`https://raw.githubusercontent.com/${c.repo}/${ref}/${p}`)) !== null;
   c.manifest = (await has(".claude-plugin/marketplace.json")) ? "marketplace.json" : (await has(".claude-plugin/plugin.json")) ? "plugin.json" : null;
 });
-const candidates = fresh.filter((c) => !c.skip)
-  .sort((a, b) => b.meta.stargazers_count - a.meta.stargazers_count || String(b.meta.pushed_at).localeCompare(String(a.meta.pushed_at)));
-const listed = candidates.slice(0, MAX_LISTED);
+const candidates = fresh.filter((c) => !c.skip && key(c.repo) !== key(REPO) && !CATALOGS.some((x) => key(x.repo) === key(c.repo)));
+// New repos have no stars yet, so they get their own section instead of sinking.
+const cutoff = Date.now() - NEW_DAYS * 86_400_000;
+const isNew = (c) => Date.parse(c.meta.created_at) > cutoff;
+const newest = candidates.filter(isNew).sort((a, b) => String(b.meta.created_at).localeCompare(String(a.meta.created_at))).slice(0, MAX_NEW);
+const starred = candidates.filter((c) => !newest.includes(c))
+  .sort((a, b) => b.meta.stargazers_count - a.meta.stargazers_count || String(b.meta.pushed_at).localeCompare(String(a.meta.pushed_at)))
+  .slice(0, MAX_LISTED);
+const listed = [...newest, ...starred];
 
 // ---- issue body -----------------------------------------------------------------
 const out = [];
@@ -121,19 +185,21 @@ if (!listed.length) {
   out.push("No new mod candidates this week.");
 } else {
   out.push(
-    `Found **${candidates.length}** possible mods that aren't in \`data/mods.json\` and weren't in an earlier candidates issue${candidates.length > listed.length ? ` (listing the top ${listed.length} by stars; the rest come next week)` : ""}.`,
+    `Found **${candidates.length}** possible mods that aren't in \`data/mods.json\` and weren't in an earlier candidates issue${candidates.length > listed.length ? ` (listing ${listed.length}: the newest, then the most starred; the rest come next week)` : ""}.`,
     "",
     "Before adding one, open it and read the source: mods run with the user's full permissions. Add the good ones with the submission form or a PR to `data/mods.json`, and tick them off here.",
     "",
   );
-  for (const c of listed) {
+  const line = (c) => {
     const m = c.meta;
-    const bits = [`★${m.stargazers_count}`, `updated ${String(m.pushed_at).slice(0, 10)}`, [...c.reasons].join(", "),
+    const bits = [`★${m.stargazers_count}`, isNew(c) ? `created ${String(m.created_at).slice(0, 10)}` : `updated ${String(m.pushed_at).slice(0, 10)}`, [...c.reasons].join(", "),
       c.manifest ? `has \`.claude-plugin/${c.manifest}\` (can be bundled)` : "no plugin manifest at the root"];
     out.push(`- [ ] **[${c.repo}](https://github.com/${c.repo})** · ${bits.join(" · ")}`);
     const d = clean(m.description);
     if (d) out.push(`  ${d}`);
-  }
+  };
+  if (newest.length) { out.push(`### New in the last ${NEW_DAYS} days`, ""); newest.forEach(line); out.push(""); }
+  if (starred.length) { out.push("### Most starred", ""); starred.forEach(line); }
 }
 const inData = [...found.keys()].filter((k) => known.has(k)).length;
 const before = [...found.keys()].filter((k) => !known.has(k) && reported.has(k)).length;

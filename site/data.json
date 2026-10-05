@@ -100,7 +100,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -165,7 +165,7 @@
             "path": "plugins/image-peek"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -231,7 +231,7 @@
             "path": "plugins/mod-builder"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [],
             "mcp": [],
@@ -310,7 +310,7 @@
             "path": "plugins/fable-pin"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -343,7 +343,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -442,7 +442,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [
               {
                 "event": "PreCompact",
@@ -543,9 +543,7 @@
                   "src/daemon/proxy-manager.ts",
                   "src/doctor/doctor.ts"
                 ],
-                "more": 1,
                 "via": [
-                  "\".env\"",
                   "ANTHROPIC_API_KEY",
                   "process.env.ANTHROPIC_API_KEY"
                 ]
@@ -653,7 +651,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -716,7 +714,7 @@
             "path": "plugins/prompt-rail"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./index.tsx"
@@ -804,7 +802,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -876,7 +874,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -974,7 +972,7 @@
             "path": "plugins/context-lens"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1015,7 +1013,7 @@
             "path": "plugins/quota-meter"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1058,7 +1056,7 @@
             "path": "plugins/token-ledger"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1101,7 +1099,7 @@
             "path": "plugins/budget-guard"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1176,7 +1174,7 @@
             "path": "agent-narrator"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1207,15 +1205,6 @@
             "agents": 0,
             "flags": [
               {
-                "id": "credentials",
-                "where": [
-                  "hooks/narrate.ts"
-                ],
-                "via": [
-                  "'.env'"
-                ]
-              },
-              {
                 "id": "model-calls",
                 "where": [
                   "hooks/register.tsx"
@@ -1238,7 +1227,7 @@
             "path": "agent-race"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1298,7 +1287,7 @@
             "path": "boss-fight"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1341,7 +1330,7 @@
             "path": "burn-meter"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1385,7 +1374,7 @@
             "path": "code-pet"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1428,7 +1417,7 @@
             "path": "inbox-alerts"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1488,7 +1477,7 @@
             "path": "inner-monologue"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1539,7 +1528,7 @@
             "path": "launch-codes"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1581,7 +1570,7 @@
             "path": "session-wrapped"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1649,7 +1638,7 @@
             "path": "sportscaster"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1703,7 +1692,7 @@
             "path": "swarm"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1767,7 +1756,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1835,7 +1824,7 @@
             "path": "review-pane"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -1916,7 +1905,7 @@
             "path": "plugin"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./mod.ts"
@@ -1990,7 +1979,7 @@
             "path": "plugin"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./mod.ts"
@@ -2079,7 +2068,7 @@
             "path": "plugins/md-prompt"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -2133,7 +2122,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -2207,7 +2196,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -2290,7 +2279,7 @@
             "path": "plugin"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./pane.tsx"
@@ -2390,7 +2379,7 @@
             "path": "plugins/secret-redactor"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./redact.ts"
@@ -2422,7 +2411,7 @@
             "path": "plugins/vercel-deploy-status"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./deploy-status.tsx"
@@ -2494,7 +2483,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -2593,7 +2582,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -2676,7 +2665,7 @@
             "path": "claude-mermaid"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -2710,7 +2699,7 @@
             "path": "claude-queue"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -2784,7 +2773,7 @@
             "path": "deploy-verify"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -2852,7 +2841,7 @@
             "path": "mini-offload"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -2914,7 +2903,7 @@
             "path": "scope-guard"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -2971,7 +2960,7 @@
             "path": "merge-gate"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -3021,7 +3010,7 @@
             "path": "receipt"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -3064,7 +3053,7 @@
             "path": "diff-review"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -3125,7 +3114,7 @@
             "path": "money-band"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -3187,7 +3176,7 @@
             "path": "usage-band"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -3235,7 +3224,7 @@
             "path": "copy-band"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -3291,7 +3280,7 @@
             "path": "chrome-switch"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -3349,7 +3338,7 @@
             "path": "wod-band"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -3396,7 +3385,7 @@
             "path": "wod-timer"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -3443,7 +3432,7 @@
             "path": "done-blink"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -3514,7 +3503,7 @@
             "path": "plugin"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -3580,7 +3569,7 @@
             "path": "cost-git"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -3660,7 +3649,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -3758,7 +3747,7 @@
             "path": "plugins/usage-ticker"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -3832,7 +3821,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.tsx"
@@ -3910,7 +3899,7 @@
             "path": "plugins/achievements"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -3972,7 +3961,7 @@
             "path": "plugins/agent-firewall"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -3998,17 +3987,7 @@
             "skills": 0,
             "commands": 0,
             "agents": 0,
-            "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              }
-            ],
+            "flags": [],
             "scanned": 6
           }
         }
@@ -4042,7 +4021,7 @@
             "path": "plugins/authors"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -4073,15 +4052,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -4133,7 +4103,7 @@
             "path": "plugins/auto-format"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -4166,15 +4136,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -4236,7 +4197,7 @@
             "path": "plugins/auto-lint"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -4269,15 +4230,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -4341,7 +4293,7 @@
             "path": "plugins/band-pack"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -4416,7 +4368,7 @@
             "path": "plugins/big-diff-nudge"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -4440,15 +4392,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/engine.ts"
-                ],
-                "via": [
-                  "'.env.example'"
-                ]
-              },
               {
                 "id": "model-calls",
                 "where": [
@@ -4492,7 +4435,7 @@
             "path": "plugins/big-file-guard"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -4512,15 +4455,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -4564,7 +4498,7 @@
             "path": "plugins/branch-band"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -4640,7 +4574,7 @@
             "path": "plugins/branches"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -4671,15 +4605,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -4731,7 +4656,7 @@
             "path": "plugins/break-nudge"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -4755,15 +4680,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/engine.ts"
-                ],
-                "via": [
-                  "'.env.example'"
-                ]
-              },
               {
                 "id": "model-calls",
                 "where": [
@@ -4807,7 +4723,7 @@
             "path": "plugins/caveman-mode"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -4853,7 +4769,7 @@
             "path": "plugins/changelog"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -4884,15 +4800,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -4945,7 +4852,7 @@
             "path": "plugins/chmod-guard"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -4965,15 +4872,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -5017,7 +4915,7 @@
             "path": "plugins/ci-config-guard"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -5037,15 +4935,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -5089,7 +4978,7 @@
             "path": "plugins/clippy"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -5113,15 +5002,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/engine.ts"
-                ],
-                "via": [
-                  "'.env.example'"
-                ]
-              },
               {
                 "id": "model-calls",
                 "where": [
@@ -5164,7 +5044,7 @@
             "path": "plugins/code-only"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -5211,7 +5091,7 @@
             "path": "plugins/command-pack"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -5242,15 +5122,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -5303,7 +5174,7 @@
             "path": "plugins/commit-msg"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -5334,15 +5205,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -5395,7 +5257,7 @@
             "path": "plugins/commit-nudge"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -5419,15 +5281,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/engine.ts"
-                ],
-                "via": [
-                  "'.env.example'"
-                ]
-              },
               {
                 "id": "model-calls",
                 "where": [
@@ -5471,7 +5324,7 @@
             "path": "plugins/context-meter"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -5546,7 +5399,7 @@
             "path": "plugins/conventional-commits"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -5592,7 +5445,7 @@
             "path": "plugins/cost-meter"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -5669,7 +5522,7 @@
             "path": "plugins/cost-pane"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -5702,15 +5555,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -5754,7 +5598,7 @@
             "path": "plugins/ctx-nudge"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -5778,15 +5622,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/engine.ts"
-                ],
-                "via": [
-                  "'.env.example'"
-                ]
-              },
               {
                 "id": "model-calls",
                 "where": [
@@ -5830,7 +5665,7 @@
             "path": "plugins/curl-pipe-guard"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -5850,15 +5685,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -5902,7 +5728,7 @@
             "path": "plugins/daily-spend"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -5978,7 +5804,7 @@
             "path": "plugins/debug-print-nudge"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -6002,15 +5828,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/engine.ts"
-                ],
-                "via": [
-                  "'.env.example'"
-                ]
-              },
               {
                 "id": "model-calls",
                 "where": [
@@ -6054,7 +5871,7 @@
             "path": "plugins/deps"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -6085,15 +5902,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -6145,7 +5953,7 @@
             "path": "plugins/desktop-notify"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -6178,15 +5986,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -6249,7 +6048,7 @@
             "path": "plugins/dev-band"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -6324,7 +6123,7 @@
             "path": "plugins/diff-stats"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -6379,7 +6178,7 @@
             "path": "plugins/discord-notify"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -6412,15 +6211,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -6483,7 +6273,7 @@
             "path": "plugins/docker-guard"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -6503,15 +6293,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -6555,7 +6336,7 @@
             "path": "plugins/docs-nudge"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -6579,15 +6360,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/engine.ts"
-                ],
-                "via": [
-                  "'.env.example'"
-                ]
-              },
               {
                 "id": "model-calls",
                 "where": [
@@ -6631,7 +6403,7 @@
             "path": "plugins/eli5-mode"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -6677,7 +6449,7 @@
             "path": "plugins/env-check"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -6708,17 +6480,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts",
-                  "hooks/rules/env-check.ts"
-                ],
-                "via": [
-                  "'.env.example'",
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -6771,7 +6532,7 @@
             "path": "plugins/env-example-nudge"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -6795,15 +6556,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/engine.ts"
-                ],
-                "via": [
-                  "'.env.example'"
-                ]
-              },
               {
                 "id": "model-calls",
                 "where": [
@@ -6847,7 +6599,7 @@
             "path": "plugins/env-exfil-guard"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -6867,15 +6619,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -6919,7 +6662,7 @@
             "path": "plugins/error-meter"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -6994,7 +6737,7 @@
             "path": "plugins/exit-badge"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -7051,7 +6794,7 @@
             "path": "plugins/explore-pack"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -7082,17 +6825,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts",
-                  "hooks/rules/env-check.ts"
-                ],
-                "via": [
-                  "'.env.example'",
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -7145,7 +6877,7 @@
             "path": "plugins/file-links"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -7201,7 +6933,7 @@
             "path": "plugins/focus-pack"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -7225,15 +6957,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/engine.ts"
-                ],
-                "via": [
-                  "'.env.example'"
-                ]
-              },
               {
                 "id": "model-calls",
                 "where": [
@@ -7277,7 +7000,7 @@
             "path": "plugins/fun-pack"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -7323,7 +7046,7 @@
             "path": "plugins/git-history-guard"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -7343,15 +7066,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -7396,7 +7110,7 @@
             "path": "plugins/git-pane"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -7429,15 +7143,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -7481,7 +7186,7 @@
             "path": "plugins/gitignore-check"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -7501,15 +7206,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -7552,7 +7248,7 @@
             "path": "plugins/gitmoji-commits"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -7598,7 +7294,7 @@
             "path": "plugins/guard-devops"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -7618,15 +7314,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -7669,7 +7356,7 @@
             "path": "plugins/guard-essentials"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -7689,15 +7376,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -7741,7 +7419,7 @@
             "path": "plugins/guard-pack"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -7761,15 +7439,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -7812,7 +7481,7 @@
             "path": "plugins/haiku-commits"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -7859,7 +7528,7 @@
             "path": "plugins/handoff"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -7890,15 +7559,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -7951,7 +7611,7 @@
             "path": "plugins/hotspots"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -7982,15 +7642,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -8043,7 +7694,7 @@
             "path": "plugins/infra-guard"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -8063,15 +7714,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -8114,7 +7756,7 @@
             "path": "plugins/json-pretty"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -8170,7 +7812,7 @@
             "path": "plugins/junior-mode"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -8216,7 +7858,7 @@
             "path": "plugins/k8s-guard"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -8236,15 +7878,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -8288,7 +7921,7 @@
             "path": "plugins/latte-meter"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -8364,7 +7997,7 @@
             "path": "plugins/lifecycle-pack"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -8397,15 +8030,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -8468,7 +8092,7 @@
             "path": "plugins/loc"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -8499,15 +8123,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -8560,7 +8175,7 @@
             "path": "plugins/lockfile-guard"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -8580,15 +8195,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -8632,7 +8238,7 @@
             "path": "plugins/lockfile-nudge"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -8656,15 +8262,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/engine.ts"
-                ],
-                "via": [
-                  "'.env.example'"
-                ]
-              },
               {
                 "id": "model-calls",
                 "where": [
@@ -8707,7 +8304,7 @@
             "path": "plugins/long-run-notify"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -8740,15 +8337,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -8811,7 +8399,7 @@
             "path": "plugins/migration-guard"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -8831,15 +8419,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -8883,7 +8462,7 @@
             "path": "plugins/migration-nudge"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -8907,15 +8486,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/engine.ts"
-                ],
-                "via": [
-                  "'.env.example'"
-                ]
-              },
               {
                 "id": "model-calls",
                 "where": [
@@ -8959,7 +8529,7 @@
             "path": "plugins/model-badge"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -9036,7 +8606,7 @@
             "path": "plugins/mood-ring"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -9112,7 +8682,7 @@
             "path": "plugins/night-owl"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -9172,7 +8742,7 @@
             "path": "plugins/no-em-dash"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -9217,7 +8787,7 @@
             "path": "plugins/no-sycophancy"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -9263,7 +8833,7 @@
             "path": "plugins/no-verify-guard"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -9283,15 +8853,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -9335,7 +8896,7 @@
             "path": "plugins/notify-pack"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -9368,15 +8929,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -9438,7 +8990,7 @@
             "path": "plugins/ntfy-notify"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -9471,15 +9023,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -9542,7 +9085,7 @@
             "path": "plugins/nudge-pack"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -9566,15 +9109,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/engine.ts"
-                ],
-                "via": [
-                  "'.env.example'"
-                ]
-              },
               {
                 "id": "model-calls",
                 "where": [
@@ -9618,7 +9152,7 @@
             "path": "plugins/package-guard"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -9638,15 +9172,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -9690,7 +9215,7 @@
             "path": "plugins/path-jail"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -9710,15 +9235,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -9762,7 +9278,7 @@
             "path": "plugins/personal-bests"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -9823,7 +9339,7 @@
             "path": "plugins/pirate-mode"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -9868,7 +9384,7 @@
             "path": "plugins/plain-english"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -9916,7 +9432,7 @@
             "path": "plugins/pomodoro"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -9993,7 +9509,7 @@
             "path": "plugins/port-watch"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -10026,15 +9542,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -10078,7 +9585,7 @@
             "path": "plugins/pr-description"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -10109,15 +9616,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -10170,7 +9668,7 @@
             "path": "plugins/prod-db-guard"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -10190,15 +9688,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -10242,7 +9731,7 @@
             "path": "plugins/protect-main"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -10262,15 +9751,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -10314,7 +9794,7 @@
             "path": "plugins/quality-pack"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -10338,15 +9818,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/engine.ts"
-                ],
-                "via": [
-                  "'.env.example'"
-                ]
-              },
               {
                 "id": "model-calls",
                 "where": [
@@ -10391,7 +9862,7 @@
             "path": "plugins/receipt"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -10422,15 +9893,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -10483,7 +9945,7 @@
             "path": "plugins/render-pack"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -10538,7 +10000,7 @@
             "path": "plugins/render-plus"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -10594,7 +10056,7 @@
             "path": "plugins/reply-language"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -10641,7 +10103,7 @@
             "path": "plugins/repo-pack"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -10672,15 +10134,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -10732,7 +10185,7 @@
             "path": "plugins/say-done"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -10765,15 +10218,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -10836,7 +10280,7 @@
             "path": "plugins/scripts"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -10867,15 +10311,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -10928,7 +10363,7 @@
             "path": "plugins/secret-commit-guard"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -10948,15 +10383,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -11000,7 +10426,7 @@
             "path": "plugins/secret-filename-guard"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -11020,15 +10446,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -11072,7 +10489,7 @@
             "path": "plugins/secret-guard"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -11092,15 +10509,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -11144,7 +10552,7 @@
             "path": "plugins/secret-output-guard"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -11164,15 +10572,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -11216,7 +10615,7 @@
             "path": "plugins/security-mode"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -11262,7 +10661,7 @@
             "path": "plugins/session-clock"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -11337,7 +10736,7 @@
             "path": "plugins/session-journal"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -11370,15 +10769,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -11441,7 +10831,7 @@
             "path": "plugins/shakespeare-mode"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -11486,7 +10876,7 @@
             "path": "plugins/size-badge"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -11541,7 +10931,7 @@
             "path": "plugins/slack-notify"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -11574,15 +10964,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -11645,7 +11026,7 @@
             "path": "plugins/sounds-minimal"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -11696,7 +11077,7 @@
             "path": "plugins/sounds-nature"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -11747,7 +11128,7 @@
             "path": "plugins/sounds-office"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -11798,7 +11179,7 @@
             "path": "plugins/sounds-retro"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -11849,7 +11230,7 @@
             "path": "plugins/sounds-scifi"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -11899,7 +11280,7 @@
             "path": "plugins/sports-narrator"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -11923,15 +11304,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/engine.ts"
-                ],
-                "via": [
-                  "'.env.example'"
-                ]
-              },
               {
                 "id": "model-calls",
                 "where": [
@@ -11975,7 +11347,7 @@
             "path": "plugins/standup"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -12006,15 +11378,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -12068,7 +11431,7 @@
             "path": "plugins/stats-pack"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -12129,7 +11492,7 @@
             "path": "plugins/ste-mode"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -12176,7 +11539,7 @@
             "path": "plugins/streaks"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -12237,7 +11600,7 @@
             "path": "plugins/sudo-guard"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -12257,15 +11620,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -12309,7 +11663,7 @@
             "path": "plugins/tdd-mode"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -12355,7 +11709,7 @@
             "path": "plugins/team-pack"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -12401,7 +11755,7 @@
             "path": "plugins/terse-mode"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -12448,7 +11802,7 @@
             "path": "plugins/test-pane"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -12481,15 +11835,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -12532,7 +11877,7 @@
             "path": "plugins/test-reminder"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -12556,15 +11901,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/engine.ts"
-                ],
-                "via": [
-                  "'.env.example'"
-                ]
-              },
               {
                 "id": "model-calls",
                 "where": [
@@ -12607,7 +11943,7 @@
             "path": "plugins/time-badge"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -12663,7 +11999,7 @@
             "path": "plugins/todo-nudge"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -12687,15 +12023,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/engine.ts"
-                ],
-                "via": [
-                  "'.env.example'"
-                ]
-              },
               {
                 "id": "model-calls",
                 "where": [
@@ -12740,7 +12067,7 @@
             "path": "plugins/todo-pane"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -12773,15 +12100,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -12825,7 +12143,7 @@
             "path": "plugins/todos"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -12856,15 +12174,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -12917,7 +12226,7 @@
             "path": "plugins/tool-counter"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -12993,7 +12302,7 @@
             "path": "plugins/tree"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -13024,15 +12333,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/patterns.ts"
-                ],
-                "via": [
-                  "id_rsa"
-                ]
-              },
               {
                 "id": "processes",
                 "where": [
@@ -13085,7 +12385,7 @@
             "path": "plugins/typecheck-nudge"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -13109,15 +12409,6 @@
             "commands": 0,
             "agents": 0,
             "flags": [
-              {
-                "id": "credentials",
-                "where": [
-                  "hooks/engine.ts"
-                ],
-                "via": [
-                  "'.env.example'"
-                ]
-              },
               {
                 "id": "model-calls",
                 "where": [
@@ -13160,7 +12451,7 @@
             "path": "plugins/url-links"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -13216,7 +12507,7 @@
             "path": "plugins/wrapped"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -13277,7 +12568,7 @@
             "path": "plugins/yoda-mode"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [
               "./register.ts"
@@ -13377,7 +12668,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [],
             "mcp": [],
@@ -13388,16 +12679,13 @@
               {
                 "id": "credentials",
                 "where": [
-                  "skills/ce-optimize/scripts/experiment-worktree.sh",
                   "skills/ce-polish/scripts/live-endpoint.js",
-                  "skills/ce-polish/scripts/resolve-port.sh",
                   "skills/ce-riffrec-feedback-analysis/scripts/analyze_riffrec_zip.py",
                   "skills/ce-sweep/scripts/analyze_riffrec_zip.py"
                 ],
                 "via": [
-                  "\".env.example\"",
-                  "/.env.local\"",
-                  "os.environ.get(\"OPENAI_API_KEY\""
+                  "os.environ.get(\"OPENAI_API_KEY\"",
+                  "process.env.OPENAI_API_KEY"
                 ]
               },
               {
@@ -13476,7 +12764,7 @@
             "path": "plugin"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [
               {
                 "event": "Setup",
@@ -13550,12 +12838,11 @@
                   "skills/agent-cost-report/scripts/acr/classify.py",
                   "skills/mode-creator/scripts/configure-telegram.mjs",
                   "sqlite/SessionStore.js",
-                  "sqlite/observations/files.js",
-                  "ui/viewer-bundle.js"
+                  "sqlite/observations/files.js"
                 ],
                 "via": [
                   "\".env\"",
-                  "/.env\"",
+                  "AWS_SECRET_ACCESS_KEY",
                   "os.environ.get(\"OPENROUTER_API_KEY\""
                 ]
               },
@@ -13631,7 +12918,7 @@
             "path": "cowork"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [
               {
                 "event": "SessionStart",
@@ -13805,7 +13092,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [
               {
                 "event": "SessionStart",
@@ -13974,7 +13261,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [],
             "mcp": [],
@@ -14052,7 +13339,7 @@
             "path": "ios-simulator-skill"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [],
             "mcp": [],
@@ -14112,7 +13399,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [],
             "mcp": [],
@@ -14153,7 +13440,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [
               {
                 "event": "SessionStart",
@@ -14218,7 +13505,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [],
             "mcp": [],
@@ -14259,7 +13546,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [
               {
                 "event": "SessionStart",
@@ -14338,7 +13625,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [],
             "mcp": [],
@@ -14417,7 +13704,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [],
             "mcp": [],
@@ -14476,7 +13763,7 @@
             "path": ""
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [],
             "mcp": [],
@@ -14883,7 +14170,7 @@
             "path": "plugin"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [],
             "mcp": [],
@@ -14974,7 +14261,7 @@
             "path": "plugins/claude/context7"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [],
             "mcp": [
@@ -15152,7 +14439,7 @@
             "path": "plugins/sentry-mcp"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [],
             "mcp": [
@@ -15191,7 +14478,7 @@
             "path": "plugins/sentry-mcp-experimental"
           },
           "footprint": {
-            "v": 1,
+            "v": 2,
             "hooks": [],
             "modules": [],
             "mcp": [
