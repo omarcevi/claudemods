@@ -11,15 +11,18 @@ Community directory of Claude extensions (mods, plugins, skills, subagents, slas
 - `data/mods.json` holds one entry per line. It is the ONLY hand-edited data file.
 - `data/resolved.json` is written by `scripts/sync.mjs`. It holds the upstream plugins for each `bundle: true` entry, pinned to a commit sha.
 - `scripts/build.mjs` generates `README.md`, `.claude-plugin/marketplace.json` and the site: `site/index.html` (from `scripts/index.template.html`, with every entry rendered into the HTML for search engines), `site/data.json`, `site/robots.txt` and `site/sitemap.xml`. Never edit these by hand; change the template or `build.mjs`.
-- `scripts/sync.mjs [ids…]` fetches each upstream `.claude-plugin/marketplace.json` (or `plugin.json`) and pins it with `git ls-remote`. It needs network access.
+- `scripts/sync.mjs [ids…] [--summary file]` fetches each upstream `.claude-plugin/marketplace.json` (or `plugin.json`) and pins it with `git ls-remote`, then records each newly pinned plugin's footprint. `--summary` writes the sync PR body: compare links plus what changed in what each plugin runs. It needs network access.
+- `scripts/footprint.mjs [ids…]` recomputes footprints at the current pins without re-pinning: it downloads each repo tarball at the pinned sha and reads (never runs) the plugin. A footprint lists shell hooks, function-hook modules with their events, `$` calls and env reads, MCP servers, skill/command/agent counts, and flags (`FLAGS` in `lib.mjs`). Bump `FOOTPRINT_VERSION` when the scan changes, then run it.
+- `build.mjs` fails if a bundled plugin has no footprint, or is flagged `runtime-fetch` (it would run code we didn't pin) without an `acknowledge: {"runtime-fetch": "why"}` on its entry. That's why tdd-guard (`npx tdd-guard@latest` in its hooks) and impeccable (downloads an engine binary) are listed, not bundled.
 - `scripts/find-mods.mjs` searches GitHub for mods we don't list (topics `claude-code-mods`/`claude-mods`, and `hooks/hooks.json` files with a `modules` list, i.e. function hooks) and prints a candidates issue. It skips listed repos and any repo named in an earlier `mod-candidates` issue.
 - `scripts/issue-to-entry.mjs` turns a submission issue (`.github/ISSUE_TEMPLATE/submit.yml`) into an entry. `--dry-run` only validates.
-- `scripts/verify-installs.sh` installs every marketplace plugin into a throwaway `CLAUDE_CONFIG_DIR`. The last run passed 67/67.
+- `scripts/verify-installs.sh` installs every marketplace plugin into a throwaway `CLAUDE_CONFIG_DIR` (uses `timeout`/`gtimeout` when present).
 - `config.json` holds the repo slug, site URL and marketplace name.
 - Workflows:
   - `ci.yml` runs `build --check` and `claude plugin validate`.
   - `submission.yml` checks submission issues; the `approved` label makes it open a PR.
-  - `sync.yml` runs weekly and opens a PR that bumps pinned commits.
+  - `sync.yml` runs weekly and opens a PR that bumps pinned commits; its body is the sync summary (⛔ marks rule breaks; bot PRs don't trigger CI).
+  - `install-test.yml` runs `verify-installs.sh` weekly and on PRs that touch `data/`.
   - `find-mods.yml` runs weekly and opens one `mod-candidates` issue with new mods to review. Code search may need a `MODS_SEARCH_TOKEN` secret; the issue says so if it was skipped.
   - `pages.yml` deploys `site/`.
 
@@ -37,17 +40,17 @@ claude plugin validate .
 
 - After any change to `data/` or `config.json`, run `npm run build` and commit the generated files too. CI fails otherwise.
 - Claude Code reserves third-party plugin names that start with `claude-` / `anthropic-`, and the name `claude-mods`. `build.mjs` strips the prefix automatically. Use an entry's `rename` map for a nicer name. Never name the marketplace anything that looks official.
-- Every bundled plugin must stay pinned to a `sha`. Mods run with the user's full permissions, so a sha bump is a code review, not a formality.
+- Every bundled plugin must stay pinned to a `sha`. Mods run with the user's full permissions, so a sha bump is a code review, not a formality. Start from the sync summary's flags, then read the compare diff.
+- Every GitHub Action is pinned to a commit sha with the version in a comment. Keep it that way.
+- `git-subdir` sources must use a full `https://github.com/owner/repo.git` URL. Claude Code clones a bare `owner/repo` over SSH, which fails for anyone without GitHub SSH keys (that broke 51 plugins until 2026-10-05).
 - Only add entries you have actually opened and verified. Never invent repos or star counts.
 - The site footer says the project is not affiliated with Anthropic. Keep it.
 - Node 20+, no dependencies. Keep it that way unless there's a strong reason.
 
-## Status (2026-10-04)
+## Status (2026-10-05)
 
-Built and tested: 91 entries, 35 bundled sources and 67 installable plugins. All 67 install cleanly, and `claude plugin validate` passes.
+Live at https://claudemods.chat (repo omarcevi/claudemods): 102 entries, 74 installable plugins, every card shows the plugin's footprint, and `verify-installs.sh` installs all 74.
 
-Not done yet: the repo isn't on GitHub, Pages and DNS aren't set up, and `config.json` still has `OWNER/claudemods`.
-Setup leftovers: a broken `.git/` folder (delete it) and `_github/` (rename to `.github/`). Both come from the sandbox the files were created in.
 
 ## Launch checklist
 
@@ -65,7 +68,6 @@ Setup leftovers: a broken `.git/` folder (delete it) and `_github/` (rename to `
 
 ## Backlog (after launch)
 
-- A per-mod "reach" badge: scan the source for the `$` calls and hooked events, like karanb192/awesome-claude-code-mods. That list is our closest competitor.
 - A weekly star-count refresh with `GITHUB_TOKEN`, written to `data/stats.json`, so the site can sort by popularity.
 - Add mods that were verified but cut: wandercom/kindex, kbrdn1/claude-crosstalk (installed with make).
 - A short demo GIF in the README. (The OG image, `site/og.png`, is a static file rendered once from HTML with headless Chrome.)

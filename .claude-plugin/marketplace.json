@@ -36,7 +36,7 @@
       "name": "agent-mem",
       "source": {
         "source": "git-subdir",
-        "url": "thedotmack/claude-mem",
+        "url": "https://github.com/thedotmack/claude-mem.git",
         "path": "plugin",
         "sha": "bfc50259f64a4e0c9e81df849095683608e87ac8"
       },
@@ -62,7 +62,7 @@
       "name": "agent-mem-cowork",
       "source": {
         "source": "git-subdir",
-        "url": "thedotmack/claude-mem",
+        "url": "https://github.com/thedotmack/claude-mem.git",
         "path": "cowork",
         "sha": "bfc50259f64a4e0c9e81df849095683608e87ac8"
       },
@@ -88,7 +88,7 @@
       "name": "agent-narrator",
       "source": {
         "source": "git-subdir",
-        "url": "OneWave-AI/claude-code-mods",
+        "url": "https://github.com/OneWave-AI/claude-code-mods.git",
         "path": "agent-narrator",
         "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
       },
@@ -114,7 +114,7 @@
       "name": "agent-race",
       "source": {
         "source": "git-subdir",
-        "url": "OneWave-AI/claude-code-mods",
+        "url": "https://github.com/OneWave-AI/claude-code-mods.git",
         "path": "agent-race",
         "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
       },
@@ -190,7 +190,7 @@
       "name": "boss-fight",
       "source": {
         "source": "git-subdir",
-        "url": "OneWave-AI/claude-code-mods",
+        "url": "https://github.com/OneWave-AI/claude-code-mods.git",
         "path": "boss-fight",
         "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
       },
@@ -216,7 +216,7 @@
       "name": "budget-guard",
       "source": {
         "source": "git-subdir",
-        "url": "Arunjay4213/claude-mods",
+        "url": "https://github.com/Arunjay4213/claude-mods.git",
         "path": "plugins/budget-guard",
         "sha": "d4fffd7de9204a62b10e7b3604fc893158fa25fd"
       },
@@ -242,7 +242,7 @@
       "name": "buffer-pane",
       "source": {
         "source": "git-subdir",
-        "url": "meganemura/buffer-pane",
+        "url": "https://github.com/meganemura/buffer-pane.git",
         "path": "plugin",
         "sha": "214211adfade734463bd045b7a1129a6792f7c28"
       },
@@ -268,7 +268,7 @@
       "name": "burn-meter",
       "source": {
         "source": "git-subdir",
-        "url": "OneWave-AI/claude-code-mods",
+        "url": "https://github.com/OneWave-AI/claude-code-mods.git",
         "path": "burn-meter",
         "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
       },
@@ -344,7 +344,7 @@
       "name": "cctop",
       "source": {
         "source": "git-subdir",
-        "url": "tomstagl/cctop",
+        "url": "https://github.com/tomstagl/cctop.git",
         "path": "plugin",
         "sha": "6ceafc34a972f4e58d5e53b1c69f80e2a9759d41"
       },
@@ -370,7 +370,7 @@
       "name": "chrome-switch",
       "source": {
         "source": "git-subdir",
-        "url": "yash-gadodia/claude-mods",
+        "url": "https://github.com/yash-gadodia/claude-mods.git",
         "path": "chrome-switch",
         "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
       },
@@ -396,7 +396,7 @@
       "name": "clawdhouse",
       "source": {
         "source": "git-subdir",
-        "url": "ishuagrawal/clawdhouse",
+        "url": "https://github.com/ishuagrawal/clawdhouse.git",
         "path": "plugin",
         "sha": "e17d76bdb76ba74832f1ce302309c390cb8c1b4e"
       },
@@ -422,7 +422,7 @@
       "name": "code-pet",
       "source": {
         "source": "git-subdir",
-        "url": "OneWave-AI/claude-code-mods",
+        "url": "https://github.com/OneWave-AI/claude-code-mods.git",
         "path": "code-pet",
         "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
       },
@@ -473,7 +473,7 @@
       "name": "context-lens",
       "source": {
         "source": "git-subdir",
-        "url": "Arunjay4213/claude-mods",
+        "url": "https://github.com/Arunjay4213/claude-mods.git",
         "path": "plugins/context-lens",
         "sha": "d4fffd7de9204a62b10e7b3604fc893158fa25fd"
       },
@@ -499,7 +499,7 @@
       "name": "context7",
       "source": {
         "source": "git-subdir",
-        "url": "upstash/context7",
+        "url": "https://github.com/upstash/context7.git",
         "path": "plugins/claude/context7",
         "sha": "bfa02ea67b5707fe0e0a673faa49d0f50b28c80b"
       },
@@ -525,7 +525,7 @@
       "name": "copy-band",
       "source": {
         "source": "git-subdir",
-        "url": "yash-gadodia/claude-mods",
+        "url": "https://github.com/yash-gadodia/claude-mods.git",
         "path": "copy-band",
         "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
       },
@@ -551,7 +551,7 @@
       "name": "cost-git",
       "source": {
         "source": "git-subdir",
-        "url": "juulsverne/claude-code-mods",
+        "url": "https://github.com/juulsverne/claude-code-mods.git",
         "path": "cost-git",
         "sha": "a9242ffcda08ac488fff4cad8b0aed5dc54d7f7f"
       },
@@ -577,7 +577,7 @@
       "name": "deploy-verify",
       "source": {
         "source": "git-subdir",
-        "url": "yash-gadodia/claude-mods",
+        "url": "https://github.com/yash-gadodia/claude-mods.git",
         "path": "deploy-verify",
         "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
       },
@@ -628,7 +628,7 @@
       "name": "diff-review",
       "source": {
         "source": "git-subdir",
-        "url": "yash-gadodia/claude-mods",
+        "url": "https://github.com/yash-gadodia/claude-mods.git",
         "path": "diff-review",
         "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
       },
@@ -654,7 +654,7 @@
       "name": "done-blink",
       "source": {
         "source": "git-subdir",
-        "url": "yash-gadodia/claude-mods",
+        "url": "https://github.com/yash-gadodia/claude-mods.git",
         "path": "done-blink",
         "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
       },
@@ -680,7 +680,7 @@
       "name": "fable-pin",
       "source": {
         "source": "git-subdir",
-        "url": "karanb192/claude-code-mods",
+        "url": "https://github.com/karanb192/claude-code-mods.git",
         "path": "plugins/fable-pin",
         "sha": "10617a90106144d3cb131bd599e677d9c38bfd35"
       },
@@ -780,7 +780,7 @@
       "name": "image-peek",
       "source": {
         "source": "git-subdir",
-        "url": "karanb192/claude-code-mods",
+        "url": "https://github.com/karanb192/claude-code-mods.git",
         "path": "plugins/image-peek",
         "sha": "10617a90106144d3cb131bd599e677d9c38bfd35"
       },
@@ -806,7 +806,7 @@
       "name": "inbox-alerts",
       "source": {
         "source": "git-subdir",
-        "url": "OneWave-AI/claude-code-mods",
+        "url": "https://github.com/OneWave-AI/claude-code-mods.git",
         "path": "inbox-alerts",
         "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
       },
@@ -832,7 +832,7 @@
       "name": "inner-monologue",
       "source": {
         "source": "git-subdir",
-        "url": "OneWave-AI/claude-code-mods",
+        "url": "https://github.com/OneWave-AI/claude-code-mods.git",
         "path": "inner-monologue",
         "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
       },
@@ -858,7 +858,7 @@
       "name": "ios-simulator-skill",
       "source": {
         "source": "git-subdir",
-        "url": "conorluddy/ios-simulator-skill",
+        "url": "https://github.com/conorluddy/ios-simulator-skill.git",
         "path": "ios-simulator-skill",
         "sha": "037a37f135100c76157b4c915a5b55bd272b5e32"
       },
@@ -884,7 +884,7 @@
       "name": "launch-codes",
       "source": {
         "source": "git-subdir",
-        "url": "OneWave-AI/claude-code-mods",
+        "url": "https://github.com/OneWave-AI/claude-code-mods.git",
         "path": "launch-codes",
         "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
       },
@@ -961,7 +961,7 @@
       "name": "md-prompt",
       "source": {
         "source": "git-subdir",
-        "url": "nogu66/md-prompt",
+        "url": "https://github.com/nogu66/md-prompt.git",
         "path": "plugins/md-prompt",
         "sha": "424b2e8fb8693f7d5432e678120567bf334f942a"
       },
@@ -987,7 +987,7 @@
       "name": "merge-gate",
       "source": {
         "source": "git-subdir",
-        "url": "yash-gadodia/claude-mods",
+        "url": "https://github.com/yash-gadodia/claude-mods.git",
         "path": "merge-gate",
         "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
       },
@@ -1013,7 +1013,7 @@
       "name": "mermaid-art",
       "source": {
         "source": "git-subdir",
-        "url": "galElmalah/claude-mods",
+        "url": "https://github.com/galElmalah/claude-mods.git",
         "path": "claude-mermaid",
         "sha": "b19a0f0d09bf214c010b15cc2849c0c1a11d7b0d"
       },
@@ -1064,7 +1064,7 @@
       "name": "mini-offload",
       "source": {
         "source": "git-subdir",
-        "url": "yash-gadodia/claude-mods",
+        "url": "https://github.com/yash-gadodia/claude-mods.git",
         "path": "mini-offload",
         "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
       },
@@ -1090,7 +1090,7 @@
       "name": "mod-builder",
       "source": {
         "source": "git-subdir",
-        "url": "karanb192/claude-code-mods",
+        "url": "https://github.com/karanb192/claude-code-mods.git",
         "path": "plugins/mod-builder",
         "sha": "10617a90106144d3cb131bd599e677d9c38bfd35"
       },
@@ -1116,7 +1116,7 @@
       "name": "money-band",
       "source": {
         "source": "git-subdir",
-        "url": "yash-gadodia/claude-mods",
+        "url": "https://github.com/yash-gadodia/claude-mods.git",
         "path": "money-band",
         "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
       },
@@ -1217,7 +1217,7 @@
       "name": "powerline",
       "source": {
         "source": "git-subdir",
-        "url": "Owloops/claude-powerline",
+        "url": "https://github.com/Owloops/claude-powerline.git",
         "path": "plugin",
         "sha": "3e763e558bca908475cf34adb55dfc59e4b39aa2"
       },
@@ -1268,7 +1268,7 @@
       "name": "prompt-queue",
       "source": {
         "source": "git-subdir",
-        "url": "galElmalah/claude-mods",
+        "url": "https://github.com/galElmalah/claude-mods.git",
         "path": "claude-queue",
         "sha": "b19a0f0d09bf214c010b15cc2849c0c1a11d7b0d"
       },
@@ -1294,7 +1294,7 @@
       "name": "prompt-rail",
       "source": {
         "source": "git-subdir",
-        "url": "oikon48/prompt-rail",
+        "url": "https://github.com/oikon48/prompt-rail.git",
         "path": "plugins/prompt-rail",
         "sha": "2ac50fb87fc426fed89ba0f09f1784ef6f289ae8"
       },
@@ -1320,7 +1320,7 @@
       "name": "pull-request-pane",
       "source": {
         "source": "git-subdir",
-        "url": "meganemura/pull-request-pane",
+        "url": "https://github.com/meganemura/pull-request-pane.git",
         "path": "plugin",
         "sha": "2b072514053814083609a3e6b45ca4d602448f9f"
       },
@@ -1346,7 +1346,7 @@
       "name": "quota-meter",
       "source": {
         "source": "git-subdir",
-        "url": "Arunjay4213/claude-mods",
+        "url": "https://github.com/Arunjay4213/claude-mods.git",
         "path": "plugins/quota-meter",
         "sha": "d4fffd7de9204a62b10e7b3604fc893158fa25fd"
       },
@@ -1372,7 +1372,7 @@
       "name": "receipt",
       "source": {
         "source": "git-subdir",
-        "url": "yash-gadodia/claude-mods",
+        "url": "https://github.com/yash-gadodia/claude-mods.git",
         "path": "receipt",
         "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
       },
@@ -1423,7 +1423,7 @@
       "name": "review-pane-rudrasecure",
       "source": {
         "source": "git-subdir",
-        "url": "rudrasecure/claude-mods",
+        "url": "https://github.com/rudrasecure/claude-mods.git",
         "path": "review-pane",
         "sha": "d408a11fd553fb9266e5fefcd948f4fc4d7708aa"
       },
@@ -1474,7 +1474,7 @@
       "name": "scope-guard",
       "source": {
         "source": "git-subdir",
-        "url": "yash-gadodia/claude-mods",
+        "url": "https://github.com/yash-gadodia/claude-mods.git",
         "path": "scope-guard",
         "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
       },
@@ -1500,7 +1500,7 @@
       "name": "secret-redactor",
       "source": {
         "source": "git-subdir",
-        "url": "ray-amjad/awesome-claude-code-function-hooks",
+        "url": "https://github.com/ray-amjad/awesome-claude-code-function-hooks.git",
         "path": "plugins/secret-redactor",
         "sha": "12b5fea27a4bd1b88cd9c9b6abc1efc0756c6625"
       },
@@ -1526,7 +1526,7 @@
       "name": "sentry-mcp",
       "source": {
         "source": "git-subdir",
-        "url": "getsentry/sentry-mcp",
+        "url": "https://github.com/getsentry/sentry-mcp.git",
         "path": "plugins/sentry-mcp",
         "sha": "9f1a7b2147d96246859f42d6f2cbf02ee3985c01"
       },
@@ -1552,7 +1552,7 @@
       "name": "sentry-mcp-experimental",
       "source": {
         "source": "git-subdir",
-        "url": "getsentry/sentry-mcp",
+        "url": "https://github.com/getsentry/sentry-mcp.git",
         "path": "plugins/sentry-mcp-experimental",
         "sha": "9f1a7b2147d96246859f42d6f2cbf02ee3985c01"
       },
@@ -1603,7 +1603,7 @@
       "name": "session-wrapped",
       "source": {
         "source": "git-subdir",
-        "url": "OneWave-AI/claude-code-mods",
+        "url": "https://github.com/OneWave-AI/claude-code-mods.git",
         "path": "session-wrapped",
         "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
       },
@@ -1629,7 +1629,7 @@
       "name": "sportscaster",
       "source": {
         "source": "git-subdir",
-        "url": "OneWave-AI/claude-code-mods",
+        "url": "https://github.com/OneWave-AI/claude-code-mods.git",
         "path": "sportscaster",
         "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
       },
@@ -1680,7 +1680,7 @@
       "name": "swarm",
       "source": {
         "source": "git-subdir",
-        "url": "OneWave-AI/claude-code-mods",
+        "url": "https://github.com/OneWave-AI/claude-code-mods.git",
         "path": "swarm",
         "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
       },
@@ -1728,36 +1728,10 @@
       }
     },
     {
-      "name": "tdd-guard",
-      "source": {
-        "source": "git-subdir",
-        "url": "nizos/tdd-guard",
-        "path": "plugin",
-        "sha": "2579ec1823fac5f4afb73be678d9c500b19885ac"
-      },
-      "description": "Automated Test-Driven Development enforcement",
-      "author": {
-        "name": "nizos",
-        "url": "https://github.com/nizos"
-      },
-      "homepage": "https://github.com/nizos/tdd-guard",
-      "category": "hook",
-      "tags": [
-        "hooks",
-        "tdd",
-        "guardrails"
-      ],
-      "metadata": {
-        "entry": "tdd-guard",
-        "upstreamName": "tdd-guard",
-        "upstreamMarketplace": "tdd-guard"
-      }
-    },
-    {
       "name": "token-ledger",
       "source": {
         "source": "git-subdir",
-        "url": "Arunjay4213/claude-mods",
+        "url": "https://github.com/Arunjay4213/claude-mods.git",
         "path": "plugins/token-ledger",
         "sha": "d4fffd7de9204a62b10e7b3604fc893158fa25fd"
       },
@@ -1808,7 +1782,7 @@
       "name": "usage-band",
       "source": {
         "source": "git-subdir",
-        "url": "yash-gadodia/claude-mods",
+        "url": "https://github.com/yash-gadodia/claude-mods.git",
         "path": "usage-band",
         "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
       },
@@ -1834,7 +1808,7 @@
       "name": "usage-ticker",
       "source": {
         "source": "git-subdir",
-        "url": "aycandv/claude-usage-meter",
+        "url": "https://github.com/aycandv/claude-usage-meter.git",
         "path": "plugins/usage-ticker",
         "sha": "52b1130bddedc9cc9127e370a2f970429254647e"
       },
@@ -1860,7 +1834,7 @@
       "name": "vercel-deploy-status",
       "source": {
         "source": "git-subdir",
-        "url": "ray-amjad/awesome-claude-code-function-hooks",
+        "url": "https://github.com/ray-amjad/awesome-claude-code-function-hooks.git",
         "path": "plugins/vercel-deploy-status",
         "sha": "12b5fea27a4bd1b88cd9c9b6abc1efc0756c6625"
       },
@@ -1886,7 +1860,7 @@
       "name": "wod-band",
       "source": {
         "source": "git-subdir",
-        "url": "yash-gadodia/claude-mods",
+        "url": "https://github.com/yash-gadodia/claude-mods.git",
         "path": "wod-band",
         "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
       },
@@ -1912,7 +1886,7 @@
       "name": "wod-timer",
       "source": {
         "source": "git-subdir",
-        "url": "yash-gadodia/claude-mods",
+        "url": "https://github.com/yash-gadodia/claude-mods.git",
         "path": "wod-timer",
         "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
       },

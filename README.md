@@ -7,7 +7,7 @@
 
 [Browse the site](https://claudemods.chat) · [Submit something](https://github.com/omarcevi/claudemods/issues/new?template=submit.yml) · [How it works](#how-it-works)
 
-![entries](https://img.shields.io/badge/entries-102-d97757) ![installable](https://img.shields.io/badge/installable_plugins-75-2f6f4f) ![license](https://img.shields.io/badge/list-CC0-lightgrey)
+![entries](https://img.shields.io/badge/entries-102-d97757) ![installable](https://img.shields.io/badge/installable_plugins-74-2f6f4f) ![license](https://img.shields.io/badge/list-CC0-lightgrey)
 
 </div>
 
@@ -150,7 +150,7 @@ Shell hooks and hook SDKs that run on Claude Code lifecycle events.
 | [Claude Code Hooks Mastery](https://github.com/disler/claude-code-hooks-mastery)<br><sub>by disler</sub> | Reference implementations of every hook lifecycle event, written as UV Python scripts. | see repo |
 | [claude-hooks](https://github.com/johnlindquist/claude-hooks)<br><sub>by johnlindquist</sub> | TypeScript hook system with strongly typed, auto-completing handlers. | `npx claude-hooks` |
 | [Multi-Agent Observability](https://github.com/disler/claude-code-hooks-multi-agent-observability)<br><sub>by disler</sub> | Real-time monitoring dashboard for Claude Code agents, fed by hook events. | see repo |
-| [TDD Guard](https://github.com/nizos/tdd-guard)<br><sub>by nizos</sub> | Blocks implementation without failing tests or beyond what the tests require. | `/plugin install tdd-guard@claudemods` |
+| [TDD Guard](https://github.com/nizos/tdd-guard)<br><sub>by nizos</sub> | Blocks implementation without failing tests or beyond what the tests require. | `/plugin marketplace add nizos/tdd-guard` |
 
 ## Status lines
 
@@ -223,7 +223,8 @@ Other curated lists worth following.
 - `data/mods.json` is the only file people edit. One entry per mod, plugin, skill or link.
 - `scripts/sync.mjs` reads each `bundle: true` entry's upstream `.claude-plugin/marketplace.json` (or `plugin.json`), pins it to the current commit and saves the result in `data/resolved.json`.
 - `scripts/build.mjs` generates this README, `.claude-plugin/marketplace.json` and the site.
-- A weekly GitHub Action re-syncs and opens a pull request with any new commits, so every upstream change gets a human look before it reaches you.
+- `scripts/footprint.mjs` reads every bundled plugin at its pinned commit and records what it runs: shell hooks, function-hook modules and the `$` calls they make, MCP servers, plus flags such as network access, running programs, touching credentials or skipping permission prompts. The site shows it on every card. A plugin that fetches code at runtime isn't bundled unless its entry says why (`acknowledge`).
+- A weekly GitHub Action re-syncs and opens a pull request with any new commits and what changed in what each plugin runs, so every upstream change gets a human look before it reaches you. Another installs every plugin into a clean config each week.
 
 ## Contributing
 
