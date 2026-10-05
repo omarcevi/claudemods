@@ -57,11 +57,29 @@ export function validateEntries(entries) {
     if (e.description && e.description.length > 140) errors.push(`${at}: description over 140 chars`);
     if (e.tags && (!Array.isArray(e.tags) || e.tags.length > 6)) errors.push(`${at}: tags must be an array of at most 6`);
     if (e.bundle && !githubRepo(e.url)) errors.push(`${at}: bundle:true needs a github.com repo url`);
+    if (e.plugin !== undefined && (!e.bundle || typeof e.plugin !== "string" || !PLUGIN_NAME_RE.test(e.plugin))) errors.push(`${at}: plugin must be a plugin name, on a bundle:true entry`);
+    if (e.marketplace !== undefined && (!e.bundle || !/^[\w.-]+\/[\w.-]+$/.test(e.marketplace))) errors.push(`${at}: marketplace must be "owner/repo", on a bundle:true entry`);
+    if (e.category !== undefined && (e.type !== "mod" || !MOD_CATEGORIES[e.category])) errors.push(`${at}: category must be one of ${Object.keys(MOD_CATEGORIES).join(", ")}, on a mod`);
     if (e.acknowledge !== undefined && (typeof e.acknowledge !== "object" || !Object.entries(e.acknowledge).every(([k, v]) => FLAGS[k] && typeof v === "string" && v.trim())))
       errors.push(`${at}: acknowledge must map flag ids (${Object.keys(FLAGS).join(", ")}) to a reason`);
   });
   return errors;
 }
+
+// Sub-categories for mods (entry field `category`), in display order. Optional:
+// a mod without one shows under "More mods".
+export const MOD_CATEGORIES = {
+  guards: { label: "Guards", blurb: "Ask or block before risky commands, edits and pushes." },
+  bands: { label: "Bands & status", blurb: "Live info above the prompt or in the status line: cost, context, git, time." },
+  panes: { label: "Panes & dashboards", blurb: "Side panes and dashboards that sit beside the conversation." },
+  display: { label: "Display tweaks", blurb: "Change how the transcript, tool rows and replies look." },
+  nudges: { label: "Nudges", blurb: "One gentle reminder when something looks off: commit, test, take a break." },
+  notify: { label: "Notifications & sounds", blurb: "Sounds, desktop pings and chat messages when something happens." },
+  styles: { label: "Writing styles", blurb: "Change how Claude writes answers and commit messages." },
+  tools: { label: "Tools & automation", blurb: "Slash commands and helpers that do work for you." },
+  fun: { label: "Fun & games", blurb: "Games, pets, pixel art, streaks and achievements." },
+  packs: { label: "Packs", blurb: "Several mods in one install." },
+};
 
 // Risk flags scripts/footprint.mjs can raise for a bundled plugin, worst first.
 export const FLAGS = {

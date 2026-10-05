@@ -9,6 +9,7 @@ Community directory of Claude extensions (mods, plugins, skills, subagents, slas
 ## Layout
 
 - `data/mods.json` holds one entry per line. It is the ONLY hand-edited data file.
+  - `bundle: true` puts an entry's plugins in our marketplace. `plugin: "name"` takes just that one plugin from the repo's marketplace, so every mod gets its own card even when many live in one repo. `marketplace: "owner/repo"` reads the plugin list from another repo instead, e.g. Baselane's reviewed catalog (`baselane-sh/mods-catalog`); their 130 mods are entries like this, pinned to the commit Baselane reviewed. Give each such entry a unique `url` (the mod's folder).
 - `data/resolved.json` is written by `scripts/sync.mjs`. It holds the upstream plugins for each `bundle: true` entry, pinned to a commit sha.
 - `scripts/build.mjs` generates `README.md`, `.claude-plugin/marketplace.json` and the site: `site/index.html` (from `scripts/index.template.html`, with every entry rendered into the HTML for search engines), `site/data.json`, `site/robots.txt` and `site/sitemap.xml`. Never edit these by hand; change the template or `build.mjs`.
 - `scripts/sync.mjs [ids…] [--summary file]` fetches each upstream `.claude-plugin/marketplace.json` (or `plugin.json`) and pins it with `git ls-remote`, then records each newly pinned plugin's footprint. `--summary` writes the sync PR body: compare links plus what changed in what each plugin runs. It needs network access.
@@ -49,7 +50,7 @@ claude plugin validate .
 
 ## Status (2026-10-05)
 
-Live at https://claudemods.chat (repo omarcevi/claudemods): 102 entries, 74 installable plugins, every card shows the plugin's footprint, and `verify-installs.sh` installs all 74.
+Live at https://claudemods.chat (repo omarcevi/claudemods): 232 entries, 204 installable plugins (130 of them Baselane's), every card shows the plugin's footprint, and `verify-installs.sh` installs them all.
 
 
 ## Launch checklist

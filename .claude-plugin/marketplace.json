@@ -8,6 +8,60 @@
   },
   "plugins": [
     {
+      "name": "achievements",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/achievements",
+        "ref": "achievements--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Unlocks eight badges once each (first session, first green test run, 100 and 1,000 tool calls, 7-day streak, 10 blocked calls, a 2 hour session, night owl), with a toast and /achievements.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/achievements",
+      "category": "mod",
+      "tags": [
+        "toast",
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "achievements",
+        "upstreamName": "achievements",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "agent-firewall",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/agent-firewall",
+        "ref": "agent-firewall--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "A live pane of every tool call the agent makes: green when it ran, red when it was blocked, with counters. Open it with /firewall.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/agent-firewall",
+      "category": "mod",
+      "tags": [
+        "pane",
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "agent-firewall",
+        "upstreamName": "agent-firewall",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
       "name": "agent-flow",
       "source": {
         "source": "github",
@@ -187,6 +241,160 @@
       }
     },
     {
+      "name": "authors",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/authors",
+        "ref": "authors--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Adds /authors: the top 15 contributors by commit count with their last commit date. Names only, never email addresses. Read-only.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/authors",
+      "category": "mod",
+      "tags": [
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "authors",
+        "upstreamName": "authors",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "auto-format",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/auto-format",
+        "ref": "auto-format--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Runs your project's own formatter on each file Claude writes or edits, only when the project has a formatter config, and tells Claude to re-read the file.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/auto-format",
+      "category": "mod",
+      "tags": [
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "auto-format",
+        "upstreamName": "auto-format",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "auto-lint",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/auto-lint",
+        "ref": "auto-lint--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Runs your project's own linter fix (eslint, ruff or golangci-lint) on each file Claude writes or edits, only when the project has that linter's config, and tells Claude what is left.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/auto-lint",
+      "category": "mod",
+      "tags": [
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "auto-lint",
+        "upstreamName": "auto-lint",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "band-pack",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/band-pack",
+        "ref": "band-pack--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Every Baselane band meter in one row above the prompt: session cost, lattes, context bar, today's spend, the focus timer and the mood ring.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/band-pack",
+      "category": "mod",
+      "tags": [
+        "band",
+        "collection",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "band-pack",
+        "upstreamName": "band-pack",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "big-diff-nudge",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/big-diff-nudge",
+        "ref": "big-diff-nudge--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Suggests splitting the change once your edits added or removed more than 500 lines since the last git commit. A successful commit resets the count.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/big-diff-nudge",
+      "category": "mod",
+      "tags": [
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "big-diff-nudge",
+        "upstreamName": "big-diff-nudge",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "big-file-guard",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/big-file-guard",
+        "ref": "big-file-guard--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Asks before a Write creates content over 1 MB, or git add names a file over 5 MB.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/big-file-guard",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "big-file-guard",
+        "upstreamName": "big-file-guard",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
       "name": "boss-fight",
       "source": {
         "source": "git-subdir",
@@ -210,6 +418,83 @@
         "entry": "onewave-claude-code-mods",
         "upstreamName": "boss-fight",
         "upstreamMarketplace": "claude-code-mods"
+      }
+    },
+    {
+      "name": "branch-band",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/branch-band",
+        "ref": "branch-band--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "A band above the prompt with the git branch and the count of changed files, refreshed after each Bash call and file edit.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/branch-band",
+      "category": "mod",
+      "tags": [
+        "band",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "branch-band",
+        "upstreamName": "branch-band",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "branches",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/branches",
+        "ref": "branches--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Adds /branches: local branches merged into the default branch or idle for 30 days, as a cleanup list. Never deletes.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/branches",
+      "category": "mod",
+      "tags": [
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "branches",
+        "upstreamName": "branches",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "break-nudge",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/break-nudge",
+        "ref": "break-nudge--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Suggests a short break once the session has run 90 minutes, and again every 90 minutes after that.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/break-nudge",
+      "category": "mod",
+      "tags": [
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "break-nudge",
+        "upstreamName": "break-nudge",
+        "upstreamMarketplace": "baselane-mods"
       }
     },
     {
@@ -316,6 +601,32 @@
       }
     },
     {
+      "name": "caveman-mode",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/caveman-mode",
+        "ref": "caveman-mode--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Prose in short caveman speech (\"Fix bug. Test pass.\"), still accurate. Code and commands stay exact.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/caveman-mode",
+      "category": "mod",
+      "tags": [
+        "style",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "caveman-mode",
+        "upstreamName": "caveman-mode",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
       "name": "cc-arcade",
       "source": {
         "source": "github",
@@ -367,6 +678,58 @@
       }
     },
     {
+      "name": "changelog",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/changelog",
+        "ref": "changelog--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Adds /changelog: commits since the last tag (or the last 30), grouped by conventional-commit type, as Markdown.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/changelog",
+      "category": "mod",
+      "tags": [
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "changelog",
+        "upstreamName": "changelog",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "chmod-guard",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/chmod-guard",
+        "ref": "chmod-guard--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Asks before chmod makes files world-writable (777, a+w, o+w) or chmod or chown runs recursively on a broad path (/, a system folder, a home folder).",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/chmod-guard",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "chmod-guard",
+        "upstreamName": "chmod-guard",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
       "name": "chrome-switch",
       "source": {
         "source": "git-subdir",
@@ -390,6 +753,32 @@
         "entry": "yash-claude-mods",
         "upstreamName": "chrome-switch",
         "upstreamMarketplace": "claude-mods"
+      }
+    },
+    {
+      "name": "ci-config-guard",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/ci-config-guard",
+        "ref": "ci-config-guard--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Asks before Write or Edit changes CI config: .github/workflows, .gitlab-ci.yml or .circleci/config.yml.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/ci-config-guard",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "ci-config-guard",
+        "upstreamName": "ci-config-guard",
+        "upstreamMarketplace": "baselane-mods"
       }
     },
     {
@@ -419,6 +808,57 @@
       }
     },
     {
+      "name": "clippy",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/clippy",
+        "ref": "clippy--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "One helpful toast per session per trigger, in the classic paperclip voice: when you edit a migrations folder, a Dockerfile or a GitHub workflow, or run rm -rf. At most one toast per turn.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/clippy",
+      "category": "mod",
+      "tags": [
+        "toast",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "clippy",
+        "upstreamName": "clippy",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "code-only",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/code-only",
+        "ref": "code-only--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Replies with the code or command first and at most two short sentences of prose, unless asked to explain.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/code-only",
+      "category": "mod",
+      "tags": [
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "code-only",
+        "upstreamName": "code-only",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
       "name": "code-pet",
       "source": {
         "source": "git-subdir",
@@ -442,6 +882,85 @@
         "entry": "onewave-claude-code-mods",
         "upstreamName": "code-pet",
         "upstreamMarketplace": "claude-code-mods"
+      }
+    },
+    {
+      "name": "command-pack",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/command-pack",
+        "ref": "command-pack--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Every slash command in one mod: /receipt, /standup, /changelog, /pr-description and /handoff.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/command-pack",
+      "category": "mod",
+      "tags": [
+        "collection",
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "command-pack",
+        "upstreamName": "command-pack",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "commit-msg",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/commit-msg",
+        "ref": "commit-msg--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Adds /commit-msg: a Conventional Commits message proposed from the staged diff. Heuristic, no model call, writes nothing.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/commit-msg",
+      "category": "mod",
+      "tags": [
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "commit-msg",
+        "upstreamName": "commit-msg",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "commit-nudge",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/commit-nudge",
+        "ref": "commit-nudge--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Suggests a commit at turn end after 8 or more file edits since the last git commit. One toast per batch of edits; a successful git commit resets the count.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/commit-nudge",
+      "category": "mod",
+      "tags": [
+        "toast",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "commit-nudge",
+        "upstreamName": "commit-nudge",
+        "upstreamMarketplace": "baselane-mods"
       }
     },
     {
@@ -496,6 +1015,32 @@
       }
     },
     {
+      "name": "context-meter",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/context-meter",
+        "ref": "context-meter--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "A band above the prompt with a 10 cell bar of the context window used, yellow from 60 percent, red from 80.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/context-meter",
+      "category": "mod",
+      "tags": [
+        "band",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "context-meter",
+        "upstreamName": "context-meter",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
       "name": "context7",
       "source": {
         "source": "git-subdir",
@@ -519,6 +1064,31 @@
         "entry": "context7",
         "upstreamName": "context7",
         "upstreamMarketplace": "context7-marketplace"
+      }
+    },
+    {
+      "name": "conventional-commits",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/conventional-commits",
+        "ref": "conventional-commits--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Commit messages follow Conventional Commits: type(scope): subject, imperative, under 72 characters.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/conventional-commits",
+      "category": "mod",
+      "tags": [
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "conventional-commits",
+        "upstreamName": "conventional-commits",
+        "upstreamMarketplace": "baselane-mods"
       }
     },
     {
@@ -574,6 +1144,163 @@
       }
     },
     {
+      "name": "cost-meter",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/cost-meter",
+        "ref": "cost-meter--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "A band above the prompt with the session cost so far and what the last turn cost.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/cost-meter",
+      "category": "mod",
+      "tags": [
+        "band",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "cost-meter",
+        "upstreamName": "cost-meter",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "cost-pane",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/cost-pane",
+        "ref": "cost-pane--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "A live side pane with the session cost, the cost of each of the last 10 turns as a bar, and the average per turn. Open it with /cost-pane.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/cost-pane",
+      "category": "mod",
+      "tags": [
+        "pane",
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "cost-pane",
+        "upstreamName": "cost-pane",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "ctx-nudge",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/ctx-nudge",
+        "ref": "ctx-nudge--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Reminds you to /clear or /compact when the context window passes 75 percent.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/ctx-nudge",
+      "category": "mod",
+      "tags": [
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "ctx-nudge",
+        "upstreamName": "ctx-nudge",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "curl-pipe-guard",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/curl-pipe-guard",
+        "ref": "curl-pipe-guard--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Asks before a download is piped into a shell or interpreter (curl | sh, wget -O- | bash, bash <(curl ...)).",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/curl-pipe-guard",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "curl-pipe-guard",
+        "upstreamName": "curl-pipe-guard",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "daily-spend",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/daily-spend",
+        "ref": "daily-spend--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "A band above the prompt with today's total cost across all your sessions.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/daily-spend",
+      "category": "mod",
+      "tags": [
+        "band",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "daily-spend",
+        "upstreamName": "daily-spend",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "debug-print-nudge",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/debug-print-nudge",
+        "ref": "debug-print-nudge--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "At turn end, one toast naming the count of console.log, print(, debugger and dbg! lines your edits added this turn. Only code files count.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/debug-print-nudge",
+      "category": "mod",
+      "tags": [
+        "toast",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "debug-print-nudge",
+        "upstreamName": "debug-print-nudge",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
       "name": "deploy-verify",
       "source": {
         "source": "git-subdir",
@@ -597,6 +1324,83 @@
         "entry": "yash-claude-mods",
         "upstreamName": "deploy-verify",
         "upstreamMarketplace": "claude-mods"
+      }
+    },
+    {
+      "name": "deps",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/deps",
+        "ref": "deps--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Adds /deps: direct dependencies with versions from package.json, pyproject.toml, requirements.txt, go.mod and Cargo.toml at the repo root. No network, no audit. Read-only.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/deps",
+      "category": "mod",
+      "tags": [
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "deps",
+        "upstreamName": "deps",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "desktop-notify",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/desktop-notify",
+        "ref": "desktop-notify--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Shows a desktop notification when Claude Code needs your input: osascript on macOS, notify-send elsewhere when it is installed. The text is the project name and a short status only.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/desktop-notify",
+      "category": "mod",
+      "tags": [
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "desktop-notify",
+        "upstreamName": "desktop-notify",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "dev-band",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/dev-band",
+        "ref": "dev-band--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "The developer band in one row above the prompt: git branch and changed files, wall clock and session age, tool counts, and failed tool calls.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/dev-band",
+      "category": "mod",
+      "tags": [
+        "band",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "dev-band",
+        "upstreamName": "dev-band",
+        "upstreamMarketplace": "baselane-mods"
       }
     },
     {
@@ -651,6 +1455,108 @@
       }
     },
     {
+      "name": "diff-stats",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/diff-stats",
+        "ref": "diff-stats--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Edit and Write rows show a compact +12 -3 bar beside the file name: green for lines added, red for lines removed, up to 20 cells.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/diff-stats",
+      "category": "mod",
+      "tags": [
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "diff-stats",
+        "upstreamName": "diff-stats",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "discord-notify",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/discord-notify",
+        "ref": "discord-notify--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Posts to a Discord webhook when Claude Code needs your input. Sends the project name and a short status only. Does nothing until you set a webhook URL.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/discord-notify",
+      "category": "mod",
+      "tags": [
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "discord-notify",
+        "upstreamName": "discord-notify",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "docker-guard",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/docker-guard",
+        "ref": "docker-guard--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Asks before Docker commands that delete data: system, volume or image prune, rm -f, volume rm and compose down -v.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/docker-guard",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "docker-guard",
+        "upstreamName": "docker-guard",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "docs-nudge",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/docs-nudge",
+        "ref": "docs-nudge--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "At turn end, one toast when edits added exported code (an export statement in .ts or .js, or a public function signature) and no README or docs file was edited this session.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/docs-nudge",
+      "category": "mod",
+      "tags": [
+        "toast",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "docs-nudge",
+        "upstreamName": "docs-nudge",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
       "name": "done-blink",
       "source": {
         "source": "git-subdir",
@@ -674,6 +1580,188 @@
         "entry": "yash-claude-mods",
         "upstreamName": "done-blink",
         "upstreamMarketplace": "claude-mods"
+      }
+    },
+    {
+      "name": "eli5-mode",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/eli5-mode",
+        "ref": "eli5-mode--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Explains like the reader is new: analogies first, no jargon without a one-line definition.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/eli5-mode",
+      "category": "mod",
+      "tags": [
+        "style",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "eli5-mode",
+        "upstreamName": "eli5-mode",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "env-check",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/env-check",
+        "ref": "env-check--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Adds /env-check: variable names in .env.example against .env, listing missing and extra names. Reads names only, never a value. Read-only.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/env-check",
+      "category": "mod",
+      "tags": [
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "env-check",
+        "upstreamName": "env-check",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "env-example-nudge",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/env-example-nudge",
+        "ref": "env-example-nudge--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "At turn end, one toast when edits add a reference to an environment variable (process.env, os.environ, os.getenv, Deno.env) that .env.example does not list. Reads only .env.example names, never .env.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/env-example-nudge",
+      "category": "mod",
+      "tags": [
+        "toast",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "env-example-nudge",
+        "upstreamName": "env-example-nudge",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "env-exfil-guard",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/env-exfil-guard",
+        "ref": "env-exfil-guard--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Asks before a command prints your environment, echoes a secret variable or sends local data to a remote host.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/env-exfil-guard",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "env-exfil-guard",
+        "upstreamName": "env-exfil-guard",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "error-meter",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/error-meter",
+        "ref": "error-meter--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "A band above the prompt with how many tool calls failed this session (an error or a deny) and which tool failed last. Red from the first failure.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/error-meter",
+      "category": "mod",
+      "tags": [
+        "band",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "error-meter",
+        "upstreamName": "error-meter",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "exit-badge",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/exit-badge",
+        "ref": "exit-badge--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "A failed Bash row shows a small red badge with its exit code, for example exit 2.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/exit-badge",
+      "category": "mod",
+      "tags": [
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "exit-badge",
+        "upstreamName": "exit-badge",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "explore-pack",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/explore-pack",
+        "ref": "explore-pack--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Five read-only repo exploration commands in one mod: /tree, /deps, /authors, /scripts and /env-check.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/explore-pack",
+      "category": "mod",
+      "tags": [
+        "collection",
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "explore-pack",
+        "upstreamName": "explore-pack",
+        "upstreamMarketplace": "baselane-mods"
       }
     },
     {
@@ -725,6 +1813,343 @@
         "entry": "claude-familiar",
         "upstreamName": "familiar",
         "upstreamMarketplace": "claude-familiar"
+      }
+    },
+    {
+      "name": "file-links",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/file-links",
+        "ref": "file-links--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "In Claude's replies, path/to/file.ts:42 references to files in your project become links. Click one to put @path/to/file.ts in the prompt.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/file-links",
+      "category": "mod",
+      "tags": [
+        "sounds",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "file-links",
+        "upstreamName": "file-links",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "focus-pack",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/focus-pack",
+        "ref": "focus-pack--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Three quiet nudges in one mod: commit after 8 edits, TODO/FIXME/HACK lines added, and debug prints added.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/focus-pack",
+      "category": "mod",
+      "tags": [
+        "collection",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "focus-pack",
+        "upstreamName": "focus-pack",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "fun-pack",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/fun-pack",
+        "ref": "fun-pack--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Fun habits in one install: caveman prose and gitmoji commit messages. They compose: caveman never touches commit messages.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/fun-pack",
+      "category": "mod",
+      "tags": [
+        "collection",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "fun-pack",
+        "upstreamName": "fun-pack",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "git-history-guard",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/git-history-guard",
+        "ref": "git-history-guard--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Asks before git commands that throw away work or rewrite history: reset --hard, clean, rebase, filter-branch, filter-repo, push --delete, branch -D and stash clear.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/git-history-guard",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "git-history-guard",
+        "upstreamName": "git-history-guard",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "git-pane",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/git-pane",
+        "ref": "git-pane--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "A live side pane with the branch, ahead and behind its upstream, changed files (staged and unstaged) and the last 5 commits. It refreshes after git commands and file edits. Open it with /git.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/git-pane",
+      "category": "mod",
+      "tags": [
+        "pane",
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "git-pane",
+        "upstreamName": "git-pane",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "gitignore-check",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/gitignore-check",
+        "ref": "gitignore-check--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Asks before git add or commit when secret-looking files are not ignored or are already tracked.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/gitignore-check",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "gitignore-check",
+        "upstreamName": "gitignore-check",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "gitmoji-commits",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/gitmoji-commits",
+        "ref": "gitmoji-commits--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Commit messages start with the matching gitmoji (✨ feat, 🐛 fix). Composes with conventional-commits: emoji goes before the type.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/gitmoji-commits",
+      "category": "mod",
+      "tags": [
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "gitmoji-commits",
+        "upstreamName": "gitmoji-commits",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "guard-devops",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/guard-devops",
+        "ref": "guard-devops--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Asks before harsh DevOps commands: destructive Docker, Kubernetes and Helm calls, CI config edits, broad chmod and chown, and git commands that lose work. Add infra-guard for plain kubectl delete.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/guard-devops",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "guard-devops",
+        "upstreamName": "guard-devops",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "guard-essentials",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/guard-essentials",
+        "ref": "guard-essentials--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Asks only before harsh or disaster commands: destructive infra, git and SQL, piping downloads into a shell, sudo, leaking or committing secrets. The quiet choice for daily work.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/guard-essentials",
+      "category": "mod",
+      "tags": [
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "guard-essentials",
+        "upstreamName": "guard-essentials",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "guard-pack",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/guard-pack",
+        "ref": "guard-pack--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Every Baselane guard in one mod.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/guard-pack",
+      "category": "mod",
+      "tags": [
+        "collection",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "guard-pack",
+        "upstreamName": "guard-pack",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "haiku-commits",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/haiku-commits",
+        "ref": "haiku-commits--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Commit messages get a normal conventional-commit first line, then a 5-7-5 haiku about the change in the body.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/haiku-commits",
+      "category": "mod",
+      "tags": [
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "haiku-commits",
+        "upstreamName": "haiku-commits",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "handoff",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/handoff",
+        "ref": "handoff--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Adds /handoff: writes a session summary to .claude/handoff.md (never overwriting) and answers with the path.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/handoff",
+      "category": "mod",
+      "tags": [
+        "style",
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "handoff",
+        "upstreamName": "handoff",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "hotspots",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/hotspots",
+        "ref": "hotspots--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Adds /hotspots: the 10 files changed most often in the last 90 days, with change counts. Read-only.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/hotspots",
+      "category": "mod",
+      "tags": [
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "hotspots",
+        "upstreamName": "hotspots",
+        "upstreamMarketplace": "baselane-mods"
       }
     },
     {
@@ -829,6 +2254,32 @@
       }
     },
     {
+      "name": "infra-guard",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/infra-guard",
+        "ref": "infra-guard--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Asks before terraform destroy, kubectl delete, force-push, DROP TABLE or rm -rf.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/infra-guard",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "infra-guard",
+        "upstreamName": "infra-guard",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
       "name": "inner-monologue",
       "source": {
         "source": "git-subdir",
@@ -881,6 +2332,109 @@
       }
     },
     {
+      "name": "json-pretty",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/json-pretty",
+        "ref": "json-pretty--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Bash output that is one long line of JSON is drawn pretty-printed, folded after 30 lines. Display only: Claude reads the output as it was.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/json-pretty",
+      "category": "mod",
+      "tags": [
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "json-pretty",
+        "upstreamName": "json-pretty",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "junior-mode",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/junior-mode",
+        "ref": "junior-mode--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Explains each step and why, and defines jargon once, for a learner.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/junior-mode",
+      "category": "mod",
+      "tags": [
+        "style",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "junior-mode",
+        "upstreamName": "junior-mode",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "k8s-guard",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/k8s-guard",
+        "ref": "k8s-guard--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Asks before kubectl apply or replace with --force, kubectl drain, helm uninstall, and kubectl delete behind global flags (plain kubectl delete is infra-guard's).",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/k8s-guard",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "k8s-guard",
+        "upstreamName": "k8s-guard",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "latte-meter",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/latte-meter",
+        "ref": "latte-meter--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "A band above the prompt that counts the session cost in lattes. Set the latte price in the plugin options.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/latte-meter",
+      "category": "mod",
+      "tags": [
+        "band",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "latte-meter",
+        "upstreamName": "latte-meter",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
       "name": "launch-codes",
       "source": {
         "source": "git-subdir",
@@ -930,6 +2484,135 @@
         "entry": "lcm",
         "upstreamName": "lcm",
         "upstreamMarketplace": "lossless-claude"
+      }
+    },
+    {
+      "name": "lifecycle-pack",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/lifecycle-pack",
+        "ref": "lifecycle-pack--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Every Baselane lifecycle mod in one: auto-format, long-run and input pushes, and the session journal.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/lifecycle-pack",
+      "category": "mod",
+      "tags": [
+        "collection",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "lifecycle-pack",
+        "upstreamName": "lifecycle-pack",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "loc",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/loc",
+        "ref": "loc--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Adds /loc: lines of tracked text files by language, sorted, with a total. Skips lockfiles and binaries. Read-only.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/loc",
+      "category": "mod",
+      "tags": [
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "loc",
+        "upstreamName": "loc",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "lockfile-guard",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/lockfile-guard",
+        "ref": "lockfile-guard--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Asks before a lockfile is written or edited by hand; the package manager should change it.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/lockfile-guard",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "lockfile-guard",
+        "upstreamName": "lockfile-guard",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "lockfile-nudge",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/lockfile-nudge",
+        "ref": "lockfile-nudge--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "At turn end, one toast when dependencies in package.json, pyproject.toml, Cargo.toml or go.mod changed and neither the matching lockfile was edited nor an install command ran.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/lockfile-nudge",
+      "category": "mod",
+      "tags": [
+        "toast",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "lockfile-nudge",
+        "upstreamName": "lockfile-nudge",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "long-run-notify",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/long-run-notify",
+        "ref": "long-run-notify--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Sends a phone push through ntfy.sh when a Bash command ran longer than a threshold (60 seconds by default). Sends the project name and the seconds only. Does nothing until you set an ntfy topic.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/long-run-notify",
+      "category": "mod",
+      "tags": [
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "long-run-notify",
+        "upstreamName": "long-run-notify",
+        "upstreamMarketplace": "baselane-mods"
       }
     },
     {
@@ -1036,6 +2719,58 @@
       }
     },
     {
+      "name": "migration-guard",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/migration-guard",
+        "ref": "migration-guard--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Asks before Write or Edit changes a migration that already exists; new migration files pass.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/migration-guard",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "migration-guard",
+        "upstreamName": "migration-guard",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "migration-nudge",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/migration-nudge",
+        "ref": "migration-nudge--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "At turn end, one toast when a schema file changed (schema.prisma, models.py, SQL under schema/, a drizzle schema) and no migration file was created this session.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/migration-nudge",
+      "category": "mod",
+      "tags": [
+        "toast",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "migration-nudge",
+        "upstreamName": "migration-nudge",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
       "name": "mindful-breathing",
       "source": {
         "source": "github",
@@ -1113,6 +2848,32 @@
       }
     },
     {
+      "name": "model-badge",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/model-badge",
+        "ref": "model-badge--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "A band above the prompt with the current model name and the context percent (opus-4-1 · 62%).",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/model-badge",
+      "category": "mod",
+      "tags": [
+        "band",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "model-badge",
+        "upstreamName": "model-badge",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
       "name": "money-band",
       "source": {
         "source": "git-subdir",
@@ -1136,6 +2897,316 @@
         "entry": "yash-claude-mods",
         "upstreamName": "money-band",
         "upstreamMarketplace": "claude-mods"
+      }
+    },
+    {
+      "name": "mood-ring",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/mood-ring",
+        "ref": "mood-ring--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "A band above the prompt with a colored dot and a word for the error and block rate of your last 20 tool calls: calm (green) under 10 percent, tense (yellow) under 30, stormy (red) from 30.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/mood-ring",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "band",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "mood-ring",
+        "upstreamName": "mood-ring",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "night-owl",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/night-owl",
+        "ref": "night-owl--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Records the hour of each prompt across sessions and adds /hours: a 24-hour histogram of when you work, naming your peak hour.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/night-owl",
+      "category": "mod",
+      "tags": [
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "night-owl",
+        "upstreamName": "night-owl",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "no-em-dash",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/no-em-dash",
+        "ref": "no-em-dash--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Never writes the em-dash character. Uses a comma, colon, period or parentheses.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/no-em-dash",
+      "category": "mod",
+      "tags": [
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "no-em-dash",
+        "upstreamName": "no-em-dash",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "no-sycophancy",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/no-sycophancy",
+        "ref": "no-sycophancy--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "No flattery or filler. Disagreement is stated plainly, with the reason.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/no-sycophancy",
+      "category": "mod",
+      "tags": [
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "no-sycophancy",
+        "upstreamName": "no-sycophancy",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "no-verify-guard",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/no-verify-guard",
+        "ref": "no-verify-guard--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Asks before git hooks are skipped (--no-verify, commit -n, HUSKY=0, core.hooksPath=/dev/null).",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/no-verify-guard",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "no-verify-guard",
+        "upstreamName": "no-verify-guard",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "notify-pack",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/notify-pack",
+        "ref": "notify-pack--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Local alerts in one: a desktop notification when Claude Code needs your input, and a spoken line on macOS when a long turn ends.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/notify-pack",
+      "category": "mod",
+      "tags": [
+        "collection",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "notify-pack",
+        "upstreamName": "notify-pack",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "ntfy-notify",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/ntfy-notify",
+        "ref": "ntfy-notify--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Sends a phone push through ntfy.sh when Claude Code needs your input. The message is generic. Does nothing until you set an ntfy topic.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/ntfy-notify",
+      "category": "mod",
+      "tags": [
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "ntfy-notify",
+        "upstreamName": "ntfy-notify",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "nudge-pack",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/nudge-pack",
+        "ref": "nudge-pack--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Every Baselane turn-end reminder in one mod.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/nudge-pack",
+      "category": "mod",
+      "tags": [
+        "collection",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "nudge-pack",
+        "upstreamName": "nudge-pack",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "package-guard",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/package-guard",
+        "ref": "package-guard--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Asks before a new dependency is installed (npm, pnpm, yarn, bun, pip, uv, poetry, cargo, go, gem) and names the packages.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/package-guard",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "package-guard",
+        "upstreamName": "package-guard",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "path-jail",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/path-jail",
+        "ref": "path-jail--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Asks before Write, Edit or NotebookEdit changes a file outside the working directory, by real path.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/path-jail",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "path-jail",
+        "upstreamName": "path-jail",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "personal-bests",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/personal-bests",
+        "ref": "personal-bests--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Tracks your records across sessions (longest session, most tool calls in a session, most files edited in a day, cheapest session over 30 minutes), toasts a new one, and lists them with /bests.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/personal-bests",
+      "category": "mod",
+      "tags": [
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "personal-bests",
+        "upstreamName": "personal-bests",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "pirate-mode",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/pirate-mode",
+        "ref": "pirate-mode--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Talks like a pirate in prose, never inside code, commands or file contents.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/pirate-mode",
+      "category": "mod",
+      "tags": [
+        "style",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "pirate-mode",
+        "upstreamName": "pirate-mode",
+        "upstreamMarketplace": "baselane-mods"
       }
     },
     {
@@ -1164,6 +3235,31 @@
       }
     },
     {
+      "name": "plain-english",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/plain-english",
+        "ref": "plain-english--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Writes in ASD-STE-100 Simplified Technical English: short sentences, active voice, simple words.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/plain-english",
+      "category": "mod",
+      "tags": [
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "plain-english",
+        "upstreamName": "plain-english",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
       "name": "playwright-skill",
       "source": {
         "source": "github",
@@ -1189,6 +3285,34 @@
       }
     },
     {
+      "name": "pomodoro",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/pomodoro",
+        "ref": "pomodoro--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "A band above the prompt with a 25/5 focus timer (focus 18:42, break 03:10). Start and stop it with /pomodoro; a toast marks each switch.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/pomodoro",
+      "category": "mod",
+      "tags": [
+        "band",
+        "toast",
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "pomodoro",
+        "upstreamName": "pomodoro",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
       "name": "ponytail",
       "source": {
         "source": "github",
@@ -1211,6 +3335,33 @@
         "entry": "ponytail",
         "upstreamName": "ponytail",
         "upstreamMarketplace": "ponytail"
+      }
+    },
+    {
+      "name": "port-watch",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/port-watch",
+        "ref": "port-watch--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "A live side pane of the local TCP ports that listen, with the process name and pid, refreshed every 10 seconds while open. Reads lsof (macOS, most Linux). Open it with /ports.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/port-watch",
+      "category": "mod",
+      "tags": [
+        "pane",
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "port-watch",
+        "upstreamName": "port-watch",
+        "upstreamMarketplace": "baselane-mods"
       }
     },
     {
@@ -1240,6 +3391,32 @@
       }
     },
     {
+      "name": "pr-description",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/pr-description",
+        "ref": "pr-description--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Adds /pr-description: title, summary, diff totals and a test plan stub for the current branch against main or master.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/pr-description",
+      "category": "mod",
+      "tags": [
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "pr-description",
+        "upstreamName": "pr-description",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
       "name": "prismantis",
       "source": {
         "source": "github",
@@ -1262,6 +3439,32 @@
         "entry": "prismantis",
         "upstreamName": "prismantis",
         "upstreamMarketplace": "prismantis"
+      }
+    },
+    {
+      "name": "prod-db-guard",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/prod-db-guard",
+        "ref": "prod-db-guard--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Asks before destructive SQL runs in a command: TRUNCATE, DELETE or UPDATE with no WHERE.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/prod-db-guard",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "prod-db-guard",
+        "upstreamName": "prod-db-guard",
+        "upstreamMarketplace": "baselane-mods"
       }
     },
     {
@@ -1317,6 +3520,32 @@
       }
     },
     {
+      "name": "protect-main",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/protect-main",
+        "ref": "protect-main--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Asks before a commit, push or merge while you are on main or master.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/protect-main",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "protect-main",
+        "upstreamName": "protect-main",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
       "name": "pull-request-pane",
       "source": {
         "source": "git-subdir",
@@ -1340,6 +3569,32 @@
         "entry": "pull-request-pane",
         "upstreamName": "pull-request-pane",
         "upstreamMarketplace": "pull-request-pane"
+      }
+    },
+    {
+      "name": "quality-pack",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/quality-pack",
+        "ref": "quality-pack--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Three quiet nudges in one mod: type check after TypeScript edits, lockfile after dependency edits, and a split suggestion past 500 changed lines.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/quality-pack",
+      "category": "mod",
+      "tags": [
+        "collection",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "quality-pack",
+        "upstreamName": "quality-pack",
+        "upstreamMarketplace": "baselane-mods"
       }
     },
     {
@@ -1392,6 +3647,137 @@
         "entry": "yash-claude-mods",
         "upstreamName": "receipt",
         "upstreamMarketplace": "claude-mods"
+      }
+    },
+    {
+      "name": "receipt-baselane-sh",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/receipt",
+        "ref": "receipt--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Adds /receipt: a shareable receipt of the session (tools, files, commands, blocks, context, cost), printed and copied.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/receipt",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "receipt",
+        "upstreamName": "receipt",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "render-pack",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/render-pack",
+        "ref": "render-pack--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Every rendering mod in one: diff-stats bars on Edit and Write rows, and file-links in Claude's replies.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/render-pack",
+      "category": "mod",
+      "tags": [
+        "collection",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "render-pack",
+        "upstreamName": "render-pack",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "render-plus",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/render-plus",
+        "ref": "render-plus--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Three row badges in one: time-badge, exit-badge and size-badge.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/render-plus",
+      "category": "mod",
+      "tags": [
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "render-plus",
+        "upstreamName": "render-plus",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "reply-language",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/reply-language",
+        "ref": "reply-language--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Answers in the language you set (English by default). Code, identifiers and commands stay as they are.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/reply-language",
+      "category": "mod",
+      "tags": [
+        "style",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "reply-language",
+        "upstreamName": "reply-language",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "repo-pack",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/repo-pack",
+        "ref": "repo-pack--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Five read-only repo commands in one mod: /todos, /loc, /hotspots, /commit-msg and /branches.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/repo-pack",
+      "category": "mod",
+      "tags": [
+        "collection",
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "repo-pack",
+        "upstreamName": "repo-pack",
+        "upstreamMarketplace": "baselane-mods"
       }
     },
     {
@@ -1471,6 +3857,31 @@
       }
     },
     {
+      "name": "say-done",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/say-done",
+        "ref": "say-done--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "On macOS, says \"Claude is done\" when a turn ends after more than 30 seconds. Does nothing on other platforms.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/say-done",
+      "category": "mod",
+      "tags": [
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "say-done",
+        "upstreamName": "say-done",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
       "name": "scope-guard",
       "source": {
         "source": "git-subdir",
@@ -1497,6 +3908,136 @@
       }
     },
     {
+      "name": "scripts",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/scripts",
+        "ref": "scripts--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Adds /scripts: runnable tasks from package.json scripts, Makefile targets, justfile recipes and pyproject scripts. Read-only.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/scripts",
+      "category": "mod",
+      "tags": [
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "scripts",
+        "upstreamName": "scripts",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "secret-commit-guard",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/secret-commit-guard",
+        "ref": "secret-commit-guard--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Asks before a git commit that would record a credential or a secret-named file.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/secret-commit-guard",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "secret-commit-guard",
+        "upstreamName": "secret-commit-guard",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "secret-filename-guard",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/secret-filename-guard",
+        "ref": "secret-filename-guard--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Asks before a Bash command touches a secret-looking file (.env, private keys, credentials).",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/secret-filename-guard",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "secret-filename-guard",
+        "upstreamName": "secret-filename-guard",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "secret-guard",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/secret-guard",
+        "ref": "secret-guard--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Asks before a live API key, token or private key is written, edited or run.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/secret-guard",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "secret-guard",
+        "upstreamName": "secret-guard",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "secret-output-guard",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/secret-output-guard",
+        "ref": "secret-output-guard--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Tells Claude not to repeat a credential that showed up in command or file output, and names the source to rotate.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/secret-output-guard",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "secret-output-guard",
+        "upstreamName": "secret-output-guard",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
       "name": "secret-redactor",
       "source": {
         "source": "git-subdir",
@@ -1520,6 +4061,32 @@
         "entry": "function-hooks-redactor",
         "upstreamName": "secret-redactor",
         "upstreamMarketplace": "awesome-claude-code-function-hooks"
+      }
+    },
+    {
+      "name": "security-mode",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/security-mode",
+        "ref": "security-mode--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Checks each change for injection, secrets, authorization and unsafe input, and states the risks it checked.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/security-mode",
+      "category": "mod",
+      "tags": [
+        "style",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "security-mode",
+        "upstreamName": "security-mode",
+        "upstreamMarketplace": "baselane-mods"
       }
     },
     {
@@ -1575,6 +4142,57 @@
       }
     },
     {
+      "name": "session-clock",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/session-clock",
+        "ref": "session-clock--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "A band above the prompt with the wall clock and how long the session has run (14:05 · 1h 12m).",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/session-clock",
+      "category": "mod",
+      "tags": [
+        "band",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "session-clock",
+        "upstreamName": "session-clock",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "session-journal",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/session-journal",
+        "ref": "session-journal--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Appends one line per session end (time, directory, reason) to ~/.claude/journal.log.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/session-journal",
+      "category": "mod",
+      "tags": [
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "session-journal",
+        "upstreamName": "session-journal",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
       "name": "session-monitor",
       "source": {
         "source": "github",
@@ -1626,6 +4244,237 @@
       }
     },
     {
+      "name": "shakespeare-mode",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/shakespeare-mode",
+        "ref": "shakespeare-mode--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Prose in Early Modern English flair. Code, commands, commit messages and error text stay exact.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/shakespeare-mode",
+      "category": "mod",
+      "tags": [
+        "style",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "shakespeare-mode",
+        "upstreamName": "shakespeare-mode",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "size-badge",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/size-badge",
+        "ref": "size-badge--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Read and Write rows show how much was read or written: the line count, for example 312 lines, or the file size for images and PDFs.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/size-badge",
+      "category": "mod",
+      "tags": [
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "size-badge",
+        "upstreamName": "size-badge",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "slack-notify",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/slack-notify",
+        "ref": "slack-notify--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Posts to a Slack incoming webhook when Claude Code needs your input. Sends the project name and a short status only. Does nothing until you set a webhook URL.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/slack-notify",
+      "category": "mod",
+      "tags": [
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "slack-notify",
+        "upstreamName": "slack-notify",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "sounds-minimal",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/sounds-minimal",
+        "ref": "sounds-minimal--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Very short, quiet clicks and ticks for a subtle signal: a tick when tests pass, two low ticks when they fail, a click when a call is blocked, a soft tick when a turn ends.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/sounds-minimal",
+      "category": "mod",
+      "tags": [
+        "sounds",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "sounds-minimal",
+        "upstreamName": "sounds-minimal",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "sounds-nature",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/sounds-nature",
+        "ref": "sounds-nature--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Soft nature sounds: a bird chirp when tests pass, a plunk into water when they fail, a gust of wind when a call is blocked, a water drop when a turn ends.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/sounds-nature",
+      "category": "mod",
+      "tags": [
+        "sounds",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "sounds-nature",
+        "upstreamName": "sounds-nature",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "sounds-office",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/sounds-office",
+        "ref": "sounds-office--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Quiet office sounds: a soft click when tests pass, a low thud when they fail, paper when a call is blocked.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/sounds-office",
+      "category": "mod",
+      "tags": [
+        "sounds",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "sounds-office",
+        "upstreamName": "sounds-office",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "sounds-retro",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/sounds-retro",
+        "ref": "sounds-retro--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "8-bit sounds: a coin when tests pass, a buzz when they fail, a chime when a turn ends.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/sounds-retro",
+      "category": "mod",
+      "tags": [
+        "sounds",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "sounds-retro",
+        "upstreamName": "sounds-retro",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "sounds-scifi",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/sounds-scifi",
+        "ref": "sounds-scifi--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Sci-fi console sounds: a beep when tests pass, an alarm when they fail, a warp when a turn ends.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/sounds-scifi",
+      "category": "mod",
+      "tags": [
+        "sounds",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "sounds-scifi",
+        "upstreamName": "sounds-scifi",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "sports-narrator",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/sports-narrator",
+        "ref": "sports-narrator--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "One line of sports play-by-play at turn end. OFF by default: one haiku call per turn with tools. Turn on the enabled option. Sends tool names, file names and the first two words of each command.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/sports-narrator",
+      "category": "mod",
+      "tags": [
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "sports-narrator",
+        "upstreamName": "sports-narrator",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
       "name": "sportscaster",
       "source": {
         "source": "git-subdir",
@@ -1649,6 +4498,138 @@
         "entry": "onewave-claude-code-mods",
         "upstreamName": "sportscaster",
         "upstreamMarketplace": "claude-code-mods"
+      }
+    },
+    {
+      "name": "standup",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/standup",
+        "ref": "standup--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Adds /standup: Yesterday, Today and Blockers from your git log and this session's record, printed and copied.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/standup",
+      "category": "mod",
+      "tags": [
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "standup",
+        "upstreamName": "standup",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "stats-pack",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/stats-pack",
+        "ref": "stats-pack--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Every Baselane stats mod in one: /wrapped, streaks and achievements on one shared daily rollup.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/stats-pack",
+      "category": "mod",
+      "tags": [
+        "collection",
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "stats-pack",
+        "upstreamName": "stats-pack",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "ste-mode",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/ste-mode",
+        "ref": "ste-mode--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Replies in ASD-STE100 Simplified Technical English: approved words, short sentences, one instruction each, active voice.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/ste-mode",
+      "category": "mod",
+      "tags": [
+        "style",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "ste-mode",
+        "upstreamName": "ste-mode",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "streaks",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/streaks",
+        "ref": "streaks--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Counts consecutive days you used Claude Code: a Day N streak toast at session start, and /streak to ask.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/streaks",
+      "category": "mod",
+      "tags": [
+        "toast",
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "streaks",
+        "upstreamName": "streaks",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "sudo-guard",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/sudo-guard",
+        "ref": "sudo-guard--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Asks before sudo, doas or su -c runs a command with elevated rights.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/sudo-guard",
+      "category": "mod",
+      "tags": [
+        "guard",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "sudo-guard",
+        "upstreamName": "sudo-guard",
+        "upstreamMarketplace": "baselane-mods"
       }
     },
     {
@@ -1728,6 +4709,240 @@
       }
     },
     {
+      "name": "tdd-mode",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/tdd-mode",
+        "ref": "tdd-mode--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Writes a failing test first, watches it fail, then implements.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/tdd-mode",
+      "category": "mod",
+      "tags": [
+        "style",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "tdd-mode",
+        "upstreamName": "tdd-mode",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "team-pack",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/team-pack",
+        "ref": "team-pack--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Team habits in one install: Conventional Commits, test-first work and a security check on every change.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/team-pack",
+      "category": "mod",
+      "tags": [
+        "collection",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "team-pack",
+        "upstreamName": "team-pack",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "terse-mode",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/terse-mode",
+        "ref": "terse-mode--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Short answers: no preamble, no recap.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/terse-mode",
+      "category": "mod",
+      "tags": [
+        "style",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "terse-mode",
+        "upstreamName": "terse-mode",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "test-pane",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/test-pane",
+        "ref": "test-pane--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "A live side pane with the last test run (vitest, jest, pytest, go test, cargo test, bun test, claude plugin test): runner, pass, fail and skip counts, duration and first failures. Open it with /tests.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/test-pane",
+      "category": "mod",
+      "tags": [
+        "pane",
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "test-pane",
+        "upstreamName": "test-pane",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "test-reminder",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/test-reminder",
+        "ref": "test-reminder--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Reminds you at turn end when source files changed but no test command ran since.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/test-reminder",
+      "category": "mod",
+      "tags": [
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "test-reminder",
+        "upstreamName": "test-reminder",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "time-badge",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/time-badge",
+        "ref": "time-badge--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Tool rows show how long the call ran, for example 2.4s, when it took over one second. The time is the tool's own run time, without permission prompts.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/time-badge",
+      "category": "mod",
+      "tags": [
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "time-badge",
+        "upstreamName": "time-badge",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "todo-nudge",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/todo-nudge",
+        "ref": "todo-nudge--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "At turn end, one toast with the count of TODO, FIXME and HACK lines your edits added this turn. Quiet when none were added.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/todo-nudge",
+      "category": "mod",
+      "tags": [
+        "toast",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "todo-nudge",
+        "upstreamName": "todo-nudge",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "todo-pane",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/todo-pane",
+        "ref": "todo-pane--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "A live side pane of the TODO, FIXME and HACK lines in tracked files (git grep), grouped by file and capped at 30. It refreshes after file edits while open. Open it with /todo-pane.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/todo-pane",
+      "category": "mod",
+      "tags": [
+        "pane",
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "todo-pane",
+        "upstreamName": "todo-pane",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "todos",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/todos",
+        "ref": "todos--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Adds /todos: TODO, FIXME and HACK lines in tracked files, grouped by file (50 lines at most). Read-only.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/todos",
+      "category": "mod",
+      "tags": [
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "todos",
+        "upstreamName": "todos",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
       "name": "token-ledger",
       "source": {
         "source": "git-subdir",
@@ -1754,6 +4969,32 @@
       }
     },
     {
+      "name": "tool-counter",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/tool-counter",
+        "ref": "tool-counter--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "A band above the prompt with your tool calls this session, the top three by tool (Bash 41 · Edit 18 · Read 12).",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/tool-counter",
+      "category": "mod",
+      "tags": [
+        "band",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "tool-counter",
+        "upstreamName": "tool-counter",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
       "name": "topic-filter",
       "source": {
         "source": "github",
@@ -1776,6 +5017,83 @@
         "entry": "topic-filter",
         "upstreamName": "topic-filter",
         "upstreamMarketplace": "topic-filter-mod"
+      }
+    },
+    {
+      "name": "tree",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/tree",
+        "ref": "tree--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Adds /tree: tracked files as a tree, 2 levels deep, folders with file counts (80 lines at most). Read-only.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/tree",
+      "category": "mod",
+      "tags": [
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "tree",
+        "upstreamName": "tree",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "typecheck-nudge",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/typecheck-nudge",
+        "ref": "typecheck-nudge--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "At turn end, one toast when .ts or .tsx files were edited and no type check (tsc, vue-tsc, a typecheck script or a build) ran since the last edit.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/typecheck-nudge",
+      "category": "mod",
+      "tags": [
+        "toast",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "typecheck-nudge",
+        "upstreamName": "typecheck-nudge",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "url-links",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/url-links",
+        "ref": "url-links--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "https links (and http://localhost) in tool output are listed as clickable links under the result, up to five. Display only: Claude reads the output as it was.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/url-links",
+      "category": "mod",
+      "tags": [
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "url-links",
+        "upstreamName": "url-links",
+        "upstreamMarketplace": "baselane-mods"
       }
     },
     {
@@ -1906,6 +5224,58 @@
         "entry": "yash-claude-mods",
         "upstreamName": "wod-timer",
         "upstreamMarketplace": "claude-mods"
+      }
+    },
+    {
+      "name": "wrapped",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/wrapped",
+        "ref": "wrapped--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Adds /wrapped: a screenshot-ready Claude Code Wrapped for the last 7 days (or /wrapped month for 30), printed and copied.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/wrapped",
+      "category": "mod",
+      "tags": [
+        "commands",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "wrapped",
+        "upstreamName": "wrapped",
+        "upstreamMarketplace": "baselane-mods"
+      }
+    },
+    {
+      "name": "yoda-mode",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/baselane-sh/mods.git",
+        "path": "plugins/yoda-mode",
+        "ref": "yoda-mode--v0.3.0",
+        "sha": "c2c3707d5134a82fa44571bdd5946ea0cef3c553"
+      },
+      "description": "Speaks like Yoda in prose. Code, commands and commit messages stay normal.",
+      "author": {
+        "name": "baselane-sh",
+        "url": "https://github.com/baselane-sh"
+      },
+      "homepage": "https://github.com/baselane-sh/mods/tree/main/plugins/yoda-mode",
+      "category": "mod",
+      "tags": [
+        "style",
+        "baselane"
+      ],
+      "metadata": {
+        "entry": "yoda-mode",
+        "upstreamName": "yoda-mode",
+        "upstreamMarketplace": "baselane-mods"
       }
     }
   ]

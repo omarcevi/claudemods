@@ -17,9 +17,12 @@ const previous = readJSON("data/resolved.json", {});
 const args = process.argv.slice(2);
 const summaryAt = args.indexOf("--summary");
 const summaryPath = summaryAt >= 0 ? args[summaryAt + 1] : null;
-const only = new Set(args.filter((a, i) => !a.startsWith("--") && i !== summaryAt + 1));
+const only = new Set(args.filter((a, i) => !a.startsWith("--") && !(summaryAt >= 0 && i === summaryAt + 1)));
 
-async function getText(url) {
+// Many entries can share one upstream repo (one per plugin), so cache lookups per run.
+const textCache = new Map();
+const getText = (url) => { if (!textCache.has(url)) textCache.set(url, fetchText(url)); return textCache.get(url); };
+async function fetchText(url) {
   try {
     const res = await fetch(url, { headers: { "user-agent": "claudemods-sync" } });
     if (res.status === 404) return null;
@@ -52,7 +55,8 @@ function lsRemote(gitUrl, ref = "HEAD") {
   if (!/^[0-9a-f]{40}$/.test(sha || "")) throw new Error(`no sha for ${gitUrl} ${ref}`);
   return sha;
 }
-const headSha = (repo) => lsRemote(`https://github.com/${repo}`);
+const shaCache = new Map();
+const headSha = (repo) => { if (!shaCache.has(repo)) shaCache.set(repo, lsRemote(`https://github.com/${repo}`)); return shaCache.get(repo); };
 const toGitUrl = (u) => (/^[\w.-]+\/[\w.-]+$/.test(u) ? `https://github.com/${u}` : u);
 
 const raw = (repo, sha, path) => `https://raw.githubusercontent.com/${repo}/${sha}/${path}`;
@@ -72,6 +76,7 @@ function absolutize(source, repo, sha, pluginRoot) {
   if (source && typeof source === "object") {
     // Already absolute. Pin git-based sources to a commit; leave npm/archive as published.
     const s = { ...source };
+    if (["url", "git-subdir"].includes(s.source) && /^[\w.-]+\/[\w.-]+$/.test(s.url || "")) s.url = `https://github.com/${s.url}.git`; // see above: no SSH
     if (!s.sha && ["github", "url", "git-subdir"].includes(s.source)) {
       const gitUrl = s.source === "github" ? `https://github.com/${s.repo}` : toGitUrl(s.url);
       s.sha = lsRemote(gitUrl, s.ref || "HEAD");
@@ -81,15 +86,18 @@ function absolutize(source, repo, sha, pluginRoot) {
   throw new Error("plugin has no source");
 }
 
+// An entry can read another repo's marketplace (`marketplace`, e.g. a curated catalog)
+// and take just one of its plugins (`plugin`), so each mod can be its own entry.
 async function resolveEntry(e) {
-  const repo = githubRepo(e.url);
+  const repo = e.marketplace || githubRepo(e.url);
   const sha = headSha(repo);
   const mpText = await getText(raw(repo, sha, ".claude-plugin/marketplace.json"));
   if (mpText) {
     const mp = JSON.parse(mpText);
     const pluginRoot = mp.metadata?.pluginRoot;
-    const plugins = (mp.plugins || []).slice(0, config.maxPluginsPerSource);
-    if ((mp.plugins || []).length > config.maxPluginsPerSource) {
+    if (e.plugin && !(mp.plugins || []).some((pl) => pl.name === e.plugin)) throw new Error(`no plugin "${e.plugin}" in ${repo}'s marketplace`);
+    const plugins = (mp.plugins || []).filter((pl) => !e.plugin || pl.name === e.plugin).slice(0, config.maxPluginsPerSource);
+    if (!e.plugin && (mp.plugins || []).length > config.maxPluginsPerSource) {
       console.warn(`  ! ${e.id}: ${mp.plugins.length} plugins upstream, bundling the first ${config.maxPluginsPerSource}`);
     }
     return {
