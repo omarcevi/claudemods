@@ -3875,12 +3875,11 @@
       "name": "achievements",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/achievements",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Unlocks eight badges once each (first session, first green test run, 100 and 1,000 tool calls, 7-day streak, 10 blocked calls, a 2 hour…",
       "tags": [
         "toast",
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "fun",
@@ -3937,12 +3936,11 @@
       "name": "agent-firewall",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/agent-firewall",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "A live pane of every tool call the agent makes: green when it ran, red when it was blocked, with counters. Open it with /firewall.",
       "tags": [
         "pane",
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "guards",
@@ -3998,11 +3996,10 @@
       "name": "authors",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/authors",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Adds /authors: the top 15 contributors by commit count with their last commit date. Names only, never email addresses. Read-only.",
       "tags": [
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "tools",
@@ -4081,11 +4078,9 @@
       "name": "auto-format",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/auto-format",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Runs your project's own formatter on each file Claude writes or edits, only when the project has a formatter config, and tells Claude to…",
-      "tags": [
-        "baselane"
-      ],
+      "tags": [],
       "featured": false,
       "category": "tools",
       "install": [
@@ -4175,11 +4170,9 @@
       "name": "auto-lint",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/auto-lint",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Runs your project's own linter fix (eslint, ruff or golangci-lint) on each file Claude writes or edits, only when the project has that…",
-      "tags": [
-        "baselane"
-      ],
+      "tags": [],
       "featured": false,
       "category": "tools",
       "install": [
@@ -4269,12 +4262,11 @@
       "name": "band-pack",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/band-pack",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Every Baselane band meter in one row above the prompt: session cost, lattes, context bar, today's spend, the focus timer and the mood ring.",
       "tags": [
         "band",
-        "collection",
-        "baselane"
+        "collection"
       ],
       "featured": false,
       "category": "packs",
@@ -4346,11 +4338,9 @@
       "name": "big-diff-nudge",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/big-diff-nudge",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Suggests splitting the change once your edits added or removed more than 500 lines since the last git commit.",
-      "tags": [
-        "baselane"
-      ],
+      "tags": [],
       "featured": false,
       "category": "nudges",
       "install": [
@@ -4412,11 +4402,10 @@
       "name": "big-file-guard",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/big-file-guard",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Asks before a Write creates content over 1 MB, or git add names a file over 5 MB.",
       "tags": [
-        "guard",
-        "baselane"
+        "guard"
       ],
       "featured": false,
       "category": "guards",
@@ -4475,11 +4464,10 @@
       "name": "branch-band",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/branch-band",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "A band above the prompt with the git branch and the count of changed files, refreshed after each Bash call and file edit.",
       "tags": [
-        "band",
-        "baselane"
+        "band"
       ],
       "featured": false,
       "category": "bands",
@@ -4551,11 +4539,10 @@
       "name": "branches",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/branches",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Adds /branches: local branches merged into the default branch or idle for 30 days, as a cleanup list. Never deletes.",
       "tags": [
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "tools",
@@ -4634,11 +4621,9 @@
       "name": "break-nudge",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/break-nudge",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Suggests a short break once the session has run 90 minutes, and again every 90 minutes after that.",
-      "tags": [
-        "baselane"
-      ],
+      "tags": [],
       "featured": false,
       "category": "nudges",
       "install": [
@@ -4700,11 +4685,10 @@
       "name": "caveman-mode",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/caveman-mode",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Prose in short caveman speech (\"Fix bug. Test pass.\"), still accurate. Code and commands stay exact.",
       "tags": [
-        "style",
-        "baselane"
+        "style"
       ],
       "featured": false,
       "category": "styles",
@@ -4746,11 +4730,10 @@
       "name": "changelog",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/changelog",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Adds /changelog: commits since the last tag (or the last 30), grouped by conventional-commit type, as Markdown.",
       "tags": [
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "tools",
@@ -4829,11 +4812,10 @@
       "name": "chmod-guard",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/chmod-guard",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Asks before chmod makes files world-writable (777, a+w, o+w) or chmod or chown runs recursively on a broad path (/, a system folder, a…",
       "tags": [
-        "guard",
-        "baselane"
+        "guard"
       ],
       "featured": false,
       "category": "guards",
@@ -4892,11 +4874,10 @@
       "name": "ci-config-guard",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/ci-config-guard",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Asks before Write or Edit changes CI config: .github/workflows, .gitlab-ci.yml or .circleci/config.yml.",
       "tags": [
-        "guard",
-        "baselane"
+        "guard"
       ],
       "featured": false,
       "category": "guards",
@@ -4955,11 +4936,10 @@
       "name": "clippy",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/clippy",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "One helpful toast per session per trigger, in the classic paperclip voice: when you edit a migrations folder, a Dockerfile or a GitHub…",
       "tags": [
-        "toast",
-        "baselane"
+        "toast"
       ],
       "featured": false,
       "category": "nudges",
@@ -5022,11 +5002,9 @@
       "name": "code-only",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/code-only",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Replies with the code or command first and at most two short sentences of prose, unless asked to explain.",
-      "tags": [
-        "baselane"
-      ],
+      "tags": [],
       "featured": false,
       "category": "styles",
       "install": [
@@ -5067,12 +5045,11 @@
       "name": "command-pack",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/command-pack",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Every slash command in one mod: /receipt, /standup, /changelog, /pr-description and /handoff.",
       "tags": [
         "collection",
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "packs",
@@ -5151,11 +5128,10 @@
       "name": "commit-msg",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/commit-msg",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Adds /commit-msg: a Conventional Commits message proposed from the staged diff. Heuristic, no model call, writes nothing.",
       "tags": [
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "tools",
@@ -5234,11 +5210,10 @@
       "name": "commit-nudge",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/commit-nudge",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Suggests a commit at turn end after 8 or more file edits since the last git commit.",
       "tags": [
-        "toast",
-        "baselane"
+        "toast"
       ],
       "featured": false,
       "category": "nudges",
@@ -5301,11 +5276,10 @@
       "name": "context-meter",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/context-meter",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "A band above the prompt with a 10 cell bar of the context window used, yellow from 60 percent, red from 80.",
       "tags": [
-        "band",
-        "baselane"
+        "band"
       ],
       "featured": false,
       "category": "bands",
@@ -5377,11 +5351,9 @@
       "name": "conventional-commits",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/conventional-commits",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Commit messages follow Conventional Commits: type(scope): subject, imperative, under 72 characters.",
-      "tags": [
-        "baselane"
-      ],
+      "tags": [],
       "featured": false,
       "category": "styles",
       "install": [
@@ -5422,11 +5394,10 @@
       "name": "cost-meter",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/cost-meter",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "A band above the prompt with the session cost so far and what the last turn cost.",
       "tags": [
-        "band",
-        "baselane"
+        "band"
       ],
       "featured": false,
       "category": "bands",
@@ -5498,12 +5469,11 @@
       "name": "cost-pane",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/cost-pane",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "A live side pane with the session cost, the cost of each of the last 10 turns as a bar, and the average per turn. Open it with /cost-pane.",
       "tags": [
         "pane",
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "panes",
@@ -5575,11 +5545,10 @@
       "name": "ctx-nudge",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/ctx-nudge",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Reminds you to /clear or /compact when the context window passes 75 percent.",
       "tags": [
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "nudges",
@@ -5642,11 +5611,10 @@
       "name": "curl-pipe-guard",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/curl-pipe-guard",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Asks before a download is piped into a shell or interpreter (curl | sh, wget -O- | bash, bash <(curl ...)).",
       "tags": [
-        "guard",
-        "baselane"
+        "guard"
       ],
       "featured": false,
       "category": "guards",
@@ -5705,11 +5673,10 @@
       "name": "daily-spend",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/daily-spend",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "A band above the prompt with today's total cost across all your sessions.",
       "tags": [
-        "band",
-        "baselane"
+        "band"
       ],
       "featured": false,
       "category": "bands",
@@ -5781,11 +5748,10 @@
       "name": "debug-print-nudge",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/debug-print-nudge",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "At turn end, one toast naming the count of console.log, print(, debugger and dbg! lines your edits added this turn. Only code files count.",
       "tags": [
-        "toast",
-        "baselane"
+        "toast"
       ],
       "featured": false,
       "category": "nudges",
@@ -5848,11 +5814,10 @@
       "name": "deps",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/deps",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Adds /deps: direct dependencies with versions from package.json, pyproject.toml, requirements.txt, go.mod and Cargo.toml at the repo root.",
       "tags": [
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "tools",
@@ -5931,11 +5896,9 @@
       "name": "desktop-notify",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/desktop-notify",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Shows a desktop notification when Claude Code needs your input: osascript on macOS, notify-send elsewhere when it is installed.",
-      "tags": [
-        "baselane"
-      ],
+      "tags": [],
       "featured": false,
       "category": "notify",
       "install": [
@@ -6025,11 +5988,10 @@
       "name": "dev-band",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/dev-band",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "The developer band in one row above the prompt: git branch and changed files, wall clock and session age, tool counts, and failed tool…",
       "tags": [
-        "band",
-        "baselane"
+        "band"
       ],
       "featured": false,
       "category": "bands",
@@ -6101,11 +6063,9 @@
       "name": "diff-stats",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/diff-stats",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Edit and Write rows show a compact +12 -3 bar beside the file name: green for lines added, red for lines removed, up to 20 cells.",
-      "tags": [
-        "baselane"
-      ],
+      "tags": [],
       "featured": false,
       "category": "display",
       "install": [
@@ -6156,11 +6116,9 @@
       "name": "discord-notify",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/discord-notify",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Posts to a Discord webhook when Claude Code needs your input.",
-      "tags": [
-        "baselane"
-      ],
+      "tags": [],
       "featured": false,
       "category": "notify",
       "install": [
@@ -6250,11 +6208,10 @@
       "name": "docker-guard",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/docker-guard",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Asks before Docker commands that delete data: system, volume or image prune, rm -f, volume rm and compose down -v.",
       "tags": [
-        "guard",
-        "baselane"
+        "guard"
       ],
       "featured": false,
       "category": "guards",
@@ -6313,11 +6270,10 @@
       "name": "docs-nudge",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/docs-nudge",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "At turn end, one toast when edits added exported code (an export statement in .ts or .js, or a public function signature) and no README or…",
       "tags": [
-        "toast",
-        "baselane"
+        "toast"
       ],
       "featured": false,
       "category": "nudges",
@@ -6380,11 +6336,10 @@
       "name": "eli5-mode",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/eli5-mode",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Explains like the reader is new: analogies first, no jargon without a one-line definition.",
       "tags": [
-        "style",
-        "baselane"
+        "style"
       ],
       "featured": false,
       "category": "styles",
@@ -6426,11 +6381,10 @@
       "name": "env-check",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/env-check",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Adds /env-check: variable names in .env.example against .env, listing missing and extra names. Reads names only, never a value. Read-only.",
       "tags": [
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "tools",
@@ -6509,11 +6463,10 @@
       "name": "env-example-nudge",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/env-example-nudge",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "At turn end, one toast when edits add a reference to an environment variable (process.env, os.environ, os.getenv, Deno.env) that…",
       "tags": [
-        "toast",
-        "baselane"
+        "toast"
       ],
       "featured": false,
       "category": "nudges",
@@ -6576,11 +6529,10 @@
       "name": "env-exfil-guard",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/env-exfil-guard",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Asks before a command prints your environment, echoes a secret variable or sends local data to a remote host.",
       "tags": [
-        "guard",
-        "baselane"
+        "guard"
       ],
       "featured": false,
       "category": "guards",
@@ -6639,11 +6591,10 @@
       "name": "error-meter",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/error-meter",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "A band above the prompt with how many tool calls failed this session (an error or a deny) and which tool failed last.",
       "tags": [
-        "band",
-        "baselane"
+        "band"
       ],
       "featured": false,
       "category": "bands",
@@ -6715,11 +6666,9 @@
       "name": "exit-badge",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/exit-badge",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "A failed Bash row shows a small red badge with its exit code, for example exit 2.",
-      "tags": [
-        "baselane"
-      ],
+      "tags": [],
       "featured": false,
       "category": "display",
       "install": [
@@ -6770,12 +6719,11 @@
       "name": "explore-pack",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/explore-pack",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Five read-only repo exploration commands in one mod: /tree, /deps, /authors, /scripts and /env-check.",
       "tags": [
         "collection",
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "packs",
@@ -6854,11 +6802,10 @@
       "name": "file-links",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/file-links",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "In Claude's replies, path/to/file.ts:42 references to files in your project become links. Click one to put @path/to/file.ts in the prompt.",
       "tags": [
-        "sounds",
-        "baselane"
+        "sounds"
       ],
       "featured": false,
       "category": "display",
@@ -6910,11 +6857,10 @@
       "name": "focus-pack",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/focus-pack",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Three quiet nudges in one mod: commit after 8 edits, TODO/FIXME/HACK lines added, and debug prints added.",
       "tags": [
-        "collection",
-        "baselane"
+        "collection"
       ],
       "featured": false,
       "category": "packs",
@@ -6977,11 +6923,10 @@
       "name": "fun-pack",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/fun-pack",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Fun habits in one install: caveman prose and gitmoji commit messages. They compose: caveman never touches commit messages.",
       "tags": [
-        "collection",
-        "baselane"
+        "collection"
       ],
       "featured": false,
       "category": "packs",
@@ -7023,11 +6968,10 @@
       "name": "git-history-guard",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/git-history-guard",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Asks before git commands that throw away work or rewrite history: reset --hard, clean, rebase, filter-branch, filter-repo, push --delete…",
       "tags": [
-        "guard",
-        "baselane"
+        "guard"
       ],
       "featured": false,
       "category": "guards",
@@ -7086,12 +7030,11 @@
       "name": "git-pane",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/git-pane",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "A live side pane with the branch, ahead and behind its upstream, changed files (staged and unstaged) and the last 5 commits.",
       "tags": [
         "pane",
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "panes",
@@ -7163,11 +7106,10 @@
       "name": "gitignore-check",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/gitignore-check",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Asks before git add or commit when secret-looking files are not ignored or are already tracked.",
       "tags": [
-        "guard",
-        "baselane"
+        "guard"
       ],
       "featured": false,
       "category": "guards",
@@ -7226,11 +7168,9 @@
       "name": "gitmoji-commits",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/gitmoji-commits",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Commit messages start with the matching gitmoji (✨ feat, 🐛 fix). Composes with conventional-commits: emoji goes before the type.",
-      "tags": [
-        "baselane"
-      ],
+      "tags": [],
       "featured": false,
       "category": "styles",
       "install": [
@@ -7271,11 +7211,10 @@
       "name": "guard-devops",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/guard-devops",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Asks before harsh DevOps commands: destructive Docker, Kubernetes and Helm calls, CI config edits, broad chmod and chown, and git commands…",
       "tags": [
-        "guard",
-        "baselane"
+        "guard"
       ],
       "featured": false,
       "category": "guards",
@@ -7334,11 +7273,9 @@
       "name": "guard-essentials",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/guard-essentials",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Asks only before harsh or disaster commands: destructive infra, git and SQL, piping downloads into a shell, sudo, leaking or committing…",
-      "tags": [
-        "baselane"
-      ],
+      "tags": [],
       "featured": false,
       "category": "guards",
       "install": [
@@ -7396,11 +7333,10 @@
       "name": "guard-pack",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/guard-pack",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Every Baselane guard in one mod.",
       "tags": [
-        "collection",
-        "baselane"
+        "collection"
       ],
       "featured": false,
       "category": "packs",
@@ -7459,11 +7395,9 @@
       "name": "haiku-commits",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/haiku-commits",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Commit messages get a normal conventional-commit first line, then a 5-7-5 haiku about the change in the body.",
-      "tags": [
-        "baselane"
-      ],
+      "tags": [],
       "featured": false,
       "category": "fun",
       "install": [
@@ -7504,12 +7438,11 @@
       "name": "handoff",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/handoff",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Adds /handoff: writes a session summary to .claude/handoff.md (never overwriting) and answers with the path.",
       "tags": [
         "style",
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "tools",
@@ -7588,11 +7521,10 @@
       "name": "hotspots",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/hotspots",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Adds /hotspots: the 10 files changed most often in the last 90 days, with change counts. Read-only.",
       "tags": [
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "tools",
@@ -7671,11 +7603,10 @@
       "name": "infra-guard",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/infra-guard",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Asks before terraform destroy, kubectl delete, force-push, DROP TABLE or rm -rf.",
       "tags": [
-        "guard",
-        "baselane"
+        "guard"
       ],
       "featured": false,
       "category": "guards",
@@ -7734,11 +7665,9 @@
       "name": "json-pretty",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/json-pretty",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Bash output that is one long line of JSON is drawn pretty-printed, folded after 30 lines. Display only: Claude reads the output as it was.",
-      "tags": [
-        "baselane"
-      ],
+      "tags": [],
       "featured": false,
       "category": "display",
       "install": [
@@ -7789,11 +7718,10 @@
       "name": "junior-mode",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/junior-mode",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Explains each step and why, and defines jargon once, for a learner.",
       "tags": [
-        "style",
-        "baselane"
+        "style"
       ],
       "featured": false,
       "category": "styles",
@@ -7835,11 +7763,10 @@
       "name": "k8s-guard",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/k8s-guard",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Asks before kubectl apply or replace with --force, kubectl drain, helm uninstall, and kubectl delete behind global flags (plain kubectl…",
       "tags": [
-        "guard",
-        "baselane"
+        "guard"
       ],
       "featured": false,
       "category": "guards",
@@ -7898,11 +7825,10 @@
       "name": "latte-meter",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/latte-meter",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "A band above the prompt that counts the session cost in lattes. Set the latte price in the plugin options.",
       "tags": [
-        "band",
-        "baselane"
+        "band"
       ],
       "featured": false,
       "category": "bands",
@@ -7974,11 +7900,10 @@
       "name": "lifecycle-pack",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/lifecycle-pack",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Every Baselane lifecycle mod in one: auto-format, long-run and input pushes, and the session journal.",
       "tags": [
-        "collection",
-        "baselane"
+        "collection"
       ],
       "featured": false,
       "category": "packs",
@@ -8069,11 +7994,10 @@
       "name": "loc",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/loc",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Adds /loc: lines of tracked text files by language, sorted, with a total. Skips lockfiles and binaries. Read-only.",
       "tags": [
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "tools",
@@ -8152,11 +8076,10 @@
       "name": "lockfile-guard",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/lockfile-guard",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Asks before a lockfile is written or edited by hand; the package manager should change it.",
       "tags": [
-        "guard",
-        "baselane"
+        "guard"
       ],
       "featured": false,
       "category": "guards",
@@ -8215,11 +8138,10 @@
       "name": "lockfile-nudge",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/lockfile-nudge",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "At turn end, one toast when dependencies in package.json, pyproject.toml, Cargo.toml or go.mod changed and neither the matching lockfile…",
       "tags": [
-        "toast",
-        "baselane"
+        "toast"
       ],
       "featured": false,
       "category": "nudges",
@@ -8282,11 +8204,9 @@
       "name": "long-run-notify",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/long-run-notify",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Sends a phone push through ntfy.sh when a Bash command ran longer than a threshold (60 seconds by default).",
-      "tags": [
-        "baselane"
-      ],
+      "tags": [],
       "featured": false,
       "category": "notify",
       "install": [
@@ -8376,11 +8296,10 @@
       "name": "migration-guard",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/migration-guard",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Asks before Write or Edit changes a migration that already exists; new migration files pass.",
       "tags": [
-        "guard",
-        "baselane"
+        "guard"
       ],
       "featured": false,
       "category": "guards",
@@ -8439,11 +8358,10 @@
       "name": "migration-nudge",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/migration-nudge",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "At turn end, one toast when a schema file changed (schema.prisma, models.py, SQL under schema/, a drizzle schema) and no migration file…",
       "tags": [
-        "toast",
-        "baselane"
+        "toast"
       ],
       "featured": false,
       "category": "nudges",
@@ -8506,11 +8424,10 @@
       "name": "model-badge",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/model-badge",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "A band above the prompt with the current model name and the context percent (opus-4-1 · 62%).",
       "tags": [
-        "band",
-        "baselane"
+        "band"
       ],
       "featured": false,
       "category": "bands",
@@ -8582,12 +8499,11 @@
       "name": "mood-ring",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/mood-ring",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "A band above the prompt with a colored dot and a word for the error and block rate of your last 20 tool calls: calm (green) under 10…",
       "tags": [
         "guard",
-        "band",
-        "baselane"
+        "band"
       ],
       "featured": false,
       "category": "bands",
@@ -8659,11 +8575,10 @@
       "name": "night-owl",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/night-owl",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Records the hour of each prompt across sessions and adds /hours: a 24-hour histogram of when you work, naming your peak hour.",
       "tags": [
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "tools",
@@ -8720,11 +8635,9 @@
       "name": "no-em-dash",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/no-em-dash",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Never writes the em-dash character. Uses a comma, colon, period or parentheses.",
-      "tags": [
-        "baselane"
-      ],
+      "tags": [],
       "featured": false,
       "category": "styles",
       "install": [
@@ -8765,11 +8678,9 @@
       "name": "no-sycophancy",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/no-sycophancy",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "No flattery or filler. Disagreement is stated plainly, with the reason.",
-      "tags": [
-        "baselane"
-      ],
+      "tags": [],
       "featured": false,
       "category": "styles",
       "install": [
@@ -8810,11 +8721,10 @@
       "name": "no-verify-guard",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/no-verify-guard",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Asks before git hooks are skipped (--no-verify, commit -n, HUSKY=0, core.hooksPath=/dev/null).",
       "tags": [
-        "guard",
-        "baselane"
+        "guard"
       ],
       "featured": false,
       "category": "guards",
@@ -8873,11 +8783,10 @@
       "name": "notify-pack",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/notify-pack",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Local alerts in one: a desktop notification when Claude Code needs your input, and a spoken line on macOS when a long turn ends.",
       "tags": [
-        "collection",
-        "baselane"
+        "collection"
       ],
       "featured": false,
       "category": "packs",
@@ -8968,11 +8877,9 @@
       "name": "ntfy-notify",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/ntfy-notify",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Sends a phone push through ntfy.sh when Claude Code needs your input. The message is generic. Does nothing until you set an ntfy topic.",
-      "tags": [
-        "baselane"
-      ],
+      "tags": [],
       "featured": false,
       "category": "notify",
       "install": [
@@ -9062,11 +8969,10 @@
       "name": "nudge-pack",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/nudge-pack",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Every Baselane turn-end reminder in one mod.",
       "tags": [
-        "collection",
-        "baselane"
+        "collection"
       ],
       "featured": false,
       "category": "packs",
@@ -9129,11 +9035,10 @@
       "name": "package-guard",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/package-guard",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Asks before a new dependency is installed (npm, pnpm, yarn, bun, pip, uv, poetry, cargo, go, gem) and names the packages.",
       "tags": [
-        "guard",
-        "baselane"
+        "guard"
       ],
       "featured": false,
       "category": "guards",
@@ -9192,11 +9097,10 @@
       "name": "path-jail",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/path-jail",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Asks before Write, Edit or NotebookEdit changes a file outside the working directory, by real path.",
       "tags": [
-        "guard",
-        "baselane"
+        "guard"
       ],
       "featured": false,
       "category": "guards",
@@ -9255,11 +9159,10 @@
       "name": "personal-bests",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/personal-bests",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Tracks your records across sessions (longest session, most tool calls in a session, most files edited in a day, cheapest session over 30…",
       "tags": [
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "fun",
@@ -9316,11 +9219,10 @@
       "name": "pirate-mode",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/pirate-mode",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Talks like a pirate in prose, never inside code, commands or file contents.",
       "tags": [
-        "style",
-        "baselane"
+        "style"
       ],
       "featured": false,
       "category": "styles",
@@ -9362,11 +9264,9 @@
       "name": "plain-english",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/plain-english",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Writes in ASD-STE-100 Simplified Technical English: short sentences, active voice, simple words.",
-      "tags": [
-        "baselane"
-      ],
+      "tags": [],
       "featured": false,
       "category": "styles",
       "install": [
@@ -9407,13 +9307,12 @@
       "name": "pomodoro",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/pomodoro",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "A band above the prompt with a 25/5 focus timer (focus 18:42, break 03:10). Start and stop it with /pomodoro; a toast marks each switch.",
       "tags": [
         "band",
         "toast",
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "bands",
@@ -9485,12 +9384,11 @@
       "name": "port-watch",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/port-watch",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "A live side pane of the local TCP ports that listen, with the process name and pid, refreshed every 10 seconds while open.",
       "tags": [
         "pane",
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "panes",
@@ -9562,11 +9460,10 @@
       "name": "pr-description",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/pr-description",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Adds /pr-description: title, summary, diff totals and a test plan stub for the current branch against main or master.",
       "tags": [
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "tools",
@@ -9645,11 +9542,10 @@
       "name": "prod-db-guard",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/prod-db-guard",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Asks before destructive SQL runs in a command: TRUNCATE, DELETE or UPDATE with no WHERE.",
       "tags": [
-        "guard",
-        "baselane"
+        "guard"
       ],
       "featured": false,
       "category": "guards",
@@ -9708,11 +9604,10 @@
       "name": "protect-main",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/protect-main",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Asks before a commit, push or merge while you are on main or master.",
       "tags": [
-        "guard",
-        "baselane"
+        "guard"
       ],
       "featured": false,
       "category": "guards",
@@ -9771,11 +9666,10 @@
       "name": "quality-pack",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/quality-pack",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Three quiet nudges in one mod: type check after TypeScript edits, lockfile after dependency edits, and a split suggestion past 500 changed…",
       "tags": [
-        "collection",
-        "baselane"
+        "collection"
       ],
       "featured": false,
       "category": "packs",
@@ -9838,23 +9732,22 @@
       "name": "receipt",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/receipt",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Adds /receipt: a shareable receipt of the session (tools, files, commands, blocks, context, cost), printed and copied.",
       "tags": [
         "guard",
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "tools",
       "install": [
-        "/plugin install receipt-baselane-sh@claudemods"
+        "/plugin install receipt-mohammad0omar@claudemods"
       ],
       "inMarketplace": true,
       "plugins": [
         {
-          "name": "receipt-baselane-sh",
-          "install": "/plugin install receipt-baselane-sh@claudemods",
+          "name": "receipt-mohammad0omar",
+          "install": "/plugin install receipt-mohammad0omar@claudemods",
           "description": "Adds /receipt: a shareable receipt of the session (tools, files, commands, blocks, context, cost), printed and copied.",
           "source": {
             "repo": "baselane-sh/mods",
@@ -9922,11 +9815,10 @@
       "name": "render-pack",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/render-pack",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Every rendering mod in one: diff-stats bars on Edit and Write rows, and file-links in Claude's replies.",
       "tags": [
-        "collection",
-        "baselane"
+        "collection"
       ],
       "featured": false,
       "category": "packs",
@@ -9978,11 +9870,9 @@
       "name": "render-plus",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/render-plus",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Three row badges in one: time-badge, exit-badge and size-badge.",
-      "tags": [
-        "baselane"
-      ],
+      "tags": [],
       "featured": false,
       "category": "display",
       "install": [
@@ -10033,11 +9923,10 @@
       "name": "reply-language",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/reply-language",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Answers in the language you set (English by default). Code, identifiers and commands stay as they are.",
       "tags": [
-        "style",
-        "baselane"
+        "style"
       ],
       "featured": false,
       "category": "styles",
@@ -10079,12 +9968,11 @@
       "name": "repo-pack",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/repo-pack",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Five read-only repo commands in one mod: /todos, /loc, /hotspots, /commit-msg and /branches.",
       "tags": [
         "collection",
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "packs",
@@ -10163,11 +10051,9 @@
       "name": "say-done",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/say-done",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "On macOS, says \"Claude is done\" when a turn ends after more than 30 seconds. Does nothing on other platforms.",
-      "tags": [
-        "baselane"
-      ],
+      "tags": [],
       "featured": false,
       "category": "notify",
       "install": [
@@ -10257,11 +10143,10 @@
       "name": "scripts",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/scripts",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Adds /scripts: runnable tasks from package.json scripts, Makefile targets, justfile recipes and pyproject scripts. Read-only.",
       "tags": [
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "tools",
@@ -10340,11 +10225,10 @@
       "name": "secret-commit-guard",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/secret-commit-guard",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Asks before a git commit that would record a credential or a secret-named file.",
       "tags": [
-        "guard",
-        "baselane"
+        "guard"
       ],
       "featured": false,
       "category": "guards",
@@ -10403,11 +10287,10 @@
       "name": "secret-filename-guard",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/secret-filename-guard",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Asks before a Bash command touches a secret-looking file (.env, private keys, credentials).",
       "tags": [
-        "guard",
-        "baselane"
+        "guard"
       ],
       "featured": false,
       "category": "guards",
@@ -10466,11 +10349,10 @@
       "name": "secret-guard",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/secret-guard",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Asks before a live API key, token or private key is written, edited or run.",
       "tags": [
-        "guard",
-        "baselane"
+        "guard"
       ],
       "featured": false,
       "category": "guards",
@@ -10529,11 +10411,10 @@
       "name": "secret-output-guard",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/secret-output-guard",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Tells Claude not to repeat a credential that showed up in command or file output, and names the source to rotate.",
       "tags": [
-        "guard",
-        "baselane"
+        "guard"
       ],
       "featured": false,
       "category": "guards",
@@ -10592,11 +10473,10 @@
       "name": "security-mode",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/security-mode",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Checks each change for injection, secrets, authorization and unsafe input, and states the risks it checked.",
       "tags": [
-        "style",
-        "baselane"
+        "style"
       ],
       "featured": false,
       "category": "styles",
@@ -10638,11 +10518,10 @@
       "name": "session-clock",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/session-clock",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "A band above the prompt with the wall clock and how long the session has run (14:05 · 1h 12m).",
       "tags": [
-        "band",
-        "baselane"
+        "band"
       ],
       "featured": false,
       "category": "bands",
@@ -10714,11 +10593,9 @@
       "name": "session-journal",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/session-journal",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Appends one line per session end (time, directory, reason) to ~/.claude/journal.log.",
-      "tags": [
-        "baselane"
-      ],
+      "tags": [],
       "featured": false,
       "category": "tools",
       "install": [
@@ -10808,11 +10685,10 @@
       "name": "shakespeare-mode",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/shakespeare-mode",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Prose in Early Modern English flair. Code, commands, commit messages and error text stay exact.",
       "tags": [
-        "style",
-        "baselane"
+        "style"
       ],
       "featured": false,
       "category": "styles",
@@ -10854,11 +10730,9 @@
       "name": "size-badge",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/size-badge",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Read and Write rows show how much was read or written: the line count, for example 312 lines, or the file size for images and PDFs.",
-      "tags": [
-        "baselane"
-      ],
+      "tags": [],
       "featured": false,
       "category": "display",
       "install": [
@@ -10909,11 +10783,9 @@
       "name": "slack-notify",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/slack-notify",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Posts to a Slack incoming webhook when Claude Code needs your input.",
-      "tags": [
-        "baselane"
-      ],
+      "tags": [],
       "featured": false,
       "category": "notify",
       "install": [
@@ -11003,11 +10875,10 @@
       "name": "sounds-minimal",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/sounds-minimal",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Very short, quiet clicks and ticks for a subtle signal: a tick when tests pass, two low ticks when they fail, a click when a call is…",
       "tags": [
-        "sounds",
-        "baselane"
+        "sounds"
       ],
       "featured": false,
       "category": "notify",
@@ -11054,11 +10925,10 @@
       "name": "sounds-nature",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/sounds-nature",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Soft nature sounds: a bird chirp when tests pass, a plunk into water when they fail, a gust of wind when a call is blocked, a water drop…",
       "tags": [
-        "sounds",
-        "baselane"
+        "sounds"
       ],
       "featured": false,
       "category": "notify",
@@ -11105,11 +10975,10 @@
       "name": "sounds-office",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/sounds-office",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Quiet office sounds: a soft click when tests pass, a low thud when they fail, paper when a call is blocked.",
       "tags": [
-        "sounds",
-        "baselane"
+        "sounds"
       ],
       "featured": false,
       "category": "notify",
@@ -11156,11 +11025,10 @@
       "name": "sounds-retro",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/sounds-retro",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "8-bit sounds: a coin when tests pass, a buzz when they fail, a chime when a turn ends.",
       "tags": [
-        "sounds",
-        "baselane"
+        "sounds"
       ],
       "featured": false,
       "category": "notify",
@@ -11207,11 +11075,10 @@
       "name": "sounds-scifi",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/sounds-scifi",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Sci-fi console sounds: a beep when tests pass, an alarm when they fail, a warp when a turn ends.",
       "tags": [
-        "sounds",
-        "baselane"
+        "sounds"
       ],
       "featured": false,
       "category": "notify",
@@ -11258,11 +11125,9 @@
       "name": "sports-narrator",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/sports-narrator",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "One line of sports play-by-play at turn end.",
-      "tags": [
-        "baselane"
-      ],
+      "tags": [],
       "featured": false,
       "category": "fun",
       "install": [
@@ -11324,11 +11189,10 @@
       "name": "standup",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/standup",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Adds /standup: Yesterday, Today and Blockers from your git log and this session's record, printed and copied.",
       "tags": [
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "tools",
@@ -11407,12 +11271,11 @@
       "name": "stats-pack",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/stats-pack",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Every Baselane stats mod in one: /wrapped, streaks and achievements on one shared daily rollup.",
       "tags": [
         "collection",
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "packs",
@@ -11469,11 +11332,10 @@
       "name": "ste-mode",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/ste-mode",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Replies in ASD-STE100 Simplified Technical English: approved words, short sentences, one instruction each, active voice.",
       "tags": [
-        "style",
-        "baselane"
+        "style"
       ],
       "featured": false,
       "category": "styles",
@@ -11515,12 +11377,11 @@
       "name": "streaks",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/streaks",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Counts consecutive days you used Claude Code: a Day N streak toast at session start, and /streak to ask.",
       "tags": [
         "toast",
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "fun",
@@ -11577,11 +11438,10 @@
       "name": "sudo-guard",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/sudo-guard",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Asks before sudo, doas or su -c runs a command with elevated rights.",
       "tags": [
-        "guard",
-        "baselane"
+        "guard"
       ],
       "featured": false,
       "category": "guards",
@@ -11640,11 +11500,10 @@
       "name": "tdd-mode",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/tdd-mode",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Writes a failing test first, watches it fail, then implements.",
       "tags": [
-        "style",
-        "baselane"
+        "style"
       ],
       "featured": false,
       "category": "styles",
@@ -11686,11 +11545,10 @@
       "name": "team-pack",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/team-pack",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Team habits in one install: Conventional Commits, test-first work and a security check on every change.",
       "tags": [
-        "collection",
-        "baselane"
+        "collection"
       ],
       "featured": false,
       "category": "packs",
@@ -11732,11 +11590,10 @@
       "name": "terse-mode",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/terse-mode",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Short answers: no preamble, no recap.",
       "tags": [
-        "style",
-        "baselane"
+        "style"
       ],
       "featured": false,
       "category": "styles",
@@ -11778,12 +11635,11 @@
       "name": "test-pane",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/test-pane",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "A live side pane with the last test run (vitest, jest, pytest, go test, cargo test, bun test, claude plugin test): runner, pass, fail and…",
       "tags": [
         "pane",
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "panes",
@@ -11855,11 +11711,9 @@
       "name": "test-reminder",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/test-reminder",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Reminds you at turn end when source files changed but no test command ran since.",
-      "tags": [
-        "baselane"
-      ],
+      "tags": [],
       "featured": false,
       "category": "nudges",
       "install": [
@@ -11921,11 +11775,9 @@
       "name": "time-badge",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/time-badge",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Tool rows show how long the call ran, for example 2.4s, when it took over one second.",
-      "tags": [
-        "baselane"
-      ],
+      "tags": [],
       "featured": false,
       "category": "display",
       "install": [
@@ -11976,11 +11828,10 @@
       "name": "todo-nudge",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/todo-nudge",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "At turn end, one toast with the count of TODO, FIXME and HACK lines your edits added this turn. Quiet when none were added.",
       "tags": [
-        "toast",
-        "baselane"
+        "toast"
       ],
       "featured": false,
       "category": "nudges",
@@ -12043,12 +11894,11 @@
       "name": "todo-pane",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/todo-pane",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "A live side pane of the TODO, FIXME and HACK lines in tracked files (git grep), grouped by file and capped at 30.",
       "tags": [
         "pane",
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "panes",
@@ -12120,11 +11970,10 @@
       "name": "todos",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/todos",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Adds /todos: TODO, FIXME and HACK lines in tracked files, grouped by file (50 lines at most). Read-only.",
       "tags": [
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "tools",
@@ -12203,11 +12052,10 @@
       "name": "tool-counter",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/tool-counter",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "A band above the prompt with your tool calls this session, the top three by tool (Bash 41 · Edit 18 · Read 12).",
       "tags": [
-        "band",
-        "baselane"
+        "band"
       ],
       "featured": false,
       "category": "bands",
@@ -12279,11 +12127,10 @@
       "name": "tree",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/tree",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Adds /tree: tracked files as a tree, 2 levels deep, folders with file counts (80 lines at most). Read-only.",
       "tags": [
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "tools",
@@ -12362,11 +12209,10 @@
       "name": "typecheck-nudge",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/typecheck-nudge",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "At turn end, one toast when .ts or .tsx files were edited and no type check (tsc, vue-tsc, a typecheck script or a build) ran since the…",
       "tags": [
-        "toast",
-        "baselane"
+        "toast"
       ],
       "featured": false,
       "category": "nudges",
@@ -12429,11 +12275,9 @@
       "name": "url-links",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/url-links",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "https links (and http://localhost) in tool output are listed as clickable links under the result, up to five.",
-      "tags": [
-        "baselane"
-      ],
+      "tags": [],
       "featured": false,
       "category": "display",
       "install": [
@@ -12484,11 +12328,10 @@
       "name": "wrapped",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/wrapped",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Adds /wrapped: a screenshot-ready Claude Code Wrapped for the last 7 days (or /wrapped month for 30), printed and copied.",
       "tags": [
-        "commands",
-        "baselane"
+        "commands"
       ],
       "featured": false,
       "category": "fun",
@@ -12545,11 +12388,10 @@
       "name": "yoda-mode",
       "type": "mod",
       "url": "https://github.com/baselane-sh/mods/tree/main/plugins/yoda-mode",
-      "author": "baselane-sh",
+      "author": "mohammad0omar",
       "description": "Speaks like Yoda in prose. Code, commands and commit messages stay normal.",
       "tags": [
-        "style",
-        "baselane"
+        "style"
       ],
       "featured": false,
       "category": "styles",
