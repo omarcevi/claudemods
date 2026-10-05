@@ -7,7 +7,7 @@
 
 [Browse the site](https://claudemods.chat) · [Submit something](https://github.com/omarcevi/claudemods/issues/new?template=submit.yml) · [How it works](#how-it-works)
 
-![entries](https://img.shields.io/badge/entries-102-d97757) ![installable](https://img.shields.io/badge/installable_plugins-74-2f6f4f) ![license](https://img.shields.io/badge/list-CC0-lightgrey)
+![entries](https://img.shields.io/badge/entries-103-d97757) ![installable](https://img.shields.io/badge/installable_plugins-74-2f6f4f) ![license](https://img.shields.io/badge/list-CC0-lightgrey)
 
 </div>
 
@@ -29,7 +29,7 @@ Every plugin in the marketplace points at the exact upstream commit we looked at
 
 - [Mods](#mods) (27)
 - [Plugins & marketplaces](#plugins-marketplaces) (7)
-- [Skills](#skills) (20)
+- [Skills](#skills) (21)
 - [Subagents](#subagents) (6)
 - [Slash commands](#slash-commands) (5)
 - [Hooks](#hooks) (6)
@@ -147,6 +147,7 @@ SKILL.md folders that teach Claude a task or workflow.
 | [Diagram Design](https://github.com/cathrynlavery/diagram-design)<br><sub>by cathrynlavery</sub> | Editorial diagram design: 42 diagram types as self-contained HTML and SVG, with Mermaid, draw.io and Excalidraw import. | `/plugin install diagram-design@claudemods` |
 | [Expo Skills](https://github.com/expo/skills)<br><sub>by expo</sub> | The Expo team's skills for building Expo apps and using Expo Application Services. | `/plugin install expo@claude-plugins-official` |
 | [Graphify](https://github.com/Graphify-Labs/graphify)<br><sub>by Graphify-Labs</sub> | Turns a codebase, with its docs, SQL schemas, configs and PDFs, into a queryable knowledge graph you use through a /graphify skill. | `uv tool install graphifyy && graphify install` |
+| [Hairline](https://github.com/lucasmarkes/hairline)<br><sub>by lucasmarkes</sub> | A skill that draws a new Hairline figure from your idea: an isometric line drawing that answers the pointer, as one HTML file. | `npx skills add lucasmarkes/hairline` |
 | [Humanizer](https://github.com/blader/humanizer)<br><sub>by blader</sub> | Removes the signs of AI-generated writing from text. | `/plugin install humanizer@claudemods` |
 | [I Have ADHD](https://github.com/ayghri/i-have-adhd)<br><sub>by ayghri</sub> | Stops your coding agent from burying the answer: ADHD-friendly output with the point first, plus an opt-in always-on mode. | `/plugin install i-have-adhd@claudemods` |
 | [Impeccable](https://github.com/pbakaus/impeccable)<br><sub>by pbakaus</sub> | A design language for AI harnesses: one skill with 24 commands like polish, audit and critique, plus anti-pattern detection. | `npx impeccable install` |

@@ -19,7 +19,7 @@
       "label": "Skills",
       "heading": "Claude skills",
       "blurb": "SKILL.md folders that teach Claude a task or workflow.",
-      "count": 20
+      "count": 21
     },
     "subagent": {
       "label": "Subagents",
@@ -5095,6 +5095,24 @@
       "featured": false,
       "install": [
         "npx impeccable install"
+      ],
+      "inMarketplace": false
+    },
+    {
+      "id": "hairline",
+      "name": "Hairline",
+      "type": "skill",
+      "url": "https://github.com/lucasmarkes/hairline",
+      "author": "lucasmarkes",
+      "description": "A skill that draws a new Hairline figure from your idea: an isometric line drawing that answers the pointer, as one HTML file.",
+      "tags": [
+        "design",
+        "svg",
+        "animation"
+      ],
+      "featured": false,
+      "install": [
+        "npx skills add lucasmarkes/hairline"
       ],
       "inMarketplace": false
     },
