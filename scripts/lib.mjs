@@ -57,7 +57,37 @@ export function validateEntries(entries) {
     if (e.description && e.description.length > 140) errors.push(`${at}: description over 140 chars`);
     if (e.tags && (!Array.isArray(e.tags) || e.tags.length > 6)) errors.push(`${at}: tags must be an array of at most 6`);
     if (e.bundle && !githubRepo(e.url)) errors.push(`${at}: bundle:true needs a github.com repo url`);
+    if (e.acknowledge !== undefined && (typeof e.acknowledge !== "object" || !Object.entries(e.acknowledge).every(([k, v]) => FLAGS[k] && typeof v === "string" && v.trim())))
+      errors.push(`${at}: acknowledge must map flag ids (${Object.keys(FLAGS).join(", ")}) to a reason`);
   });
+  return errors;
+}
+
+// Risk flags scripts/footprint.mjs can raise for a bundled plugin, worst first.
+export const FLAGS = {
+  "runtime-fetch": { label: "Fetches code at runtime", level: "bad", blocking: true },
+  "auto-approve": { label: "Skips permission prompts", level: "bad" },
+  obfuscation: { label: "Hard-to-review code (eval or encoded blobs)", level: "bad" },
+  credentials: { label: "Touches credentials", level: "warn" },
+  processes: { label: "Runs other programs", level: "warn" },
+  network: { label: "Uses the network", level: "warn" },
+  "writes-files": { label: "Writes files", level: "warn" },
+  "model-calls": { label: "Makes its own model calls", level: "warn" },
+  prompts: { label: "Sends prompts for you", level: "warn" },
+  bundled: { label: "Ships minified code", level: "warn" },
+};
+
+// A plugin that fetches code at runtime doesn't run the commit we pinned, so it
+// stays out of the marketplace unless its entry says why in `acknowledge`.
+export function policyErrors(e, r) {
+  const errors = [];
+  for (const pl of r?.plugins || []) {
+    if (!pl.footprint) { errors.push(`${e.id}: plugin ${pl.name} has no footprint; run node scripts/footprint.mjs ${e.id}`); continue; }
+    for (const f of pl.footprint.flags) {
+      if (FLAGS[f.id]?.blocking && !e.acknowledge?.[f.id])
+        errors.push(`${e.id}: plugin ${pl.name} ${FLAGS[f.id].label.toLowerCase()} (${f.where.join(", ")}). Unbundle it, or explain in "acknowledge": {"${f.id}": "..."}`);
+    }
+  }
   return errors;
 }
 

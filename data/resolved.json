@@ -11,6 +11,37 @@
           "source": "github",
           "repo": "halluton/Mindful-Claude",
           "sha": "411c9c4f4f1c3d128159be7315823341ae7d9e2d"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "session.start",
+            "turn.complete",
+            "turn.start",
+            "ui.message",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.after",
+            "clock.now",
+            "command.register",
+            "store.get",
+            "store.set",
+            "ui.invalidate",
+            "ui.log",
+            "ui.resolve"
+          ],
+          "skills": 0,
+          "commands": 1,
+          "agents": 0,
+          "flags": [],
+          "scanned": 11
         }
       }
     ]
@@ -25,9 +56,65 @@
         "description": "Preview pasted images at their prompt markers on macOS. Ghostty, plus experimental iTerm2 and Herdr support with a startup override. Reach L2: local clipboard capture and temporary files, no model or network calls.",
         "source": {
           "source": "git-subdir",
-          "url": "karanb192/claude-code-mods",
+          "url": "https://github.com/karanb192/claude-code-mods.git",
           "path": "plugins/image-peek",
           "sha": "10617a90106144d3cb131bd599e677d9c38bfd35"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.ts"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "prompt.edit",
+            "prompt.fill",
+            "session.compact",
+            "session.end",
+            "session.start",
+            "ui.close",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.every",
+            "command.register",
+            "env.get",
+            "plugin.root",
+            "process.run",
+            "prompt.read",
+            "session.id",
+            "state.get",
+            "state.set",
+            "ui.close",
+            "ui.invalidate",
+            "ui.log",
+            "ui.open",
+            "ui.panes",
+            "ui.resolve"
+          ],
+          "env": [
+            "CLAUDE_CODE_FORCE_TERMINAL_IMAGES",
+            "GHOSTTY_RESOURCES_DIR",
+            "HERDR_ENV",
+            "TERM_PROGRAM"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "processes",
+              "where": [
+                "hooks/register.ts"
+              ],
+              "via": [
+                "$.process.run"
+              ]
+            }
+          ],
+          "scanned": 3
         }
       },
       {
@@ -35,9 +122,78 @@
         "description": "A skill that plans, writes, validates, proves, reviews, migrates and publishes Claude Code mods. Plan first with the smallest $ surface, a footprint diffed against the plan, a test seen failing, an isolated load that leaves evidence files, a five-line threat model, and a handoff that names what was and was not proven. Brainstorm mode checks ideas against every mod already on GitHub.",
         "source": {
           "source": "git-subdir",
-          "url": "karanb192/claude-code-mods",
+          "url": "https://github.com/karanb192/claude-code-mods.git",
           "path": "plugins/mod-builder",
           "sha": "10617a90106144d3cb131bd599e677d9c38bfd35"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "session.start"
+          ],
+          "calls": [
+            "command.register",
+            "env.get",
+            "session.start",
+            "state.get",
+            "state.set",
+            "ui.ask",
+            "ui.blit",
+            "ui.invalidate",
+            "ui.log",
+            "ui.notice",
+            "ui.open",
+            "ui.resolve",
+            "ui.status",
+            "ui.toast"
+          ],
+          "env": [
+            "MOD_BUILDER_PROBE"
+          ],
+          "skills": 1,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "runtime-fetch",
+              "where": [
+                "skills/mod-builder/scripts/gate.mjs",
+                "skills/mod-builder/scripts/prove.mjs"
+              ],
+              "via": [
+                "'npx -y -p typescript tsc",
+                "'npx -y -p typescript tsc (no tsc on PATH; the first typecheck downloads TypeScr"
+              ]
+            },
+            {
+              "id": "processes",
+              "where": [
+                "skills/mod-builder/scripts/footprint.mjs",
+                "skills/mod-builder/scripts/lib.mjs",
+                "skills/mod-builder/scripts/prove.mjs"
+              ],
+              "via": [
+                "child_process"
+              ]
+            },
+            {
+              "id": "network",
+              "where": [
+                "skills/mod-builder/scripts/list-mods.mjs"
+              ],
+              "via": [
+                "fetch("
+              ],
+              "hosts": [
+                "raw.githubusercontent.com"
+              ]
+            }
+          ],
+          "scanned": 8
         }
       },
       {
@@ -45,9 +201,32 @@
         "description": "Pins every subagent to the fable model by rewriting agent.spawn, with /fable-pin on, off and status. Reach L0: its own store and one command, nothing else.",
         "source": {
           "source": "git-subdir",
-          "url": "karanb192/claude-code-mods",
+          "url": "https://github.com/karanb192/claude-code-mods.git",
           "path": "plugins/fable-pin",
           "sha": "10617a90106144d3cb131bd599e677d9c38bfd35"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.ts"
+          ],
+          "mcp": [],
+          "events": [
+            "agent.spawn",
+            "command.run",
+            "session.start"
+          ],
+          "calls": [
+            "command.register",
+            "store.get",
+            "store.set"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [],
+          "scanned": 1
         }
       },
       {
@@ -57,6 +236,71 @@
           "source": "github",
           "repo": "karanb192/cache-tax",
           "sha": "06cac47ec125a41a4aeeb78a6b006bec8cc6d6ed"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.ts"
+          ],
+          "mcp": [],
+          "events": [
+            "classic.SessionStart",
+            "command.run",
+            "config.set",
+            "prompt.submit",
+            "session.compact",
+            "session.start",
+            "turn.complete",
+            "turn.step",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.after",
+            "clock.now",
+            "command.list",
+            "command.register",
+            "config.list",
+            "env.get",
+            "model.fork",
+            "session.id",
+            "session.model",
+            "session.usage",
+            "store.delete",
+            "store.get",
+            "store.set",
+            "ui.invalidate",
+            "ui.log",
+            "ui.resolve",
+            "ui.status"
+          ],
+          "env": [
+            "NO_COLOR"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "processes",
+              "where": [
+                "tools/generate-status-icons.py"
+              ],
+              "via": [
+                "subprocess.run"
+              ]
+            },
+            {
+              "id": "model-calls",
+              "where": [
+                "hooks/register.ts"
+              ],
+              "via": [
+                "$.model.fork"
+              ]
+            }
+          ],
+          "scanned": 3
         }
       }
     ]
@@ -74,6 +318,186 @@
           "repo": "lossless-claude/lcm",
           "ref": "v0.16.0",
           "sha": "0c17dbffda452cf7fae46929af427dff355aeaa3"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [
+            {
+              "event": "PreCompact",
+              "command": "node"
+            },
+            {
+              "event": "SessionStart",
+              "command": "node"
+            },
+            {
+              "event": "SessionEnd",
+              "command": "node"
+            },
+            {
+              "event": "UserPromptSubmit",
+              "command": "node"
+            },
+            {
+              "event": "Stop",
+              "command": "node"
+            },
+            {
+              "event": "PostToolUse",
+              "matcher": "^(Agent|AskUserQuestion|Bash|EnterPlanMode|ExitPlanMode|Read|Edit|Write|Glob|Grep|TaskCreate|TaskUpdate|Skill|mcp__.*)$",
+              "command": "node"
+            },
+            {
+              "event": "PostToolUseFailure",
+              "command": "node"
+            }
+          ],
+          "modules": [
+            "./lcm-hooks.ts"
+          ],
+          "mcp": [
+            {
+              "name": "lcm",
+              "command": "node ${CLAUDE_PLUGIN_ROOT}/bundle/mcp-server.js"
+            }
+          ],
+          "events": [
+            "classic.PostToolUse",
+            "classic.PostToolUseFailure",
+            "classic.SessionStart",
+            "classic.Stop",
+            "classic.UserPromptSubmit",
+            "prompt.context",
+            "prompt.section",
+            "prompt.submit",
+            "session.append",
+            "session.compact",
+            "session.end",
+            "session.start",
+            "tool.call",
+            "turn.complete"
+          ],
+          "calls": [
+            "clock.after",
+            "clock.sleep",
+            "env.get",
+            "fs.write",
+            "http.fetch",
+            "model.complete",
+            "model.fork",
+            "process.run",
+            "session.cwd",
+            "session.id",
+            "session.model",
+            "ui.log"
+          ],
+          "env": [
+            "LCM_SUMMARIZE_WORKER",
+            "LCM_SUMMARIZE_WORKER_MAX_OUTPUT_TOKENS",
+            "LCM_SUMMARIZE_WORKER_MODEL"
+          ],
+          "skills": 2,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "obfuscation",
+              "where": [
+                "bundle/mcp-server.js"
+              ],
+              "via": [
+                "new Function("
+              ]
+            },
+            {
+              "id": "credentials",
+              "where": [
+                "bundle/assets/setup.sh",
+                "bundle/mcp-server.js",
+                "installer/install.ts",
+                "installer/setup.sh",
+                "src/daemon/config.ts",
+                "src/daemon/provider-config.ts",
+                "src/daemon/proxy-manager.ts",
+                "src/doctor/doctor.ts"
+              ],
+              "more": 1,
+              "via": [
+                "\".env\"",
+                "ANTHROPIC_API_KEY",
+                "process.env.ANTHROPIC_API_KEY"
+              ]
+            },
+            {
+              "id": "processes",
+              "where": [
+                "bundle/mcp-server.js",
+                "hooks/lcm-hooks.ts",
+                "installer/dry-run-deps.ts",
+                "installer/install.ts",
+                "installer/uninstall.ts",
+                "scripts/check-doc-claims.mjs",
+                "scripts/golden-capture.mjs",
+                "scripts/repro-group-promoted.mjs"
+              ],
+              "more": 12,
+              "via": [
+                "$.process.run",
+                "child_process"
+              ]
+            },
+            {
+              "id": "network",
+              "where": [
+                "bundle/mcp-server.js",
+                "hooks/lcm-hooks.ts",
+                "scripts/sync-plugin-cache.sh",
+                "scripts/update-gitleaks-patterns.ts",
+                "src/doctor/doctor.ts",
+                "src/doctor/timeline-check.ts",
+                "src/hooks/session-snapshot.ts"
+              ],
+              "via": [
+                "$.http.fetch",
+                "fetch(",
+                "rsync"
+              ],
+              "hosts": [
+                "raw.githubusercontent.com"
+              ]
+            },
+            {
+              "id": "writes-files",
+              "where": [
+                "hooks/lcm-hooks.ts"
+              ],
+              "via": [
+                "$.fs.write"
+              ]
+            },
+            {
+              "id": "model-calls",
+              "where": [
+                "hooks/compaction-header.ts",
+                "hooks/lcm-hooks.ts"
+              ],
+              "via": [
+                "$.model.complete",
+                "$.model.fork"
+              ]
+            },
+            {
+              "id": "bundled",
+              "where": [
+                "bundle/mcp-server.js",
+                "bundle/session-start-compact-worker.js"
+              ]
+            }
+          ],
+          "scanned": 289,
+          "errors": [
+            "bundle/lcm.js: over 2 MB, not scanned"
+          ]
         }
       }
     ]
@@ -90,6 +514,38 @@
           "source": "github",
           "repo": "sezaakgun/cc-arcade",
           "sha": "0baff06d31295850283c2eebe052f39bbc35473f"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "session.start",
+            "tool.call",
+            "turn.complete",
+            "turn.start",
+            "ui.message",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.now",
+            "command.register",
+            "store.get",
+            "store.set",
+            "ui.invalidate",
+            "ui.log",
+            "ui.resolve",
+            "ui.toast"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [],
+          "scanned": 24
         }
       }
     ]
@@ -104,9 +560,66 @@
         "description": "A rail of your session's prompts beside the transcript or above the prompt; hover to read one, click to jump to it.",
         "source": {
           "source": "git-subdir",
-          "url": "oikon48/prompt-rail",
+          "url": "https://github.com/oikon48/prompt-rail.git",
           "path": "plugins/prompt-rail",
           "sha": "2ac50fb87fc426fed89ba0f09f1784ef6f289ae8"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./index.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "classic.SessionStart",
+            "classic.Stop",
+            "command.run",
+            "prompt.submit",
+            "session.receive",
+            "session.start",
+            "turn.complete",
+            "turn.start",
+            "ui.focus",
+            "ui.press",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.after",
+            "command.register",
+            "config.set",
+            "fs.read",
+            "fs.stat",
+            "process.spawn",
+            "session.id",
+            "state.get",
+            "state.set",
+            "store.delete",
+            "store.get",
+            "store.keys",
+            "store.set",
+            "ui.close",
+            "ui.invalidate",
+            "ui.open",
+            "ui.resolve",
+            "ui.scroll",
+            "ui.toast"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "processes",
+              "where": [
+                "hooks/index.tsx"
+              ],
+              "via": [
+                "$.process.spawn"
+              ]
+            }
+          ],
+          "scanned": 1
         }
       }
     ]
@@ -123,6 +636,47 @@
           "source": "github",
           "repo": "Charlie0113-T/claude-agent-flow",
           "sha": "72f1287c84b312ef106a6a91c9520afa4d67244c"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.ts"
+          ],
+          "mcp": [],
+          "events": [
+            "agent.spawn",
+            "classic.Notification",
+            "classic.PermissionRequest",
+            "command.run",
+            "session.start",
+            "tool.call",
+            "turn.complete",
+            "turn.start",
+            "ui.close",
+            "ui.render"
+          ],
+          "calls": [
+            "agent.list",
+            "clock.after",
+            "clock.every",
+            "clock.now",
+            "clock.sleep",
+            "command.register",
+            "store.get",
+            "store.set",
+            "ui.close",
+            "ui.invalidate",
+            "ui.log",
+            "ui.open",
+            "ui.resolve",
+            "ui.status"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [],
+          "scanned": 37
         }
       }
     ]
@@ -139,6 +693,70 @@
           "source": "github",
           "repo": "furqan-khan07/pixelband",
           "sha": "20e27f99b023e62c8aa91dace07654442a715c24"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.ts"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "session.start",
+            "turn.complete",
+            "turn.start",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.after",
+            "clock.every",
+            "command.register",
+            "env.get",
+            "fs.list",
+            "fs.read",
+            "fs.stat",
+            "process.run",
+            "session.root",
+            "state.get",
+            "state.set",
+            "store.delete",
+            "store.get",
+            "store.set",
+            "ui.blit",
+            "ui.close",
+            "ui.invalidate",
+            "ui.open",
+            "ui.panes",
+            "ui.resolve"
+          ],
+          "env": [
+            "COLORTERM",
+            "HOME",
+            "TERM_PROGRAM",
+            "TMPDIR"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "processes",
+              "where": [
+                "hooks/register.ts"
+              ],
+              "via": [
+                "$.process.run"
+              ]
+            },
+            {
+              "id": "bundled",
+              "where": [
+                "hooks/creation-data.ts"
+              ]
+            }
+          ],
+          "scanned": 17
         }
       }
     ]
@@ -153,9 +771,40 @@
         "description": "Live /context: what fills the window, per-turn growth, and distance to auto-compaction.",
         "source": {
           "source": "git-subdir",
-          "url": "Arunjay4213/claude-mods",
+          "url": "https://github.com/Arunjay4213/claude-mods.git",
           "path": "plugins/context-lens",
           "sha": "d4fffd7de9204a62b10e7b3604fc893158fa25fd"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "session.compact",
+            "session.start",
+            "turn.complete",
+            "ui.close",
+            "ui.render"
+          ],
+          "calls": [
+            "command.register",
+            "session.usage",
+            "ui.close",
+            "ui.invalidate",
+            "ui.log",
+            "ui.open",
+            "ui.resolve",
+            "ui.status"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [],
+          "scanned": 2
         }
       },
       {
@@ -163,9 +812,42 @@
         "description": "5-hour and weekly plan limits with reset countdown and projected time until you hit them.",
         "source": {
           "source": "git-subdir",
-          "url": "Arunjay4213/claude-mods",
+          "url": "https://github.com/Arunjay4213/claude-mods.git",
           "path": "plugins/quota-meter",
           "sha": "d4fffd7de9204a62b10e7b3604fc893158fa25fd"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "session.start",
+            "turn.complete",
+            "ui.close",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.every",
+            "clock.now",
+            "command.register",
+            "session.usage",
+            "store.get",
+            "store.set",
+            "ui.close",
+            "ui.invalidate",
+            "ui.open",
+            "ui.resolve",
+            "ui.status"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [],
+          "scanned": 2
         }
       },
       {
@@ -173,9 +855,42 @@
         "description": "Per-turn cost, tokens and cache hit ratio, with the session total.",
         "source": {
           "source": "git-subdir",
-          "url": "Arunjay4213/claude-mods",
+          "url": "https://github.com/Arunjay4213/claude-mods.git",
           "path": "plugins/token-ledger",
           "sha": "d4fffd7de9204a62b10e7b3604fc893158fa25fd"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "session.start",
+            "turn.complete",
+            "ui.close",
+            "ui.render"
+          ],
+          "calls": [
+            "command.register",
+            "session.id",
+            "session.usage",
+            "store.get",
+            "store.set",
+            "ui.close",
+            "ui.invalidate",
+            "ui.log",
+            "ui.open",
+            "ui.resolve",
+            "ui.status"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [],
+          "scanned": 2
         }
       },
       {
@@ -183,9 +898,43 @@
         "description": "Stops a session before it runs past a budget: warns near a cost or plan-window limit, then refuses tool calls and asks before the next prompt.",
         "source": {
           "source": "git-subdir",
-          "url": "Arunjay4213/claude-mods",
+          "url": "https://github.com/Arunjay4213/claude-mods.git",
           "path": "plugins/budget-guard",
           "sha": "d4fffd7de9204a62b10e7b3604fc893158fa25fd"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "prompt.submit",
+            "session.start",
+            "tool.call",
+            "turn.complete",
+            "turn.start"
+          ],
+          "calls": [
+            "clock.after",
+            "command.register",
+            "config.set",
+            "session.usage",
+            "store.get",
+            "store.set",
+            "turn.abort",
+            "ui.ask",
+            "ui.log",
+            "ui.status",
+            "ui.toast"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [],
+          "scanned": 2
         }
       }
     ]
@@ -200,9 +949,61 @@
         "description": "Watch the agent work: every step in plain English, with a live time-saved counter",
         "source": {
           "source": "git-subdir",
-          "url": "OneWave-AI/claude-code-mods",
+          "url": "https://github.com/OneWave-AI/claude-code-mods.git",
           "path": "agent-narrator",
           "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "prompt.submit",
+            "session.start",
+            "tool.call",
+            "turn.complete",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.after",
+            "clock.every",
+            "clock.now",
+            "command.register",
+            "model.complete",
+            "ui.invalidate",
+            "ui.open",
+            "ui.resolve",
+            "ui.status",
+            "ui.toast"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "credentials",
+              "where": [
+                "hooks/narrate.ts"
+              ],
+              "via": [
+                "'.env'"
+              ]
+            },
+            {
+              "id": "model-calls",
+              "where": [
+                "hooks/register.tsx"
+              ],
+              "via": [
+                "$.model.complete"
+              ]
+            }
+          ],
+          "scanned": 2
         }
       },
       {
@@ -210,9 +1011,59 @@
         "description": "Race Claude Code sessions on a task: live split-screen race track scoreboard",
         "source": {
           "source": "git-subdir",
-          "url": "OneWave-AI/claude-code-mods",
+          "url": "https://github.com/OneWave-AI/claude-code-mods.git",
           "path": "agent-race",
           "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "session.start",
+            "tool.call",
+            "turn.complete",
+            "ui.render"
+          ],
+          "calls": [
+            "audio.speak",
+            "clock.every",
+            "clock.now",
+            "command.register",
+            "env.get",
+            "fs.list",
+            "fs.read",
+            "fs.write",
+            "session.id",
+            "session.usage",
+            "ui.close",
+            "ui.open",
+            "ui.resolve",
+            "ui.status",
+            "ui.toast"
+          ],
+          "env": [
+            "HOME"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "writes-files",
+              "where": [
+                "hooks/register.tsx"
+              ],
+              "via": [
+                "$.fs.write"
+              ]
+            }
+          ],
+          "scanned": 2
         }
       },
       {
@@ -220,9 +1071,42 @@
         "description": "Failing tests spawn a pixel boss; every run that fixes tests lands a hit, zero failures is a KO with loot",
         "source": {
           "source": "git-subdir",
-          "url": "OneWave-AI/claude-code-mods",
+          "url": "https://github.com/OneWave-AI/claude-code-mods.git",
           "path": "boss-fight",
           "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "session.start",
+            "tool.call",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.after",
+            "clock.every",
+            "clock.now",
+            "command.register",
+            "store.get",
+            "store.set",
+            "ui.blit",
+            "ui.open",
+            "ui.panes",
+            "ui.resolve",
+            "ui.status",
+            "ui.toast"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [],
+          "scanned": 4
         }
       },
       {
@@ -230,9 +1114,43 @@
         "description": "Live session cost odometer above the prompt: a burning fuse, real-world comparisons, threshold alerts",
         "source": {
           "source": "git-subdir",
-          "url": "OneWave-AI/claude-code-mods",
+          "url": "https://github.com/OneWave-AI/claude-code-mods.git",
           "path": "burn-meter",
           "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "prompt.submit",
+            "session.start",
+            "turn.complete",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.after",
+            "clock.every",
+            "clock.now",
+            "command.register",
+            "session.id",
+            "session.usage",
+            "store.get",
+            "store.set",
+            "ui.invalidate",
+            "ui.open",
+            "ui.resolve",
+            "ui.toast"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [],
+          "scanned": 2
         }
       },
       {
@@ -240,9 +1158,42 @@
         "description": "A pixel pet that lives in a pane and reacts to what Claude does: eats on tool calls, gets sick on failures, panics on rm -rf, sleeps when idle, evolves as you ship",
         "source": {
           "source": "git-subdir",
-          "url": "OneWave-AI/claude-code-mods",
+          "url": "https://github.com/OneWave-AI/claude-code-mods.git",
           "path": "code-pet",
           "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "prompt.submit",
+            "session.start",
+            "tool.call",
+            "turn.complete",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.after",
+            "clock.every",
+            "clock.now",
+            "command.register",
+            "store.get",
+            "store.set",
+            "ui.open",
+            "ui.resolve",
+            "ui.status",
+            "ui.toast"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [],
+          "scanned": 4
         }
       },
       {
@@ -250,9 +1201,59 @@
         "description": "Gmail + Slack alerts inside Claude Code: toasts, status count, and an Alerts pane",
         "source": {
           "source": "git-subdir",
-          "url": "OneWave-AI/claude-code-mods",
+          "url": "https://github.com/OneWave-AI/claude-code-mods.git",
           "path": "inbox-alerts",
           "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "session.start",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.every",
+            "clock.now",
+            "command.register",
+            "mcp.call",
+            "prompt.submit",
+            "store.get",
+            "store.set",
+            "ui.open",
+            "ui.resolve",
+            "ui.status",
+            "ui.toast"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "auto-approve",
+              "where": [
+                "hooks/register.tsx"
+              ],
+              "via": [
+                "$.mcp.call"
+              ]
+            },
+            {
+              "id": "prompts",
+              "where": [
+                "hooks/register.tsx"
+              ],
+              "via": [
+                "$.prompt.submit"
+              ]
+            }
+          ],
+          "scanned": 3
         }
       },
       {
@@ -260,9 +1261,50 @@
         "description": "A pane of Claude's dry inner thoughts about your session, typed out live",
         "source": {
           "source": "git-subdir",
-          "url": "OneWave-AI/claude-code-mods",
+          "url": "https://github.com/OneWave-AI/claude-code-mods.git",
           "path": "inner-monologue",
           "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "prompt.submit",
+            "session.start",
+            "tool.call",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.after",
+            "clock.every",
+            "clock.now",
+            "command.register",
+            "model.complete",
+            "ui.invalidate",
+            "ui.open",
+            "ui.panes",
+            "ui.resolve"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "model-calls",
+              "where": [
+                "hooks/register.tsx"
+              ],
+              "via": [
+                "$.model.complete"
+              ]
+            }
+          ],
+          "scanned": 2
         }
       },
       {
@@ -270,9 +1312,41 @@
         "description": "Dangerous Bash commands need launch codes: red alert pane, siren, a code to arm and a LAUNCH to fire",
         "source": {
           "source": "git-subdir",
-          "url": "OneWave-AI/claude-code-mods",
+          "url": "https://github.com/OneWave-AI/claude-code-mods.git",
           "path": "launch-codes",
           "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "session.start",
+            "tool.call",
+            "ui.render"
+          ],
+          "calls": [
+            "audio.play",
+            "clock.after",
+            "clock.every",
+            "clock.now",
+            "command.register",
+            "ui.ask",
+            "ui.blit",
+            "ui.close",
+            "ui.invalidate",
+            "ui.open",
+            "ui.resolve"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [],
+          "scanned": 3
         }
       },
       {
@@ -280,9 +1354,67 @@
         "description": "Spotify Wrapped for a Claude Code session: an animated stat reveal and a shareable PNG card",
         "source": {
           "source": "git-subdir",
-          "url": "OneWave-AI/claude-code-mods",
+          "url": "https://github.com/OneWave-AI/claude-code-mods.git",
           "path": "session-wrapped",
           "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "prompt.submit",
+            "session.end",
+            "session.start",
+            "tool.call",
+            "turn.complete",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.every",
+            "clock.now",
+            "command.register",
+            "env.get",
+            "fs.write",
+            "plugin.root",
+            "process.run",
+            "session.model",
+            "session.usage",
+            "ui.open",
+            "ui.resolve",
+            "ui.toast"
+          ],
+          "env": [
+            "HOME"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "processes",
+              "where": [
+                "hooks/register.tsx"
+              ],
+              "via": [
+                "$.process.run"
+              ]
+            },
+            {
+              "id": "writes-files",
+              "where": [
+                "hooks/register.tsx"
+              ],
+              "via": [
+                "$.fs.write"
+              ]
+            }
+          ],
+          "scanned": 7
         }
       },
       {
@@ -290,9 +1422,53 @@
         "description": "Live TV play-by-play of your Claude Code session, spoken aloud with crowd effects",
         "source": {
           "source": "git-subdir",
-          "url": "OneWave-AI/claude-code-mods",
+          "url": "https://github.com/OneWave-AI/claude-code-mods.git",
           "path": "sportscaster",
           "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "prompt.submit",
+            "session.start",
+            "tool.call",
+            "turn.complete",
+            "ui.render"
+          ],
+          "calls": [
+            "audio.play",
+            "audio.speak",
+            "clock.after",
+            "clock.every",
+            "clock.now",
+            "command.register",
+            "model.complete",
+            "store.get",
+            "store.set",
+            "ui.open",
+            "ui.resolve"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "model-calls",
+              "where": [
+                "hooks/register.tsx"
+              ],
+              "via": [
+                "$.model.complete"
+              ]
+            }
+          ],
+          "scanned": 4
         }
       },
       {
@@ -300,9 +1476,42 @@
         "description": "Mission control for subagents and agent teams: who is running, what each is doing, who spawned whom, who is talking to whom",
         "source": {
           "source": "git-subdir",
-          "url": "OneWave-AI/claude-code-mods",
+          "url": "https://github.com/OneWave-AI/claude-code-mods.git",
           "path": "swarm",
           "sha": "e6da26ca36a88eec3be25605d30fa20f2c1c0cec"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "agent.spawn",
+            "command.run",
+            "session.receive",
+            "session.send",
+            "session.start",
+            "tool.call",
+            "turn.complete",
+            "ui.render"
+          ],
+          "calls": [
+            "agent.list",
+            "clock.every",
+            "clock.now",
+            "command.register",
+            "ui.open",
+            "ui.resolve",
+            "ui.status",
+            "ui.toast"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [],
+          "scanned": 3
         }
       }
     ]
@@ -319,6 +1528,43 @@
           "source": "github",
           "repo": "r3al1tym/claude-review",
           "sha": "ae7a92cdf9d4dd0018d1b1edc43456b9fc306fad"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "session.append",
+            "session.start",
+            "turn.complete",
+            "turn.start",
+            "ui.focus",
+            "ui.render",
+            "ui.scroll"
+          ],
+          "calls": [
+            "clock.after",
+            "command.register",
+            "session.cwd",
+            "session.id",
+            "session.messages",
+            "session.model",
+            "session.surfaces",
+            "ui.close",
+            "ui.copy",
+            "ui.open",
+            "ui.panes",
+            "ui.resolve"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [],
+          "scanned": 5
         }
       }
     ]
@@ -333,9 +1579,59 @@
         "description": "Side pane showing the files changed in this conversation as diffs; mark lines, comment, and send the comments back to Claude",
         "source": {
           "source": "git-subdir",
-          "url": "rudrasecure/claude-mods",
+          "url": "https://github.com/rudrasecure/claude-mods.git",
           "path": "review-pane",
           "sha": "d408a11fd553fb9266e5fefcd948f4fc4d7708aa"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "prompt.submit",
+            "session.end",
+            "session.start",
+            "tool.call",
+            "turn.complete",
+            "turn.start",
+            "turn.step",
+            "ui.message",
+            "ui.render"
+          ],
+          "calls": [
+            "command.list",
+            "command.register",
+            "fs.read",
+            "prompt.submit",
+            "session.append",
+            "session.messages",
+            "tool.call",
+            "tool.list",
+            "ui.focus",
+            "ui.open",
+            "ui.resolve",
+            "ui.scroll",
+            "ui.toast"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "prompts",
+              "where": [
+                "hooks/register.tsx"
+              ],
+              "via": [
+                "$.prompt.submit"
+              ]
+            }
+          ],
+          "scanned": 5
         }
       }
     ]
@@ -350,9 +1646,52 @@
         "description": "A pane beside the transcript that holds the next things to tell the agent: write blocks of text while a turn runs, then press [+] to put one block into the prompt box.",
         "source": {
           "source": "git-subdir",
-          "url": "meganemura/buffer-pane",
+          "url": "https://github.com/meganemura/buffer-pane.git",
           "path": "plugin",
           "sha": "214211adfade734463bd045b7a1129a6792f7c28"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./mod.ts"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "session.start",
+            "ui.close",
+            "ui.render"
+          ],
+          "calls": [
+            "command.register",
+            "prompt.fill",
+            "prompt.submit",
+            "session.cwd",
+            "store.get",
+            "store.set",
+            "ui.close",
+            "ui.invalidate",
+            "ui.log",
+            "ui.open",
+            "ui.resolve",
+            "ui.status"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "prompts",
+              "where": [
+                "hooks/mod.ts"
+              ],
+              "via": [
+                "$.prompt.submit"
+              ]
+            }
+          ],
+          "scanned": 1
         }
       }
     ]
@@ -367,9 +1706,67 @@
         "description": "A pane beside the transcript with the GitHub pull requests and issues related to the current session: drag a title or description to leave a comment on it, add as many as you like, then Submit sends them all as one prompt. Watch each pull request's checks, review decision and mergeability update on a timer.",
         "source": {
           "source": "git-subdir",
-          "url": "meganemura/pull-request-pane",
+          "url": "https://github.com/meganemura/pull-request-pane.git",
           "path": "plugin",
           "sha": "2b072514053814083609a3e6b45ca4d602448f9f"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./mod.ts"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "session.start",
+            "tool.call",
+            "turn.complete",
+            "ui.close",
+            "ui.message",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.every",
+            "command.register",
+            "process.run",
+            "prompt.submit",
+            "session.cwd",
+            "session.messages",
+            "store.get",
+            "store.set",
+            "ui.close",
+            "ui.focus",
+            "ui.invalidate",
+            "ui.log",
+            "ui.open",
+            "ui.resolve",
+            "ui.status"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "processes",
+              "where": [
+                "hooks/mod.ts"
+              ],
+              "via": [
+                "$.process.run"
+              ]
+            },
+            {
+              "id": "prompts",
+              "where": [
+                "hooks/mod.ts"
+              ],
+              "via": [
+                "$.prompt.submit"
+              ]
+            }
+          ],
+          "scanned": 3
         }
       }
     ]
@@ -384,9 +1781,32 @@
         "description": "Paints Markdown onto the prompt box as you type: syntax-highlighted code blocks, inline code, bold, italic, lists, tables, quotes, links and headings. Paint only, your text is never changed.",
         "source": {
           "source": "git-subdir",
-          "url": "nogu66/md-prompt",
+          "url": "https://github.com/nogu66/md-prompt.git",
           "path": "plugins/md-prompt",
           "sha": "424b2e8fb8693f7d5432e678120567bf334f942a"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "prompt.edit",
+            "prompt.fill",
+            "session.start"
+          ],
+          "calls": [
+            "config.set",
+            "ui.log"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [],
+          "scanned": 11
         }
       }
     ]
@@ -403,6 +1823,49 @@
           "source": "github",
           "repo": "JayDoubleu/aside",
           "sha": "cf2b7562ae7b376cdcf9e2436a926aba77dc759f"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.ts"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "session.start",
+            "turn.complete",
+            "ui.input",
+            "ui.press",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.now",
+            "command.register",
+            "model.complete",
+            "model.fork",
+            "session.messages",
+            "ui.close",
+            "ui.invalidate",
+            "ui.open",
+            "ui.resolve"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "model-calls",
+              "where": [
+                "hooks/register.ts"
+              ],
+              "via": [
+                "$.model.complete",
+                "$.model.fork"
+              ]
+            }
+          ],
+          "scanned": 1
         }
       }
     ]
@@ -419,6 +1882,58 @@
           "source": "github",
           "repo": "NahumLitvin/prismantis",
           "sha": "b13de6c9ec39e01946943f67b07e5fae4aefd939"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "prompt.submit",
+            "session.start",
+            "ui.render"
+          ],
+          "calls": [
+            "config.set",
+            "env.get",
+            "plugin.name",
+            "ui.copy",
+            "ui.resolve",
+            "ui.toast"
+          ],
+          "env": [
+            "ALACRITTY_WINDOW_ID",
+            "KITTY_WINDOW_ID",
+            "KONSOLE_VERSION",
+            "TERM",
+            "TERM_PROGRAM",
+            "VTE_VERSION",
+            "WT_SESSION"
+          ],
+          "skills": 4,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "network",
+              "where": [
+                "scripts/bench.mjs"
+              ],
+              "via": [
+                "fetch("
+              ]
+            },
+            {
+              "id": "bundled",
+              "where": [
+                "hooks/vendor/mermaid-text.js"
+              ]
+            }
+          ],
+          "scanned": 14
         }
       }
     ]
@@ -433,9 +1948,77 @@
         "description": "btop-style live dashboard for Claude Code internals: /cctop opens it in a side pane, cctop-insights lets the session answer questions from its numbers",
         "source": {
           "source": "git-subdir",
-          "url": "tomstagl/cctop",
+          "url": "https://github.com/tomstagl/cctop.git",
           "path": "plugin",
           "sha": "6ceafc34a972f4e58d5e53b1c69f80e2a9759d41"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./pane.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "session.compact",
+            "session.start",
+            "skill.prompt",
+            "tool.call",
+            "turn.complete",
+            "turn.start",
+            "ui.close",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.after",
+            "clock.every",
+            "clock.now",
+            "command.register",
+            "env.get",
+            "fs.write",
+            "plugin.root",
+            "process.run",
+            "session.id",
+            "session.model",
+            "session.usage",
+            "ui.close",
+            "ui.invalidate",
+            "ui.log",
+            "ui.open",
+            "ui.resolve",
+            "ui.status",
+            "ui.toast"
+          ],
+          "env": [
+            "HOME"
+          ],
+          "skills": 2,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "processes",
+              "where": [
+                "hooks/pane.tsx",
+                "hooks/poller.ts"
+              ],
+              "via": [
+                "$.process.run"
+              ]
+            },
+            {
+              "id": "writes-files",
+              "where": [
+                "hooks/pane.tsx",
+                "hooks/poller.ts"
+              ],
+              "via": [
+                "$.fs.write"
+              ]
+            }
+          ],
+          "scanned": 14
         }
       }
     ]
@@ -450,9 +2033,31 @@
         "description": "Keeps secrets, email addresses and IP addresses out of the session transcript, and puts the real value back on the way into a tool call",
         "source": {
           "source": "git-subdir",
-          "url": "ray-amjad/awesome-claude-code-function-hooks",
+          "url": "https://github.com/ray-amjad/awesome-claude-code-function-hooks.git",
           "path": "plugins/secret-redactor",
           "sha": "12b5fea27a4bd1b88cd9c9b6abc1efc0756c6625"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./redact.ts"
+          ],
+          "mcp": [],
+          "events": [
+            "prompt.context",
+            "prompt.submit",
+            "tool.call"
+          ],
+          "calls": [
+            "ui.notice",
+            "ui.toast"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [],
+          "scanned": 1
         }
       },
       {
@@ -460,9 +2065,50 @@
         "description": "Pins the Vercel deploy queue of the linked project under the prompt: every deploy queued, building or just finished, with its phase and elapsed time",
         "source": {
           "source": "git-subdir",
-          "url": "ray-amjad/awesome-claude-code-function-hooks",
+          "url": "https://github.com/ray-amjad/awesome-claude-code-function-hooks.git",
           "path": "plugins/vercel-deploy-status",
           "sha": "12b5fea27a4bd1b88cd9c9b6abc1efc0756c6625"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./deploy-status.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "session.start",
+            "tool.call",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.after",
+            "clock.every",
+            "clock.now",
+            "fs.exists",
+            "fs.readFile",
+            "process.run",
+            "session.repo",
+            "ui.invalidate",
+            "ui.log",
+            "ui.resolve",
+            "ui.toast"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "processes",
+              "where": [
+                "hooks/deploy-status.tsx"
+              ],
+              "via": [
+                "$.process.run"
+              ]
+            }
+          ],
+          "scanned": 2
         }
       }
     ]
@@ -479,6 +2125,74 @@
           "source": "github",
           "repo": "lperezmo/topic-filter-mod",
           "sha": "678a5554e7fb35b4c93ef3095dbee3d5f54fdd01"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.ts"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "prompt.attachment",
+            "prompt.context",
+            "prompt.submit",
+            "session.end",
+            "session.receive",
+            "session.start",
+            "skill.prompt",
+            "tool.call",
+            "tool.describe",
+            "ui.press",
+            "ui.render"
+          ],
+          "calls": [
+            "agent.list",
+            "command.register",
+            "env.get",
+            "fs.list",
+            "fs.read",
+            "fs.stat",
+            "plugin.root",
+            "store.get",
+            "store.set",
+            "ui.close",
+            "ui.invalidate",
+            "ui.log",
+            "ui.open",
+            "ui.panes",
+            "ui.resolve",
+            "ui.toast"
+          ],
+          "env": [
+            "HOME",
+            "USERPROFILE"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "network",
+              "where": [
+                "tools/packs/topic_packs/build.py",
+                "tools/packs/topic_packs/judge.py",
+                "tools/packs/topic_packs/sources.py"
+              ],
+              "via": [
+                "fetch(",
+                "urllib.request"
+              ],
+              "hosts": [
+                "api.datamuse.com",
+                "en.wikipedia.org",
+                "en.wiktionary.org",
+                "openrouter.ai"
+              ]
+            }
+          ],
+          "scanned": 20
         }
       }
     ]
@@ -495,6 +2209,57 @@
           "source": "github",
           "repo": "smukh/roll-credits",
           "sha": "5b627e351fb745db6dc12f5bfe8656aaa385424e"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "session.start",
+            "tool.call",
+            "turn.complete",
+            "ui.close",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.every",
+            "clock.now",
+            "command.register",
+            "ui.invalidate",
+            "ui.open",
+            "ui.resolve"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "processes",
+              "where": [
+                "scripts/claude.mjs"
+              ],
+              "via": [
+                "child_process"
+              ]
+            },
+            {
+              "id": "network",
+              "where": [
+                "scripts/fetch-types.mjs"
+              ],
+              "via": [
+                "fetch("
+              ],
+              "hosts": [
+                "raw.githubusercontent.com"
+              ]
+            }
+          ],
+          "scanned": 4
         }
       }
     ]
@@ -509,9 +2274,33 @@
         "description": "Mermaid diagrams drawn as box art inline in the transcript.",
         "source": {
           "source": "git-subdir",
-          "url": "galElmalah/claude-mods",
+          "url": "https://github.com/galElmalah/claude-mods.git",
           "path": "claude-mermaid",
           "sha": "b19a0f0d09bf214c010b15cc2849c0c1a11d7b0d"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.ts"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "session.start",
+            "ui.render"
+          ],
+          "calls": [
+            "store.get",
+            "store.set",
+            "ui.invalidate",
+            "ui.log"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [],
+          "scanned": 4
         }
       },
       {
@@ -519,9 +2308,40 @@
         "description": "/q <text> while Claude is working waits in a stack above the prompt and goes out when the turn ends.",
         "source": {
           "source": "git-subdir",
-          "url": "galElmalah/claude-mods",
+          "url": "https://github.com/galElmalah/claude-mods.git",
           "path": "claude-queue",
           "sha": "b19a0f0d09bf214c010b15cc2849c0c1a11d7b0d"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.ts"
+          ],
+          "mcp": [],
+          "events": [
+            "classic.Stop",
+            "command.run",
+            "prompt.submit",
+            "session.start",
+            "tool.call",
+            "turn.complete",
+            "turn.start",
+            "ui.focus",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.after",
+            "ui.focus",
+            "ui.invalidate",
+            "ui.log",
+            "ui.resolve"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [],
+          "scanned": 1
         }
       }
     ]
@@ -536,9 +2356,67 @@
         "description": "Verifies the live URL after a deploy command succeeds.",
         "source": {
           "source": "git-subdir",
-          "url": "yash-gadodia/claude-mods",
+          "url": "https://github.com/yash-gadodia/claude-mods.git",
           "path": "deploy-verify",
           "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.ts"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "prompt.context",
+            "session.start",
+            "tool.call",
+            "turn.complete"
+          ],
+          "calls": [
+            "clock.after",
+            "clock.now",
+            "clock.sleep",
+            "env.get",
+            "fs.exists",
+            "fs.read",
+            "process.run",
+            "prompt.submit",
+            "session.cwd",
+            "session.repo",
+            "ui.invalidate",
+            "ui.log",
+            "ui.status",
+            "ui.toast"
+          ],
+          "env": [
+            "CLAUDE_MODS_DISABLE"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "processes",
+              "where": [
+                "hooks/register.ts"
+              ],
+              "via": [
+                "$.process.run"
+              ]
+            },
+            {
+              "id": "prompts",
+              "where": [
+                "hooks/register.ts"
+              ],
+              "via": [
+                "$.prompt.submit"
+              ]
+            }
+          ],
+          "scanned": 2
         }
       },
       {
@@ -546,9 +2424,61 @@
         "description": "Routes heavy Bash commands to a second machine over ssh, syncing the commit first.",
         "source": {
           "source": "git-subdir",
-          "url": "yash-gadodia/claude-mods",
+          "url": "https://github.com/yash-gadodia/claude-mods.git",
           "path": "mini-offload",
           "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.ts"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "session.start",
+            "tool.call"
+          ],
+          "calls": [
+            "env.get",
+            "fs.exists",
+            "fs.read",
+            "process.run",
+            "session.cwd",
+            "session.repo",
+            "store.get",
+            "store.set",
+            "ui.log",
+            "ui.toast"
+          ],
+          "env": [
+            "CLAUDE_MODS_DISABLE"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "processes",
+              "where": [
+                "hooks/register.ts"
+              ],
+              "via": [
+                "$.process.run"
+              ]
+            },
+            {
+              "id": "network",
+              "where": [
+                "hooks/register.ts"
+              ],
+              "via": [
+                "'ssh'"
+              ]
+            }
+          ],
+          "scanned": 1
         }
       },
       {
@@ -556,9 +2486,56 @@
         "description": "Stops a turn that has edited too many files until the goal is restated.",
         "source": {
           "source": "git-subdir",
-          "url": "yash-gadodia/claude-mods",
+          "url": "https://github.com/yash-gadodia/claude-mods.git",
           "path": "scope-guard",
           "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.ts"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "prompt.context",
+            "prompt.submit",
+            "session.start",
+            "tool.check",
+            "turn.start"
+          ],
+          "calls": [
+            "clock.after",
+            "env.get",
+            "model.complete",
+            "session.cwd",
+            "session.messages",
+            "store.get",
+            "store.set",
+            "turn.abort",
+            "ui.invalidate",
+            "ui.log",
+            "ui.status"
+          ],
+          "env": [
+            "CLAUDE_MODS_DISABLE"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "model-calls",
+              "where": [
+                "hooks/register.ts"
+              ],
+              "via": [
+                "$.model.complete"
+              ]
+            }
+          ],
+          "scanned": 1
         }
       },
       {
@@ -566,9 +2543,49 @@
         "description": "Denies a merge unless the latest human message says merge; ship, push and deploy do not count.",
         "source": {
           "source": "git-subdir",
-          "url": "yash-gadodia/claude-mods",
+          "url": "https://github.com/yash-gadodia/claude-mods.git",
           "path": "merge-gate",
           "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.ts"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "prompt.submit",
+            "session.start",
+            "tool.call"
+          ],
+          "calls": [
+            "env.get",
+            "process.run",
+            "session.messages",
+            "store.get",
+            "store.set",
+            "ui.log"
+          ],
+          "env": [
+            "CLAUDE_MODS_DISABLE"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "processes",
+              "where": [
+                "hooks/register.ts"
+              ],
+              "via": [
+                "$.process.run"
+              ]
+            }
+          ],
+          "scanned": 1
         }
       },
       {
@@ -576,9 +2593,42 @@
         "description": "A receipt in the turn footer: edits, runs and curls, a warning when edits ran nothing, unfolded destructive commands, and a spinner that names an unverified claim.",
         "source": {
           "source": "git-subdir",
-          "url": "yash-gadodia/claude-mods",
+          "url": "https://github.com/yash-gadodia/claude-mods.git",
           "path": "receipt",
           "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.ts"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "prompt.suggest",
+            "session.start",
+            "tool.call",
+            "turn.complete",
+            "turn.start",
+            "ui.render"
+          ],
+          "calls": [
+            "env.get",
+            "prompt.suggest",
+            "store.get",
+            "store.set",
+            "ui.invalidate",
+            "ui.log"
+          ],
+          "env": [
+            "CLAUDE_MODS_DISABLE"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [],
+          "scanned": 1
         }
       },
       {
@@ -586,9 +2636,60 @@
         "description": "A docked pane with each edited file's hunk and keep or revert buttons that act without a model turn.",
         "source": {
           "source": "git-subdir",
-          "url": "yash-gadodia/claude-mods",
+          "url": "https://github.com/yash-gadodia/claude-mods.git",
           "path": "diff-review",
           "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "prompt.submit",
+            "session.start",
+            "tool.call",
+            "turn.start",
+            "ui.close",
+            "ui.press",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.after",
+            "env.get",
+            "fs.exists",
+            "fs.read",
+            "process.run",
+            "store.get",
+            "store.set",
+            "ui.close",
+            "ui.invalidate",
+            "ui.log",
+            "ui.open",
+            "ui.resolve",
+            "ui.toast"
+          ],
+          "env": [
+            "CLAUDE_MODS_DISABLE"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "processes",
+              "where": [
+                "hooks/register.tsx"
+              ],
+              "via": [
+                "$.process.run"
+              ]
+            }
+          ],
+          "scanned": 1
         }
       },
       {
@@ -596,9 +2697,61 @@
         "description": "A money line above the prompt, read from SQLite databases over ssh.",
         "source": {
           "source": "git-subdir",
-          "url": "yash-gadodia/claude-mods",
+          "url": "https://github.com/yash-gadodia/claude-mods.git",
           "path": "money-band",
           "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "session.start",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.after",
+            "clock.now",
+            "env.get",
+            "process.run",
+            "store.get",
+            "store.set",
+            "ui.invalidate",
+            "ui.log",
+            "ui.resolve",
+            "ui.status"
+          ],
+          "env": [
+            "CLAUDE_MODS_DISABLE"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "processes",
+              "where": [
+                "hooks/register.tsx"
+              ],
+              "via": [
+                "$.process.run"
+              ]
+            },
+            {
+              "id": "network",
+              "where": [
+                "hooks/register.tsx"
+              ],
+              "via": [
+                "'ssh'"
+              ]
+            }
+          ],
+          "scanned": 1
         }
       },
       {
@@ -606,9 +2759,47 @@
         "description": "Limit windows, context fill and cost above the prompt, with a nudge to clear.",
         "source": {
           "source": "git-subdir",
-          "url": "yash-gadodia/claude-mods",
+          "url": "https://github.com/yash-gadodia/claude-mods.git",
           "path": "usage-band",
           "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "session.measure",
+            "session.start",
+            "turn.complete",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.now",
+            "env.get",
+            "fs.read",
+            "session.cwd",
+            "session.model",
+            "session.usage",
+            "store.get",
+            "store.set",
+            "ui.invalidate",
+            "ui.log",
+            "ui.resolve",
+            "ui.toast"
+          ],
+          "env": [
+            "CLAUDE_MODS_DISABLE",
+            "HOME"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [],
+          "scanned": 1
         }
       },
       {
@@ -616,9 +2807,55 @@
         "description": "Click-to-copy buttons above the prompt for the last answer's blocks, plus a durable stash.",
         "source": {
           "source": "git-subdir",
-          "url": "yash-gadodia/claude-mods",
+          "url": "https://github.com/yash-gadodia/claude-mods.git",
           "path": "copy-band",
           "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "session.start",
+            "turn.complete",
+            "ui.press",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.now",
+            "env.get",
+            "process.run",
+            "store.get",
+            "store.set",
+            "ui.invalidate",
+            "ui.log",
+            "ui.resolve",
+            "ui.status",
+            "ui.toast"
+          ],
+          "env": [
+            "CLAUDE_MODS_DISABLE",
+            "HOME"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "processes",
+              "where": [
+                "hooks/register.tsx"
+              ],
+              "via": [
+                "$.process.run"
+              ]
+            }
+          ],
+          "scanned": 1
         }
       },
       {
@@ -626,9 +2863,57 @@
         "description": "Switches the Chrome profile Claude drives with no approval click.",
         "source": {
           "source": "git-subdir",
-          "url": "yash-gadodia/claude-mods",
+          "url": "https://github.com/yash-gadodia/claude-mods.git",
           "path": "chrome-switch",
           "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.ts"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "session.start",
+            "tool.call"
+          ],
+          "calls": [
+            "env.get",
+            "mcp.call",
+            "process.run",
+            "ui.log",
+            "ui.toast"
+          ],
+          "env": [
+            "CLAUDE_MODS_DISABLE",
+            "HOME"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "auto-approve",
+              "where": [
+                "hooks/register.ts"
+              ],
+              "via": [
+                "$.mcp.call"
+              ]
+            },
+            {
+              "id": "processes",
+              "where": [
+                "hooks/register.ts"
+              ],
+              "via": [
+                "$.process.run"
+              ]
+            }
+          ],
+          "scanned": 1
         }
       },
       {
@@ -636,9 +2921,46 @@
         "description": "A pixel Ragtag athlete above the prompt: every turn is a rep, the session is an AMRAP.",
         "source": {
           "source": "git-subdir",
-          "url": "yash-gadodia/claude-mods",
+          "url": "https://github.com/yash-gadodia/claude-mods.git",
           "path": "wod-band",
           "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "session.start",
+            "tool.call",
+            "turn.abort",
+            "turn.complete",
+            "turn.start",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.every",
+            "clock.now",
+            "env.get",
+            "store.get",
+            "store.set",
+            "ui.blit",
+            "ui.invalidate",
+            "ui.log",
+            "ui.resolve",
+            "ui.toast"
+          ],
+          "env": [
+            "CLAUDE_MODS_DISABLE"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [],
+          "scanned": 1
         }
       },
       {
@@ -646,9 +2968,46 @@
         "description": "3, 2, 1, GO on submit, a running clock per turn, and the split when it lands.",
         "source": {
           "source": "git-subdir",
-          "url": "yash-gadodia/claude-mods",
+          "url": "https://github.com/yash-gadodia/claude-mods.git",
           "path": "wod-timer",
           "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "prompt.submit",
+            "session.start",
+            "turn.abort",
+            "turn.complete",
+            "turn.start",
+            "turn.step",
+            "ui.render"
+          ],
+          "calls": [
+            "audio.speak",
+            "clock.every",
+            "clock.now",
+            "env.get",
+            "store.get",
+            "store.set",
+            "ui.invalidate",
+            "ui.log",
+            "ui.resolve"
+          ],
+          "env": [
+            "CLAUDE_MODS_DISABLE"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [],
+          "scanned": 1
         }
       },
       {
@@ -656,9 +3015,49 @@
         "description": "Blinks the iTerm2 tab orange when a turn lands, until you type again or three minutes pass.",
         "source": {
           "source": "git-subdir",
-          "url": "yash-gadodia/claude-mods",
+          "url": "https://github.com/yash-gadodia/claude-mods.git",
           "path": "done-blink",
           "sha": "f4c1c751f67918c73f29977cbd52b8398f8556ac"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.ts"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "prompt.submit",
+            "session.start",
+            "turn.complete",
+            "turn.start"
+          ],
+          "calls": [
+            "env.get",
+            "process.run",
+            "store.get",
+            "store.set",
+            "ui.log"
+          ],
+          "env": [
+            "CLAUDE_MODS_DISABLE"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "processes",
+              "where": [
+                "hooks/register.ts"
+              ],
+              "via": [
+                "$.process.run"
+              ]
+            }
+          ],
+          "scanned": 1
         }
       }
     ]
@@ -673,9 +3072,44 @@
         "description": "A pixel Clawd in a side pane that reacts to what Claude is doing",
         "source": {
           "source": "git-subdir",
-          "url": "ishuagrawal/clawdhouse",
+          "url": "https://github.com/ishuagrawal/clawdhouse.git",
           "path": "plugin",
           "sha": "e17d76bdb76ba74832f1ce302309c390cb8c1b4e"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "prompt.submit",
+            "session.compact",
+            "session.start",
+            "tool.call",
+            "tool.check",
+            "turn.complete",
+            "turn.start",
+            "turn.step",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.after",
+            "clock.every",
+            "clock.now",
+            "command.register",
+            "state.get",
+            "ui.close",
+            "ui.open",
+            "ui.resolve"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [],
+          "scanned": 3
         }
       }
     ]
@@ -690,9 +3124,58 @@
         "description": "A band above the prompt: session and last-message cost, plus git branch, status, CI, pull and push",
         "source": {
           "source": "git-subdir",
-          "url": "juulsverne/claude-code-mods",
+          "url": "https://github.com/juulsverne/claude-code-mods.git",
           "path": "cost-git",
           "sha": "a9242ffcda08ac488fff4cad8b0aed5dc54d7f7f"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "session.measure",
+            "session.start",
+            "turn.complete",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.after",
+            "clock.every",
+            "clock.now",
+            "command.register",
+            "model.complete",
+            "process.run",
+            "session.usage",
+            "ui.resolve"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "processes",
+              "where": [
+                "hooks/register.tsx"
+              ],
+              "via": [
+                "$.process.run"
+              ]
+            },
+            {
+              "id": "model-calls",
+              "where": [
+                "hooks/register.tsx"
+              ],
+              "via": [
+                "$.model.complete"
+              ]
+            }
+          ],
+          "scanned": 1
         }
       }
     ]
@@ -709,6 +3192,73 @@
           "source": "github",
           "repo": "udaaff/claude-code-session-monitor",
           "sha": "aa6b3ecc82540d36d8646ee423d4fa27fd524d70"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.ts"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "session.start",
+            "turn.complete",
+            "turn.start",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.after",
+            "clock.every",
+            "clock.now",
+            "config.list",
+            "env.get",
+            "fs.list",
+            "fs.stat",
+            "fs.write",
+            "plugin.root",
+            "process.run",
+            "session.id",
+            "settings.read",
+            "ui.close",
+            "ui.invalidate",
+            "ui.log",
+            "ui.open",
+            "ui.panes",
+            "ui.resolve",
+            "ui.toast"
+          ],
+          "env": [
+            "CLAUDE_CONFIG_DIR",
+            "HOME",
+            "TERM",
+            "USERPROFILE"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "processes",
+              "where": [
+                "scripts/sessions.mjs"
+              ],
+              "via": [
+                "$.process.run",
+                "child_process"
+              ]
+            },
+            {
+              "id": "writes-files",
+              "where": [
+                "hooks/register.ts"
+              ],
+              "via": [
+                "$.fs.write"
+              ]
+            }
+          ],
+          "scanned": 4
         }
       }
     ]
@@ -723,9 +3273,52 @@
         "description": "A usage board for Claude Code: a weekly pace gauge and a sliding ticker of your spend per model, in the terminal and on the desktop.",
         "source": {
           "source": "git-subdir",
-          "url": "aycandv/claude-usage-meter",
+          "url": "https://github.com/aycandv/claude-usage-meter.git",
           "path": "plugins/usage-ticker",
           "sha": "52b1130bddedc9cc9127e370a2f970429254647e"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "session.measure",
+            "session.start",
+            "turn.complete",
+            "turn.start",
+            "ui.close",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.every",
+            "clock.now",
+            "process.run",
+            "session.usage",
+            "store.get",
+            "store.set",
+            "ui.blit",
+            "ui.invalidate",
+            "ui.open",
+            "ui.resolve"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "processes",
+              "where": [
+                "hooks/register.tsx"
+              ],
+              "via": [
+                "$.process.run"
+              ]
+            }
+          ],
+          "scanned": 20
         }
       }
     ]
@@ -742,6 +3335,53 @@
           "source": "github",
           "repo": "lucenity0/claude-familiar",
           "sha": "77930064d5624d7c1a20ed974e80af48f3e1eb43"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "session.measure",
+            "session.start",
+            "tool.call",
+            "turn.complete",
+            "turn.start",
+            "ui.message",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.every",
+            "clock.now",
+            "command.register",
+            "model.complete",
+            "model.fork",
+            "store.get",
+            "store.set",
+            "ui.close",
+            "ui.open",
+            "ui.resolve",
+            "ui.toast"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "model-calls",
+              "where": [
+                "hooks/register.tsx"
+              ],
+              "via": [
+                "$.model.complete",
+                "$.model.fork"
+              ]
+            }
+          ],
+          "scanned": 5
         }
       }
     ]
@@ -758,6 +3398,74 @@
           "source": "github",
           "repo": "EveryInc/compound-engineering-plugin",
           "sha": "9af474a70e7f2a844338519ad9e92aafbd92d4fb"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [],
+          "mcp": [],
+          "skills": 36,
+          "commands": 1,
+          "agents": 38,
+          "flags": [
+            {
+              "id": "credentials",
+              "where": [
+                "skills/ce-optimize/scripts/experiment-worktree.sh",
+                "skills/ce-polish/scripts/live-endpoint.js",
+                "skills/ce-polish/scripts/resolve-port.sh",
+                "skills/ce-riffrec-feedback-analysis/scripts/analyze_riffrec_zip.py",
+                "skills/ce-sweep/scripts/analyze_riffrec_zip.py"
+              ],
+              "via": [
+                "\".env.example\"",
+                "/.env.local\"",
+                "os.environ.get(\"OPENAI_API_KEY\""
+              ]
+            },
+            {
+              "id": "processes",
+              "where": [
+                "scripts/release/validate.ts",
+                "scripts/run-tests.ts",
+                "skills/ce-brainstorm/scripts/light-webserver.js",
+                "skills/ce-brainstorm/scripts/packs-resolve.py",
+                "skills/ce-brainstorm/scripts/peer-job-runner.py",
+                "skills/ce-code-review/scripts/packs-resolve.py",
+                "skills/ce-code-review/scripts/peer-job-runner.py",
+                "skills/ce-code-review/scripts/review-scope.py"
+              ],
+              "more": 22,
+              "via": [
+                "Bun.spawn",
+                "child_process",
+                "subprocess.Popen"
+              ]
+            },
+            {
+              "id": "network",
+              "where": [
+                "site/_plugins/ce_sources.rb",
+                "skills/ce-brainstorm/scripts/light-webserver.js",
+                "skills/ce-brainstorm/scripts/packs-resolve.py",
+                "skills/ce-code-review/scripts/packs-resolve.py",
+                "skills/ce-compound/scripts/packs-resolve.py",
+                "skills/ce-doc-review/scripts/packs-resolve.py",
+                "skills/ce-dogfood/scripts/packs-resolve.py",
+                "skills/ce-plan/scripts/packs-resolve.py"
+              ],
+              "more": 4,
+              "via": [
+                "\"ssh\"",
+                "fetch("
+              ],
+              "hosts": [
+                "api.openai.com",
+                "github.com"
+              ]
+            }
+          ],
+          "scanned": 111
         }
       }
     ]
@@ -772,9 +3480,154 @@
         "description": "Persistent memory system for Claude Code - context compression across sessions",
         "source": {
           "source": "git-subdir",
-          "url": "thedotmack/claude-mem",
+          "url": "https://github.com/thedotmack/claude-mem.git",
           "path": "plugin",
           "sha": "bfc50259f64a4e0c9e81df849095683608e87ac8"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [
+            {
+              "event": "Setup",
+              "matcher": "*",
+              "command": "export PATH=\"$HOME/.nvm/versions/node/v$(ls \"$HOME/.nvm/versions/node\" 2>/dev/null | sed 's/^v//' | sort -t. -k1,1n -k2,2n -k3,3n | tail -1)/bin:$HOME/.local/bin:/usr/local/bin:/opt/homebrew/bin:$PATH\"; _C=\"${CLAUDE_CONFIG_DIR:-$HOME/.claude}\"; _E=\"${CLAUDE_PLUGIN_ROOT:-${PLUGIN_ROOT:-}}\"; _P=; if [ -n \"$_E\" ]; then _R=\"${_E%/}\"; [ -d \"$_R/plugin/scripts\" ] && _Q=\"$_R/plugin\" || _Q=\"$_R\"; [ -f \"$_Q/scripts/version-check.js\" ] && _P=\"$_Q\"; fi; if [ -z \"$_P\" ]; then _F=; _P=$({ for _V in \"$_C/plugins/cache/thedotmack/claude-mem\"/[0-9]*/; do [ -d \"$_V\" ] || continue; [ -e \"${_V}.orphaned_at\" ] && continue; _B=${_V%/}; _B=${_B##*/}; case \"$_B\" in (*-*) _G=0;; (*) _G=1;; esac; _N=${_B%%-*}; _M1=${_N%%.*}; case \"$_N\" in (*.*) _T=${_N#*.};; (*) _T=0;; esac; _M2=${_T%%.*}; case \"$_T\" in (*.*) _U=${_T#*.};; (*) _U=0;; esac; _M3=${_U%%.*}; _M1=${_M1%%[!0-9]*}; _M2=${_M2%%[!0-9]*}; _M3=${_M3%%[!0-9]*}; printf '%08d%08d%08d%d %s\\n' \"${_M1:-0}\" \"${_M2:-0}\" \"${_M3:-0}\" \"$_G\" \"$_V\"; done 2>/dev/null | sort -r | sed 's/^[^ ]* //'; printf '%s\\n' \"$_C/plugins/marketplaces/thedotmack/plugin\"; } | while IFS= read -r _R; do _R=\"${_R%/}\"; [ -d \"$_R/plugin/scripts\" ] && _Q=\"$_R/plugin\" || _Q=\"$_R\"; [ -f \"$_Q/scripts/version-check.js\" ] && [ -z \"$_F\" ] && { _F=1; printf '%s\\n' \"$_Q\"; }; done); fi; [ -n \"$_P\" ] || { echo \"claude-mem: version-check.js not found\" >&2; exit 1; }; command -v cygpath >/dev/null 2>&1 && { _W=$(cygpath -w \"$_P\" 2>/dev/null); [ -n \"$_W\" ] && _P=\"$_W\"; }; node \"$_P/scripts/version-check.js\""
+            },
+            {
+              "event": "SessionStart",
+              "matcher": "startup|resume|clear|compact",
+              "command": "export PATH=\"$HOME/.nvm/versions/node/v$(ls \"$HOME/.nvm/versions/node\" 2>/dev/null | sed 's/^v//' | sort -t. -k1,1n -k2,2n -k3,3n | tail -1)/bin:$HOME/.local/bin:/usr/local/bin:/opt/homebrew/bin:$PATH\"; _C=\"${CLAUDE_CONFIG_DIR:-$HOME/.claude}\"; _E=\"${CLAUDE_PLUGIN_ROOT:-${PLUGIN_ROOT:-}}\"; _P=; if [ -n \"$_E\" ]; then _R=\"${_E%/}\"; [ -d \"$_R/plugin/scripts\" ] && _Q=\"$_R/plugin\" || _Q=\"$_R\"; [ -f \"$_Q/scripts/bun-runner.js\" ] && [ -f \"$_Q/scripts/worker-service.cjs\" ] && _P=\"$_Q\"; fi; if [ -z \"$_P\" ]; then _F=; _P=$({ for _V in \"$_C/plugins/cache/thedotmack/claude-mem\"/[0-9]*/; do [ -d \"$_V\" ] || continue; [ -e \"${_V}.orphaned_at\" ] && continue; _B=${_V%/}; _B=${_B##*/}; case \"$_B\" in (*-*) _G=0;; (*) _G=1;; esac; _N=${_B%%-*}; _M1=${_N%%.*}; case \"$_N\" in (*.*) _T=${_N#*.};; (*) _T=0;; esac; _M2=${_T%%.*}; case \"$_T\" in (*.*) _U=${_T#*.};; (*) _U=0;; esac; _M3=${_U%%.*}; _M1=${_M1%%[!0-9]*}; _M2=${_M2%%[!0-9]*}; _M3=${_M3%%[!0-9]*}; printf '%08d%08d%08d%d %s\\n' \"${_M1:-0}\" \"${_M2:-0}\" \"${_M3:-0}\" \"$_G\" \"$_V\"; done 2>/dev/null | sort -r | sed 's/^[^ ]* //'; printf '%s\\n' \"$_C/plugins/marketplaces/thedotmack/plugin\"; } | while IFS= read -r _R; do _R=\"${_R%/}\"; [ -d \"$_R/plugin/scripts\" ] && _Q=\"$_R/plugin\" || _Q=\"$_R\"; [ -f \"$_Q/scripts/bun-runner.js\" ] && [ -f \"$_Q/scripts/worker-service.cjs\" ] && [ -z \"$_F\" ] && { _F=1; printf '%s\\n' \"$_Q\"; }; done); fi; [ -n \"$_P\" ] || { echo \"claude-mem: plugin scripts not found\" >&2; exit 0; }; command -v cygpath >/dev/null 2>&1 && { _W=$(cygpath -w \"$_P\" 2>/dev/null); [ -n \"$_W\" ] && _P=\"$_W\"; }; { node \"$_P/scripts/bun-runner.js\" \"$_P/scripts/worker-service.cjs\" start; } || { _S=$?; echo \"claude-mem: hook command failed (exit $_S)\" >&2; exit 0; }"
+            },
+            {
+              "event": "SessionStart",
+              "matcher": "startup|resume|clear|compact",
+              "command": "export PATH=\"$HOME/.nvm/versions/node/v$(ls \"$HOME/.nvm/versions/node\" 2>/dev/null | sed 's/^v//' | sort -t. -k1,1n -k2,2n -k3,3n | tail -1)/bin:$HOME/.local/bin:/usr/local/bin:/opt/homebrew/bin:$PATH\"; _C=\"${CLAUDE_CONFIG_DIR:-$HOME/.claude}\"; _E=\"${CLAUDE_PLUGIN_ROOT:-${PLUGIN_ROOT:-}}\"; _P=; if [ -n \"$_E\" ]; then _R=\"${_E%/}\"; [ -d \"$_R/plugin/scripts\" ] && _Q=\"$_R/plugin\" || _Q=\"$_R\"; [ -f \"$_Q/scripts/bun-runner.js\" ] && [ -f \"$_Q/scripts/worker-service.cjs\" ] && _P=\"$_Q\"; fi; if [ -z \"$_P\" ]; then _F=; _P=$({ for _V in \"$_C/plugins/cache/thedotmack/claude-mem\"/[0-9]*/; do [ -d \"$_V\" ] || continue; [ -e \"${_V}.orphaned_at\" ] && continue; _B=${_V%/}; _B=${_B##*/}; case \"$_B\" in (*-*) _G=0;; (*) _G=1;; esac; _N=${_B%%-*}; _M1=${_N%%.*}; case \"$_N\" in (*.*) _T=${_N#*.};; (*) _T=0;; esac; _M2=${_T%%.*}; case \"$_T\" in (*.*) _U=${_T#*.};; (*) _U=0;; esac; _M3=${_U%%.*}; _M1=${_M1%%[!0-9]*}; _M2=${_M2%%[!0-9]*}; _M3=${_M3%%[!0-9]*}; printf '%08d%08d%08d%d %s\\n' \"${_M1:-0}\" \"${_M2:-0}\" \"${_M3:-0}\" \"$_G\" \"$_V\"; done 2>/dev/null | sort -r | sed 's/^[^ ]* //'; printf '%s\\n' \"$_C/plugins/marketplaces/thedotmack/plugin\"; } | while IFS= read -r _R; do _R=\"${_R%/}\"; [ -d \"$_R/plugin/scripts\" ] && _Q=\"$_R/plugin\" || _Q=\"$_R\"; [ -f \"$_Q/scripts/bun-runner.js\" ] && [ -f \"$_Q/scripts/worker-service.cjs\" ] && [ -z \"$_F\" ] && { _F=1; printf '%s\\n' \"$_Q\"; }; done); fi; [ -n \"$_P\" ] || { echo \"claude-mem: plugin scripts not found\" >&2; exit 0; }; command -v cygpath >/dev/null 2>&1 && { _W=$(cygpath -w \"$_P\" 2>/dev/null); [ -n \"$_W\" ] && _P=\"$_W\"; }; { node \"$_P/scripts/bun-runner.js\" \"$_P/scripts/worker-service.cjs\" hook claude-code context; } || { _S=$?; echo \"claude-mem: hook command failed (exit $_S)\" >&2; exit 0; }"
+            },
+            {
+              "event": "UserPromptSubmit",
+              "command": "export PATH=\"$HOME/.nvm/versions/node/v$(ls \"$HOME/.nvm/versions/node\" 2>/dev/null | sed 's/^v//' | sort -t. -k1,1n -k2,2n -k3,3n | tail -1)/bin:$HOME/.local/bin:/usr/local/bin:/opt/homebrew/bin:$PATH\"; _C=\"${CLAUDE_CONFIG_DIR:-$HOME/.claude}\"; _E=\"${CLAUDE_PLUGIN_ROOT:-${PLUGIN_ROOT:-}}\"; _P=; if [ -n \"$_E\" ]; then _R=\"${_E%/}\"; [ -d \"$_R/plugin/scripts\" ] && _Q=\"$_R/plugin\" || _Q=\"$_R\"; [ -f \"$_Q/scripts/bun-runner.js\" ] && [ -f \"$_Q/scripts/worker-service.cjs\" ] && _P=\"$_Q\"; fi; if [ -z \"$_P\" ]; then _F=; _P=$({ for _V in \"$_C/plugins/cache/thedotmack/claude-mem\"/[0-9]*/; do [ -d \"$_V\" ] || continue; [ -e \"${_V}.orphaned_at\" ] && continue; _B=${_V%/}; _B=${_B##*/}; case \"$_B\" in (*-*) _G=0;; (*) _G=1;; esac; _N=${_B%%-*}; _M1=${_N%%.*}; case \"$_N\" in (*.*) _T=${_N#*.};; (*) _T=0;; esac; _M2=${_T%%.*}; case \"$_T\" in (*.*) _U=${_T#*.};; (*) _U=0;; esac; _M3=${_U%%.*}; _M1=${_M1%%[!0-9]*}; _M2=${_M2%%[!0-9]*}; _M3=${_M3%%[!0-9]*}; printf '%08d%08d%08d%d %s\\n' \"${_M1:-0}\" \"${_M2:-0}\" \"${_M3:-0}\" \"$_G\" \"$_V\"; done 2>/dev/null | sort -r | sed 's/^[^ ]* //'; printf '%s\\n' \"$_C/plugins/marketplaces/thedotmack/plugin\"; } | while IFS= read -r _R; do _R=\"${_R%/}\"; [ -d \"$_R/plugin/scripts\" ] && _Q=\"$_R/plugin\" || _Q=\"$_R\"; [ -f \"$_Q/scripts/bun-runner.js\" ] && [ -f \"$_Q/scripts/worker-service.cjs\" ] && [ -z \"$_F\" ] && { _F=1; printf '%s\\n' \"$_Q\"; }; done); fi; [ -n \"$_P\" ] || { echo \"claude-mem: plugin scripts not found\" >&2; exit 0; }; command -v cygpath >/dev/null 2>&1 && { _W=$(cygpath -w \"$_P\" 2>/dev/null); [ -n \"$_W\" ] && _P=\"$_W\"; }; { node \"$_P/scripts/bun-runner.js\" \"$_P/scripts/worker-service.cjs\" hook claude-code session-init; } || { _S=$?; echo \"claude-mem: hook command failed (exit $_S)\" >&2; exit 0; }"
+            },
+            {
+              "event": "PostToolUse",
+              "matcher": "*",
+              "command": "export PATH=\"$HOME/.nvm/versions/node/v$(ls \"$HOME/.nvm/versions/node\" 2>/dev/null | sed 's/^v//' | sort -t. -k1,1n -k2,2n -k3,3n | tail -1)/bin:$HOME/.local/bin:/usr/local/bin:/opt/homebrew/bin:$PATH\"; _C=\"${CLAUDE_CONFIG_DIR:-$HOME/.claude}\"; _E=\"${CLAUDE_PLUGIN_ROOT:-${PLUGIN_ROOT:-}}\"; _P=; if [ -n \"$_E\" ]; then _R=\"${_E%/}\"; [ -d \"$_R/plugin/scripts\" ] && _Q=\"$_R/plugin\" || _Q=\"$_R\"; [ -f \"$_Q/scripts/bun-runner.js\" ] && [ -f \"$_Q/scripts/worker-service.cjs\" ] && _P=\"$_Q\"; fi; if [ -z \"$_P\" ]; then _F=; _P=$({ for _V in \"$_C/plugins/cache/thedotmack/claude-mem\"/[0-9]*/; do [ -d \"$_V\" ] || continue; [ -e \"${_V}.orphaned_at\" ] && continue; _B=${_V%/}; _B=${_B##*/}; case \"$_B\" in (*-*) _G=0;; (*) _G=1;; esac; _N=${_B%%-*}; _M1=${_N%%.*}; case \"$_N\" in (*.*) _T=${_N#*.};; (*) _T=0;; esac; _M2=${_T%%.*}; case \"$_T\" in (*.*) _U=${_T#*.};; (*) _U=0;; esac; _M3=${_U%%.*}; _M1=${_M1%%[!0-9]*}; _M2=${_M2%%[!0-9]*}; _M3=${_M3%%[!0-9]*}; printf '%08d%08d%08d%d %s\\n' \"${_M1:-0}\" \"${_M2:-0}\" \"${_M3:-0}\" \"$_G\" \"$_V\"; done 2>/dev/null | sort -r | sed 's/^[^ ]* //'; printf '%s\\n' \"$_C/plugins/marketplaces/thedotmack/plugin\"; } | while IFS= read -r _R; do _R=\"${_R%/}\"; [ -d \"$_R/plugin/scripts\" ] && _Q=\"$_R/plugin\" || _Q=\"$_R\"; [ -f \"$_Q/scripts/bun-runner.js\" ] && [ -f \"$_Q/scripts/worker-service.cjs\" ] && [ -z \"$_F\" ] && { _F=1; printf '%s\\n' \"$_Q\"; }; done); fi; [ -n \"$_P\" ] || { echo \"claude-mem: plugin scripts not found\" >&2; exit 0; }; command -v cygpath >/dev/null 2>&1 && { _W=$(cygpath -w \"$_P\" 2>/dev/null); [ -n \"$_W\" ] && _P=\"$_W\"; }; { node \"$_P/scripts/bun-runner.js\" \"$_P/scripts/worker-service.cjs\" hook claude-code observation; } || { _S=$?; echo \"claude-mem: hook command failed (exit $_S)\" >&2; exit 0; }"
+            },
+            {
+              "event": "PostToolUseFailure",
+              "matcher": "*",
+              "command": "export PATH=\"$HOME/.nvm/versions/node/v$(ls \"$HOME/.nvm/versions/node\" 2>/dev/null | sed 's/^v//' | sort -t. -k1,1n -k2,2n -k3,3n | tail -1)/bin:$HOME/.local/bin:/usr/local/bin:/opt/homebrew/bin:$PATH\"; _C=\"${CLAUDE_CONFIG_DIR:-$HOME/.claude}\"; _E=\"${CLAUDE_PLUGIN_ROOT:-${PLUGIN_ROOT:-}}\"; _P=; if [ -n \"$_E\" ]; then _R=\"${_E%/}\"; [ -d \"$_R/plugin/scripts\" ] && _Q=\"$_R/plugin\" || _Q=\"$_R\"; [ -f \"$_Q/scripts/bun-runner.js\" ] && [ -f \"$_Q/scripts/worker-service.cjs\" ] && _P=\"$_Q\"; fi; if [ -z \"$_P\" ]; then _F=; _P=$({ for _V in \"$_C/plugins/cache/thedotmack/claude-mem\"/[0-9]*/; do [ -d \"$_V\" ] || continue; [ -e \"${_V}.orphaned_at\" ] && continue; _B=${_V%/}; _B=${_B##*/}; case \"$_B\" in (*-*) _G=0;; (*) _G=1;; esac; _N=${_B%%-*}; _M1=${_N%%.*}; case \"$_N\" in (*.*) _T=${_N#*.};; (*) _T=0;; esac; _M2=${_T%%.*}; case \"$_T\" in (*.*) _U=${_T#*.};; (*) _U=0;; esac; _M3=${_U%%.*}; _M1=${_M1%%[!0-9]*}; _M2=${_M2%%[!0-9]*}; _M3=${_M3%%[!0-9]*}; printf '%08d%08d%08d%d %s\\n' \"${_M1:-0}\" \"${_M2:-0}\" \"${_M3:-0}\" \"$_G\" \"$_V\"; done 2>/dev/null | sort -r | sed 's/^[^ ]* //'; printf '%s\\n' \"$_C/plugins/marketplaces/thedotmack/plugin\"; } | while IFS= read -r _R; do _R=\"${_R%/}\"; [ -d \"$_R/plugin/scripts\" ] && _Q=\"$_R/plugin\" || _Q=\"$_R\"; [ -f \"$_Q/scripts/bun-runner.js\" ] && [ -f \"$_Q/scripts/worker-service.cjs\" ] && [ -z \"$_F\" ] && { _F=1; printf '%s\\n' \"$_Q\"; }; done); fi; [ -n \"$_P\" ] || { echo \"claude-mem: plugin scripts not found\" >&2; exit 0; }; command -v cygpath >/dev/null 2>&1 && { _W=$(cygpath -w \"$_P\" 2>/dev/null); [ -n \"$_W\" ] && _P=\"$_W\"; }; { node \"$_P/scripts/bun-runner.js\" \"$_P/scripts/worker-service.cjs\" hook claude-code observation; } || { _S=$?; echo \"claude-mem: hook command failed (exit $_S)\" >&2; exit 0; }"
+            },
+            {
+              "event": "PreToolUse",
+              "matcher": "Read",
+              "command": "export PATH=\"$HOME/.nvm/versions/node/v$(ls \"$HOME/.nvm/versions/node\" 2>/dev/null | sed 's/^v//' | sort -t. -k1,1n -k2,2n -k3,3n | tail -1)/bin:$HOME/.local/bin:/usr/local/bin:/opt/homebrew/bin:$PATH\"; _C=\"${CLAUDE_CONFIG_DIR:-$HOME/.claude}\"; _E=\"${CLAUDE_PLUGIN_ROOT:-${PLUGIN_ROOT:-}}\"; _P=; if [ -n \"$_E\" ]; then _R=\"${_E%/}\"; [ -d \"$_R/plugin/scripts\" ] && _Q=\"$_R/plugin\" || _Q=\"$_R\"; [ -f \"$_Q/scripts/bun-runner.js\" ] && [ -f \"$_Q/scripts/worker-service.cjs\" ] && _P=\"$_Q\"; fi; if [ -z \"$_P\" ]; then _F=; _P=$({ for _V in \"$_C/plugins/cache/thedotmack/claude-mem\"/[0-9]*/; do [ -d \"$_V\" ] || continue; [ -e \"${_V}.orphaned_at\" ] && continue; _B=${_V%/}; _B=${_B##*/}; case \"$_B\" in (*-*) _G=0;; (*) _G=1;; esac; _N=${_B%%-*}; _M1=${_N%%.*}; case \"$_N\" in (*.*) _T=${_N#*.};; (*) _T=0;; esac; _M2=${_T%%.*}; case \"$_T\" in (*.*) _U=${_T#*.};; (*) _U=0;; esac; _M3=${_U%%.*}; _M1=${_M1%%[!0-9]*}; _M2=${_M2%%[!0-9]*}; _M3=${_M3%%[!0-9]*}; printf '%08d%08d%08d%d %s\\n' \"${_M1:-0}\" \"${_M2:-0}\" \"${_M3:-0}\" \"$_G\" \"$_V\"; done 2>/dev/null | sort -r | sed 's/^[^ ]* //'; printf '%s\\n' \"$_C/plugins/marketplaces/thedotmack/plugin\"; } | while IFS= read -r _R; do _R=\"${_R%/}\"; [ -d \"$_R/plugin/scripts\" ] && _Q=\"$_R/plugin\" || _Q=\"$_R\"; [ -f \"$_Q/scripts/bun-runner.js\" ] && [ -f \"$_Q/scripts/worker-service.cjs\" ] && [ -z \"$_F\" ] && { _F=1; printf '%s\\n' \"$_Q\"; }; done); fi; [ -n \"$_P\" ] || { echo \"claude-mem: plugin scripts not found\" >&2; exit 0; }; command -v cygpath >/dev/null 2>&1 && { _W=$(cygpath -w \"$_P\" 2>/dev/null); [ -n \"$_W\" ] && _P=\"$_W\"; }; { node \"$_P/scripts/bun-runner.js\" \"$_P/scripts/worker-service.cjs\" hook claude-code file-context; } || { _S=$?; echo \"claude-mem: hook command failed (exit $_S)\" >&2; exit 0; }"
+            },
+            {
+              "event": "Stop",
+              "command": "export PATH=\"$HOME/.nvm/versions/node/v$(ls \"$HOME/.nvm/versions/node\" 2>/dev/null | sed 's/^v//' | sort -t. -k1,1n -k2,2n -k3,3n | tail -1)/bin:$HOME/.local/bin:/usr/local/bin:/opt/homebrew/bin:$PATH\"; _C=\"${CLAUDE_CONFIG_DIR:-$HOME/.claude}\"; _E=\"${CLAUDE_PLUGIN_ROOT:-${PLUGIN_ROOT:-}}\"; _P=; if [ -n \"$_E\" ]; then _R=\"${_E%/}\"; [ -d \"$_R/plugin/scripts\" ] && _Q=\"$_R/plugin\" || _Q=\"$_R\"; [ -f \"$_Q/scripts/bun-runner.js\" ] && [ -f \"$_Q/scripts/worker-service.cjs\" ] && _P=\"$_Q\"; fi; if [ -z \"$_P\" ]; then _F=; _P=$({ for _V in \"$_C/plugins/cache/thedotmack/claude-mem\"/[0-9]*/; do [ -d \"$_V\" ] || continue; [ -e \"${_V}.orphaned_at\" ] && continue; _B=${_V%/}; _B=${_B##*/}; case \"$_B\" in (*-*) _G=0;; (*) _G=1;; esac; _N=${_B%%-*}; _M1=${_N%%.*}; case \"$_N\" in (*.*) _T=${_N#*.};; (*) _T=0;; esac; _M2=${_T%%.*}; case \"$_T\" in (*.*) _U=${_T#*.};; (*) _U=0;; esac; _M3=${_U%%.*}; _M1=${_M1%%[!0-9]*}; _M2=${_M2%%[!0-9]*}; _M3=${_M3%%[!0-9]*}; printf '%08d%08d%08d%d %s\\n' \"${_M1:-0}\" \"${_M2:-0}\" \"${_M3:-0}\" \"$_G\" \"$_V\"; done 2>/dev/null | sort -r | sed 's/^[^ ]* //'; printf '%s\\n' \"$_C/plugins/marketplaces/thedotmack/plugin\"; } | while IFS= read -r _R; do _R=\"${_R%/}\"; [ -d \"$_R/plugin/scripts\" ] && _Q=\"$_R/plugin\" || _Q=\"$_R\"; [ -f \"$_Q/scripts/bun-runner.js\" ] && [ -f \"$_Q/scripts/worker-service.cjs\" ] && [ -z \"$_F\" ] && { _F=1; printf '%s\\n' \"$_Q\"; }; done); fi; [ -n \"$_P\" ] || { echo \"claude-mem: plugin scripts not found\" >&2; exit 0; }; command -v cygpath >/dev/null 2>&1 && { _W=$(cygpath -w \"$_P\" 2>/dev/null); [ -n \"$_W\" ] && _P=\"$_W\"; }; { node \"$_P/scripts/bun-runner.js\" \"$_P/scripts/worker-service.cjs\" hook claude-code summarize; } || { _S=$?; echo \"claude-mem: hook command failed (exit $_S)\" >&2; exit 0; }"
+            },
+            {
+              "event": "SessionEnd",
+              "command": "export PATH=\"$HOME/.nvm/versions/node/v$(ls \"$HOME/.nvm/versions/node\" 2>/dev/null | sed 's/^v//' | sort -t. -k1,1n -k2,2n -k3,3n | tail -1)/bin:$HOME/.local/bin:/usr/local/bin:/opt/homebrew/bin:$PATH\"; _C=\"${CLAUDE_CONFIG_DIR:-$HOME/.claude}\"; _E=\"${CLAUDE_PLUGIN_ROOT:-${PLUGIN_ROOT:-}}\"; _P=; if [ -n \"$_E\" ]; then _R=\"${_E%/}\"; [ -d \"$_R/plugin/scripts\" ] && _Q=\"$_R/plugin\" || _Q=\"$_R\"; [ -f \"$_Q/scripts/bun-runner.js\" ] && [ -f \"$_Q/scripts/worker-service.cjs\" ] && _P=\"$_Q\"; fi; if [ -z \"$_P\" ]; then _F=; _P=$({ for _V in \"$_C/plugins/cache/thedotmack/claude-mem\"/[0-9]*/; do [ -d \"$_V\" ] || continue; [ -e \"${_V}.orphaned_at\" ] && continue; _B=${_V%/}; _B=${_B##*/}; case \"$_B\" in (*-*) _G=0;; (*) _G=1;; esac; _N=${_B%%-*}; _M1=${_N%%.*}; case \"$_N\" in (*.*) _T=${_N#*.};; (*) _T=0;; esac; _M2=${_T%%.*}; case \"$_T\" in (*.*) _U=${_T#*.};; (*) _U=0;; esac; _M3=${_U%%.*}; _M1=${_M1%%[!0-9]*}; _M2=${_M2%%[!0-9]*}; _M3=${_M3%%[!0-9]*}; printf '%08d%08d%08d%d %s\\n' \"${_M1:-0}\" \"${_M2:-0}\" \"${_M3:-0}\" \"$_G\" \"$_V\"; done 2>/dev/null | sort -r | sed 's/^[^ ]* //'; printf '%s\\n' \"$_C/plugins/marketplaces/thedotmack/plugin\"; } | while IFS= read -r _R; do _R=\"${_R%/}\"; [ -d \"$_R/plugin/scripts\" ] && _Q=\"$_R/plugin\" || _Q=\"$_R\"; [ -f \"$_Q/scripts/bun-runner.js\" ] && [ -f \"$_Q/scripts/worker-service.cjs\" ] && [ -z \"$_F\" ] && { _F=1; printf '%s\\n' \"$_Q\"; }; done); fi; [ -n \"$_P\" ] || { echo \"claude-mem: plugin scripts not found\" >&2; exit 0; }; command -v cygpath >/dev/null 2>&1 && { _W=$(cygpath -w \"$_P\" 2>/dev/null); [ -n \"$_W\" ] && _P=\"$_W\"; }; { node \"$_P/scripts/bun-runner.js\" \"$_P/scripts/worker-service.cjs\" hook claude-code session-end; } || { _S=$?; echo \"claude-mem: hook command failed (exit $_S)\" >&2; exit 0; }"
+            }
+          ],
+          "modules": [],
+          "mcp": [
+            {
+              "name": "mcp-search",
+              "command": "node -e const f=require('fs'),p=require('path'),o=require('os'),c=require('child_process');const h=o.homedir();const C=process.env.CLAUDE_CONFIG_DIR||p.join(h,'.claude');const E=process.env.CLAUDE_PLUGIN_ROOT||process.env.PLUGIN_ROOT||'';const d=process.cwd();const S=n=>{const q=n.split('-')[0].split('.');return[parseInt(q[0],10)||0,parseInt(q[1],10)||0,parseInt(q[2],10)||0]};const W=(a,b)=>{const x=S(a),y=S(b);return(y[0]-x[0])||(y[1]-x[1])||(y[2]-x[2])||((a.indexOf('-')<0?0:1)-(b.indexOf('-')<0?0:1))||(a<b?1:a>b?-1:0)};const L=x=>{try{return f.readdirSync(x).filter(n=>/^\\d/.test(n)).map(n=>p.join(x,n)).filter(z=>{try{return f.statSync(z).isDirectory()&&!f.existsSync(p.join(z,'.orphaned_at'))}catch{return false}}).sort((a,b)=>W(p.basename(a),p.basename(b)))}catch{return[]}};const K=[E,p.join(d,\"plugin\"),d,...L(p.join(h,\".codex/plugins/cache/claude-mem-local/claude-mem\")),...L(p.join(h,\".codex/plugins/cache/thedotmack/claude-mem\")),...L(p.join(C,\"plugins/cache/thedotmack/claude-mem\")),p.join(C,\"plugins/marketplaces/thedotmack/plugin\")].filter(Boolean);let R=null;for(const k of K){const r=f.existsSync(p.join(k,'plugin','scripts'))?p.join(k,'plugin'):k;if(f.existsSync(p.join(r,'scripts',\"mcp-server.cjs\"))){R=r;break}}if(!R){process.stderr.write(\"claude-mem: mcp server not found\\n\");process.exit(1)}const ch=c.spawn(process.execPath,[p.join(R,'scripts',\"mcp-server.cjs\")],{stdio:'inherit',windowsHide:true});for(const s of ['SIGTERM','SIGINT','SIGHUP'])process.on(s,()=>{try{ch.kill(s)}catch{}});ch.on('exit',(code,sig)=>{if(sig){process.removeAllListeners(sig);try{process.kill(process.pid,sig)}catch{process.exit(1)}}else process.exit(code==null?0:code)})"
+            }
+          ],
+          "skills": 22,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "obfuscation",
+              "where": [
+                "scripts/mcp-server.cjs"
+              ],
+              "via": [
+                "new Function("
+              ]
+            },
+            {
+              "id": "credentials",
+              "where": [
+                "scripts/context-generator.cjs",
+                "scripts/mcp-server.cjs",
+                "scripts/transcript-watcher.cjs",
+                "skills/agent-cost-report/scripts/acr/classify.py",
+                "skills/mode-creator/scripts/configure-telegram.mjs",
+                "sqlite/SessionStore.js",
+                "sqlite/observations/files.js",
+                "ui/viewer-bundle.js"
+              ],
+              "via": [
+                "\".env\"",
+                "/.env\"",
+                "os.environ.get(\"OPENROUTER_API_KEY\""
+              ]
+            },
+            {
+              "id": "processes",
+              "where": [
+                "scripts/bun-runner.js",
+                "scripts/context-generator.cjs",
+                "scripts/mcp-server.cjs",
+                "scripts/transcript-watcher.cjs",
+                "scripts/version-check.js",
+                "scripts/worker-wrapper.cjs",
+                "skills/agent-cost-report/scripts/acr/render.py",
+                "skills/agent-cost-report/scripts/acr/wins.py"
+              ],
+              "more": 1,
+              "via": [
+                "child_process",
+                "subprocess.run"
+              ]
+            },
+            {
+              "id": "network",
+              "where": [
+                "scripts/context-generator.cjs",
+                "scripts/mcp-server.cjs",
+                "scripts/transcript-watcher.cjs",
+                "skills/agent-cost-report/scripts/acr/classify.py",
+                "skills/agent-cost-report/scripts/acr/measure.py",
+                "skills/agent-cost-report/scripts/acr/prices.py",
+                "skills/mode-creator/scripts/configure-telegram.mjs",
+                "ui/viewer-bundle.js"
+              ],
+              "via": [
+                "fetch(",
+                "urllib.request"
+              ],
+              "hosts": [
+                "api.deepseek.com",
+                "api.github.com",
+                "api.groq.com",
+                "api.minimax.io",
+                "api.minimaxi.com",
+                "api.opper.ai",
+                "api.orcarouter.ai",
+                "api.telegram.org"
+              ]
+            },
+            {
+              "id": "bundled",
+              "where": [
+                "scripts/mcp-server.cjs",
+                "scripts/transcript-watcher.cjs",
+                "sqlite/SessionStore.js",
+                "ui/viewer-bundle.js"
+              ]
+            }
+          ],
+          "scanned": 35,
+          "errors": [
+            "scripts/server-service.cjs: over 2 MB, not scanned",
+            "scripts/worker-service.cjs: over 2 MB, not scanned"
+          ]
         }
       },
       {
@@ -782,9 +3635,99 @@
         "description": "Claude-Mem for Cowork (Claude app cloud sessions) - hooks stream tool use to cmem.ai and inject observations into new sessions and agents",
         "source": {
           "source": "git-subdir",
-          "url": "thedotmack/claude-mem",
+          "url": "https://github.com/thedotmack/claude-mem.git",
           "path": "cowork",
           "sha": "bfc50259f64a4e0c9e81df849095683608e87ac8"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [
+            {
+              "event": "SessionStart",
+              "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/cmem-hook.mjs\" context"
+            },
+            {
+              "event": "UserPromptSubmit",
+              "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/cmem-hook.mjs\" session-init"
+            },
+            {
+              "event": "PostToolUse",
+              "matcher": "*",
+              "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/cmem-hook.mjs\" observation"
+            },
+            {
+              "event": "PreToolUse",
+              "matcher": "Task|Agent",
+              "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/cmem-hook.mjs\" agent-context"
+            },
+            {
+              "event": "SubagentStop",
+              "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/cmem-hook.mjs\" subagent-stop"
+            },
+            {
+              "event": "Stop",
+              "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/cmem-hook.mjs\" summarize"
+            },
+            {
+              "event": "SessionEnd",
+              "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/cmem-hook.mjs\" session-end"
+            }
+          ],
+          "modules": [],
+          "mcp": [],
+          "skills": 3,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "auto-approve",
+              "where": [
+                "scripts/cmem-hook.mjs"
+              ],
+              "via": [
+                "permissionDecision: 'allow'"
+              ]
+            },
+            {
+              "id": "credentials",
+              "where": [
+                "scripts/cmem-hook.mjs",
+                "skills/agent-cost-report/scripts/acr/classify.py"
+              ],
+              "via": [
+                "os.environ.get(\"OPENROUTER_API_KEY\"",
+                "process.env.CMEM_API_KEY"
+              ]
+            },
+            {
+              "id": "processes",
+              "where": [
+                "skills/agent-cost-report/scripts/acr/render.py",
+                "skills/agent-cost-report/scripts/acr/wins.py"
+              ],
+              "via": [
+                "subprocess.run"
+              ]
+            },
+            {
+              "id": "network",
+              "where": [
+                "scripts/cmem-hook.mjs",
+                "skills/agent-cost-report/scripts/acr/classify.py",
+                "skills/agent-cost-report/scripts/acr/measure.py",
+                "skills/agent-cost-report/scripts/acr/prices.py"
+              ],
+              "via": [
+                "fetch(",
+                "urllib.request"
+              ],
+              "hosts": [
+                "cmem.ai",
+                "openrouter.ai"
+              ]
+            }
+          ],
+          "scanned": 22
         }
       }
     ]
@@ -801,6 +3744,57 @@
           "source": "github",
           "repo": "obra/superpowers",
           "sha": "8ca22dba9a94f28898bbce59f2537ff4d87c747d"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [
+            {
+              "event": "SessionStart",
+              "matcher": "startup|clear|compact",
+              "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/run-hook.cmd\" session-start"
+            }
+          ],
+          "modules": [],
+          "mcp": [],
+          "skills": 15,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "credentials",
+              "where": [
+                "skills/brainstorming/scripts/server.cjs"
+              ],
+              "via": [
+                "process.env.BRAINSTORM_TOKEN_FILE"
+              ]
+            },
+            {
+              "id": "processes",
+              "where": [
+                "skills/brainstorming/scripts/server.cjs",
+                "skills/writing-skills/render-graphs.js"
+              ],
+              "via": [
+                "child_process"
+              ]
+            },
+            {
+              "id": "network",
+              "where": [
+                "scripts/sync-to-codex-plugin.sh",
+                "skills/brainstorming/scripts/helper.js"
+              ],
+              "via": [
+                "new WebSocket",
+                "rsync"
+              ],
+              "hosts": [
+                "github.com"
+              ]
+            }
+          ],
+          "scanned": 12
         }
       }
     ]
@@ -817,6 +3811,36 @@
           "source": "github",
           "repo": "lackeyjb/playwright-skill",
           "sha": "dd47a6a023e249eb1b36e9e943eab89d0900865d"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [],
+          "mcp": [],
+          "skills": 1,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "processes",
+              "where": [
+                "skills/playwright-skill/run.js"
+              ],
+              "via": [
+                "child_process"
+              ]
+            },
+            {
+              "id": "network",
+              "where": [
+                "skills/playwright-skill/lib/helpers.js"
+              ],
+              "via": [
+                "http.request("
+              ]
+            }
+          ],
+          "scanned": 2
         }
       }
     ]
@@ -831,9 +3855,39 @@
         "description": "29 production-ready scripts for iOS app testing, building, and automation",
         "source": {
           "source": "git-subdir",
-          "url": "conorluddy/ios-simulator-skill",
+          "url": "https://github.com/conorluddy/ios-simulator-skill.git",
           "path": "ios-simulator-skill",
           "sha": "037a37f135100c76157b4c915a5b55bd272b5e32"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [],
+          "mcp": [],
+          "skills": 1,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "processes",
+              "where": [
+                "skills/ios-simulator-skill/scripts/app_launcher.py",
+                "skills/ios-simulator-skill/scripts/app_state_capture.py",
+                "skills/ios-simulator-skill/scripts/appearance.py",
+                "skills/ios-simulator-skill/scripts/clipboard.py",
+                "skills/ios-simulator-skill/scripts/common/device_utils.py",
+                "skills/ios-simulator-skill/scripts/common/idb_utils.py",
+                "skills/ios-simulator-skill/scripts/common/screenshot_utils.py",
+                "skills/ios-simulator-skill/scripts/container.py"
+              ],
+              "more": 18,
+              "via": [
+                "subprocess.Popen",
+                "subprocess.run"
+              ]
+            }
+          ],
+          "scanned": 41
         }
       }
     ]
@@ -850,6 +3904,17 @@
           "source": "github",
           "repo": "Leonxlnx/taste-skill",
           "sha": "ce26fc25c0e5e8cab638f883de62d9a86ee5e45b"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [],
+          "mcp": [],
+          "skills": 13,
+          "commands": 0,
+          "agents": 0,
+          "flags": [],
+          "scanned": 5
         }
       }
     ]
@@ -866,6 +3931,41 @@
           "source": "github",
           "repo": "DietrichGebert/ponytail",
           "sha": "c982cd411abb53323c4baa1baa3c2f020b8d0b08"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [
+            {
+              "event": "SessionStart",
+              "matcher": "startup|resume|clear|compact",
+              "command": "node -e \"require(require('node:path').join(process.env.CLAUDE_PLUGIN_ROOT.replaceAll(String.fromCharCode(92), '/'), 'hooks/ponytail-activate.js'))\""
+            },
+            {
+              "event": "SubagentStart",
+              "command": "node -e \"require(require('node:path').join(process.env.CLAUDE_PLUGIN_ROOT.replaceAll(String.fromCharCode(92), '/'), 'hooks/ponytail-subagent.js'))\""
+            },
+            {
+              "event": "UserPromptSubmit",
+              "command": "node -e \"require(require('node:path').join(process.env.CLAUDE_PLUGIN_ROOT.replaceAll(String.fromCharCode(92), '/'), 'hooks/ponytail-mode-tracker.js'))\""
+            }
+          ],
+          "modules": [],
+          "mcp": [],
+          "skills": 6,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "processes",
+              "where": [
+                "scripts/publish-openclaw-skills.js"
+              ],
+              "via": [
+                "child_process"
+              ]
+            }
+          ],
+          "scanned": 18
         }
       }
     ]
@@ -882,6 +3982,17 @@
           "source": "github",
           "repo": "mattpocock/skills",
           "sha": "24fe0ef7737efae15c87225755e9f6f5965e4888"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [],
+          "mcp": [],
+          "skills": 37,
+          "commands": 0,
+          "agents": 0,
+          "flags": [],
+          "scanned": 7
         }
       }
     ]
@@ -898,6 +4009,37 @@
           "source": "github",
           "repo": "ayghri/i-have-adhd",
           "sha": "839872f9d1cd634fed642b4589ce7226199cc15f"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [
+            {
+              "event": "SessionStart",
+              "matcher": "startup|resume|clear|compact",
+              "command": "node -e \"(async()=>{const root=process.env.CLAUDE_PLUGIN_ROOT||process.env.PLUGIN_ROOT;if(root)await import(require('node:url').pathToFileURL(require('node:path').join(root,'hooks','always-on.mjs')).href)})().catch(()=>{})\""
+            }
+          ],
+          "modules": [],
+          "mcp": [],
+          "skills": 1,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "processes",
+              "where": [
+                "scripts/check_pi_extension.py",
+                "scripts/judge.py",
+                "scripts/run_evals.py",
+                "scripts/run_scenario_eval.py"
+              ],
+              "via": [
+                "subprocess.Popen",
+                "subprocess.run"
+              ]
+            }
+          ],
+          "scanned": 10
         }
       }
     ]
@@ -914,6 +4056,56 @@
           "source": "github",
           "repo": "cathrynlavery/diagram-design",
           "sha": "f903933a534ba92cde1c85a28186267b3a317bb2"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [],
+          "mcp": [],
+          "skills": 1,
+          "commands": 6,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "processes",
+              "where": [
+                "scripts/build-openai-plugin-zip.py",
+                "scripts/lint-render.py",
+                "scripts/plugin_version_history.py",
+                "scripts/verify-doctor.py",
+                "scripts/verify-drawio-import.py",
+                "scripts/verify-excalidraw-import.py",
+                "scripts/verify-mermaid-import.py",
+                "scripts/verify-plugin-package.py"
+              ],
+              "more": 2,
+              "via": [
+                "subprocess.run"
+              ]
+            },
+            {
+              "id": "network",
+              "where": [
+                "scripts/build-icons.py",
+                "scripts/lint-render.py"
+              ],
+              "via": [
+                "fetch(",
+                "urllib.request"
+              ],
+              "hosts": [
+                "cdn.jsdelivr.net",
+                "cdn.prod.website-files.com",
+                "cdn.worldvectorlogo.com",
+                "fonts.googleapis.com",
+                "hop.apache.org",
+                "icon.icepanel.io",
+                "raw.githubusercontent.com",
+                "simpleicons.org"
+              ]
+            }
+          ],
+          "scanned": 42
         }
       }
     ]
@@ -930,6 +4122,17 @@
           "source": "github",
           "repo": "blader/humanizer",
           "sha": "225a6f39ac85f76ee48dbad772ea4abe4ed6c9d8"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [],
+          "mcp": [],
+          "skills": 1,
+          "commands": 0,
+          "agents": 0,
+          "flags": [],
+          "scanned": 1
         }
       }
     ]
@@ -946,23 +4149,37 @@
           "source": "github",
           "repo": "addyosmani/agent-skills",
           "sha": "1401c8b8030e023baeebb31781a6653fe8e93026"
-        }
-      }
-    ]
-  },
-  "tdd-guard": {
-    "repo": "nizos/tdd-guard",
-    "sha": "2579ec1823fac5f4afb73be678d9c500b19885ac",
-    "upstreamMarketplace": "tdd-guard",
-    "plugins": [
-      {
-        "name": "tdd-guard",
-        "description": "Automated Test-Driven Development enforcement",
-        "source": {
-          "source": "git-subdir",
-          "url": "nizos/tdd-guard",
-          "path": "plugin",
-          "sha": "2579ec1823fac5f4afb73be678d9c500b19885ac"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [],
+          "mcp": [],
+          "skills": 25,
+          "commands": 9,
+          "agents": 4,
+          "flags": [
+            {
+              "id": "processes",
+              "where": [
+                "scripts/run-evals.js"
+              ],
+              "via": [
+                "child_process"
+              ]
+            },
+            {
+              "id": "network",
+              "where": [
+                "hooks/sdd-cache-post.sh",
+                "hooks/sdd-cache-pre.sh"
+              ],
+              "via": [
+                "curl"
+              ]
+            }
+          ],
+          "scanned": 12
         }
       }
     ]
@@ -977,9 +4194,20 @@
         "description": "Interactive setup wizard for theme, style, segment, and budget configuration",
         "source": {
           "source": "git-subdir",
-          "url": "Owloops/claude-powerline",
+          "url": "https://github.com/Owloops/claude-powerline.git",
           "path": "plugin",
           "sha": "3e763e558bca908475cf34adb55dfc59e4b39aa2"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [],
+          "mcp": [],
+          "skills": 0,
+          "commands": 1,
+          "agents": 0,
+          "flags": [],
+          "scanned": 1
         }
       }
     ]
@@ -994,9 +4222,38 @@
         "description": "Up-to-date documentation lookup. Pull version-specific documentation and code examples directly from source repositories into your LLM context.",
         "source": {
           "source": "git-subdir",
-          "url": "upstash/context7",
+          "url": "https://github.com/upstash/context7.git",
           "path": "plugins/claude/context7",
           "sha": "bfa02ea67b5707fe0e0a673faa49d0f50b28c80b"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [],
+          "mcp": [
+            {
+              "name": "context7",
+              "url": "https://mcp.context7.com/mcp?client=claude-code-plugin"
+            }
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "network",
+              "where": [
+                "mcp:context7"
+              ],
+              "via": [
+                "https://mcp.context7.com/mcp?client=claude-code-plugin"
+              ],
+              "hosts": [
+                "mcp.context7.com"
+              ]
+            }
+          ],
+          "scanned": 0
         }
       }
     ]
@@ -1011,9 +4268,38 @@
         "description": "Sentry error tracking and performance monitoring - search issues, analyze errors, explore traces, and get AI-powered root cause analysis",
         "source": {
           "source": "git-subdir",
-          "url": "getsentry/sentry-mcp",
+          "url": "https://github.com/getsentry/sentry-mcp.git",
           "path": "plugins/sentry-mcp",
           "sha": "9f1a7b2147d96246859f42d6f2cbf02ee3985c01"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [],
+          "mcp": [
+            {
+              "name": "sentry",
+              "url": "https://mcp.sentry.dev/mcp"
+            }
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 1,
+          "flags": [
+            {
+              "id": "network",
+              "where": [
+                "mcp:sentry"
+              ],
+              "via": [
+                "https://mcp.sentry.dev/mcp"
+              ],
+              "hosts": [
+                "mcp.sentry.dev"
+              ]
+            }
+          ],
+          "scanned": 0
         }
       },
       {
@@ -1021,9 +4307,38 @@
         "description": "Sentry MCP with experimental features enabled - includes all stable tools plus bleeding-edge capabilities",
         "source": {
           "source": "git-subdir",
-          "url": "getsentry/sentry-mcp",
+          "url": "https://github.com/getsentry/sentry-mcp.git",
           "path": "plugins/sentry-mcp-experimental",
           "sha": "9f1a7b2147d96246859f42d6f2cbf02ee3985c01"
+        },
+        "footprint": {
+          "v": 1,
+          "hooks": [],
+          "modules": [],
+          "mcp": [
+            {
+              "name": "sentry",
+              "url": "https://mcp.sentry.dev/mcp?experimental=1"
+            }
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 1,
+          "flags": [
+            {
+              "id": "network",
+              "where": [
+                "mcp:sentry"
+              ],
+              "via": [
+                "https://mcp.sentry.dev/mcp?experimental=1"
+              ],
+              "hosts": [
+                "mcp.sentry.dev"
+              ]
+            }
+          ],
+          "scanned": 0
         }
       }
     ]

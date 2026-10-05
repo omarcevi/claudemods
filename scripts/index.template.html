@@ -11,19 +11,19 @@
 :root {
   --bg: #faf8f5; --surface: #ffffff; --surface-2: #f3efe9; --text: #1f1d1a; --muted: #6b655d;
   --border: #e6e0d7; --accent: #c4623f; --accent-ink: #ffffff; --accent-soft: #f6e4dc;
-  --good: #2f6f4f; --good-soft: #e2f0e7; --code-bg: #f3efe9; --shadow: 0 1px 2px rgba(31,29,26,.06), 0 4px 16px rgba(31,29,26,.04);
+  --good: #2f6f4f; --good-soft: #e2f0e7; --warn: #8a5a00; --warn-soft: #f7ecd4; --bad: #a8281e; --bad-soft: #f8e1de; --code-bg: #f3efe9; --shadow: 0 1px 2px rgba(31,29,26,.06), 0 4px 16px rgba(31,29,26,.04);
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #161513; --surface: #1f1d1b; --surface-2: #2a2724; --text: #f1ede7; --muted: #a39b90;
     --border: #35312c; --accent: #e07a55; --accent-ink: #1a1310; --accent-soft: #3a2a22;
-    --good: #7cc79c; --good-soft: #1f3328; --code-bg: #2a2724; --shadow: none;
+    --good: #7cc79c; --good-soft: #1f3328; --warn: #e3b55c; --warn-soft: #3a2f1a; --bad: #f08a80; --bad-soft: #3d1f1c; --code-bg: #2a2724; --shadow: none;
   }
 }
 :root[data-theme="dark"] {
   --bg: #161513; --surface: #1f1d1b; --surface-2: #2a2724; --text: #f1ede7; --muted: #a39b90;
   --border: #35312c; --accent: #e07a55; --accent-ink: #1a1310; --accent-soft: #3a2a22;
-  --good: #7cc79c; --good-soft: #1f3328; --code-bg: #2a2724; --shadow: none;
+  --good: #7cc79c; --good-soft: #1f3328; --warn: #e3b55c; --warn-soft: #3a2f1a; --bad: #f08a80; --bad-soft: #3d1f1c; --code-bg: #2a2724; --shadow: none;
 }
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
@@ -92,14 +92,37 @@ header.top { display: flex; align-items: center; justify-content: space-between;
 .install { margin-top: auto; display: flex; flex-direction: column; gap: 6px; }
 .install-row { display: flex; align-items: center; gap: 6px; background: var(--code-bg); border-radius: 8px; padding: 4px 4px 4px 10px; min-width: 0; }
 .install-row code { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: 4px 0; font-size: 12px; }
-.more summary { cursor: pointer; font-size: 13px; color: var(--muted); list-style: none; width: fit-content; }
-.more summary::-webkit-details-marker { display: none; }
-.more summary::before { content: "▸ "; }
-.more[open] summary::before { content: "▾ "; }
-.more summary:hover { color: var(--text); }
-.more .install-row { margin-top: 6px; }
-/* While one card shows its extra commands, the others in that grid keep their own height. */
-.grid:has(.more[open]) .card:not(:has(.more[open])) { align-self: start; }
+.more > summary { cursor: pointer; font-size: 13px; color: var(--muted); list-style: none; width: fit-content; }
+.more > summary::-webkit-details-marker { display: none; }
+.more > summary::before { content: "▸ "; }
+.more[open] > summary::before { content: "▾ "; }
+.more > summary:hover { color: var(--text); }
+.more .plugin { margin-top: 10px; }
+.plugin { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.pdesc { margin: 0; font-size: 13px; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.fp summary { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; cursor: pointer; list-style: none; }
+.fp summary::-webkit-details-marker { display: none; }
+.rk { font-size: 11px; line-height: 1.5; padding: 1px 6px; border-radius: 5px; background: var(--surface-2); color: var(--muted); white-space: nowrap; }
+.rk.lv-ok { background: var(--good-soft); color: var(--good); }
+.rk.lv-warn { background: var(--warn-soft); color: var(--warn); }
+.rk.lv-bad { background: var(--bad-soft); color: var(--bad); font-weight: 600; }
+.rk.lv-info { background: var(--accent-soft); color: var(--accent); }
+.fp-more { font-size: 12px; color: var(--muted); margin-left: auto; white-space: nowrap; }
+.fp-more::after { content: " ▸"; }
+.fp[open] .fp-more::after { content: " ▾"; }
+.fp summary:hover .fp-more { color: var(--text); }
+.fp-body { margin-top: 8px; padding: 10px 12px; background: var(--surface-2); border-radius: 8px; font-size: 12.5px; overflow-wrap: anywhere; }
+.fp-body p { margin: 0 0 6px; }
+.fp-body .fp-h { margin: 10px 0 4px; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: .03em; color: var(--muted); }
+.fp-body ul { margin: 0; padding-left: 16px; }
+.fp-body li { margin: 3px 0; }
+.fp-body li code, .fp-body li em, .fp-body li .fp-m { display: block; margin-top: 2px; }
+.fp-body code { font-size: 11.5px; white-space: pre-wrap; word-break: break-all; }
+.fp-body .fp-m { color: var(--muted); }
+.fp-body .fp-note { margin: 10px 0 0; color: var(--muted); font-style: italic; }
+.ext { margin: 0; font-size: 12px; color: var(--muted); }
+/* While one card has a fold open, the others in that grid keep their own height. */
+.grid:has(details[open]) .card:not(:has(details[open])) { align-self: start; }
 .copy { flex: none; border: 0; background: transparent; color: var(--muted); cursor: pointer; padding: 6px; border-radius: 6px; display: grid; place-items: center; }
 .copy:hover { background: var(--surface); color: var(--text); }
 .copy.done { color: var(--good); }
@@ -118,6 +141,21 @@ header.top { display: flex; align-items: center; justify-content: space-between;
 .callout p { margin: 0; color: var(--muted); }
 .warn { font-size: 13px; color: var(--muted); border-left: 3px solid var(--accent); padding: 4px 0 4px 12px; margin: 12px 0 30px; }
 footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; padding: 22px 0 40px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+/* Side panel for "What it runs" and "+N more plugins", so cards never change size. */
+.panel { margin: 0 0 0 auto; padding: 0; border: 0; width: min(560px, 100vw); max-width: 100vw; height: 100dvh; max-height: 100dvh;
+  background: var(--bg); color: var(--text); box-shadow: -8px 0 32px rgba(0, 0, 0, .2); }
+.panel[open] { display: flex; flex-direction: column; animation: panel-in .18s ease-out; }
+@keyframes panel-in { from { transform: translateX(24px); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .panel[open] { animation: none; } }
+.panel::backdrop { background: rgba(20, 18, 16, .45); }
+html:has(.panel[open]) { overflow: hidden; }
+.panel-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 18px 20px 14px; border-bottom: 1px solid var(--border); }
+.panel-title { margin: 0; font-size: 18px; font-weight: 700; }
+.panel-sub { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
+.panel-body { overflow: auto; padding: 16px 20px 32px; display: flex; flex-direction: column; gap: 12px; }
+.panel-body .plugin { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 12px; margin: 0; }
+.panel-body .pdesc { display: block; -webkit-line-clamp: unset; }
 
 @media (max-width: 640px) {
   .grid { grid-template-columns: 1fr; }
@@ -164,13 +202,14 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
   </div>
   <p class="none" id="none" hidden><span id="none-msg">Nothing matches.</span> <button class="linkish" id="see-all" hidden></button> <a href="{{submitUrl}}">Submit it?</a></p>
 
-  <p class="warn">Mods and plugins run with your permissions — they can read files, run commands and reach the network. Every plugin in the claudemods marketplace is pinned to the upstream commit we reviewed, but read the source before you install.</p>
+  <p class="warn">Mods and plugins run with your permissions: they can read files, run commands and reach the network. Every card shows what its plugin runs, read from the commit it's pinned to. Open "What it runs" for the exact hooks and files, and read the source before you install.</p>
 
   <section class="about">
     <h2>About Claude mods</h2>
     <div class="faq">
       <div><h3>What is a Claude mod?</h3><p>A Claude mod is a Claude Code plugin built from function hooks. It can draw a live pane, band, status line or toast inside Claude Code, or guard what Claude does. This directory also lists the wider ecosystem: plugins, skills, subagents, slash commands, hooks and MCP servers.</p></div>
       <div><h3>How do I install one?</h3><p>Add the marketplace once with <code>/plugin marketplace add {{repo}}</code>, then install any mod by name, like <code>/plugin install cc-arcade@{{marketplace}}</code>. Entries outside the marketplace link to their own setup steps.</p></div>
+      <div><h3>How are plugins checked?</h3><p>Every plugin in the marketplace is pinned to a commit we reviewed. A scan of that commit lists what it runs: shell hooks, code that runs inside Claude Code, MCP servers, and flags such as network access, running programs or skipping permission prompts. A plugin that downloads code at runtime isn't bundled unless we say why. Updates arrive as pull requests that show what changed, and every plugin is install-tested weekly.</p></div>
       <div><h3>Is claudemods official?</h3><p>No. It's a community project, not affiliated with or endorsed by Anthropic. The list is CC0, each linked project keeps its own license, and anyone can submit an entry.</p></div>
     </div>
   </section>
@@ -185,6 +224,12 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
     <span>List is CC0 · <a href="{{repoUrl}}">Source on GitHub</a></span>
   </footer>
 </main>
+
+<dialog class="panel" id="panel" aria-labelledby="panel-title">
+  <div class="panel-head"><div><p class="panel-title" id="panel-title"></p><p class="panel-sub" id="panel-sub"></p></div>
+    <button class="btn icon" id="panel-close" aria-label="Close">✕</button></div>
+  <div class="panel-body" id="panel-body"></div>
+</dialog>
 
 <script>
 (() => {
@@ -213,6 +258,32 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13
   });
   document.querySelectorAll(".copy").forEach((b) => (b.innerHTML = COPY_ICON));
   document.addEventListener("keydown", (e) => { if (e.key === "/" && document.activeElement !== $("#q")) { e.preventDefault(); $("#q").focus(); } });
+
+  // "What it runs" and "+N more plugins" open in a side panel, so cards never change size.
+  // Without JavaScript (or <dialog>) they stay ordinary <details> folds.
+  const panel = $("#panel");
+  function openPanel(card, plugins, one) {
+    $("#panel-title").textContent = card.querySelector("h3 a").textContent;
+    $("#panel-sub").textContent = one ? "What this plugin runs, read from the commit it's pinned to" : `${plugins.length} plugins, each pinned to a reviewed commit`;
+    $("#panel-body").replaceChildren(...plugins.map((pl) => {
+      const c = pl.cloneNode(true);
+      c.querySelectorAll("details").forEach((d) => (d.open = one || plugins.length === 1));
+      return c;
+    }));
+    panel.showModal();
+    $("#panel-body").scrollTop = 0;
+  }
+  document.addEventListener("click", (ev) => {
+    const s = ev.target.closest("summary");
+    const fold = s?.parentElement;
+    const card = s?.closest(".card");
+    if (!card || !panel.showModal || !(fold.classList.contains("fp") || fold.classList.contains("more"))) return;
+    ev.preventDefault();
+    const one = fold.classList.contains("fp");
+    openPanel(card, one ? [fold.closest(".plugin")] : [...card.querySelectorAll(".plugin")], one);
+  });
+  panel.addEventListener("click", (ev) => { if (ev.target === panel) panel.close(); }); // backdrop
+  $("#panel-close").onclick = () => panel.close();
 
   // The directory is rendered into the page at build time (scripts/build.mjs);
   // search and the type chips only show, hide and reorder those cards.

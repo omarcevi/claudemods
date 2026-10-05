@@ -3,14 +3,21 @@
 //
 //   node scripts/sync.mjs            # refresh all bundled entries
 //   node scripts/sync.mjs cc-arcade  # refresh only these ids
+//   node scripts/sync.mjs --summary out.md   # also write a review summary (the sync PR body)
 //
-// Writes data/resolved.json. Run `node scripts/build.mjs` afterwards.
+// Writes data/resolved.json, with each plugin's footprint (scripts/footprint.mjs).
+// Run `node scripts/build.mjs` afterwards.
 import { execFileSync } from "node:child_process";
-import { readJSON, writeJSON, config, githubRepo, PLUGIN_NAME_RE } from "./lib.mjs";
+import { writeFileSync } from "node:fs";
+import { readJSON, writeJSON, config, githubRepo, PLUGIN_NAME_RE, FLAGS, policyErrors } from "./lib.mjs";
+import { footprintFor, FOOTPRINT_VERSION, cleanup } from "./footprint.mjs";
 
 const entries = readJSON("data/mods.json");
 const previous = readJSON("data/resolved.json", {});
-const only = new Set(process.argv.slice(2));
+const args = process.argv.slice(2);
+const summaryAt = args.indexOf("--summary");
+const summaryPath = summaryAt >= 0 ? args[summaryAt + 1] : null;
+const only = new Set(args.filter((a, i) => !a.startsWith("--") && i !== summaryAt + 1));
 
 async function getText(url) {
   try {
@@ -59,7 +66,8 @@ function absolutize(source, repo, sha, pluginRoot) {
     if (rel.includes("..")) throw new Error(`unsafe path ${source}`);
     return rel === "" || rel === "."
       ? { source: "github", repo, sha }
-      : { source: "git-subdir", url: repo, path: rel, sha };
+      // Full https URL: Claude Code clones a bare "owner/repo" over SSH, which fails without GitHub SSH keys.
+      : { source: "git-subdir", url: `https://github.com/${repo}.git`, path: rel, sha };
   }
   if (source && typeof source === "object") {
     // Already absolute. Pin git-based sources to a commit; leave npm/archive as published.
@@ -113,6 +121,9 @@ for (const e of entries.filter((x) => x.bundle)) {
     const r = await resolveEntry(e);
     for (const pl of r.plugins) {
       if (!PLUGIN_NAME_RE.test(pl.name || "")) throw new Error(`invalid plugin name "${pl.name}"`);
+      // Same pin as before: keep its footprint. A new pin gets scanned.
+      const old = previous[e.id]?.plugins.find((p) => p.name === pl.name && JSON.stringify(p.source) === JSON.stringify(pl.source));
+      pl.footprint = old?.footprint?.v === FOOTPRINT_VERSION ? old.footprint : await footprintFor(pl);
     }
     resolved[e.id] = r;
     console.log(`${r.plugins.length} plugin(s) @ ${r.sha.slice(0, 7)}`);
@@ -122,6 +133,50 @@ for (const e of entries.filter((x) => x.bundle)) {
     if (previous[e.id]) { resolved[e.id] = previous[e.id]; console.log("  keeping previous pin"); }
   }
 }
+cleanup();
 
 writeJSON("data/resolved.json", resolved);
 console.log(`\nResolved ${Object.keys(resolved).length} bundled entries (${failed} failed). Now run: node scripts/build.mjs`);
+
+// ---- review summary -------------------------------------------------------------
+// What changed in what each bumped plugin runs, so a reviewer starts from the risky parts.
+function footprintLines(fp) {
+  if (!fp) return [];
+  return [
+    ...fp.hooks.map((h) => `shell hook \`${h.event}${h.matcher ? ` (${h.matcher})` : ""}\`: \`${h.command.slice(0, 120)}\``),
+    ...fp.modules.map((m) => `function-hook module \`${m}\``),
+    ...(fp.events || []).map((ev) => `hooks event \`${ev}\``),
+    ...fp.mcp.map((m) => `MCP server \`${m.name}\`: \`${m.url || m.command.slice(0, 120)}\``),
+    ...fp.flags.map((f) => `flag **${FLAGS[f.id].label}** in ${f.where.map((w) => `\`${w}\``).join(", ")}`),
+  ];
+}
+if (summaryPath) {
+  const sections = [];
+  for (const e of entries.filter((x) => x.bundle && resolved[x.id])) {
+    const before = previous[e.id], after = resolved[e.id];
+    if (before && before.sha === after.sha && JSON.stringify(before.plugins.map((p) => p.source)) === JSON.stringify(after.plugins.map((p) => p.source))) continue;
+    const head = before
+      ? `### ${e.name}: [\`${before.sha.slice(0, 7)}\` → \`${after.sha.slice(0, 7)}\`](https://github.com/${after.repo}/compare/${before.sha}...${after.sha})`
+      : `### ${e.name}: new, pinned at \`${after.sha.slice(0, 7)}\``;
+    const lines = [head];
+    for (const pl of after.plugins) {
+      const was = new Set(footprintLines(before?.plugins.find((p) => p.name === pl.name)?.footprint));
+      const now = footprintLines(pl.footprint);
+      const added = now.filter((l) => !was.has(l)), removed = [...was].filter((l) => !now.includes(l));
+      lines.push(`- **${pl.name}**: ${added.length || removed.length ? "what it runs changed" : "no change in what it runs"}`);
+      for (const l of added) lines.push(`  - ➕ ${l}`);
+      for (const l of removed) lines.push(`  - ➖ ${l}`);
+    }
+    for (const err of policyErrors(e, after)) lines.push(`- ⛔ ${err}`);
+    sections.push(lines.join("\n"));
+  }
+  writeFileSync(summaryPath, [
+    "Upstream mods and plugins changed. Every bundled plugin runs with the user's full permissions, so review each diff before merging; the compare links show the full change.",
+    "",
+    sections.length ? sections.join("\n\n") : "No pins changed.",
+    "",
+    "<sub>Generated by `scripts/sync.mjs`. Flags are pattern matches from `scripts/footprint.mjs`: a reason to read the code, not a verdict.</sub>",
+    "",
+  ].join("\n"));
+  console.log(`Wrote the review summary to ${summaryPath}`);
+}

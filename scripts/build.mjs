@@ -5,26 +5,30 @@
 //   node scripts/build.mjs          # write files
 //   node scripts/build.mjs --check  # fail if generated files are out of date
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
-import { readJSON, config, TYPES, validateEntries, md, p } from "./lib.mjs";
+import { readJSON, config, TYPES, FLAGS, validateEntries, policyErrors, md, p } from "./lib.mjs";
+import { pluginLocation } from "./footprint.mjs";
 
 const CHECK = process.argv.includes("--check");
 const entries = readJSON("data/mods.json");
 const resolved = readJSON("data/resolved.json", {});
 
 const errors = validateEntries(entries);
+for (const e of entries) if (e.bundle && resolved[e.id]) errors.push(...policyErrors(e, resolved[e.id]));
 if (errors.length) {
-  console.error("data/mods.json has problems:\n  " + errors.join("\n  "));
+  console.error("data/ has problems:\n  " + errors.join("\n  "));
   process.exit(1);
 }
 
 // ---- marketplace -----------------------------------------------------------
 const used = new Map(); // plugin name -> entry id
 const installOf = {};   // entry id -> [install ids]
+const pluginsOf = {};   // entry id -> [{ name, description, footprint, loc }] for the site
 const plugins = [];
 for (const e of entries) {
   const r = e.bundle && resolved[e.id];
   if (!r) continue;
   installOf[e.id] = [];
+  pluginsOf[e.id] = [];
   for (const pl of r.plugins) {
     // Claude Code reserves "claude-*" style plugin names for Anthropic, so strip the prefix
     // (or use the entry's explicit `rename` map) when we republish a third-party plugin.
@@ -34,6 +38,7 @@ for (const e of entries) {
     }
     used.set(name, e.id);
     installOf[e.id].push(name);
+    pluginsOf[e.id].push({ name, description: pl.description || "", footprint: pl.footprint, loc: pluginLocation(pl) });
     plugins.push({
       name,
       source: pl.source,
@@ -119,7 +124,8 @@ readme += `## How it works
 - \`data/mods.json\` is the only file people edit. One entry per mod, plugin, skill or link.
 - \`scripts/sync.mjs\` reads each \`bundle: true\` entry's upstream \`.claude-plugin/marketplace.json\` (or \`plugin.json\`), pins it to the current commit and saves the result in \`data/resolved.json\`.
 - \`scripts/build.mjs\` generates this README, \`.claude-plugin/marketplace.json\` and the site.
-- A weekly GitHub Action re-syncs and opens a pull request with any new commits, so every upstream change gets a human look before it reaches you.
+- \`scripts/footprint.mjs\` reads every bundled plugin at its pinned commit and records what it runs: shell hooks, function-hook modules and the \`$\` calls they make, MCP servers, plus flags such as network access, running programs, touching credentials or skipping permission prompts. The site shows it on every card. A plugin that fetches code at runtime isn't bundled unless its entry says why (\`acknowledge\`).
+- A weekly GitHub Action re-syncs and opens a pull request with any new commits and what changed in what each plugin runs, so every upstream change gets a human look before it reaches you. Another installs every plugin into a clean config each week.
 
 ## Contributing
 
@@ -140,6 +146,11 @@ const site = {
     id: e.id, name: e.name, type: e.type, url: e.url, author: e.author,
     description: e.description, tags: e.tags || [], featured: !!e.featured,
     install: installLine(e), inMarketplace: !!installOf[e.id]?.length,
+    ...(pluginsOf[e.id] ? { plugins: pluginsOf[e.id].map((pl) => ({
+      name: pl.name, install: `/plugin install ${pl.name}@${mk}`, description: pl.description,
+      source: pl.loc && { repo: pl.loc.repo, sha: pl.loc.sha, path: pl.loc.root }, footprint: pl.footprint,
+    })) } : {}),
+    ...(e.acknowledge ? { acknowledge: e.acknowledge } : {}),
   })),
 };
 
@@ -155,14 +166,59 @@ const description = `Browse ${entries.length} Claude mods, plugins, skills, hook
 const shownTypes = order.filter((t) => byType[t].length);
 const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
+// ---- what a plugin runs (footprint from scripts/footprint.mjs) ----
+const short = (s, n) => (s.length > n ? s.slice(0, n - 1) + "…" : s);
+const plural = (n, w) => `${n} ${w}${n === 1 ? "" : "s"}`;
+const LEVEL_ORDER = { bad: 0, warn: 1, info: 2, ok: 3 };
+function runsChips(fp) {
+  const chips = [];
+  if (!fp.hooks.length && !fp.modules.length && !fp.mcp.length) chips.push(["ok", "Prompts only"]);
+  if (fp.hooks.length) {
+    const ev = [...new Set(fp.hooks.map((h) => h.event))];
+    chips.push(["warn", `Shell hooks: ${ev.slice(0, 2).join(", ")}${ev.length > 2 ? ` +${ev.length - 2}` : ""}`]);
+  }
+  if (fp.modules.length) chips.push(["warn", "Runs code inside Claude Code"]);
+  if (fp.mcp.some((m) => !m.url)) chips.push(["warn", "Local MCP server"]);
+  for (const host of new Set(fp.mcp.filter((m) => m.url).map((m) => new URL(m.url).hostname))) chips.push(["info", `Talks to ${host}`]);
+  for (const f of fp.flags) {
+    if (f.id === "network" && f.where.every((w) => w.startsWith("mcp:"))) continue; // already a "Talks to" chip
+    chips.push([FLAGS[f.id].level, FLAGS[f.id].label]);
+  }
+  return chips.sort((a, b) => LEVEL_ORDER[a[0]] - LEVEL_ORDER[b[0]]);
+}
+function runsDetails(pl, e) {
+  const { footprint: fp, loc } = pl;
+  const at = (path) => `https://github.com/${loc.repo}/blob/${loc.sha}/${loc.root ? loc.root + "/" : ""}${path}`;
+  const where = (w) => (/^(?:hook|mcp):/.test(w) ? html(w) : `<a href="${html(at(w))}" target="_blank" rel="noopener">${html(w)}</a>`);
+  const ships = [fp.skills && plural(fp.skills, "skill"), fp.commands && plural(fp.commands, "command"), fp.agents && plural(fp.agents, "agent")].filter(Boolean).join(", ");
+  const out = [`<p>Read from <a href="https://github.com/${html(loc.repo)}/tree/${loc.sha}${loc.root ? "/" + html(loc.root) : ""}" target="_blank" rel="noopener">${html(loc.repo)}@${loc.sha.slice(0, 7)}</a>, the commit this install is pinned to${ships ? `. Ships ${ships}` : ""}.</p>`];
+  if (fp.hooks.length) out.push(`<p class="fp-h">Shell hooks</p><ul>${fp.hooks.map((h) => `<li><b>${html(h.event)}</b>${h.matcher ? ` <span class="fp-m">${html(h.matcher)}</span>` : ""}<code>${html(short(h.command, 240))}</code></li>`).join("")}</ul>`);
+  if (fp.modules.length) out.push(`<p class="fp-h">Code inside Claude Code</p><ul><li>Modules: ${fp.modules.map((m) => `<code>${html(m)}</code>`).join(" ")}</li>`
+    + (fp.events ? `<li>Hooks: ${html(fp.events.join(", "))}</li>` : "") + (fp.calls ? `<li>Uses: ${html(fp.calls.map((c) => "$." + c).join(", "))}</li>` : "") + (fp.env ? `<li>Reads env: ${html(fp.env.join(", "))}</li>` : "") + "</ul>");
+  if (fp.mcp.length) out.push(`<p class="fp-h">MCP servers</p><ul>${fp.mcp.map((m) => `<li><b>${html(m.name)}</b><code>${html(short(m.url || m.command, 240))}</code></li>`).join("")}</ul>`);
+  if (fp.flags.length) out.push(`<p class="fp-h">Flags</p><ul>${fp.flags.map((f) => `<li><span class="rk lv-${FLAGS[f.id].level}">${html(FLAGS[f.id].label)}</span> ${f.where.map(where).join(", ")}${f.more ? ` and ${f.more} more` : ""}`
+    + (f.via ? `<code>${html(f.via.join("  ·  "))}</code>` : "") + (f.hosts ? `<span class="fp-m">hosts: ${html(f.hosts.join(", "))}</span>` : "")
+    + (e.acknowledge?.[f.id] ? `<em>Reviewed: ${html(e.acknowledge[f.id])}</em>` : "") + "</li>").join("")}</ul>`);
+  out.push(`<p class="fp-note">Flags are pattern matches: a reason to read the code, not a verdict.</p>`);
+  return out.join("");
+}
+
 function card(e) {
-  const inst = installLine(e);
   const row = (i) =>
     `<div class="install-row"><code title="${html(i)}">${html(i)}</code><button class="copy" data-copy="${html(i)}" aria-label="Copy install command"></button></div>`;
-  // One command on the card; the rest fold away so a big bundle doesn't stretch its whole grid row.
-  const [first, ...rest] = inst;
-  const rows = (first ? row(first) : "")
-    + (rest.length ? `<details class="more"><summary>+${rest.length} more plugin${rest.length > 1 ? "s" : ""}</summary>${rest.map(row).join("")}</details>` : "");
+  const block = (pl, multi) => {
+    const chips = runsChips(pl.footprint);
+    return `<div class="plugin">${row(`/plugin install ${pl.name}@${mk}`)}`
+      + (multi && pl.description ? `<p class="pdesc" title="${html(pl.description)}">${html(short(pl.description, 160))}</p>` : "")
+      + `<details class="fp"><summary>${chips.slice(0, 4).map(([lv, t]) => `<span class="rk lv-${lv}">${html(t)}</span>`).join("")}`
+      + `${chips.length > 4 ? `<span class="rk">+${chips.length - 4}</span>` : ""}<span class="fp-more">What it runs</span></summary><div class="fp-body">${runsDetails(pl, e)}</div></details></div>`;
+  };
+  // One plugin on the card; the rest fold away so a big bundle doesn't stretch its whole grid row.
+  const pls = pluginsOf[e.id] || [];
+  const [first, ...rest] = pls;
+  const rows = first
+    ? block(first, pls.length > 1) + (rest.length ? `<details class="more"><summary>+${rest.length} more plugin${rest.length > 1 ? "s" : ""}</summary>${rest.map((pl) => block(pl, true)).join("")}</details>` : "")
+    : e.install ? `${row(e.install)}<p class="ext">Installs from upstream: not pinned or scanned by claudemods.</p>` : "";
   const badge = TYPES[e.type].label.replace(/s$/, "").replace(/ & .*/, "");
   return `<article class="card" id="${html(e.id)}" data-type="${e.type}">
         <div class="card-head"><div><h3><a href="${html(e.url)}" target="_blank" rel="noopener">${html(e.name)}</a>${e.featured ? " ⭐" : ""}</h3>
