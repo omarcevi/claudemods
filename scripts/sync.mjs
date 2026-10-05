@@ -17,9 +17,12 @@ const previous = readJSON("data/resolved.json", {});
 const args = process.argv.slice(2);
 const summaryAt = args.indexOf("--summary");
 const summaryPath = summaryAt >= 0 ? args[summaryAt + 1] : null;
-const only = new Set(args.filter((a, i) => !a.startsWith("--") && i !== summaryAt + 1));
+const only = new Set(args.filter((a, i) => !a.startsWith("--") && !(summaryAt >= 0 && i === summaryAt + 1)));
 
-async function getText(url) {
+// Entries can share an upstream repo, so cache lookups per run.
+const textCache = new Map();
+const getText = (url) => { if (!textCache.has(url)) textCache.set(url, fetchText(url)); return textCache.get(url); };
+async function fetchText(url) {
   try {
     const res = await fetch(url, { headers: { "user-agent": "claudemods-sync" } });
     if (res.status === 404) return null;
@@ -52,7 +55,8 @@ function lsRemote(gitUrl, ref = "HEAD") {
   if (!/^[0-9a-f]{40}$/.test(sha || "")) throw new Error(`no sha for ${gitUrl} ${ref}`);
   return sha;
 }
-const headSha = (repo) => lsRemote(`https://github.com/${repo}`);
+const shaCache = new Map();
+const headSha = (repo) => { if (!shaCache.has(repo)) shaCache.set(repo, lsRemote(`https://github.com/${repo}`)); return shaCache.get(repo); };
 const toGitUrl = (u) => (/^[\w.-]+\/[\w.-]+$/.test(u) ? `https://github.com/${u}` : u);
 
 const raw = (repo, sha, path) => `https://raw.githubusercontent.com/${repo}/${sha}/${path}`;
@@ -72,6 +76,7 @@ function absolutize(source, repo, sha, pluginRoot) {
   if (source && typeof source === "object") {
     // Already absolute. Pin git-based sources to a commit; leave npm/archive as published.
     const s = { ...source };
+    if (["url", "git-subdir"].includes(s.source) && /^[\w.-]+\/[\w.-]+$/.test(s.url || "")) s.url = `https://github.com/${s.url}.git`; // see above: no SSH
     if (!s.sha && ["github", "url", "git-subdir"].includes(s.source)) {
       const gitUrl = s.source === "github" ? `https://github.com/${s.repo}` : toGitUrl(s.url);
       s.sha = lsRemote(gitUrl, s.ref || "HEAD");
