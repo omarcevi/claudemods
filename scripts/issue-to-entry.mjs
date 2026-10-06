@@ -45,6 +45,23 @@ const entry = {
 const problems = validateEntries([...entries, entry]).filter((m) => m.includes(`(${id})`));
 if (!TYPES[type]) problems.push(`Unknown type "${type}".`);
 if (bundle && !githubRepo(url)) problems.push("Marketplace entries need a github.com repo URL.");
+if (bundle && githubRepo(url) && !(await hasManifest(githubRepo(url)))) {
+  problems.push("\"Add it to the claudemods marketplace\" is ticked, but the repo has no `.claude-plugin/marketplace.json` or `.claude-plugin/plugin.json` at its root. Untick it to list the repo as a link instead.");
+}
+
+// True if the repo has a plugin manifest at its root. Network errors count as
+// true so a GitHub hiccup can't reject a submission; sync.mjs checks again.
+async function hasManifest(repo) {
+  for (const file of ["marketplace.json", "plugin.json"]) {
+    try {
+      const res = await fetch(`https://raw.githubusercontent.com/${repo}/HEAD/.claude-plugin/${file}`, { method: "HEAD" });
+      if (res.status !== 404) return true;
+    } catch {
+      return true;
+    }
+  }
+  return false;
+}
 
 const out = [];
 if (problems.length) {
