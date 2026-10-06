@@ -12,7 +12,7 @@
       "source": {
         "source": "github",
         "repo": "Charlie0113-T/claude-agent-flow",
-        "sha": "72f1287c84b312ef106a6a91c9520afa4d67244c"
+        "sha": "d87b2559dec03979e088026e8f48aee5f9d2cab5"
       },
       "description": "/flow opens a live, read-only tree of the session's subagents and teammates beside the transcript: status, current tool call, waits for approval, elapsed time, tokens; prints the same tree as text where no pane can be drawn",
       "author": {
@@ -38,7 +38,7 @@
         "source": "git-subdir",
         "url": "https://github.com/thedotmack/claude-mem.git",
         "path": "plugin",
-        "sha": "bfc50259f64a4e0c9e81df849095683608e87ac8"
+        "sha": "1bb64393a6122c2cdf45cf219cd9b4d1cf78645b"
       },
       "description": "Persistent memory system for Claude Code - context compression across sessions",
       "author": {
@@ -64,7 +64,7 @@
         "source": "git-subdir",
         "url": "https://github.com/thedotmack/claude-mem.git",
         "path": "cowork",
-        "sha": "bfc50259f64a4e0c9e81df849095683608e87ac8"
+        "sha": "1bb64393a6122c2cdf45cf219cd9b4d1cf78645b"
       },
       "description": "Claude-Mem for Cowork (Claude app cloud sessions) - hooks stream tool use to cmem.ai and inject observations into new sessions and agents",
       "author": {
@@ -449,7 +449,7 @@
       "source": {
         "source": "github",
         "repo": "EveryInc/compound-engineering-plugin",
-        "sha": "9af474a70e7f2a844338519ad9e92aafbd92d4fb"
+        "sha": "030188b4ba27f2dc33fbc4d5a112d3c8cc893e8c"
       },
       "description": "Brainstorm, plan, debug, review, and compound learnings with AI agents",
       "author": {
@@ -501,7 +501,7 @@
         "source": "git-subdir",
         "url": "https://github.com/upstash/context7.git",
         "path": "plugins/claude/context7",
-        "sha": "bfa02ea67b5707fe0e0a673faa49d0f50b28c80b"
+        "sha": "f2eef4f49da71a758c91cf6cb97640c8b262ef81"
       },
       "description": "Up-to-date documentation lookup. Pull version-specific documentation and code examples directly from source repositories into your LLM context.",
       "author": {
@@ -604,7 +604,7 @@
       "source": {
         "source": "github",
         "repo": "cathrynlavery/diagram-design",
-        "sha": "f903933a534ba92cde1c85a28186267b3a317bb2"
+        "sha": "cb80b0d299a5c0674e0d133d33f91f19af8cda0f"
       },
       "description": "Editorial diagram design: 42 diagram types as self-contained HTML and SVG, with Mermaid, draw.io and Excalidraw import.",
       "author": {
@@ -937,7 +937,7 @@
       "source": {
         "source": "github",
         "repo": "mattpocock/skills",
-        "sha": "24fe0ef7737efae15c87225755e9f6f5965e4888"
+        "sha": "4588b32ecab9ecc9fc8cc6b6c5e7d675b6004b0d"
       },
       "description": "Matt Pocock's agent skills for real engineering (grilling, spec/ticket flows, TDD, code review, domain modelling and more).",
       "author": {
@@ -1193,7 +1193,7 @@
       "source": {
         "source": "github",
         "repo": "DietrichGebert/ponytail",
-        "sha": "c982cd411abb53323c4baa1baa3c2f020b8d0b08"
+        "sha": "944b5dcc253cb0561db525207db5b804072ab127"
       },
       "description": "Forces the laziest solution that works. YAGNI, stdlib first, one line over fifty.",
       "author": {
@@ -1244,7 +1244,7 @@
       "source": {
         "source": "github",
         "repo": "NahumLitvin/prismantis",
-        "sha": "b13de6c9ec39e01946943f67b07e5fae4aefd939"
+        "sha": "41bfa17526e3e137566fa850648b506989943d3d"
       },
       "description": "Colorful, themeable rendering for Claude Code replies: tables, headings, code, numbers, paths and links.",
       "author": {
@@ -1528,7 +1528,7 @@
         "source": "git-subdir",
         "url": "https://github.com/getsentry/sentry-mcp.git",
         "path": "plugins/sentry-mcp",
-        "sha": "9f1a7b2147d96246859f42d6f2cbf02ee3985c01"
+        "sha": "dc98e07385d9f87e8549f22a4582a109219636a7"
       },
       "description": "Sentry error tracking and performance monitoring - search issues, analyze errors, explore traces, and get AI-powered root cause analysis",
       "author": {
@@ -1554,7 +1554,7 @@
         "source": "git-subdir",
         "url": "https://github.com/getsentry/sentry-mcp.git",
         "path": "plugins/sentry-mcp-experimental",
-        "sha": "9f1a7b2147d96246859f42d6f2cbf02ee3985c01"
+        "sha": "dc98e07385d9f87e8549f22a4582a109219636a7"
       },
       "description": "Sentry MCP with experimental features enabled - includes all stable tools plus bleeding-edge capabilities",
       "author": {
