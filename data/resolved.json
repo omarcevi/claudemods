@@ -624,7 +624,7 @@
   },
   "agent-flow": {
     "repo": "Charlie0113-T/claude-agent-flow",
-    "sha": "d87b2559dec03979e088026e8f48aee5f9d2cab5",
+    "sha": "76ef8fb2db36136f08ecaf142f920bf4d3843537",
     "upstreamMarketplace": "claude-agent-flow",
     "plugins": [
       {
@@ -633,7 +633,7 @@
         "source": {
           "source": "github",
           "repo": "Charlie0113-T/claude-agent-flow",
-          "sha": "d87b2559dec03979e088026e8f48aee5f9d2cab5"
+          "sha": "76ef8fb2db36136f08ecaf142f920bf4d3843537"
         },
         "footprint": {
           "v": 2,
@@ -651,6 +651,7 @@
             "tool.call",
             "turn.complete",
             "turn.start",
+            "turn.step",
             "ui.close",
             "ui.render"
           ],
@@ -674,7 +675,7 @@
           "commands": 0,
           "agents": 0,
           "flags": [],
-          "scanned": 37
+          "scanned": 38
         }
       }
     ]
@@ -1861,7 +1862,7 @@
   },
   "prismantis": {
     "repo": "NahumLitvin/prismantis",
-    "sha": "41bfa17526e3e137566fa850648b506989943d3d",
+    "sha": "915b8be882864bb7dc46bbfab800364bcd8cb38d",
     "upstreamMarketplace": "prismantis",
     "plugins": [
       {
@@ -1870,7 +1871,8 @@
         "source": {
           "source": "github",
           "repo": "NahumLitvin/prismantis",
-          "sha": "41bfa17526e3e137566fa850648b506989943d3d"
+          "ref": "v0.17.1",
+          "sha": "1e5bdb8505d5857885cb3fa3e30986be84ef6367"
         },
         "footprint": {
           "v": 2,
@@ -1881,31 +1883,67 @@
           "mcp": [],
           "events": [
             "command.run",
+            "engine.create",
+            "prismantis.markdown",
             "prompt.submit",
             "session.start",
+            "turn.complete",
             "ui.render"
           ],
           "calls": [
+            "clock.after",
+            "clock.now",
             "config.set",
             "env.get",
+            "fs.read",
+            "fs.stat",
             "plugin.name",
+            "process.run",
+            "session.id",
+            "session.messages",
+            "session.root",
+            "session.surfaces",
+            "state.get",
+            "state.set",
             "ui.copy",
+            "ui.invalidate",
             "ui.resolve",
             "ui.toast"
           ],
           "env": [
             "ALACRITTY_WINDOW_ID",
+            "DISPLAY",
+            "HOME",
             "KITTY_WINDOW_ID",
             "KONSOLE_VERSION",
+            "SSH_CONNECTION",
+            "SSH_TTY",
+            "TEMP",
             "TERM",
             "TERM_PROGRAM",
+            "TMPDIR",
+            "TMUX",
+            "USERPROFILE",
             "VTE_VERSION",
+            "WAYLAND_DISPLAY",
             "WT_SESSION"
           ],
           "skills": 4,
           "commands": 0,
           "agents": 0,
           "flags": [
+            {
+              "id": "processes",
+              "where": [
+                "hooks/register.tsx",
+                "scripts/clipboard-check.mjs",
+                "scripts/clipboard-linux-check.mjs"
+              ],
+              "via": [
+                "$.process.run",
+                "child_process"
+              ]
+            },
             {
               "id": "network",
               "where": [
@@ -1922,7 +1960,7 @@
               ]
             }
           ],
-          "scanned": 14
+          "scanned": 21
         }
       }
     ]
@@ -2014,17 +2052,627 @@
   },
   "function-hooks-redactor": {
     "repo": "ray-amjad/awesome-claude-code-function-hooks",
-    "sha": "12b5fea27a4bd1b88cd9c9b6abc1efc0756c6625",
-    "upstreamMarketplace": "awesome-claude-code-function-hooks",
+    "sha": "812a5e91bf14f70f210d3f93b7a99f7737b5d38e",
+    "upstreamMarketplace": "claude-code-mods",
     "plugins": [
       {
-        "name": "secret-redactor",
-        "description": "Keeps secrets, email addresses and IP addresses out of the session transcript, and puts the real value back on the way into a tool call",
+        "name": "cache-clock",
+        "description": "A one-line band above the prompt: context used, and a countdown until the prompt cache goes cold",
         "source": {
           "source": "git-subdir",
           "url": "https://github.com/ray-amjad/awesome-claude-code-function-hooks.git",
-          "path": "plugins/secret-redactor",
-          "sha": "12b5fea27a4bd1b88cd9c9b6abc1efc0756c6625"
+          "path": "plugins/cache-clock",
+          "sha": "812a5e91bf14f70f210d3f93b7a99f7737b5d38e"
+        },
+        "footprint": {
+          "v": 2,
+          "hooks": [],
+          "modules": [
+            "./register.js"
+          ],
+          "mcp": [],
+          "events": [
+            "classic.SessionStart",
+            "classic.Stop",
+            "command.run",
+            "prompt.submit",
+            "session.measure",
+            "session.start",
+            "turn.complete",
+            "turn.start",
+            "turn.step",
+            "ui.render"
+          ],
+          "calls": [
+            "audio.play",
+            "clock.every",
+            "clock.now",
+            "command.register",
+            "env.get",
+            "process.run",
+            "prompt.submit",
+            "session.cwd",
+            "session.usage",
+            "ui.invalidate",
+            "ui.resolve",
+            "ui.toast"
+          ],
+          "env": [
+            "CACHE_CLOCK_AUTO_HANDOFF",
+            "CACHE_CLOCK_MAIN_TTL_MIN",
+            "CACHE_CLOCK_SOUND",
+            "CACHE_CLOCK_SUB_TTL_MIN",
+            "CACHE_CLOCK_WARN_MIN"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "processes",
+              "where": [
+                "hooks/register.js"
+              ],
+              "via": [
+                "$.process.run"
+              ]
+            },
+            {
+              "id": "prompts",
+              "where": [
+                "hooks/register.js"
+              ],
+              "via": [
+                "$.prompt.submit"
+              ]
+            }
+          ],
+          "scanned": 1
+        }
+      },
+      {
+        "name": "decision-tree",
+        "description": "When Claude ends a reply with a question, explains the choice in a side pane and lets you explore any option, or your own, in a real forked session",
+        "source": {
+          "source": "git-subdir",
+          "url": "https://github.com/ray-amjad/awesome-claude-code-function-hooks.git",
+          "path": "plugins/decision-tree",
+          "sha": "812a5e91bf14f70f210d3f93b7a99f7737b5d38e"
+        },
+        "footprint": {
+          "v": 2,
+          "hooks": [],
+          "modules": [
+            "./register.jsx"
+          ],
+          "mcp": [],
+          "events": [
+            "classic.Stop",
+            "command.run",
+            "session.start",
+            "turn.complete",
+            "ui.render"
+          ],
+          "calls": [
+            "command.register",
+            "env.get",
+            "fs.exists",
+            "fs.read",
+            "model.complete",
+            "model.fork",
+            "process.run",
+            "session.cwd",
+            "session.id",
+            "ui.close",
+            "ui.copy",
+            "ui.invalidate",
+            "ui.log",
+            "ui.open",
+            "ui.resolve",
+            "ui.toast"
+          ],
+          "env": [
+            "DECISION_TREE_CHILD",
+            "DECISION_TREE_WAIT",
+            "HERDR_ENV",
+            "HOME"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "processes",
+              "where": [
+                "hooks/register.jsx"
+              ],
+              "via": [
+                "$.process.run"
+              ]
+            },
+            {
+              "id": "model-calls",
+              "where": [
+                "hooks/register.jsx"
+              ],
+              "via": [
+                "$.model.complete",
+                "$.model.fork"
+              ]
+            }
+          ],
+          "scanned": 1
+        }
+      },
+      {
+        "name": "diagram-pane",
+        "description": "A side pane that pins every diagram Claude draws and keeps a live map of the work",
+        "source": {
+          "source": "git-subdir",
+          "url": "https://github.com/ray-amjad/awesome-claude-code-function-hooks.git",
+          "path": "plugins/diagram-pane",
+          "sha": "812a5e91bf14f70f210d3f93b7a99f7737b5d38e"
+        },
+        "footprint": {
+          "v": 2,
+          "hooks": [],
+          "modules": [
+            "./register.js"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "session.start",
+            "turn.complete",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.now",
+            "command.register",
+            "env.get",
+            "fs.write",
+            "model.complete",
+            "model.fork",
+            "session.id",
+            "session.messages",
+            "store.get",
+            "store.set",
+            "ui.invalidate",
+            "ui.log",
+            "ui.open",
+            "ui.panes",
+            "ui.resolve"
+          ],
+          "env": [
+            "DIAGRAM_PANE_DUMP",
+            "DIAGRAM_PANE_EVERY",
+            "DIAGRAM_PANE_SYNC"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "writes-files",
+              "where": [
+                "hooks/register.js"
+              ],
+              "via": [
+                "$.fs.write"
+              ]
+            },
+            {
+              "id": "model-calls",
+              "where": [
+                "hooks/register.js"
+              ],
+              "via": [
+                "$.model.complete",
+                "$.model.fork"
+              ]
+            }
+          ],
+          "scanned": 2
+        }
+      },
+      {
+        "name": "dream-pass",
+        "description": "A dreaming pass over Claude's memory folder: merges duplicates, rewrites stale entries, removes dead ones and tidies MEMORY.md, with a backup and undo",
+        "source": {
+          "source": "git-subdir",
+          "url": "https://github.com/ray-amjad/awesome-claude-code-function-hooks.git",
+          "path": "plugins/dream-pass",
+          "sha": "812a5e91bf14f70f210d3f93b7a99f7737b5d38e"
+        },
+        "footprint": {
+          "v": 2,
+          "hooks": [],
+          "modules": [
+            "./register.js"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "session.compact",
+            "session.start",
+            "tool.call",
+            "turn.complete",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.now",
+            "command.register",
+            "env.get",
+            "fs.exists",
+            "fs.list",
+            "fs.read",
+            "fs.stat",
+            "fs.write",
+            "model.complete",
+            "model.fork",
+            "process.run",
+            "session.cwd",
+            "session.id",
+            "session.messages",
+            "session.repo",
+            "settings.read",
+            "store.get",
+            "store.set",
+            "ui.invalidate",
+            "ui.log",
+            "ui.open",
+            "ui.resolve",
+            "ui.toast"
+          ],
+          "env": [
+            "CLAUDE_CONFIG_DIR",
+            "DREAM_PASS_EVERY",
+            "DREAM_PASS_MEMORY_DIR",
+            "DREAM_PASS_SYNC",
+            "DREAM_PASS_TRANSCRIPTS_DIR",
+            "HOME"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "processes",
+              "where": [
+                "hooks/register.js"
+              ],
+              "via": [
+                "$.process.run"
+              ]
+            },
+            {
+              "id": "writes-files",
+              "where": [
+                "hooks/register.js"
+              ],
+              "via": [
+                "$.fs.write"
+              ]
+            },
+            {
+              "id": "model-calls",
+              "where": [
+                "hooks/register.js"
+              ],
+              "via": [
+                "$.model.complete",
+                "$.model.fork"
+              ]
+            }
+          ],
+          "scanned": 1
+        }
+      },
+      {
+        "name": "jev-skill-suggestion",
+        "description": "Scores every skill against your prompt with TypeSafe Jev as you type; observe, block or steer skill loading",
+        "source": {
+          "source": "git-subdir",
+          "url": "https://github.com/ray-amjad/awesome-claude-code-function-hooks.git",
+          "path": "plugins/jev-skill-suggestion",
+          "sha": "812a5e91bf14f70f210d3f93b7a99f7737b5d38e"
+        },
+        "footprint": {
+          "v": 2,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "prompt.attachment",
+            "prompt.edit",
+            "prompt.submit",
+            "session.start",
+            "tool.call",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.after",
+            "clock.now",
+            "command.register",
+            "env.get",
+            "fs.list",
+            "fs.read",
+            "http.fetch",
+            "store.get",
+            "store.set",
+            "ui.invalidate",
+            "ui.open",
+            "ui.resolve"
+          ],
+          "env": [
+            "HOME",
+            "TYPESAFE_API_KEY"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "credentials",
+              "where": [
+                "hooks/register.tsx"
+              ],
+              "via": [
+                "$.env.get('TYPESAFE_API_KEY')"
+              ]
+            },
+            {
+              "id": "network",
+              "where": [
+                "hooks/register.tsx"
+              ],
+              "via": [
+                "$.http.fetch",
+                "fetch("
+              ],
+              "hosts": [
+                "api.typesafe.ai"
+              ]
+            }
+          ],
+          "scanned": 1
+        }
+      },
+      {
+        "name": "memory-fork",
+        "description": "After each turn Haiku decides whether memory needs a change; a tool-less fork of the session drafts it and the mod writes it, with a band and a pane showing what changed",
+        "source": {
+          "source": "git-subdir",
+          "url": "https://github.com/ray-amjad/awesome-claude-code-function-hooks.git",
+          "path": "plugins/memory-fork",
+          "sha": "812a5e91bf14f70f210d3f93b7a99f7737b5d38e"
+        },
+        "footprint": {
+          "v": 2,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "prompt.compose",
+            "session.start",
+            "tool.call",
+            "turn.complete",
+            "ui.render"
+          ],
+          "calls": [
+            "command.register",
+            "env.get",
+            "fs.list",
+            "fs.read",
+            "fs.write",
+            "model.complete",
+            "model.fork",
+            "process.run",
+            "session.cwd",
+            "session.messages",
+            "ui.open",
+            "ui.resolve"
+          ],
+          "env": [
+            "CLAUDE_CONFIG_DIR",
+            "HOME"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "processes",
+              "where": [
+                "hooks/register.tsx"
+              ],
+              "via": [
+                "$.process.run"
+              ]
+            },
+            {
+              "id": "writes-files",
+              "where": [
+                "hooks/register.tsx"
+              ],
+              "via": [
+                "$.fs.write"
+              ]
+            },
+            {
+              "id": "model-calls",
+              "where": [
+                "hooks/register.tsx"
+              ],
+              "via": [
+                "$.model.complete",
+                "$.model.fork"
+              ]
+            }
+          ],
+          "scanned": 1
+        }
+      },
+      {
+        "name": "prompt-bouncer",
+        "description": "Bounces vague prompts before Claude sees them, and suggests the project's own term",
+        "source": {
+          "source": "git-subdir",
+          "url": "https://github.com/ray-amjad/awesome-claude-code-function-hooks.git",
+          "path": "plugins/prompt-bouncer",
+          "sha": "812a5e91bf14f70f210d3f93b7a99f7737b5d38e"
+        },
+        "footprint": {
+          "v": 2,
+          "hooks": [],
+          "modules": [
+            "./register.js"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "prompt.submit",
+            "session.start"
+          ],
+          "calls": [
+            "clock.after",
+            "command.register",
+            "env.get",
+            "fs.exists",
+            "fs.list",
+            "fs.read",
+            "model.complete",
+            "prompt.submit",
+            "session.cwd",
+            "session.messages",
+            "ui.log",
+            "ui.status",
+            "ui.toast"
+          ],
+          "env": [
+            "PROMPT_BOUNCER_MODE"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "model-calls",
+              "where": [
+                "hooks/register.js"
+              ],
+              "via": [
+                "$.model.complete"
+              ]
+            },
+            {
+              "id": "prompts",
+              "where": [
+                "hooks/register.js"
+              ],
+              "via": [
+                "$.prompt.submit"
+              ]
+            }
+          ],
+          "scanned": 1
+        }
+      },
+      {
+        "name": "secret-box",
+        "description": "Claude can use a secret without seeing it: a masked box saves keys to .env and gives Claude a placeholder, every key a tool prints comes back as a placeholder, and committing .env is refused",
+        "source": {
+          "source": "git-subdir",
+          "url": "https://github.com/ray-amjad/awesome-claude-code-function-hooks.git",
+          "path": "plugins/secret-box",
+          "sha": "812a5e91bf14f70f210d3f93b7a99f7737b5d38e"
+        },
+        "footprint": {
+          "v": 2,
+          "hooks": [],
+          "modules": [
+            "./register.jsx"
+          ],
+          "mcp": [],
+          "events": [
+            "agent.spawn",
+            "prompt.attachment",
+            "prompt.context",
+            "prompt.mention",
+            "prompt.submit",
+            "session.start",
+            "tool.call",
+            "ui.close",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.now",
+            "fs.exists",
+            "fs.read",
+            "fs.write",
+            "process.run",
+            "session.cwd",
+            "session.surfaces",
+            "tool.register",
+            "ui.close",
+            "ui.invalidate",
+            "ui.log",
+            "ui.notice",
+            "ui.open",
+            "ui.resolve",
+            "ui.toast"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "credentials",
+              "where": [
+                "hooks/detect.ts",
+                "hooks/register.jsx"
+              ],
+              "via": [
+                "'.env'",
+                ".netrc"
+              ]
+            },
+            {
+              "id": "processes",
+              "where": [
+                "hooks/register.jsx"
+              ],
+              "via": [
+                "$.process.run"
+              ]
+            },
+            {
+              "id": "writes-files",
+              "where": [
+                "hooks/register.jsx"
+              ],
+              "via": [
+                "$.fs.write"
+              ]
+            }
+          ],
+          "scanned": 3
+        }
+      },
+      {
+        "name": "transcript-redactor",
+        "description": "Keeps secrets and email addresses out of the session transcript: swaps each one for a stable placeholder on the way in, and puts the real value back on the way into a tool call",
+        "source": {
+          "source": "git-subdir",
+          "url": "https://github.com/ray-amjad/awesome-claude-code-function-hooks.git",
+          "path": "plugins/transcript-redactor",
+          "sha": "812a5e91bf14f70f210d3f93b7a99f7737b5d38e"
         },
         "footprint": {
           "v": 2,
@@ -2034,19 +2682,34 @@
           ],
           "mcp": [],
           "events": [
+            "agent.spawn",
+            "prompt.attachment",
             "prompt.context",
+            "prompt.mention",
             "prompt.submit",
             "tool.call"
           ],
           "calls": [
+            "fs.exists",
+            "fs.read",
             "ui.notice",
             "ui.toast"
           ],
           "skills": 0,
           "commands": 0,
           "agents": 0,
-          "flags": [],
-          "scanned": 1
+          "flags": [
+            {
+              "id": "credentials",
+              "where": [
+                "hooks/detect.ts"
+              ],
+              "via": [
+                ".netrc"
+              ]
+            }
+          ],
+          "scanned": 2
         }
       },
       {
@@ -2056,7 +2719,7 @@
           "source": "git-subdir",
           "url": "https://github.com/ray-amjad/awesome-claude-code-function-hooks.git",
           "path": "plugins/vercel-deploy-status",
-          "sha": "12b5fea27a4bd1b88cd9c9b6abc1efc0756c6625"
+          "sha": "812a5e91bf14f70f210d3f93b7a99f7737b5d38e"
         },
         "footprint": {
           "v": 2,
@@ -2255,17 +2918,17 @@
   },
   "claude-mermaid": {
     "repo": "galElmalah/claude-mods",
-    "sha": "b19a0f0d09bf214c010b15cc2849c0c1a11d7b0d",
-    "upstreamMarketplace": "claude-mods",
+    "sha": "f7e8416f994738293cb39fea75cc9f0ba387e91a",
+    "upstreamMarketplace": "gal-mods",
     "plugins": [
       {
-        "name": "claude-mermaid",
+        "name": "mermaid-draw",
         "description": "Mermaid diagrams drawn as box art inline in the transcript.",
         "source": {
           "source": "git-subdir",
           "url": "https://github.com/galElmalah/claude-mods.git",
           "path": "claude-mermaid",
-          "sha": "b19a0f0d09bf214c010b15cc2849c0c1a11d7b0d"
+          "sha": "f7e8416f994738293cb39fea75cc9f0ba387e91a"
         },
         "footprint": {
           "v": 2,
@@ -2283,7 +2946,8 @@
             "store.get",
             "store.set",
             "ui.invalidate",
-            "ui.log"
+            "ui.log",
+            "ui.resolve"
           ],
           "skills": 0,
           "commands": 0,
@@ -2293,13 +2957,13 @@
         }
       },
       {
-        "name": "claude-queue",
+        "name": "prompt-queue",
         "description": "/q <text> while Claude is working waits in a stack above the prompt and goes out when the turn ends.",
         "source": {
           "source": "git-subdir",
           "url": "https://github.com/galElmalah/claude-mods.git",
           "path": "claude-queue",
-          "sha": "b19a0f0d09bf214c010b15cc2849c0c1a11d7b0d"
+          "sha": "f7e8416f994738293cb39fea75cc9f0ba387e91a"
         },
         "footprint": {
           "v": 2,
@@ -3377,7 +4041,7 @@
   },
   "compound-engineering": {
     "repo": "EveryInc/compound-engineering-plugin",
-    "sha": "030188b4ba27f2dc33fbc4d5a112d3c8cc893e8c",
+    "sha": "50532b00de523980010d97fe950965b35382a3b7",
     "upstreamMarketplace": "compound-engineering-plugin",
     "plugins": [
       {
@@ -3386,7 +4050,7 @@
         "source": {
           "source": "github",
           "repo": "EveryInc/compound-engineering-plugin",
-          "sha": "030188b4ba27f2dc33fbc4d5a112d3c8cc893e8c"
+          "sha": "50532b00de523980010d97fe950965b35382a3b7"
         },
         "footprint": {
           "v": 2,
@@ -3451,14 +4115,14 @@
               ]
             }
           ],
-          "scanned": 111
+          "scanned": 112
         }
       }
     ]
   },
   "claude-mem": {
     "repo": "thedotmack/claude-mem",
-    "sha": "1bb64393a6122c2cdf45cf219cd9b4d1cf78645b",
+    "sha": "356b7c08f64c29f931171e264e848772a039da62",
     "upstreamMarketplace": "thedotmack",
     "plugins": [
       {
@@ -3468,7 +4132,7 @@
           "source": "git-subdir",
           "url": "https://github.com/thedotmack/claude-mem.git",
           "path": "plugin",
-          "sha": "1bb64393a6122c2cdf45cf219cd9b4d1cf78645b"
+          "sha": "356b7c08f64c29f931171e264e848772a039da62"
         },
         "footprint": {
           "v": 2,
@@ -3504,7 +4168,7 @@
             },
             {
               "event": "PreToolUse",
-              "matcher": "Read",
+              "matcher": "Read|^Bash$|^Grep$|^Glob$|^memory_search$|^memory$|^mcp__.+__memory_search$",
               "command": "export PATH=\"$HOME/.nvm/versions/node/v$(ls \"$HOME/.nvm/versions/node\" 2>/dev/null | sed 's/^v//' | sort -t. -k1,1n -k2,2n -k3,3n | tail -1)/bin:$HOME/.local/bin:/usr/local/bin:/opt/homebrew/bin:$PATH\"; _C=\"${CLAUDE_CONFIG_DIR:-$HOME/.claude}\"; _E=\"${CLAUDE_PLUGIN_ROOT:-${PLUGIN_ROOT:-}}\"; _P=; if [ -n \"$_E\" ]; then _R=\"${_E%/}\"; [ -d \"$_R/plugin/scripts\" ] && _Q=\"$_R/plugin\" || _Q=\"$_R\"; [ -f \"$_Q/scripts/bun-runner.js\" ] && [ -f \"$_Q/scripts/worker-service.cjs\" ] && _P=\"$_Q\"; fi; if [ -z \"$_P\" ]; then _F=; _P=$({ for _V in \"$_C/plugins/cache/thedotmack/claude-mem\"/[0-9]*/; do [ -d \"$_V\" ] || continue; [ -e \"${_V}.orphaned_at\" ] && continue; _B=${_V%/}; _B=${_B##*/}; case \"$_B\" in (*-*) _G=0;; (*) _G=1;; esac; _N=${_B%%-*}; _M1=${_N%%.*}; case \"$_N\" in (*.*) _T=${_N#*.};; (*) _T=0;; esac; _M2=${_T%%.*}; case \"$_T\" in (*.*) _U=${_T#*.};; (*) _U=0;; esac; _M3=${_U%%.*}; _M1=${_M1%%[!0-9]*}; _M2=${_M2%%[!0-9]*}; _M3=${_M3%%[!0-9]*}; printf '%08d%08d%08d%d %s\\n' \"${_M1:-0}\" \"${_M2:-0}\" \"${_M3:-0}\" \"$_G\" \"$_V\"; done 2>/dev/null | sort -r | sed 's/^[^ ]* //'; printf '%s\\n' \"$_C/plugins/marketplaces/thedotmack/plugin\"; } | while IFS= read -r _R; do _R=\"${_R%/}\"; [ -d \"$_R/plugin/scripts\" ] && _Q=\"$_R/plugin\" || _Q=\"$_R\"; [ -f \"$_Q/scripts/bun-runner.js\" ] && [ -f \"$_Q/scripts/worker-service.cjs\" ] && [ -z \"$_F\" ] && { _F=1; printf '%s\\n' \"$_Q\"; }; done); fi; [ -n \"$_P\" ] || { echo \"claude-mem: plugin scripts not found\" >&2; exit 0; }; command -v cygpath >/dev/null 2>&1 && { _W=$(cygpath -w \"$_P\" 2>/dev/null); [ -n \"$_W\" ] && _P=\"$_W\"; }; { node \"$_P/scripts/bun-runner.js\" \"$_P/scripts/worker-service.cjs\" hook claude-code file-context; } || { _S=$?; echo \"claude-mem: hook command failed (exit $_S)\" >&2; exit 0; }"
             },
             {
@@ -3520,10 +4184,10 @@
           "mcp": [
             {
               "name": "mcp-search",
-              "command": "node -e const f=require('fs'),p=require('path'),o=require('os'),c=require('child_process');const h=o.homedir();const C=process.env.CLAUDE_CONFIG_DIR||p.join(h,'.claude');const E=process.env.CLAUDE_PLUGIN_ROOT||process.env.PLUGIN_ROOT||'';const d=process.cwd();const S=n=>{const q=n.split('-')[0].split('.');return[parseInt(q[0],10)||0,parseInt(q[1],10)||0,parseInt(q[2],10)||0]};const W=(a,b)=>{const x=S(a),y=S(b);return(y[0]-x[0])||(y[1]-x[1])||(y[2]-x[2])||((a.indexOf('-')<0?0:1)-(b.indexOf('-')<0?0:1))||(a<b?1:a>b?-1:0)};const L=x=>{try{return f.readdirSync(x).filter(n=>/^\\d/.test(n)).map(n=>p.join(x,n)).filter(z=>{try{return f.statSync(z).isDirectory()&&!f.existsSync(p.join(z,'.orphaned_at'))}catch{return false}}).sort((a,b)=>W(p.basename(a),p.basename(b)))}catch{return[]}};const K=[E,p.join(d,\"plugin\"),d,...L(p.join(h,\".codex/plugins/cache/claude-mem-local/claude-mem\")),...L(p.join(h,\".codex/plugins/cache/thedotmack/claude-mem\")),...L(p.join(C,\"plugins/cache/thedotmack/claude-mem\")),p.join(C,\"plugins/marketplaces/thedotmack/plugin\")].filter(Boolean);let R=null;for(const k of K){const r=f.existsSync(p.join(k,'plugin','scripts'))?p.join(k,'plugin'):k;if(f.existsSync(p.join(r,'scripts',\"mcp-server.cjs\"))){R=r;break}}if(!R){process.stderr.write(\"claude-mem: mcp server not found\\n\");process.exit(1)}const ch=c.spawn(process.execPath,[p.join(R,'scripts',\"mcp-server.cjs\")],{stdio:'inherit',windowsHide:true});for(const s of ['SIGTERM','SIGINT','SIGHUP'])process.on(s,()=>{try{ch.kill(s)}catch{}});ch.on('exit',(code,sig)=>{if(sig){process.removeAllListeners(sig);try{process.kill(process.pid,sig)}catch{process.exit(1)}}else process.exit(code==null?0:code)})"
+              "command": "node -e const f=require('fs'),p=require('path'),o=require('os');const h=o.homedir();const C=process.env.CLAUDE_CONFIG_DIR||p.join(h,'.claude');const E=process.env.CLAUDE_PLUGIN_ROOT||process.env.PLUGIN_ROOT||'';const d=process.cwd();const S=n=>{const q=n.split('-')[0].split('.');return[parseInt(q[0],10)||0,parseInt(q[1],10)||0,parseInt(q[2],10)||0]};const W=(a,b)=>{const x=S(a),y=S(b);return(y[0]-x[0])||(y[1]-x[1])||(y[2]-x[2])||((a.indexOf('-')<0?0:1)-(b.indexOf('-')<0?0:1))||(a<b?1:a>b?-1:0)};const L=x=>{try{return f.readdirSync(x).filter(n=>/^\\d/.test(n)).map(n=>p.join(x,n)).filter(z=>{try{return f.statSync(z).isDirectory()&&!f.existsSync(p.join(z,'.orphaned_at'))}catch{return false}}).sort((a,b)=>W(p.basename(a),p.basename(b)))}catch{return[]}};const K=[E,p.join(d,\"plugin\"),d,...L(p.join(h,\".codex/plugins/cache/claude-mem-local/claude-mem\")),...L(p.join(h,\".codex/plugins/cache/thedotmack/claude-mem\")),...L(p.join(C,\"plugins/cache/thedotmack/claude-mem\")),p.join(C,\"plugins/marketplaces/thedotmack/plugin\")].filter(Boolean);let R=null;for(const k of K){const r=f.existsSync(p.join(k,'plugin','scripts'))?p.join(k,'plugin'):k;if(f.existsSync(p.join(r,'scripts',\"mcp-server.cjs\"))){R=r;break}}if(!R){process.stderr.write(\"claude-mem: mcp server not found\\n\");process.exit(1)}require(p.resolve(R,'scripts',\"mcp-server.cjs\"))"
             }
           ],
-          "skills": 22,
+          "skills": 23,
           "commands": 0,
           "agents": 0,
           "flags": [
@@ -3559,13 +4223,13 @@
                 "scripts/bun-runner.js",
                 "scripts/context-generator.cjs",
                 "scripts/mcp-server.cjs",
+                "scripts/qoder-hook-launcher.cjs",
                 "scripts/transcript-watcher.cjs",
                 "scripts/version-check.js",
                 "scripts/worker-wrapper.cjs",
-                "skills/agent-cost-report/scripts/acr/render.py",
-                "skills/agent-cost-report/scripts/acr/wins.py"
+                "skills/agent-cost-report/scripts/acr/render.py"
               ],
-              "more": 1,
+              "more": 2,
               "via": [
                 "child_process",
                 "subprocess.Popen",
@@ -3582,8 +4246,9 @@
                 "skills/agent-cost-report/scripts/acr/measure.py",
                 "skills/agent-cost-report/scripts/acr/prices.py",
                 "skills/mode-creator/scripts/configure-telegram.mjs",
-                "ui/viewer-bundle.js"
+                "skills/screenpipe/screenpipe.mjs"
               ],
+              "more": 1,
               "via": [
                 "fetch(",
                 "urllib.request"
@@ -3610,7 +4275,7 @@
               ]
             }
           ],
-          "scanned": 35,
+          "scanned": 37,
           "errors": [
             "scripts/server-service.cjs: over 2 MB, not scanned",
             "scripts/worker-service.cjs: over 2 MB, not scanned"
@@ -3624,7 +4289,7 @@
           "source": "git-subdir",
           "url": "https://github.com/thedotmack/claude-mem.git",
           "path": "cowork",
-          "sha": "1bb64393a6122c2cdf45cf219cd9b4d1cf78645b"
+          "sha": "356b7c08f64c29f931171e264e848772a039da62"
         },
         "footprint": {
           "v": 2,
@@ -3722,7 +4387,7 @@
   },
   "superpowers": {
     "repo": "obra/superpowers",
-    "sha": "8ca22dba9a94f28898bbce59f2537ff4d87c747d",
+    "sha": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
     "upstreamMarketplace": "superpowers-dev",
     "plugins": [
       {
@@ -3731,7 +4396,7 @@
         "source": {
           "source": "github",
           "repo": "obra/superpowers",
-          "sha": "8ca22dba9a94f28898bbce59f2537ff4d87c747d"
+          "sha": "bb92a77741419a4ab5f06e711a283343f1ada0c3"
         },
         "footprint": {
           "v": 2,
@@ -3782,7 +4447,7 @@
               ]
             }
           ],
-          "scanned": 12
+          "scanned": 13
         }
       }
     ]
@@ -3835,7 +4500,7 @@
   },
   "ios-simulator-skill": {
     "repo": "conorluddy/ios-simulator-skill",
-    "sha": "037a37f135100c76157b4c915a5b55bd272b5e32",
+    "sha": "c535422ab4ee550c8994c179583f805cb0cb01b1",
     "upstreamMarketplace": "conorluddy",
     "plugins": [
       {
@@ -3845,7 +4510,7 @@
           "source": "git-subdir",
           "url": "https://github.com/conorluddy/ios-simulator-skill.git",
           "path": "ios-simulator-skill",
-          "sha": "037a37f135100c76157b4c915a5b55bd272b5e32"
+          "sha": "c535422ab4ee550c8994c179583f805cb0cb01b1"
         },
         "footprint": {
           "v": 2,
@@ -3882,7 +4547,7 @@
   },
   "taste-skill": {
     "repo": "Leonxlnx/taste-skill",
-    "sha": "ce26fc25c0e5e8cab638f883de62d9a86ee5e45b",
+    "sha": "d237dd399d57524945c0c81327da5da19f7a468d",
     "upstreamMarketplace": "taste-skill",
     "plugins": [
       {
@@ -3891,7 +4556,7 @@
         "source": {
           "source": "github",
           "repo": "Leonxlnx/taste-skill",
-          "sha": "ce26fc25c0e5e8cab638f883de62d9a86ee5e45b"
+          "sha": "d237dd399d57524945c0c81327da5da19f7a468d"
         },
         "footprint": {
           "v": 2,
@@ -3902,14 +4567,14 @@
           "commands": 0,
           "agents": 0,
           "flags": [],
-          "scanned": 5
+          "scanned": 6
         }
       }
     ]
   },
   "ponytail": {
     "repo": "DietrichGebert/ponytail",
-    "sha": "944b5dcc253cb0561db525207db5b804072ab127",
+    "sha": "9b58c1ffb790c075ca32e70a89cf1d80588f4abf",
     "upstreamMarketplace": "ponytail",
     "plugins": [
       {
@@ -3918,7 +4583,7 @@
         "source": {
           "source": "github",
           "repo": "DietrichGebert/ponytail",
-          "sha": "944b5dcc253cb0561db525207db5b804072ab127"
+          "sha": "9b58c1ffb790c075ca32e70a89cf1d80588f4abf"
         },
         "footprint": {
           "v": 2,
@@ -3946,6 +4611,7 @@
             {
               "id": "processes",
               "where": [
+                "hooks/ponytail-map.js",
                 "scripts/publish-openclaw-skills.js"
               ],
               "via": [
@@ -3953,14 +4619,14 @@
               ]
             }
           ],
-          "scanned": 18
+          "scanned": 17
         }
       }
     ]
   },
   "mattpocock-skills": {
     "repo": "mattpocock/skills",
-    "sha": "4588b32ecab9ecc9fc8cc6b6c5e7d675b6004b0d",
+    "sha": "49dd158d1076134a641b33efb035946536778336",
     "upstreamMarketplace": "mattpocock",
     "plugins": [
       {
@@ -3969,7 +4635,7 @@
         "source": {
           "source": "github",
           "repo": "mattpocock/skills",
-          "sha": "4588b32ecab9ecc9fc8cc6b6c5e7d675b6004b0d"
+          "sha": "49dd158d1076134a641b33efb035946536778336"
         },
         "footprint": {
           "v": 2,
@@ -3987,7 +4653,7 @@
   },
   "i-have-adhd": {
     "repo": "ayghri/i-have-adhd",
-    "sha": "839872f9d1cd634fed642b4589ce7226199cc15f",
+    "sha": "1ecea1993b7fce257ffbd686c070948b5e07eda6",
     "upstreamMarketplace": "i-have-adhd",
     "plugins": [
       {
@@ -3996,7 +4662,7 @@
         "source": {
           "source": "github",
           "repo": "ayghri/i-have-adhd",
-          "sha": "839872f9d1cd634fed642b4589ce7226199cc15f"
+          "sha": "1ecea1993b7fce257ffbd686c070948b5e07eda6"
         },
         "footprint": {
           "v": 2,
@@ -4034,7 +4700,7 @@
   },
   "diagram-design": {
     "repo": "cathrynlavery/diagram-design",
-    "sha": "cb80b0d299a5c0674e0d133d33f91f19af8cda0f",
+    "sha": "be2e736cd5e5f0329ada5ecb4182ae58176e4c47",
     "upstreamMarketplace": "diagram-design",
     "plugins": [
       {
@@ -4043,7 +4709,7 @@
         "source": {
           "source": "github",
           "repo": "cathrynlavery/diagram-design",
-          "sha": "cb80b0d299a5c0674e0d133d33f91f19af8cda0f"
+          "sha": "be2e736cd5e5f0329ada5ecb4182ae58176e4c47"
         },
         "footprint": {
           "v": 2,
@@ -4093,7 +4759,7 @@
               ]
             }
           ],
-          "scanned": 47
+          "scanned": 48
         }
       }
     ]
@@ -4127,7 +4793,7 @@
   },
   "addyosmani-agent-skills": {
     "repo": "addyosmani/agent-skills",
-    "sha": "1401c8b8030e023baeebb31781a6653fe8e93026",
+    "sha": "1be8e34187e34647bb83adc3a1323b26ae6f6abe",
     "upstreamMarketplace": "addy-agent-skills",
     "plugins": [
       {
@@ -4136,7 +4802,7 @@
         "source": {
           "source": "github",
           "repo": "addyosmani/agent-skills",
-          "sha": "1401c8b8030e023baeebb31781a6653fe8e93026"
+          "sha": "1be8e34187e34647bb83adc3a1323b26ae6f6abe"
         },
         "footprint": {
           "v": 2,
@@ -4174,7 +4840,7 @@
   },
   "claude-powerline": {
     "repo": "Owloops/claude-powerline",
-    "sha": "3e763e558bca908475cf34adb55dfc59e4b39aa2",
+    "sha": "aea5a5cff8cdb34b45788b495e12c409f5429e8c",
     "upstreamMarketplace": "claude-powerline",
     "plugins": [
       {
@@ -4184,7 +4850,7 @@
           "source": "git-subdir",
           "url": "https://github.com/Owloops/claude-powerline.git",
           "path": "plugin",
-          "sha": "3e763e558bca908475cf34adb55dfc59e4b39aa2"
+          "sha": "aea5a5cff8cdb34b45788b495e12c409f5429e8c"
         },
         "footprint": {
           "v": 2,
@@ -4202,7 +4868,7 @@
   },
   "context7": {
     "repo": "upstash/context7",
-    "sha": "f2eef4f49da71a758c91cf6cb97640c8b262ef81",
+    "sha": "33414e6e3fc157c936348ca8ddba25e50dacaeee",
     "upstreamMarketplace": "context7-marketplace",
     "plugins": [
       {
@@ -4212,7 +4878,7 @@
           "source": "git-subdir",
           "url": "https://github.com/upstash/context7.git",
           "path": "plugins/claude/context7",
-          "sha": "f2eef4f49da71a758c91cf6cb97640c8b262ef81"
+          "sha": "33414e6e3fc157c936348ca8ddba25e50dacaeee"
         },
         "footprint": {
           "v": 2,
@@ -4248,7 +4914,7 @@
   },
   "sentry-mcp": {
     "repo": "getsentry/sentry-mcp",
-    "sha": "dc98e07385d9f87e8549f22a4582a109219636a7",
+    "sha": "c22fb35069477373bf0c8cdd0a95c55210c7c4b3",
     "upstreamMarketplace": "sentry-mcp",
     "plugins": [
       {
@@ -4258,7 +4924,7 @@
           "source": "git-subdir",
           "url": "https://github.com/getsentry/sentry-mcp.git",
           "path": "plugins/sentry-mcp",
-          "sha": "dc98e07385d9f87e8549f22a4582a109219636a7"
+          "sha": "c22fb35069477373bf0c8cdd0a95c55210c7c4b3"
         },
         "footprint": {
           "v": 2,
@@ -4297,7 +4963,7 @@
           "source": "git-subdir",
           "url": "https://github.com/getsentry/sentry-mcp.git",
           "path": "plugins/sentry-mcp-experimental",
-          "sha": "dc98e07385d9f87e8549f22a4582a109219636a7"
+          "sha": "c22fb35069477373bf0c8cdd0a95c55210c7c4b3"
         },
         "footprint": {
           "v": 2,
