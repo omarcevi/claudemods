@@ -4330,5 +4330,54 @@
         }
       }
     ]
+  },
+  "buildpane": {
+    "repo": "griches/buildpane",
+    "sha": "1dc9688ba924aa9a49ccd9726bd1d7caa5330aeb",
+    "upstreamMarketplace": "buildpane",
+    "plugins": [
+      {
+        "name": "buildpane",
+        "description": "Turns build, test and lint output from tsc, cargo, go, pytest, jest, gradle and more into a live pane of errors by file, and hands Claude the diagnostics instead of the raw log.",
+        "source": {
+          "source": "github",
+          "repo": "griches/buildpane",
+          "sha": "1dc9688ba924aa9a49ccd9726bd1d7caa5330aeb"
+        },
+        "footprint": {
+          "v": 2,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "command.run",
+            "session.append",
+            "session.start",
+            "tool.call",
+            "ui.render"
+          ],
+          "calls": [
+            "clock.every",
+            "clock.now",
+            "command.register",
+            "fs.read",
+            "store.get",
+            "store.set",
+            "tool.register",
+            "ui.open",
+            "ui.resolve",
+            "ui.status",
+            "ui.toast"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 0,
+          "flags": [],
+          "scanned": 5
+        }
+      }
+    ]
   }
 }

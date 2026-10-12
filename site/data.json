@@ -7,7 +7,7 @@
       "label": "Mods",
       "heading": "Claude Code mods",
       "blurb": "Function-hook plugins that draw panes, bands, status lines and toasts, or guard what Claude does.",
-      "count": 27
+      "count": 28
     },
     "plugin": {
       "label": "Plugins & marketplaces",
@@ -6065,6 +6065,71 @@
       "featured": false,
       "install": [],
       "inMarketplace": false
+    },
+    {
+      "id": "buildpane",
+      "name": "buildpane",
+      "type": "mod",
+      "url": "https://github.com/griches/buildpane",
+      "author": "griches",
+      "description": "Build, test and lint errors by file in a pane for tsc, cargo, go, pytest, jest and more; Claude reads diagnostics, not the raw log.",
+      "tags": [
+        "build",
+        "tests",
+        "lint",
+        "pane",
+        "tokens"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install buildpane@claudemods"
+      ],
+      "inMarketplace": true,
+      "plugins": [
+        {
+          "name": "buildpane",
+          "install": "/plugin install buildpane@claudemods",
+          "description": "Turns build, test and lint output from tsc, cargo, go, pytest, jest, gradle and more into a live pane of errors by file, and hands Claude the diagnostics instead of the raw log.",
+          "source": {
+            "repo": "griches/buildpane",
+            "sha": "1dc9688ba924aa9a49ccd9726bd1d7caa5330aeb",
+            "path": ""
+          },
+          "footprint": {
+            "v": 2,
+            "hooks": [],
+            "modules": [
+              "./register.tsx"
+            ],
+            "mcp": [],
+            "events": [
+              "command.run",
+              "session.append",
+              "session.start",
+              "tool.call",
+              "ui.render"
+            ],
+            "calls": [
+              "clock.every",
+              "clock.now",
+              "command.register",
+              "fs.read",
+              "store.get",
+              "store.set",
+              "tool.register",
+              "ui.open",
+              "ui.resolve",
+              "ui.status",
+              "ui.toast"
+            ],
+            "skills": 0,
+            "commands": 0,
+            "agents": 0,
+            "flags": [],
+            "scanned": 5
+          }
+        }
+      ]
     }
   ]
 }

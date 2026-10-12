@@ -7,7 +7,7 @@
 
 [Browse the site](https://claudemods.chat) · [Submit something](https://github.com/omarcevi/claudemods/issues/new?template=submit.yml) · [How it works](#how-it-works)
 
-![entries](https://img.shields.io/badge/entries-103-d97757) ![installable](https://img.shields.io/badge/installable_plugins-74-2f6f4f) ![license](https://img.shields.io/badge/list-CC0-lightgrey)
+![entries](https://img.shields.io/badge/entries-104-d97757) ![installable](https://img.shields.io/badge/installable_plugins-75-2f6f4f) ![license](https://img.shields.io/badge/list-CC0-lightgrey)
 
 </div>
 
@@ -27,7 +27,7 @@ Every plugin in the marketplace points at the exact upstream commit we looked at
 
 ## Contents
 
-- [Mods](#mods) (27)
+- [Mods](#mods) (28)
 - [Plugins & marketplaces](#plugins-marketplaces) (7)
 - [Skills](#skills) (21)
 - [Subagents](#subagents) (6)
@@ -118,6 +118,14 @@ Several mods in one install.
 | [claude-mods (Arunjay4213)](https://github.com/Arunjay4213/claude-mods)<br><sub>by Arunjay4213</sub> | Session trackers: context window fill, plan quota burn rate, per-turn cost and a budget guard. | `/plugin install context-lens@claudemods`<br>`/plugin install quota-meter@claudemods`<br>`/plugin install token-ledger@claudemods`<br>`/plugin install budget-guard@claudemods` |
 | [claude-mods (yash-gadodia)](https://github.com/yash-gadodia/claude-mods)<br><sub>by yash-gadodia</sub> | Thirteen mods that guard scope, verify deploys, gate merges and draw usage and cost bands. | `/plugin install deploy-verify@claudemods`<br>`/plugin install mini-offload@claudemods`<br>`/plugin install scope-guard@claudemods`<br>`/plugin install merge-gate@claudemods`<br>`/plugin install receipt@claudemods`<br>`/plugin install diff-review@claudemods`<br>`/plugin install money-band@claudemods`<br>`/plugin install usage-band@claudemods`<br>`/plugin install copy-band@claudemods`<br>`/plugin install chrome-switch@claudemods`<br>`/plugin install wod-band@claudemods`<br>`/plugin install wod-timer@claudemods`<br>`/plugin install done-blink@claudemods` |
 | [secret-redactor + vercel-deploy-status](https://github.com/ray-amjad/awesome-claude-code-function-hooks)<br><sub>by ray-amjad</sub> | Keeps keys, emails and IPs out of the transcript, plus a Vercel deploy-status band. | `/plugin install secret-redactor@claudemods`<br>`/plugin install vercel-deploy-status@claudemods` |
+
+### More mods
+
+Mods we haven't sorted yet.
+
+| Name | What it does | Install |
+| --- | --- | --- |
+| [buildpane](https://github.com/griches/buildpane)<br><sub>by griches</sub> | Build, test and lint errors by file in a pane for tsc, cargo, go, pytest, jest and more; Claude reads diagnostics, not the raw log. | `/plugin install buildpane@claudemods` |
 
 ## Plugins & marketplaces
 
