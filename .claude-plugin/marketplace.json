@@ -265,6 +265,33 @@
       }
     },
     {
+      "name": "buildpane",
+      "source": {
+        "source": "github",
+        "repo": "griches/buildpane",
+        "sha": "1dc9688ba924aa9a49ccd9726bd1d7caa5330aeb"
+      },
+      "description": "Turns build, test and lint output from tsc, cargo, go, pytest, jest, gradle and more into a live pane of errors by file, and hands Claude the diagnostics instead of the raw log.",
+      "author": {
+        "name": "griches",
+        "url": "https://github.com/griches"
+      },
+      "homepage": "https://github.com/griches/buildpane",
+      "category": "mod",
+      "tags": [
+        "build",
+        "tests",
+        "lint",
+        "pane",
+        "tokens"
+      ],
+      "metadata": {
+        "entry": "buildpane",
+        "upstreamName": "buildpane",
+        "upstreamMarketplace": "buildpane"
+      }
+    },
+    {
       "name": "burn-meter",
       "source": {
         "source": "git-subdir",
