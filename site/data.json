@@ -7,7 +7,7 @@
       "label": "Mods",
       "heading": "Claude Code mods",
       "blurb": "Function-hook plugins that draw panes, bands, status lines and toasts, or guard what Claude does.",
-      "count": 27
+      "count": 28
     },
     "plugin": {
       "label": "Plugins & marketplaces",
@@ -412,6 +412,262 @@
       "acknowledge": {
         "runtime-fetch": "mod-builder's typecheck step runs npx -y -p typescript tsc when tsc isn't installed. It runs on demand inside the skill, not from a hook."
       }
+    },
+    {
+      "id": "roqam",
+      "name": "ROQAM",
+      "type": "mod",
+      "url": "https://github.com/Telefaxnix/ROQAM",
+      "author": "Telefaxnix",
+      "description": "Status bar above the prompt: context, plan limits, cache countdown, Anthropic status, one-click buttons, sky and weather. Windows.",
+      "tags": [
+        "statusline",
+        "band",
+        "usage",
+        "cache",
+        "weather"
+      ],
+      "featured": false,
+      "category": "bands",
+      "install": [
+        "/plugin install roqam@claudemods",
+        "/plugin install roqam-de@claudemods"
+      ],
+      "inMarketplace": true,
+      "plugins": [
+        {
+          "name": "roqam",
+          "install": "/plugin install roqam@claudemods",
+          "description": "Status bar above the prompt: context, plan limits, prompt-cache countdown, Anthropic status, model, version, chats, connectors, one-click buttons, recording mode, and tonight's sky and weather at your location. Windows; labels in English.",
+          "source": {
+            "repo": "Telefaxnix/ROQAM",
+            "sha": "511f44c0310665022c8805cfe6256f75fd039f4a",
+            "path": "roqam"
+          },
+          "footprint": {
+            "v": 2,
+            "hooks": [],
+            "modules": [
+              "./register.tsx"
+            ],
+            "mcp": [],
+            "events": [
+              "command.run",
+              "prompt.compose",
+              "prompt.submit",
+              "session.compact",
+              "session.measure",
+              "session.start",
+              "tool.call",
+              "turn.complete",
+              "turn.start",
+              "turn.step",
+              "ui.message",
+              "ui.render"
+            ],
+            "calls": [
+              "agent.list",
+              "audio.play",
+              "clock.after",
+              "clock.every",
+              "clock.now",
+              "command.register",
+              "command.run",
+              "env.get",
+              "fs.list",
+              "fs.read",
+              "fs.write",
+              "http.fetch",
+              "mcp.call",
+              "plugin.root",
+              "process.run",
+              "prompt.fill",
+              "session.cwd",
+              "session.id",
+              "session.model",
+              "session.root",
+              "session.usage",
+              "session.version",
+              "store.get",
+              "store.set",
+              "tool.list",
+              "turn.abort",
+              "ui.ask",
+              "ui.invalidate",
+              "ui.log",
+              "ui.resolve",
+              "ui.toast"
+            ],
+            "env": [
+              "USERPROFILE"
+            ],
+            "skills": 0,
+            "commands": 0,
+            "agents": 0,
+            "flags": [
+              {
+                "id": "auto-approve",
+                "where": [
+                  "hooks/register.tsx"
+                ],
+                "via": [
+                  "$.mcp.call"
+                ]
+              },
+              {
+                "id": "processes",
+                "where": [
+                  "hooks/register.tsx"
+                ],
+                "via": [
+                  "$.process.run"
+                ]
+              },
+              {
+                "id": "network",
+                "where": [
+                  "hooks/register.tsx"
+                ],
+                "via": [
+                  "$.http.fetch",
+                  "fetch("
+                ],
+                "hosts": [
+                  "api.frankfurter.app",
+                  "api.open-meteo.com",
+                  "geocoding-api.open-meteo.com"
+                ]
+              },
+              {
+                "id": "writes-files",
+                "where": [
+                  "hooks/register.tsx"
+                ],
+                "via": [
+                  "$.fs.write"
+                ]
+              }
+            ],
+            "scanned": 19
+          }
+        },
+        {
+          "name": "roqam-de",
+          "install": "/plugin install roqam-de@claudemods",
+          "description": "Status bar above the prompt: context, plan limits, prompt-cache countdown, Anthropic status, model, version, chats, connectors, one-click buttons, recording mode, and tonight's sky and weather at your location. Windows; labels in German.",
+          "source": {
+            "repo": "Telefaxnix/ROQAM",
+            "sha": "511f44c0310665022c8805cfe6256f75fd039f4a",
+            "path": "roqam-de"
+          },
+          "footprint": {
+            "v": 2,
+            "hooks": [],
+            "modules": [
+              "./register.tsx"
+            ],
+            "mcp": [],
+            "events": [
+              "command.run",
+              "prompt.compose",
+              "prompt.submit",
+              "session.compact",
+              "session.measure",
+              "session.start",
+              "tool.call",
+              "turn.complete",
+              "turn.start",
+              "turn.step",
+              "ui.message",
+              "ui.render"
+            ],
+            "calls": [
+              "agent.list",
+              "audio.play",
+              "clock.after",
+              "clock.every",
+              "clock.now",
+              "command.register",
+              "command.run",
+              "env.get",
+              "fs.list",
+              "fs.read",
+              "fs.write",
+              "http.fetch",
+              "mcp.call",
+              "plugin.root",
+              "process.run",
+              "prompt.fill",
+              "session.cwd",
+              "session.id",
+              "session.model",
+              "session.root",
+              "session.usage",
+              "session.version",
+              "store.get",
+              "store.set",
+              "tool.list",
+              "turn.abort",
+              "ui.ask",
+              "ui.invalidate",
+              "ui.log",
+              "ui.resolve",
+              "ui.toast"
+            ],
+            "env": [
+              "USERPROFILE"
+            ],
+            "skills": 0,
+            "commands": 0,
+            "agents": 0,
+            "flags": [
+              {
+                "id": "auto-approve",
+                "where": [
+                  "hooks/register.tsx"
+                ],
+                "via": [
+                  "$.mcp.call"
+                ]
+              },
+              {
+                "id": "processes",
+                "where": [
+                  "hooks/register.tsx"
+                ],
+                "via": [
+                  "$.process.run"
+                ]
+              },
+              {
+                "id": "network",
+                "where": [
+                  "hooks/register.tsx"
+                ],
+                "via": [
+                  "$.http.fetch",
+                  "fetch("
+                ],
+                "hosts": [
+                  "api.frankfurter.app",
+                  "api.open-meteo.com",
+                  "geocoding-api.open-meteo.com"
+                ]
+              },
+              {
+                "id": "writes-files",
+                "where": [
+                  "hooks/register.tsx"
+                ],
+                "via": [
+                  "$.fs.write"
+                ]
+              }
+            ],
+            "scanned": 19
+          }
+        }
+      ]
     },
     {
       "id": "lcm",

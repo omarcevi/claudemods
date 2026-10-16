@@ -7,7 +7,7 @@
 
 [Browse the site](https://claudemods.chat) · [Submit something](https://github.com/omarcevi/claudemods/issues/new?template=submit.yml) · [How it works](#how-it-works)
 
-![entries](https://img.shields.io/badge/entries-103-d97757) ![installable](https://img.shields.io/badge/installable_plugins-74-2f6f4f) ![license](https://img.shields.io/badge/list-CC0-lightgrey)
+![entries](https://img.shields.io/badge/entries-104-d97757) ![installable](https://img.shields.io/badge/installable_plugins-76-2f6f4f) ![license](https://img.shields.io/badge/list-CC0-lightgrey)
 
 </div>
 
@@ -27,7 +27,7 @@ Every plugin in the marketplace points at the exact upstream commit we looked at
 
 ## Contents
 
-- [Mods](#mods) (27)
+- [Mods](#mods) (28)
 - [Plugins & marketplaces](#plugins-marketplaces) (7)
 - [Skills](#skills) (21)
 - [Subagents](#subagents) (6)
@@ -60,6 +60,7 @@ Live info above the prompt or in the status line: cost, context, git, time.
 | [claude-usage-meter](https://github.com/aycandv/claude-usage-meter)<br><sub>by aycandv</sub> | A usage board: a weekly pace gauge and an LED crawl of today's spend per model. | `/plugin install usage-ticker@claudemods` |
 | [cost-git](https://github.com/juulsverne/claude-code-mods)<br><sub>by juulsverne</sub> | Band above the prompt with session cost plus git branch, status, CI, pull and push. | `/plugin install cost-git@claudemods` |
 | [Mindful Claude](https://github.com/halluton/Mindful-Claude)<br><sub>by halluton</sub> | Guided breathing exercises drawn above the prompt while Claude works, with several techniques via /breathe. | `/plugin install mindful-breathing@claudemods` |
+| [ROQAM](https://github.com/Telefaxnix/ROQAM)<br><sub>by Telefaxnix</sub> | Status bar above the prompt: context, plan limits, cache countdown, Anthropic status, one-click buttons, sky and weather. Windows. | `/plugin install roqam@claudemods`<br>`/plugin install roqam-de@claudemods` |
 
 ### Panes & dashboards
 
