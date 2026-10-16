@@ -1471,6 +1471,62 @@
       }
     },
     {
+      "name": "roqam",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/Telefaxnix/ROQAM.git",
+        "path": "roqam",
+        "sha": "511f44c0310665022c8805cfe6256f75fd039f4a"
+      },
+      "description": "Status bar above the prompt: context, plan limits, prompt-cache countdown, Anthropic status, model, version, chats, connectors, one-click buttons, recording mode, and tonight's sky and weather at your location. Windows; labels in English.",
+      "author": {
+        "name": "Telefaxnix",
+        "url": "https://github.com/Telefaxnix"
+      },
+      "homepage": "https://github.com/Telefaxnix/ROQAM",
+      "category": "mod",
+      "tags": [
+        "statusline",
+        "band",
+        "usage",
+        "cache",
+        "weather"
+      ],
+      "metadata": {
+        "entry": "roqam",
+        "upstreamName": "roqam",
+        "upstreamMarketplace": "roqam"
+      }
+    },
+    {
+      "name": "roqam-de",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/Telefaxnix/ROQAM.git",
+        "path": "roqam-de",
+        "sha": "511f44c0310665022c8805cfe6256f75fd039f4a"
+      },
+      "description": "Status bar above the prompt: context, plan limits, prompt-cache countdown, Anthropic status, model, version, chats, connectors, one-click buttons, recording mode, and tonight's sky and weather at your location. Windows; labels in German.",
+      "author": {
+        "name": "Telefaxnix",
+        "url": "https://github.com/Telefaxnix"
+      },
+      "homepage": "https://github.com/Telefaxnix/ROQAM",
+      "category": "mod",
+      "tags": [
+        "statusline",
+        "band",
+        "usage",
+        "cache",
+        "weather"
+      ],
+      "metadata": {
+        "entry": "roqam",
+        "upstreamName": "roqam-de",
+        "upstreamMarketplace": "roqam"
+      }
+    },
+    {
       "name": "scope-guard",
       "source": {
         "source": "git-subdir",
