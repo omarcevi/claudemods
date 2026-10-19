@@ -12,7 +12,7 @@
       "source": {
         "source": "github",
         "repo": "Charlie0113-T/claude-agent-flow",
-        "sha": "d87b2559dec03979e088026e8f48aee5f9d2cab5"
+        "sha": "76ef8fb2db36136f08ecaf142f920bf4d3843537"
       },
       "description": "/flow opens a live, read-only tree of the session's subagents and teammates beside the transcript: status, current tool call, waits for approval, elapsed time, tokens; prints the same tree as text where no pane can be drawn",
       "author": {
@@ -38,7 +38,7 @@
         "source": "git-subdir",
         "url": "https://github.com/thedotmack/claude-mem.git",
         "path": "plugin",
-        "sha": "1bb64393a6122c2cdf45cf219cd9b4d1cf78645b"
+        "sha": "3fae1eb45ba1a7fbd4818527f48b439991a273da"
       },
       "description": "Persistent memory system for Claude Code - context compression across sessions",
       "author": {
@@ -64,7 +64,7 @@
         "source": "git-subdir",
         "url": "https://github.com/thedotmack/claude-mem.git",
         "path": "cowork",
-        "sha": "1bb64393a6122c2cdf45cf219cd9b4d1cf78645b"
+        "sha": "3fae1eb45ba1a7fbd4818527f48b439991a273da"
       },
       "description": "Claude-Mem for Cowork (Claude app cloud sessions) - hooks stream tool use to cmem.ai and inject observations into new sessions and agents",
       "author": {
@@ -141,7 +141,7 @@
       "source": {
         "source": "github",
         "repo": "addyosmani/agent-skills",
-        "sha": "1401c8b8030e023baeebb31781a6653fe8e93026"
+        "sha": "aeac41d4d005999432bb7312f7ff06383a91d59d"
       },
       "description": "Production-grade engineering skills covering every phase of software development: spec, plan, build, verify, review, and ship.",
       "author": {
@@ -218,7 +218,7 @@
         "source": "git-subdir",
         "url": "https://github.com/Arunjay4213/claude-mods.git",
         "path": "plugins/budget-guard",
-        "sha": "d4fffd7de9204a62b10e7b3604fc893158fa25fd"
+        "sha": "6de1b69a555a412aea7b9a374ad6c0de7e47ac4e"
       },
       "description": "Stops a session before it runs past a budget: warns near a cost or plan-window limit, then refuses tool calls and asks before the next prompt.",
       "author": {
@@ -244,7 +244,7 @@
         "source": "git-subdir",
         "url": "https://github.com/meganemura/buffer-pane.git",
         "path": "plugin",
-        "sha": "214211adfade734463bd045b7a1129a6792f7c28"
+        "sha": "db65738ab815188692041f67370c001b77cca9ea"
       },
       "description": "A pane beside the transcript that holds the next things to tell the agent: write blocks of text while a turn runs, then press [+] to put one block into the prompt box.",
       "author": {
@@ -291,11 +291,37 @@
       }
     },
     {
+      "name": "cache-clock",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ray-amjad/awesome-claude-code-function-hooks.git",
+        "path": "plugins/cache-clock",
+        "sha": "6db48a3af54f1b681e4d21e6d4f54ff497389fad"
+      },
+      "description": "A one-line band above the prompt: context used, and a countdown until the prompt cache goes cold",
+      "author": {
+        "name": "ray-amjad",
+        "url": "https://github.com/ray-amjad"
+      },
+      "homepage": "https://github.com/ray-amjad/awesome-claude-code-function-hooks",
+      "category": "mod",
+      "tags": [
+        "security",
+        "redaction",
+        "vercel"
+      ],
+      "metadata": {
+        "entry": "function-hooks-redactor",
+        "upstreamName": "cache-clock",
+        "upstreamMarketplace": "claude-code-mods"
+      }
+    },
+    {
       "name": "cache-tax",
       "source": {
         "source": "github",
         "repo": "karanb192/cache-tax",
-        "sha": "06cac47ec125a41a4aeeb78a6b006bec8cc6d6ed"
+        "sha": "432a08df1a22474a66b94240e2bcedaa6db55a17"
       },
       "description": "cache-tax, the Mod. Stops a cold send once with its price, keeps the 1-hour prompt cache warm for a window you set (/keepwarm 6h), arms that for you after a paid cold write, and keeps score. Reach L2, one $.model.fork per idle stretch, its own store, a status slot; sees prompt length only.",
       "author": {
@@ -449,7 +475,7 @@
       "source": {
         "source": "github",
         "repo": "EveryInc/compound-engineering-plugin",
-        "sha": "030188b4ba27f2dc33fbc4d5a112d3c8cc893e8c"
+        "sha": "2e41b4490a37f53db0beb6d4904618da9af2f559"
       },
       "description": "Brainstorm, plan, debug, review, and compound learnings with AI agents",
       "author": {
@@ -475,7 +501,7 @@
         "source": "git-subdir",
         "url": "https://github.com/Arunjay4213/claude-mods.git",
         "path": "plugins/context-lens",
-        "sha": "d4fffd7de9204a62b10e7b3604fc893158fa25fd"
+        "sha": "6de1b69a555a412aea7b9a374ad6c0de7e47ac4e"
       },
       "description": "Live /context: what fills the window, per-turn growth, and distance to auto-compaction.",
       "author": {
@@ -501,9 +527,9 @@
         "source": "git-subdir",
         "url": "https://github.com/upstash/context7.git",
         "path": "plugins/claude/context7",
-        "sha": "f2eef4f49da71a758c91cf6cb97640c8b262ef81"
+        "sha": "323bda95a613217ada62efe49fce3cb1d982f8cc"
       },
-      "description": "Up-to-date documentation lookup. Pull version-specific documentation and code examples directly from source repositories into your LLM context.",
+      "description": "Up-to-date documentation lookup. Pull version-specific documentation and code examples directly from source repositories into your coding agent's context.",
       "author": {
         "name": "upstash",
         "url": "https://github.com/upstash"
@@ -574,6 +600,32 @@
       }
     },
     {
+      "name": "decision-tree",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ray-amjad/awesome-claude-code-function-hooks.git",
+        "path": "plugins/decision-tree",
+        "sha": "6db48a3af54f1b681e4d21e6d4f54ff497389fad"
+      },
+      "description": "When Claude ends a reply with a question, explains the choice in a side pane and lets you explore any option, or your own, in a real forked session",
+      "author": {
+        "name": "ray-amjad",
+        "url": "https://github.com/ray-amjad"
+      },
+      "homepage": "https://github.com/ray-amjad/awesome-claude-code-function-hooks",
+      "category": "mod",
+      "tags": [
+        "security",
+        "redaction",
+        "vercel"
+      ],
+      "metadata": {
+        "entry": "function-hooks-redactor",
+        "upstreamName": "decision-tree",
+        "upstreamMarketplace": "claude-code-mods"
+      }
+    },
+    {
       "name": "deploy-verify",
       "source": {
         "source": "git-subdir",
@@ -604,7 +656,7 @@
       "source": {
         "source": "github",
         "repo": "cathrynlavery/diagram-design",
-        "sha": "cb80b0d299a5c0674e0d133d33f91f19af8cda0f"
+        "sha": "550fd66edff058bc73056c3416b76d69cfe865ba"
       },
       "description": "Editorial diagram design: 42 diagram types as self-contained HTML and SVG, with Mermaid, draw.io and Excalidraw import.",
       "author": {
@@ -622,6 +674,32 @@
         "entry": "diagram-design",
         "upstreamName": "diagram-design",
         "upstreamMarketplace": "diagram-design"
+      }
+    },
+    {
+      "name": "diagram-pane",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ray-amjad/awesome-claude-code-function-hooks.git",
+        "path": "plugins/diagram-pane",
+        "sha": "6db48a3af54f1b681e4d21e6d4f54ff497389fad"
+      },
+      "description": "A side pane that pins every diagram Claude draws, keeps a live map of the work, and lets you go into boxes and change them",
+      "author": {
+        "name": "ray-amjad",
+        "url": "https://github.com/ray-amjad"
+      },
+      "homepage": "https://github.com/ray-amjad/awesome-claude-code-function-hooks",
+      "category": "mod",
+      "tags": [
+        "security",
+        "redaction",
+        "vercel"
+      ],
+      "metadata": {
+        "entry": "function-hooks-redactor",
+        "upstreamName": "diagram-pane",
+        "upstreamMarketplace": "claude-code-mods"
       }
     },
     {
@@ -677,12 +755,38 @@
       }
     },
     {
+      "name": "dream-pass",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ray-amjad/awesome-claude-code-function-hooks.git",
+        "path": "plugins/dream-pass",
+        "sha": "6db48a3af54f1b681e4d21e6d4f54ff497389fad"
+      },
+      "description": "A dreaming pass over Claude's memory folder: merges duplicates, rewrites stale entries, removes dead ones and tidies MEMORY.md, with a backup and undo",
+      "author": {
+        "name": "ray-amjad",
+        "url": "https://github.com/ray-amjad"
+      },
+      "homepage": "https://github.com/ray-amjad/awesome-claude-code-function-hooks",
+      "category": "mod",
+      "tags": [
+        "security",
+        "redaction",
+        "vercel"
+      ],
+      "metadata": {
+        "entry": "function-hooks-redactor",
+        "upstreamName": "dream-pass",
+        "upstreamMarketplace": "claude-code-mods"
+      }
+    },
+    {
       "name": "fable-pin",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/karanb192/claude-code-mods.git",
         "path": "plugins/fable-pin",
-        "sha": "10617a90106144d3cb131bd599e677d9c38bfd35"
+        "sha": "fb1f9c085c807d548f198fab2ada3a9585ac7e17"
       },
       "description": "Pins every subagent to the fable model by rewriting agent.spawn, with /fable-pin on, off and status. Reach L0: its own store and one command, nothing else.",
       "author": {
@@ -732,7 +836,7 @@
       "source": {
         "source": "github",
         "repo": "blader/humanizer",
-        "sha": "225a6f39ac85f76ee48dbad772ea4abe4ed6c9d8"
+        "sha": "8c307f367c91bd974002f10f2be2965d642c13df"
       },
       "description": "Rewrite AI-sounding text so it reads like the writer without changing what it says.",
       "author": {
@@ -756,7 +860,7 @@
       "source": {
         "source": "github",
         "repo": "ayghri/i-have-adhd",
-        "sha": "839872f9d1cd634fed642b4589ce7226199cc15f"
+        "sha": "1ecea1993b7fce257ffbd686c070948b5e07eda6"
       },
       "description": "Action-first, ADHD-friendly output shaping for Claude Code.",
       "author": {
@@ -782,7 +886,7 @@
         "source": "git-subdir",
         "url": "https://github.com/karanb192/claude-code-mods.git",
         "path": "plugins/image-peek",
-        "sha": "10617a90106144d3cb131bd599e677d9c38bfd35"
+        "sha": "fb1f9c085c807d548f198fab2ada3a9585ac7e17"
       },
       "description": "Preview pasted images at their prompt markers on macOS. Ghostty, plus experimental iTerm2 and Herdr support with a startup override. Reach L2: local clipboard capture and temporary files, no model or network calls.",
       "author": {
@@ -860,9 +964,9 @@
         "source": "git-subdir",
         "url": "https://github.com/conorluddy/ios-simulator-skill.git",
         "path": "ios-simulator-skill",
-        "sha": "037a37f135100c76157b4c915a5b55bd272b5e32"
+        "sha": "e38b3ad5cc2585140c91b9c0f974124c3add31dc"
       },
-      "description": "29 production-ready scripts for iOS app testing, building, and automation",
+      "description": "30 scripts for iOS app building, testing, and simulator automation. Semantic UI navigation via the accessibility tree, xcodebuild with progressive error disclosure, accessibility audits, hang detection, and simulator lifecycle management.",
       "author": {
         "name": "conorluddy",
         "url": "https://github.com/conorluddy"
@@ -878,6 +982,32 @@
         "entry": "ios-simulator-skill",
         "upstreamName": "ios-simulator-skill",
         "upstreamMarketplace": "conorluddy"
+      }
+    },
+    {
+      "name": "jev-skill-suggestion",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ray-amjad/awesome-claude-code-function-hooks.git",
+        "path": "plugins/jev-skill-suggestion",
+        "sha": "6db48a3af54f1b681e4d21e6d4f54ff497389fad"
+      },
+      "description": "Scores every skill against your prompt with TypeSafe Jev as you type; observe, block or steer skill loading",
+      "author": {
+        "name": "ray-amjad",
+        "url": "https://github.com/ray-amjad"
+      },
+      "homepage": "https://github.com/ray-amjad/awesome-claude-code-function-hooks",
+      "category": "mod",
+      "tags": [
+        "security",
+        "redaction",
+        "vercel"
+      ],
+      "metadata": {
+        "entry": "function-hooks-redactor",
+        "upstreamName": "jev-skill-suggestion",
+        "upstreamMarketplace": "claude-code-mods"
       }
     },
     {
@@ -937,7 +1067,7 @@
       "source": {
         "source": "github",
         "repo": "mattpocock/skills",
-        "sha": "4588b32ecab9ecc9fc8cc6b6c5e7d675b6004b0d"
+        "sha": "49dd158d1076134a641b33efb035946536778336"
       },
       "description": "Matt Pocock's agent skills for real engineering (grilling, spec/ticket flows, TDD, code review, domain modelling and more).",
       "author": {
@@ -984,6 +1114,32 @@
       }
     },
     {
+      "name": "memory-fork",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ray-amjad/awesome-claude-code-function-hooks.git",
+        "path": "plugins/memory-fork",
+        "sha": "6db48a3af54f1b681e4d21e6d4f54ff497389fad"
+      },
+      "description": "After each turn Haiku decides whether memory needs a change; a tool-less fork of the session drafts it and the mod writes it, with a band and a pane showing what changed",
+      "author": {
+        "name": "ray-amjad",
+        "url": "https://github.com/ray-amjad"
+      },
+      "homepage": "https://github.com/ray-amjad/awesome-claude-code-function-hooks",
+      "category": "mod",
+      "tags": [
+        "security",
+        "redaction",
+        "vercel"
+      ],
+      "metadata": {
+        "entry": "function-hooks-redactor",
+        "upstreamName": "memory-fork",
+        "upstreamMarketplace": "claude-code-mods"
+      }
+    },
+    {
       "name": "merge-gate",
       "source": {
         "source": "git-subdir",
@@ -1010,12 +1166,12 @@
       }
     },
     {
-      "name": "mermaid-art",
+      "name": "mermaid-draw",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/galElmalah/claude-mods.git",
         "path": "claude-mermaid",
-        "sha": "b19a0f0d09bf214c010b15cc2849c0c1a11d7b0d"
+        "sha": "f7e8416f994738293cb39fea75cc9f0ba387e91a"
       },
       "description": "Mermaid diagrams drawn as box art inline in the transcript.",
       "author": {
@@ -1031,8 +1187,8 @@
       ],
       "metadata": {
         "entry": "claude-mermaid",
-        "upstreamName": "claude-mermaid",
-        "upstreamMarketplace": "claude-mods"
+        "upstreamName": "mermaid-draw",
+        "upstreamMarketplace": "gal-mods"
       }
     },
     {
@@ -1092,7 +1248,7 @@
         "source": "git-subdir",
         "url": "https://github.com/karanb192/claude-code-mods.git",
         "path": "plugins/mod-builder",
-        "sha": "10617a90106144d3cb131bd599e677d9c38bfd35"
+        "sha": "fb1f9c085c807d548f198fab2ada3a9585ac7e17"
       },
       "description": "A skill that plans, writes, validates, proves, reviews, migrates and publishes Claude Code mods. Plan first with the smallest $ surface, a footprint diffed against the plan, a test seen failing, an isolated load that leaves evidence files, a five-line threat model, and a handoff that names what was and was not proven. Brainstorm mode checks ideas against every mod already on GitHub.",
       "author": {
@@ -1143,7 +1299,7 @@
       "source": {
         "source": "github",
         "repo": "furqan-khan07/pixelband",
-        "sha": "20e27f99b023e62c8aa91dace07654442a715c24"
+        "sha": "b4c05b0a8017ef0eb41f4fd5373d5c8842944357"
       },
       "description": "Animated pixel-art scenes or your own image above the prompt, reacting to Claude. Zero tokens.",
       "author": {
@@ -1193,7 +1349,7 @@
       "source": {
         "source": "github",
         "repo": "DietrichGebert/ponytail",
-        "sha": "944b5dcc253cb0561db525207db5b804072ab127"
+        "sha": "09c434ab73ca43761c5d8b0c5d341926c2fba710"
       },
       "description": "Forces the laziest solution that works. YAGNI, stdlib first, one line over fifty.",
       "author": {
@@ -1219,7 +1375,7 @@
         "source": "git-subdir",
         "url": "https://github.com/Owloops/claude-powerline.git",
         "path": "plugin",
-        "sha": "3e763e558bca908475cf34adb55dfc59e4b39aa2"
+        "sha": "c611cbff28e8a2c33d2a531c7168dfc215aca97c"
       },
       "description": "Interactive setup wizard for theme, style, segment, and budget configuration",
       "author": {
@@ -1244,7 +1400,8 @@
       "source": {
         "source": "github",
         "repo": "NahumLitvin/prismantis",
-        "sha": "41bfa17526e3e137566fa850648b506989943d3d"
+        "ref": "v0.30.0",
+        "sha": "e0baa431597f627a06393b4efb20041eda35e822"
       },
       "description": "Colorful, themeable rendering for Claude Code replies: tables, headings, code, numbers, paths and links.",
       "author": {
@@ -1265,12 +1422,38 @@
       }
     },
     {
+      "name": "prompt-bouncer",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ray-amjad/awesome-claude-code-function-hooks.git",
+        "path": "plugins/prompt-bouncer",
+        "sha": "6db48a3af54f1b681e4d21e6d4f54ff497389fad"
+      },
+      "description": "Bounces vague prompts before Claude sees them, and suggests the project's own term",
+      "author": {
+        "name": "ray-amjad",
+        "url": "https://github.com/ray-amjad"
+      },
+      "homepage": "https://github.com/ray-amjad/awesome-claude-code-function-hooks",
+      "category": "mod",
+      "tags": [
+        "security",
+        "redaction",
+        "vercel"
+      ],
+      "metadata": {
+        "entry": "function-hooks-redactor",
+        "upstreamName": "prompt-bouncer",
+        "upstreamMarketplace": "claude-code-mods"
+      }
+    },
+    {
       "name": "prompt-queue",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/galElmalah/claude-mods.git",
         "path": "claude-queue",
-        "sha": "b19a0f0d09bf214c010b15cc2849c0c1a11d7b0d"
+        "sha": "f7e8416f994738293cb39fea75cc9f0ba387e91a"
       },
       "description": "/q <text> while Claude is working waits in a stack above the prompt and goes out when the turn ends.",
       "author": {
@@ -1286,8 +1469,8 @@
       ],
       "metadata": {
         "entry": "claude-mermaid",
-        "upstreamName": "claude-queue",
-        "upstreamMarketplace": "claude-mods"
+        "upstreamName": "prompt-queue",
+        "upstreamMarketplace": "gal-mods"
       }
     },
     {
@@ -1296,7 +1479,7 @@
         "source": "git-subdir",
         "url": "https://github.com/oikon48/prompt-rail.git",
         "path": "plugins/prompt-rail",
-        "sha": "2ac50fb87fc426fed89ba0f09f1784ef6f289ae8"
+        "sha": "b084c4250853ec57a6e491533db9d42dee6e5834"
       },
       "description": "A rail of your session's prompts beside the transcript or above the prompt; hover to read one, click to jump to it.",
       "author": {
@@ -1322,7 +1505,7 @@
         "source": "git-subdir",
         "url": "https://github.com/meganemura/pull-request-pane.git",
         "path": "plugin",
-        "sha": "2b072514053814083609a3e6b45ca4d602448f9f"
+        "sha": "4a1306e4a56cd8d67c0e8c28d20b9924a0a57cec"
       },
       "description": "A pane beside the transcript with the GitHub pull requests and issues related to the current session: drag a title or description to leave a comment on it, add as many as you like, then Submit sends them all as one prompt. Watch each pull request's checks, review decision and mergeability update on a timer.",
       "author": {
@@ -1348,7 +1531,7 @@
         "source": "git-subdir",
         "url": "https://github.com/Arunjay4213/claude-mods.git",
         "path": "plugins/quota-meter",
-        "sha": "d4fffd7de9204a62b10e7b3604fc893158fa25fd"
+        "sha": "6de1b69a555a412aea7b9a374ad6c0de7e47ac4e"
       },
       "description": "5-hour and weekly plan limits with reset countdown and projected time until you hit them.",
       "author": {
@@ -1497,14 +1680,14 @@
       }
     },
     {
-      "name": "secret-redactor",
+      "name": "secret-box",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/ray-amjad/awesome-claude-code-function-hooks.git",
-        "path": "plugins/secret-redactor",
-        "sha": "12b5fea27a4bd1b88cd9c9b6abc1efc0756c6625"
+        "path": "plugins/secret-box",
+        "sha": "6db48a3af54f1b681e4d21e6d4f54ff497389fad"
       },
-      "description": "Keeps secrets, email addresses and IP addresses out of the session transcript, and puts the real value back on the way into a tool call",
+      "description": "Claude can use a secret without seeing it: a masked box saves keys to .env and gives Claude a placeholder, every key a tool prints comes back as a placeholder, and committing .env is refused",
       "author": {
         "name": "ray-amjad",
         "url": "https://github.com/ray-amjad"
@@ -1518,8 +1701,8 @@
       ],
       "metadata": {
         "entry": "function-hooks-redactor",
-        "upstreamName": "secret-redactor",
-        "upstreamMarketplace": "awesome-claude-code-function-hooks"
+        "upstreamName": "secret-box",
+        "upstreamMarketplace": "claude-code-mods"
       }
     },
     {
@@ -1528,7 +1711,7 @@
         "source": "git-subdir",
         "url": "https://github.com/getsentry/sentry-mcp.git",
         "path": "plugins/sentry-mcp",
-        "sha": "dc98e07385d9f87e8549f22a4582a109219636a7"
+        "sha": "f2566764de0f4717a33059623f78517687010af2"
       },
       "description": "Sentry error tracking and performance monitoring - search issues, analyze errors, explore traces, and get AI-powered root cause analysis",
       "author": {
@@ -1554,7 +1737,7 @@
         "source": "git-subdir",
         "url": "https://github.com/getsentry/sentry-mcp.git",
         "path": "plugins/sentry-mcp-experimental",
-        "sha": "dc98e07385d9f87e8549f22a4582a109219636a7"
+        "sha": "f2566764de0f4717a33059623f78517687010af2"
       },
       "description": "Sentry MCP with experimental features enabled - includes all stable tools plus bleeding-edge capabilities",
       "author": {
@@ -1656,7 +1839,7 @@
       "source": {
         "source": "github",
         "repo": "obra/superpowers",
-        "sha": "8ca22dba9a94f28898bbce59f2537ff4d87c747d"
+        "sha": "bb92a77741419a4ab5f06e711a283343f1ada0c3"
       },
       "description": "Core skills library for Claude Code: TDD, debugging, collaboration patterns, and proven techniques",
       "author": {
@@ -1707,9 +1890,9 @@
       "source": {
         "source": "github",
         "repo": "Leonxlnx/taste-skill",
-        "sha": "ce26fc25c0e5e8cab638f883de62d9a86ee5e45b"
+        "sha": "b9ca2fd8047f4c72d7da90ebc1c1203e57c72cd2"
       },
-      "description": "Frontend design taste skills including brutalist, minimalist, soft, redesign, stitch, and more",
+      "description": "tasteskill v2: art direction for websites, product pages, dashboards and app screens, with a library of researched directions, real pictures from open collections and a real-browser inspector.",
       "author": {
         "name": "Leonxlnx",
         "url": "https://github.com/Leonxlnx"
@@ -1728,12 +1911,37 @@
       }
     },
     {
+      "name": "taste-skill-classics",
+      "source": {
+        "source": "github",
+        "repo": "Leonxlnx/taste-skill",
+        "sha": "b9ca2fd8047f4c72d7da90ebc1c1203e57c72cd2"
+      },
+      "description": "The classic taste-skill styles and earlier versions (soft, minimalist, brutalist, gpt-taste, Stitch, v1, v2-experimental). Opt-in: each runs only when called by name.",
+      "author": {
+        "name": "Leonxlnx",
+        "url": "https://github.com/Leonxlnx"
+      },
+      "homepage": "https://github.com/Leonxlnx/taste-skill",
+      "category": "skill",
+      "tags": [
+        "design",
+        "frontend",
+        "ui"
+      ],
+      "metadata": {
+        "entry": "taste-skill",
+        "upstreamName": "taste-skill-classics",
+        "upstreamMarketplace": "taste-skill"
+      }
+    },
+    {
       "name": "token-ledger",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/Arunjay4213/claude-mods.git",
         "path": "plugins/token-ledger",
-        "sha": "d4fffd7de9204a62b10e7b3604fc893158fa25fd"
+        "sha": "6de1b69a555a412aea7b9a374ad6c0de7e47ac4e"
       },
       "description": "Per-turn cost, tokens and cache hit ratio, with the session total.",
       "author": {
@@ -1776,6 +1984,32 @@
         "entry": "topic-filter",
         "upstreamName": "topic-filter",
         "upstreamMarketplace": "topic-filter-mod"
+      }
+    },
+    {
+      "name": "transcript-redactor",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ray-amjad/awesome-claude-code-function-hooks.git",
+        "path": "plugins/transcript-redactor",
+        "sha": "6db48a3af54f1b681e4d21e6d4f54ff497389fad"
+      },
+      "description": "Keeps secrets and email addresses out of the session transcript: swaps each one for a stable placeholder on the way in, and puts the real value back on the way into a tool call",
+      "author": {
+        "name": "ray-amjad",
+        "url": "https://github.com/ray-amjad"
+      },
+      "homepage": "https://github.com/ray-amjad/awesome-claude-code-function-hooks",
+      "category": "mod",
+      "tags": [
+        "security",
+        "redaction",
+        "vercel"
+      ],
+      "metadata": {
+        "entry": "function-hooks-redactor",
+        "upstreamName": "transcript-redactor",
+        "upstreamMarketplace": "claude-code-mods"
       }
     },
     {
@@ -1836,7 +2070,7 @@
         "source": "git-subdir",
         "url": "https://github.com/ray-amjad/awesome-claude-code-function-hooks.git",
         "path": "plugins/vercel-deploy-status",
-        "sha": "12b5fea27a4bd1b88cd9c9b6abc1efc0756c6625"
+        "sha": "6db48a3af54f1b681e4d21e6d4f54ff497389fad"
       },
       "description": "Pins the Vercel deploy queue of the linked project under the prompt: every deploy queued, building or just finished, with its phase and elapsed time",
       "author": {
@@ -1853,7 +2087,7 @@
       "metadata": {
         "entry": "function-hooks-redactor",
         "upstreamName": "vercel-deploy-status",
-        "upstreamMarketplace": "awesome-claude-code-function-hooks"
+        "upstreamMarketplace": "claude-code-mods"
       }
     },
     {
