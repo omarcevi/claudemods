@@ -7,7 +7,7 @@
 
 [Browse the site](https://claudemods.chat) · [Submit something](https://github.com/omarcevi/claudemods/issues/new?template=submit.yml) · [How it works](#how-it-works)
 
-![entries](https://img.shields.io/badge/entries-103-d97757) ![installable](https://img.shields.io/badge/installable_plugins-74-2f6f4f) ![license](https://img.shields.io/badge/list-CC0-lightgrey)
+![entries](https://img.shields.io/badge/entries-104-d97757) ![installable](https://img.shields.io/badge/installable_plugins-75-2f6f4f) ![license](https://img.shields.io/badge/list-CC0-lightgrey)
 
 </div>
 
@@ -28,7 +28,7 @@ Every plugin in the marketplace points at the exact upstream commit we looked at
 ## Contents
 
 - [Mods](#mods) (27)
-- [Plugins & marketplaces](#plugins-marketplaces) (7)
+- [Plugins & marketplaces](#plugins-marketplaces) (8)
 - [Skills](#skills) (21)
 - [Subagents](#subagents) (6)
 - [Slash commands](#slash-commands) (5)
@@ -127,6 +127,7 @@ Bundles of commands, agents, skills and hooks you install with /plugin.
 | --- | --- | --- |
 | [Claude Plugins Official](https://github.com/anthropics/claude-plugins-official) ⭐<br><sub>by anthropics</sub> | Anthropic-managed directory of curated Claude Code plugins from Anthropic and partners. | `/plugin install <plugin>@claude-plugins-official` |
 | [claude-mem](https://github.com/thedotmack/claude-mem) ⭐<br><sub>by thedotmack</sub> | Records what your agent does, compresses it, and feeds relevant context back into future sessions. | `/plugin install agent-mem@claudemods`<br>`/plugin install agent-mem-cowork@claudemods` |
+| [Akii: SEO & AI Search Optimizer](https://github.com/akii-technologies-ltd/akii-seo-ai-search-optimizer)<br><sub>by akii-technologies-ltd</sub> | This free Claude Code plugin audits sites, checks links, and plans SEO content. | `/plugin install akii-seo-ai-search-optimizer@claudemods` |
 | [Awesome Claude Code Plugins](https://github.com/ccplugins/awesome-claude-code-plugins)<br><sub>by ccplugins</sub> | Curated, installable marketplace of slash commands, subagents and hooks. | `/plugin marketplace add ccplugins/awesome-claude-code-plugins` |
 | [Claude Code bundled plugins](https://github.com/anthropics/claude-code)<br><sub>by anthropics</sub> | Anthropic's own plugins: code review, commit commands, feature dev, hookify, plugin-dev and more. | `/plugin marketplace add anthropics/claude-code` |
 | [Claude Code Plugins Plus Skills](https://github.com/jeremylongshore/claude-code-plugins-plus-skills)<br><sub>by jeremylongshore</sub> | Huge community marketplace with hundreds of plugins and skills across DevOps, data, security and more. | `/plugin marketplace add jeremylongshore/claude-code-plugins-plus-skills` |

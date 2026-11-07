@@ -162,6 +162,31 @@
       }
     },
     {
+      "name": "akii-seo-ai-search-optimizer",
+      "source": {
+        "source": "github",
+        "repo": "akii-technologies-ltd/akii-seo-ai-search-optimizer",
+        "sha": "baae2443881a13f4365ac8a0a508541e9c5a7eb4"
+      },
+      "description": "Free SEO + AEO + GEO toolkit. Aligned with Google's AI Optimization Guide. Helps you rank in Google AI surfaces and improves visibility signals for ChatGPT, Claude, Gemini, Perplexity, and Copilot.",
+      "author": {
+        "name": "akii-technologies-ltd",
+        "url": "https://github.com/akii-technologies-ltd"
+      },
+      "homepage": "https://github.com/akii-technologies-ltd/akii-seo-ai-search-optimizer",
+      "category": "plugin",
+      "tags": [
+        "seo",
+        "site-audit",
+        "search"
+      ],
+      "metadata": {
+        "entry": "akii-seo-ai-search-optimizer",
+        "upstreamName": "akii-seo-ai-search-optimizer",
+        "upstreamMarketplace": "akii"
+      }
+    },
+    {
       "name": "aside",
       "source": {
         "source": "github",

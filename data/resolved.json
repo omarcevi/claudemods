@@ -4330,5 +4330,57 @@
         }
       }
     ]
+  },
+  "akii-seo-ai-search-optimizer": {
+    "repo": "akii-technologies-ltd/akii-seo-ai-search-optimizer",
+    "sha": "baae2443881a13f4365ac8a0a508541e9c5a7eb4",
+    "upstreamMarketplace": "akii",
+    "plugins": [
+      {
+        "name": "akii-seo-ai-search-optimizer",
+        "description": "Free SEO + AEO + GEO toolkit. Aligned with Google's AI Optimization Guide. Helps you rank in Google AI surfaces and improves visibility signals for ChatGPT, Claude, Gemini, Perplexity, and Copilot.",
+        "source": {
+          "source": "github",
+          "repo": "akii-technologies-ltd/akii-seo-ai-search-optimizer",
+          "sha": "baae2443881a13f4365ac8a0a508541e9c5a7eb4"
+        },
+        "footprint": {
+          "v": 2,
+          "hooks": [
+            {
+              "event": "SessionEnd",
+              "command": "${CLAUDE_PLUGIN_ROOT}/scripts/akii-cta.sh"
+            }
+          ],
+          "modules": [],
+          "mcp": [],
+          "skills": 12,
+          "commands": 3,
+          "agents": 5,
+          "flags": [
+            {
+              "id": "auto-approve",
+              "where": [
+                "scripts/akii-cta.sh"
+              ],
+              "via": [
+                "decision\":\"approve\""
+              ]
+            },
+            {
+              "id": "network",
+              "where": [
+                "scripts/akii-cta.sh",
+                "scripts/validate.sh"
+              ],
+              "via": [
+                "curl"
+              ]
+            }
+          ],
+          "scanned": 3
+        }
+      }
+    ]
   }
 }
