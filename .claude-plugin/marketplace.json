@@ -393,6 +393,35 @@
       }
     },
     {
+      "name": "clawd-hq",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/vedant-shah/clawd-hq.git",
+        "path": "plugins/clawd-hq",
+        "sha": "1bf345efb3ba9570e95110c0fa7639216b5330ee"
+      },
+      "description": "A chief of staff for Claude Code: keep talking while Clawd hands work to specialists from your installed helpers and runs them in the background, with a live pixel-art office panel.",
+      "author": {
+        "name": "vedant-shah",
+        "url": "https://github.com/vedant-shah"
+      },
+      "homepage": "https://github.com/vedant-shah/clawd-hq",
+      "category": "mod",
+      "tags": [
+        "orchestration",
+        "subagents",
+        "delegation",
+        "pane",
+        "pixel-art",
+        "workflow"
+      ],
+      "metadata": {
+        "entry": "clawd-hq",
+        "upstreamName": "clawd-hq",
+        "upstreamMarketplace": "clawd-hq"
+      }
+    },
+    {
       "name": "clawdhouse",
       "source": {
         "source": "git-subdir",

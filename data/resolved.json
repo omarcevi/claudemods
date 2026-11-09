@@ -3375,6 +3375,143 @@
       }
     ]
   },
+  "clawd-hq": {
+    "repo": "vedant-shah/clawd-hq",
+    "sha": "1bf345efb3ba9570e95110c0fa7639216b5330ee",
+    "upstreamMarketplace": "clawd-hq",
+    "plugins": [
+      {
+        "name": "clawd-hq",
+        "description": "A chief of staff for Claude Code: keep talking while Clawd hands work to specialists from your installed helpers and runs them in the background, with a live pixel-art office panel.",
+        "source": {
+          "source": "git-subdir",
+          "url": "https://github.com/vedant-shah/clawd-hq.git",
+          "path": "plugins/clawd-hq",
+          "sha": "1bf345efb3ba9570e95110c0fa7639216b5330ee"
+        },
+        "footprint": {
+          "v": 2,
+          "hooks": [],
+          "modules": [
+            "./register.tsx"
+          ],
+          "mcp": [],
+          "events": [
+            "agent.offer",
+            "agent.spawn",
+            "classic.CwdChanged",
+            "classic.SubagentStop",
+            "command.run",
+            "model.fork",
+            "prompt.compose",
+            "prompt.context",
+            "prompt.submit",
+            "session.attach",
+            "session.compact",
+            "session.end",
+            "session.measure",
+            "session.start",
+            "tool.call",
+            "tool.describe",
+            "turn.complete",
+            "turn.start",
+            "turn.step",
+            "ui.render"
+          ],
+          "calls": [
+            "agent.list",
+            "agent.register",
+            "agent.spawn",
+            "clock.after",
+            "clock.every",
+            "clock.now",
+            "command.list",
+            "command.register",
+            "config.list",
+            "env.get",
+            "fs.ancestors",
+            "fs.exists",
+            "fs.list",
+            "fs.read",
+            "fs.stat",
+            "fs.write",
+            "model.complete",
+            "model.fork",
+            "plugin.name",
+            "plugin.root",
+            "prompt.fill",
+            "prompt.read",
+            "prompt.submit",
+            "session.compact",
+            "session.id",
+            "session.messages",
+            "session.model",
+            "session.root",
+            "session.surfaces",
+            "session.usage",
+            "session.version",
+            "store.get",
+            "store.set",
+            "tool.call",
+            "tool.check",
+            "tool.register",
+            "ui.close",
+            "ui.invalidate",
+            "ui.log",
+            "ui.open",
+            "ui.panes",
+            "ui.resolve",
+            "ui.status",
+            "ui.toast"
+          ],
+          "env": [
+            "CLAUDE_CONFIG_DIR",
+            "HOME",
+            "USERPROFILE"
+          ],
+          "skills": 0,
+          "commands": 0,
+          "agents": 5,
+          "flags": [
+            {
+              "id": "writes-files",
+              "where": [
+                "hooks/register-io.ts",
+                "hooks/register-rules.ts"
+              ],
+              "via": [
+                "$.fs.write"
+              ]
+            },
+            {
+              "id": "model-calls",
+              "where": [
+                "hooks/register-coffee.ts",
+                "hooks/register-io.ts",
+                "hooks/register-know.ts",
+                "hooks/register-left.ts",
+                "hooks/register-setup.ts"
+              ],
+              "via": [
+                "$.model.complete",
+                "$.model.fork"
+              ]
+            },
+            {
+              "id": "prompts",
+              "where": [
+                "hooks/register-io.ts"
+              ],
+              "via": [
+                "$.prompt.submit"
+              ]
+            }
+          ],
+          "scanned": 121
+        }
+      }
+    ]
+  },
   "compound-engineering": {
     "repo": "EveryInc/compound-engineering-plugin",
     "sha": "030188b4ba27f2dc33fbc4d5a112d3c8cc893e8c",

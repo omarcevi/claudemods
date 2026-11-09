@@ -7,7 +7,7 @@
       "label": "Mods",
       "heading": "Claude Code mods",
       "blurb": "Function-hook plugins that draw panes, bands, status lines and toasts, or guard what Claude does.",
-      "count": 27
+      "count": 28
     },
     "plugin": {
       "label": "Plugins & marketplaces",
@@ -3866,6 +3866,159 @@
               }
             ],
             "scanned": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "clawd-hq",
+      "name": "Clawd HQ",
+      "type": "mod",
+      "url": "https://github.com/vedant-shah/clawd-hq",
+      "author": "vedant-shah",
+      "description": "A chief of staff for Claude Code: hands work to specialists from your installed helpers and runs them in the background.",
+      "tags": [
+        "orchestration",
+        "subagents",
+        "delegation",
+        "pane",
+        "pixel-art",
+        "workflow"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install clawd-hq@claudemods"
+      ],
+      "inMarketplace": true,
+      "plugins": [
+        {
+          "name": "clawd-hq",
+          "install": "/plugin install clawd-hq@claudemods",
+          "description": "A chief of staff for Claude Code: keep talking while Clawd hands work to specialists from your installed helpers and runs them in the background, with a live pixel-art office panel.",
+          "source": {
+            "repo": "vedant-shah/clawd-hq",
+            "sha": "1bf345efb3ba9570e95110c0fa7639216b5330ee",
+            "path": "plugins/clawd-hq"
+          },
+          "footprint": {
+            "v": 2,
+            "hooks": [],
+            "modules": [
+              "./register.tsx"
+            ],
+            "mcp": [],
+            "events": [
+              "agent.offer",
+              "agent.spawn",
+              "classic.CwdChanged",
+              "classic.SubagentStop",
+              "command.run",
+              "model.fork",
+              "prompt.compose",
+              "prompt.context",
+              "prompt.submit",
+              "session.attach",
+              "session.compact",
+              "session.end",
+              "session.measure",
+              "session.start",
+              "tool.call",
+              "tool.describe",
+              "turn.complete",
+              "turn.start",
+              "turn.step",
+              "ui.render"
+            ],
+            "calls": [
+              "agent.list",
+              "agent.register",
+              "agent.spawn",
+              "clock.after",
+              "clock.every",
+              "clock.now",
+              "command.list",
+              "command.register",
+              "config.list",
+              "env.get",
+              "fs.ancestors",
+              "fs.exists",
+              "fs.list",
+              "fs.read",
+              "fs.stat",
+              "fs.write",
+              "model.complete",
+              "model.fork",
+              "plugin.name",
+              "plugin.root",
+              "prompt.fill",
+              "prompt.read",
+              "prompt.submit",
+              "session.compact",
+              "session.id",
+              "session.messages",
+              "session.model",
+              "session.root",
+              "session.surfaces",
+              "session.usage",
+              "session.version",
+              "store.get",
+              "store.set",
+              "tool.call",
+              "tool.check",
+              "tool.register",
+              "ui.close",
+              "ui.invalidate",
+              "ui.log",
+              "ui.open",
+              "ui.panes",
+              "ui.resolve",
+              "ui.status",
+              "ui.toast"
+            ],
+            "env": [
+              "CLAUDE_CONFIG_DIR",
+              "HOME",
+              "USERPROFILE"
+            ],
+            "skills": 0,
+            "commands": 0,
+            "agents": 5,
+            "flags": [
+              {
+                "id": "writes-files",
+                "where": [
+                  "hooks/register-io.ts",
+                  "hooks/register-rules.ts"
+                ],
+                "via": [
+                  "$.fs.write"
+                ]
+              },
+              {
+                "id": "model-calls",
+                "where": [
+                  "hooks/register-coffee.ts",
+                  "hooks/register-io.ts",
+                  "hooks/register-know.ts",
+                  "hooks/register-left.ts",
+                  "hooks/register-setup.ts"
+                ],
+                "via": [
+                  "$.model.complete",
+                  "$.model.fork"
+                ]
+              },
+              {
+                "id": "prompts",
+                "where": [
+                  "hooks/register-io.ts"
+                ],
+                "via": [
+                  "$.prompt.submit"
+                ]
+              }
+            ],
+            "scanned": 121
           }
         }
       ]
