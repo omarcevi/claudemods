@@ -13,7 +13,7 @@
       "label": "Plugins & marketplaces",
       "heading": "Claude Code plugins & marketplaces",
       "blurb": "Bundles of commands, agents, skills and hooks you install with /plugin.",
-      "count": 7
+      "count": 8
     },
     "skill": {
       "label": "Skills",
@@ -6065,6 +6065,66 @@
       "featured": false,
       "install": [],
       "inMarketplace": false
+    },
+    {
+      "id": "appstruct-social",
+      "name": "AppStruct Social",
+      "type": "plugin",
+      "url": "https://github.com/VladimirTambovtsev/appstruct-social-cursor-plugin",
+      "author": "VladimirTambovtsev",
+      "description": "Review AppStruct Social channels and posts, and save unscheduled drafts via MCP for manual review.",
+      "tags": [
+        "mcp",
+        "social-media",
+        "drafts",
+        "marketing"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install appstruct-social@claudemods"
+      ],
+      "inMarketplace": true,
+      "plugins": [
+        {
+          "name": "appstruct-social",
+          "install": "/plugin install appstruct-social@claudemods",
+          "description": "Read channels and analytics, and save unscheduled social drafts for review.",
+          "source": {
+            "repo": "VladimirTambovtsev/appstruct-social-cursor-plugin",
+            "sha": "1f809a1d58a1a4decc003ed4e902e43c2802cead",
+            "path": ""
+          },
+          "footprint": {
+            "v": 2,
+            "hooks": [],
+            "modules": [],
+            "mcp": [
+              {
+                "name": "appstruct-social",
+                "url": "https://api.appstruct.ai/v1/social/mcp"
+              }
+            ],
+            "skills": 1,
+            "commands": 0,
+            "agents": 0,
+            "flags": [
+              {
+                "id": "network",
+                "where": [
+                  "mcp:appstruct-social"
+                ],
+                "via": [
+                  "https://api.appstruct.ai/v1/social/mcp"
+                ],
+                "hosts": [
+                  "api.appstruct.ai"
+                ]
+              }
+            ],
+            "scanned": 0
+          }
+        }
+      ]
     }
   ]
 }

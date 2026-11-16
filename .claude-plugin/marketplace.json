@@ -162,6 +162,32 @@
       }
     },
     {
+      "name": "appstruct-social",
+      "source": {
+        "source": "github",
+        "repo": "VladimirTambovtsev/appstruct-social-cursor-plugin",
+        "sha": "1f809a1d58a1a4decc003ed4e902e43c2802cead"
+      },
+      "description": "Read channels and analytics, and save unscheduled social drafts for review.",
+      "author": {
+        "name": "VladimirTambovtsev",
+        "url": "https://github.com/VladimirTambovtsev"
+      },
+      "homepage": "https://github.com/VladimirTambovtsev/appstruct-social-cursor-plugin",
+      "category": "plugin",
+      "tags": [
+        "mcp",
+        "social-media",
+        "drafts",
+        "marketing"
+      ],
+      "metadata": {
+        "entry": "appstruct-social",
+        "upstreamName": "appstruct-social",
+        "upstreamMarketplace": "appstruct-social-plugins"
+      }
+    },
+    {
       "name": "aside",
       "source": {
         "source": "github",

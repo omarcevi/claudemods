@@ -4330,5 +4330,50 @@
         }
       }
     ]
+  },
+  "appstruct-social": {
+    "repo": "VladimirTambovtsev/appstruct-social-cursor-plugin",
+    "sha": "1f809a1d58a1a4decc003ed4e902e43c2802cead",
+    "upstreamMarketplace": "appstruct-social-plugins",
+    "plugins": [
+      {
+        "name": "appstruct-social",
+        "description": "Read channels and analytics, and save unscheduled social drafts for review.",
+        "source": {
+          "source": "github",
+          "repo": "VladimirTambovtsev/appstruct-social-cursor-plugin",
+          "sha": "1f809a1d58a1a4decc003ed4e902e43c2802cead"
+        },
+        "footprint": {
+          "v": 2,
+          "hooks": [],
+          "modules": [],
+          "mcp": [
+            {
+              "name": "appstruct-social",
+              "url": "https://api.appstruct.ai/v1/social/mcp"
+            }
+          ],
+          "skills": 1,
+          "commands": 0,
+          "agents": 0,
+          "flags": [
+            {
+              "id": "network",
+              "where": [
+                "mcp:appstruct-social"
+              ],
+              "via": [
+                "https://api.appstruct.ai/v1/social/mcp"
+              ],
+              "hosts": [
+                "api.appstruct.ai"
+              ]
+            }
+          ],
+          "scanned": 0
+        }
+      }
+    ]
   }
 }
