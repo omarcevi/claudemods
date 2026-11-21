@@ -7,7 +7,7 @@
 
 [Browse the site](https://claudemods.chat) · [Submit something](https://github.com/omarcevi/claudemods/issues/new?template=submit.yml) · [How it works](#how-it-works)
 
-![entries](https://img.shields.io/badge/entries-103-d97757) ![installable](https://img.shields.io/badge/installable_plugins-74-2f6f4f) ![license](https://img.shields.io/badge/list-CC0-lightgrey)
+![entries](https://img.shields.io/badge/entries-104-d97757) ![installable](https://img.shields.io/badge/installable_plugins-74-2f6f4f) ![license](https://img.shields.io/badge/list-CC0-lightgrey)
 
 </div>
 
@@ -28,7 +28,7 @@ Every plugin in the marketplace points at the exact upstream commit we looked at
 ## Contents
 
 - [Mods](#mods) (27)
-- [Plugins & marketplaces](#plugins-marketplaces) (7)
+- [Plugins & marketplaces](#plugins-marketplaces) (8)
 - [Skills](#skills) (21)
 - [Subagents](#subagents) (6)
 - [Slash commands](#slash-commands) (5)
@@ -132,6 +132,7 @@ Bundles of commands, agents, skills and hooks you install with /plugin.
 | [Claude Code Plugins Plus Skills](https://github.com/jeremylongshore/claude-code-plugins-plus-skills)<br><sub>by jeremylongshore</sub> | Huge community marketplace with hundreds of plugins and skills across DevOps, data, security and more. | `/plugin marketplace add jeremylongshore/claude-code-plugins-plus-skills` |
 | [Compound Engineering](https://github.com/EveryInc/compound-engineering-plugin)<br><sub>by EveryInc</sub> | Skills for a brainstorm, plan, build, review and capture-learnings development loop. | `/plugin install compound-engineering@claudemods` |
 | [Knowledge Work Plugins](https://github.com/anthropics/knowledge-work-plugins)<br><sub>by anthropics</sub> | Role plugins for sales, finance, legal, marketing, data and more, plus partner integrations. | `/plugin marketplace add anthropics/knowledge-work-plugins` |
+| [Open Agent API for Claude Code](https://github.com/jiangxingfan1-coder/open-agent-api-claude-plugin)<br><sub>by jiangxingfan1-coder</sub> | Lists and inspects agents in a local Open Agent API gateway using a read-only caller key, without starting tasks. | `/plugin install open-agent-api --marketplace jiangxingfan1-coder/open-agent-api-claude-plugin` |
 
 ## Skills
 
