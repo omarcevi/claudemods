@@ -13,7 +13,7 @@
       "label": "Plugins & marketplaces",
       "heading": "Claude Code plugins & marketplaces",
       "blurb": "Bundles of commands, agents, skills and hooks you install with /plugin.",
-      "count": 7
+      "count": 8
     },
     "skill": {
       "label": "Skills",
@@ -5813,6 +5813,24 @@
           }
         }
       ]
+    },
+    {
+      "id": "open-agent-api-catalog",
+      "name": "Open Agent API for Claude Code",
+      "type": "plugin",
+      "url": "https://github.com/jiangxingfan1-coder/open-agent-api-claude-plugin",
+      "author": "jiangxingfan1-coder",
+      "description": "Lists and inspects agents in a local Open Agent API gateway using a read-only caller key, without starting tasks.",
+      "tags": [
+        "mcp",
+        "local",
+        "read-only"
+      ],
+      "featured": false,
+      "install": [
+        "/plugin install open-agent-api --marketplace jiangxingfan1-coder/open-agent-api-claude-plugin"
+      ],
+      "inMarketplace": false
     },
     {
       "id": "cc-best-practices",
